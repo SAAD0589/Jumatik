@@ -1,0 +1,49 @@
+
+    {
+            "name": "Informatique & Multimedia",
+            "description": ""
+
+        },
+        
+        {
+            "name": "Vehicules",
+            "description": ""
+
+        },
+        {
+            "name": "Immobilier",
+            "description": ""
+
+        },
+        {
+            "name": "Maison & Jardin",
+            "description": ""
+
+        },
+        {
+            "name": "Habillement & Bien-etre",
+            "description": ""
+
+        },
+        {
+            "name": "Loisir & Divertissement",
+            "description": ""
+
+        },
+        {
+            "name": "Emplois & Services",
+            "description": ""
+
+        },
+        {
+            "name": "Entreprise",
+            "description": ""
+
+        },
+        {
+            "name": "Autre",
+            "description": ""
+
+        }
+    
+}

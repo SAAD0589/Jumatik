@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "modifications",
+  "[al]": {
+    "editor.formatOnSave": false
+  },
+  "javascript.format.enable": false,
+  "html.format.enable": false,
+  "editor.defaultFormatter": "Mohamed-khaled.mern-snippets",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
