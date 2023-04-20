@@ -4,3 +4,4 @@ REACT_APP_ENV=development
 REACT_APP_APP_URL= https://jumatik.ma:3000
 REACT_APP_SOCKET=wss://jumatik.ma:8900
 SKIP_PREFLIGHT_CHECK=true
+ 
