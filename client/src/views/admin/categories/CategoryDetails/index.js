@@ -62,6 +62,7 @@ import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTop
 import { tableColumnsTopCreators } from 'views/admin/marketplace/variables/tableColumnsTopCreators';
 import AdAsList from 'views/ads/recentAds/components/AdAsList';
 import { SearchIcon } from '@chakra-ui/icons';
+import { t } from 'helpers/TransWrapper';
 
 export default function CategoryDetails() {
   // Chakra Color Mode
@@ -166,7 +167,11 @@ export default function CategoryDetails() {
                       title={ad.name}
                       category={ad.categoryLabel}
                       //link={ad.name}
-                      price={ad.price === "Non défini" ? " " : ad.price + " MAD"}
+                      price={
+                        ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
+                      }
                       image={ ad.adPictures[0] && Object.keys(ad.adPictures[0]).length ? ad.adPictures[0] : Nft3}
                       city={ad.city}
                       bidders={[
@@ -216,7 +221,11 @@ export default function CategoryDetails() {
                           image={ ad.adPictures[0] && Object.keys(ad.adPictures[0]).length ? ad.adPictures[0] : Nft3}
 
                           category={ad.categoryLabel}
-                          currentbid={ad.price === "Non défini" ? "Non défini " : ad.price + " MAD"}
+                          currentbid={
+                        ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
+                      }
 
                           Click={handleClick}
                           city={ad.city}
@@ -228,7 +237,7 @@ export default function CategoryDetails() {
                                     60 /
                                     60 /
                                     24
-                                )} Jours`
+                                )} Jours  `
                               : `${Math.floor(
                                   (new Date() - new Date(ad.createdAt)) /
                                     1000 /

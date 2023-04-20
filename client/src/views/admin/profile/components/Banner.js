@@ -22,6 +22,7 @@ import {
   MdSettings,
   MdLogout,
 } from 'react-icons/md';
+import { t } from 'helpers/TransWrapper';
 
 export default function Banner(props) {
   const { banner, avatar, name, job, posts, userId } = props;
@@ -131,7 +132,7 @@ export default function Banner(props) {
                 {posts}{' '}
               </Text>{' '}
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Annonces{' '}
+                 {t('Annonces')} {' '}
               </Text>{' '}
             </Flex>{' '}
           </Box>{' '}
@@ -142,7 +143,7 @@ export default function Banner(props) {
                 {followersCount ? followersCount : 0}{' '}
               </Text>{' '}
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Abonnés{' '}
+              {t('Abonnés')}{' '}
               </Text>{' '}
             </Flex>{' '}
           </Box>{' '}
@@ -153,7 +154,7 @@ export default function Banner(props) {
                 {followingCount ? followingCount : 0}{' '}
               </Text>{' '}
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Abonnements{' '}
+                 {t('Abonnements')} {' '}
               </Text>{' '}
             </Flex>{' '}
           </Box>{' '}
@@ -169,7 +170,7 @@ export default function Banner(props) {
           minW="100%"
           mx="auto"
         >
-          Modifier mon profile{' '}
+           {t('Modifier mon profile')}{' '}
         </Button>{' '}
         <Button
           leftIcon={<MdLogout />}
@@ -181,7 +182,7 @@ export default function Banner(props) {
           mx="auto"
           onClick={logout}
         >
-          Se déconnecter{' '}
+           {t('Se déconnecter')}{' '}
         </Button>{' '}
       </Stack>{' '}
     </Card>

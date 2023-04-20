@@ -13,6 +13,7 @@ import {
   } from "@chakra-ui/react";
   // Custom components
   import Card from "components/card/Card.js";
+import { t } from "helpers/TransWrapper";
   // Assets
   import React, { useState } from "react";
   import { IoHeart, IoHeartOutline } from "react-icons/io5";
@@ -68,7 +69,7 @@ import {
                   }}
                   fontWeight='400'
                   me='14px'>
-                  {count} annonces
+                  {count}  {t('annonces')}
                 </Text>
               </Flex>
               
@@ -103,7 +104,7 @@ import {
                   borderRadius='70px'
                   px='24px'
                   py='5px'>
-                  Voir toutes les annonces
+                  {t('Voir toutes les annonces')}
                 </Button>
               </Link>
             </Flex>

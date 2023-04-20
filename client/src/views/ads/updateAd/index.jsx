@@ -54,6 +54,7 @@ import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { useDropzone } from 'react-dropzone';
 import { useParams } from 'react-router-dom';
+import { t } from 'helpers/TransWrapper';
 function UpdateAd() {
   // Chakra color mode
   const textColor = useColorModeValue('navy.700', 'white');
@@ -74,6 +75,7 @@ function UpdateAd() {
   const [subcategories, setSubcategories] = useState([]);
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
   const [selectedSubcategoryLabel, setSelectedSubcategoryLabel] = useState('');
+  const [tableFields, setTableFields] = useState([]);
 
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('');
@@ -84,6 +86,7 @@ function UpdateAd() {
 
   const [secteurs, setSecteurs] = useState([]);
   const [selectedSecteur, setSelectedsecteur] = useState('');
+  const [adId , setAdId ] = useState();
 
   const [ad, setAd] = useState([]);
 
@@ -157,9 +160,27 @@ function UpdateAd() {
       [name]: value,
     });
   };
-
+  const [fieldsValues, setFieldsValues] = useState({
+    ad_id: '',
+    field_id: '',
+    field_name: '',
+    value: '',
+  });
   const [file, setFile] = useState([]);
-
+  const handleFieldsChange = (fieldId, fieldType, e) => {
+    let value;
+    if (fieldType === "radio") {
+      value = e;
+    } else if (fieldType === "select") {
+      value = e.target.value;
+    } else {
+      value = e.target.value;
+    }
+    setFieldsValues(prevFieldsValues => ({
+      ...prevFieldsValues,
+      [fieldId]: { valeure: value },
+    }));
+  };
   const onFileChange = event => {
     setAd({
       ...ad, //spread operator
@@ -174,7 +195,7 @@ function UpdateAd() {
       console.error(error);
     }
   }
-  const add = async () => {
+  const add = async (fieldsValues) => {
     const formData = new FormData();
     const promises = [];
     formData.append('userId', ad.userId);
@@ -221,19 +242,66 @@ function UpdateAd() {
     };
 
     await axios(configuration)
-      .then(result => {
-        setLogin(true);
+    .then(result => {
+      setLogin(true);
 
-        const adToken = result.data;
-
-        if (!adToken) {
-          error('Error', 'Un probleme est survenu ');
-          return;
-        }
-      })
-      .catch(error => {
-        error = new Error();
+      const adToken = result.data;
+      setAdId(adToken._id);
+      const fieldValues = tableFields.map((field) => {
+        return {
+          ad_id: adToken._id,
+          field_id: field._id,
+          field_name: field.name,
+          valeure: fieldsValues[field._id]?.valeure,
+        };
       });
+      console.log('fieldValues:', fieldValues);
+      for (const fieldValue of fieldValues) {
+        try {
+          const response = axios.post(
+            `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
+            fieldValue,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
+          console.log(response.data);
+          // show a success message to the user
+          toast.success("Field value created successfully!", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        } catch (error) {
+          console.log(error);
+          // show an error message to the user
+          toast.error("Error creating field value!", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      }
+      if (!adToken) {
+        error('Error', 'Un probleme est survenu ');
+        return;
+      }
+    })
+    .catch(error => {
+      error = new Error();
+    });
   };
   const adData = {
     name: document.getElementById('name')?.value,
@@ -323,7 +391,7 @@ function UpdateAd() {
       return;
     }
 
-    await add();
+    await add(fieldsValues);
     toast(
       `Nous avons bien reçu votre annonce et nous vous remercions de votre confiance. Votre annonce est en cours de vérification et sera publiée prochainement si elle respecte nos critères de publication.
 
@@ -375,8 +443,7 @@ function UpdateAd() {
           fontSize="2xl"
           fontWeight="600"
         >
-          Modifier votre annonce
-        </Text>
+{t('Modifier votre annonce')}        </Text>
         <FormControl onSubmit={e => handleSubmit(e)}>
           <FormLabel
             display="flex"
@@ -387,7 +454,7 @@ function UpdateAd() {
             mb="8px"
             mt={10}
           >
-            Ajoutez les images du produit (Max 6 images){' '}
+             {t('Ajoutez les images du produit (Max 6 images)')}{' '}
           </FormLabel>{' '}
           <Stack direction={['column', 'row']} spacing={6} mb="20px">
             <Center w="full">
@@ -417,7 +484,7 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-              Nom de l 'annonce<Text color={brandStars}>*</Text>{' '}
+               {t(`Nom de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
             </FormLabel>{' '}
             <Input
               id="name"
@@ -427,7 +494,7 @@ function UpdateAd() {
               fontSize="sm"
               ms={{ base: '0px', md: '0px' }}
               type="text"
-              placeholder="Entrez le nom de l'annonce"
+              placeholder={t(`Entrez le nom de l'annonce`)}
               mb="24px"
               fontWeight="500"
               size="lg"
@@ -444,7 +511,7 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-              Choisissez une categorie <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -464,7 +531,7 @@ function UpdateAd() {
                 setSelectedCategoryId(selectedCategoryId);
                 setSelectedCategoryLabel(selectedCategory.label);
               }}
-              placeholder="Choisir une categorie"
+              placeholder={t(`Choisir une categorie`)}
             >
               {categories.map(category => (
                 <option
@@ -487,7 +554,7 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-              Choisissez une Sous-categorie <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisir une sous-categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -498,12 +565,13 @@ function UpdateAd() {
               size="lg"
               variant="auth"
               onChange={e => {
+
                 setSelectedSubcategory(e.target.value);
                 setSelectedSubcategoryLabel(
                   e.target.options[e.target.selectedIndex].text
                 );
               }}
-              placeholder="Choisir une sous-categorie"
+              placeholder={t(`Choisir une sous-categorie`)}
             >
               {' '}
               {subcategories.map(subcategory => (
@@ -518,6 +586,80 @@ function UpdateAd() {
               ))}{' '}
             </Select>
           </Box>
+          {selectedCategory &&
+  <>
+    {tableFields?.map(field => (
+      <Box height="90px">
+        <FormLabel
+          ms="4px"
+          fontSize="sm"
+          fontWeight="500"
+          color={textColor}
+          display="flex"
+        >
+          {field.name}
+        </FormLabel>
+        <FormControl isRequired={true}>
+          {field.type === 'text' &&
+            <InputGroup size="md">
+              <Input
+                fontSize="sm"
+                placeholder="Enter text"
+                mb="24px"
+                size="lg"
+                variant="auth"
+                value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}
+  name={field.name}
+              />
+            </InputGroup>
+          }
+          {field.type === 'textarea' &&
+            <Textarea
+              fontSize="sm"
+              placeholder="Enter text"
+              mb="24px"
+              size="lg"
+              variant="auth"
+              name={field.name}
+              value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
+          }
+          {field.type === 'radio' &&
+            <RadioGroup
+                  name={field.name}
+                  value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}
+              mb="24px"
+              size="lg"
+            >
+              <Stack direction="row">
+                {field.options.map(option => (
+                  <Radio value={option} key={option}>{option}</Radio>
+                ))}
+              </Stack>
+            </RadioGroup>
+          }
+          {field.type === 'select' &&
+            <Select
+              placeholder="Select option"
+              name={field.name}
+              value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}         
+         mb="24px"
+              size="lg"
+            >
+              {field.options.map(option => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </Select>
+          }
+        </FormControl>
+      </Box>
+    ))}
+  </>
+}
+
           <Box height="90px">
             <FormLabel
               ms="4px"
@@ -526,13 +668,13 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez le prix en MAD <Text color={brandStars}> * </Text>{' '}
+               {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup size="md">
               <Input
                 isRequired={true}
                 fontSize="sm"
-                placeholder="Prix en MAD"
+                placeholder={t(`Entrez le prix en MAD`)}
                 mb="24px"
                 size="lg"
                 variant="auth"
@@ -542,7 +684,7 @@ function UpdateAd() {
               />
             </InputGroup>{' '}
           </Box>{' '}
-    
+         
           <Box height="90px">
             <FormLabel
               ms="4px"
@@ -551,7 +693,7 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez la ville <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -559,7 +701,7 @@ function UpdateAd() {
                 name="location"
                 fontSize="sm"
                 ms={{ base: '0px', md: '0px' }}
-                placeholder="Choisissez votre ville "
+                placeholder={t(`Choisissez votre ville`)}
                 mb="24px"
                 fontWeight="200"
                 size="lg"
@@ -595,7 +737,7 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez le secteur <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre secteur`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -603,7 +745,7 @@ function UpdateAd() {
                 name="location"
                 fontSize="sm"
                 ms={{ base: '0px', md: '0px' }}
-                placeholder="Choisissez votre secteur "
+                placeholder={t(`Choisissez votre secteur`)}
                 mb="24px"
                 fontWeight="200"
                 size="lg"
@@ -627,7 +769,7 @@ function UpdateAd() {
             color={textColor}
             mb="8px"
           >
-            Entrez la description de l 'annonce<Text color={brandStars}>*</Text>{' '}
+             {t(`Entrez la description de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
           </FormLabel>
           <Textarea
             id="description"
@@ -644,12 +786,8 @@ function UpdateAd() {
           />
           <Alert status="error" mb={5} align="start">
             <AlertDescription>
-              Pour créer une nouvelle annonce, veuillez noter que les contenus à
-              caractère sexuel, promotionnels de produits illégaux ou dangereux,
-              ou tout autre contenu considéré comme inapproprié ne seront pas
-              acceptés. Nous nous réservons le droit de refuser ou de retirer
-              toute annonce qui ne respecte pas nos règles de publication. Merci
-              de votre compréhension.
+            {t(`Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`)}
+             
             </AlertDescription>
           </Alert>
           <Button
@@ -661,7 +799,7 @@ function UpdateAd() {
             mb="24px"
             onClick={handleSubmit}
           >
-            Ajouter{' '}
+             {t(`Ajouter`)}{' '}
           </Button>{' '}
         </FormControl>
         <Flex

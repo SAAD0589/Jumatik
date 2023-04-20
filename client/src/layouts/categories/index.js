@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import { Redirect, Route, Switch, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import routes from "routes.js";
+import { t } from "helpers/TransWrapper";
 
 // Custom Chakra theme
 export default function Dashboard(props) {
@@ -22,7 +23,7 @@ export default function Dashboard(props) {
     return window.location.pathname !== "/admin/full-screen-maps";
   };
   const getActiveRoute = (routes) => {
-    let activeRoute = "Catégories";
+    let activeRoute = t('Catégories');
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
         let collapseActiveRoute = getActiveRoute(routes[i].items);

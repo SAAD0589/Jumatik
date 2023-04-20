@@ -39,15 +39,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationEN from './locales/en.json'
 import { t, getLocale } from './helpers/TransWrapper';
-i18n.use(initReactI18next).init({
-  resources: {
-    en: {
-      translation: translationEN
-    }
-  },
-  lng: 'en',
-  fallbackLng: 'en'
-});
+
 
 
 
@@ -70,10 +62,10 @@ window.t = t;
 ReactDOM.render(
   <GoogleOAuthProvider clientId="764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com">
     <ChakraProvider theme={theme}>
-      <React.StrictMode>
+      <React.StrictMode key={getLocale()}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistStore(store)}>
-            <IntlProvider  locale={getLocale()}>
+            <IntlProvider  locale={getLocale()} i18n={i18n}>
               <ThemeEditorProvider>
                 <HashRouter basename="/" forceRefresh={true}>
                   <ScrollToTop />

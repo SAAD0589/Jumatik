@@ -53,6 +53,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { useDropzone } from 'react-dropzone';
+import { t } from 'helpers/TransWrapper';
 function CreateAd() {
   // Chakra color mode
   const textColor = useColorModeValue('navy.700', 'white');
@@ -155,7 +156,7 @@ function CreateAd() {
 
   const [ad, setAd] = useState({
     userId: user._id,
-    firstName: user.firstName,
+    firstName: user?.firstName,
     lastName: user.lastName,
     phone: user.phone,
     categoryName: '',
@@ -164,10 +165,10 @@ function CreateAd() {
     secteur: '',
     city: '',
     region: '',
-    price: 'Non défini',
+    price:  t('Non défini'),
     description: '',
     adPictures: '',
-    status: 'En cours de Validation',
+    status: t('En cours de Validation'),
     userProfilePicture: user.profilePicture,
   });
   const [fieldsValues, setFieldsValues] = useState({
@@ -222,7 +223,7 @@ function CreateAd() {
     const formData = new FormData();
     const promises = [];
     formData.append('userId', ad.userId);
-    formData.append('firstName', ad.firstName);
+    formData.append('firstName', ad?.firstName);
     formData.append('lastName', ad.lastName);
     formData.append('phone', ad.phone);
     formData.append('name', ad.name);
@@ -538,8 +539,7 @@ function CreateAd() {
           fontSize="2xl"
           fontWeight="600"
         >
-          Ajoutez une annonce gratuitement
-        </Text>
+{t('Ajoutez une annonce gratuitement')}        </Text>
         <FormControl onSubmit={e => handleSubmit(e)}>
           <FormLabel
             display="flex"
@@ -550,7 +550,7 @@ function CreateAd() {
             mb="8px"
             mt={10}
           >
-            Ajoutez les images du produit (Max 6 images){' '}
+             {t('Ajoutez les images du produit (Max 6 images)')}{' '}
           </FormLabel>{' '}
           <Stack direction={['column', 'row']} spacing={6} mb="20px">
             <Center w="full">
@@ -580,7 +580,7 @@ function CreateAd() {
               color={textColor}
               mb="8px"
             >
-              Nom de l 'annonce<Text color={brandStars}>*</Text>{' '}
+               {t(`Nom de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
             </FormLabel>{' '}
             <Input
               id="name"
@@ -590,7 +590,7 @@ function CreateAd() {
               fontSize="sm"
               ms={{ base: '0px', md: '0px' }}
               type="text"
-              placeholder="Entrez le nom de l'annonce"
+              placeholder={t(`Entrez le nom de l'annonce`)}
               mb="24px"
               fontWeight="500"
               size="lg"
@@ -607,7 +607,7 @@ function CreateAd() {
               color={textColor}
               mb="8px"
             >
-              Choisissez une categorie <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -627,7 +627,7 @@ function CreateAd() {
                 setSelectedCategoryId(selectedCategoryId);
                 setSelectedCategoryLabel(selectedCategory.label);
               }}
-              placeholder="Choisir une categorie"
+              placeholder={t(`Choisir une categorie`)}
             >
               {categories.map(category => (
                 <option
@@ -650,7 +650,7 @@ function CreateAd() {
               color={textColor}
               mb="8px"
             >
-              Choisissez une Sous-categorie <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisir une sous-categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -667,7 +667,7 @@ function CreateAd() {
                   e.target.options[e.target.selectedIndex].text
                 );
               }}
-              placeholder="Choisir une sous-categorie"
+              placeholder={t(`Choisir une sous-categorie`)}
             >
               {' '}
               {subcategories.map(subcategory => (
@@ -764,13 +764,13 @@ function CreateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez le prix en MAD <Text color={brandStars}> * </Text>{' '}
+               {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup size="md">
               <Input
                 isRequired={true}
                 fontSize="sm"
-                placeholder="Prix en MAD"
+                placeholder={t(`Entrez le prix en MAD`)}
                 mb="24px"
                 size="lg"
                 variant="auth"
@@ -789,7 +789,7 @@ function CreateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez la ville <Text color={brandStars}> * </Text>{' '}
+               {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -797,7 +797,7 @@ function CreateAd() {
                 name="location"
                 fontSize="sm"
                 ms={{ base: '0px', md: '0px' }}
-                placeholder="Choisissez votre ville "
+                placeholder={t(`Choisissez votre ville`)}
                 mb="24px"
                 fontWeight="200"
                 size="lg"
@@ -833,7 +833,7 @@ function CreateAd() {
               color={textColor}
               display="flex"
             >
-              Entrez le secteur <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre secteur`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -841,7 +841,7 @@ function CreateAd() {
                 name="location"
                 fontSize="sm"
                 ms={{ base: '0px', md: '0px' }}
-                placeholder="Choisissez votre secteur "
+                placeholder={t(`Choisissez votre secteur`)}
                 mb="24px"
                 fontWeight="200"
                 size="lg"
@@ -865,7 +865,7 @@ function CreateAd() {
             color={textColor}
             mb="8px"
           >
-            Entrez la description de l 'annonce<Text color={brandStars}>*</Text>{' '}
+             {t(`Entrez la description de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
           </FormLabel>
           <Textarea
             id="description"
@@ -882,12 +882,8 @@ function CreateAd() {
           />
           <Alert status="error" mb={5} align="start">
             <AlertDescription>
-              Pour créer une nouvelle annonce, veuillez noter que les contenus à
-              caractère sexuel, promotionnels de produits illégaux ou dangereux,
-              ou tout autre contenu considéré comme inapproprié ne seront pas
-              acceptés. Nous nous réservons le droit de refuser ou de retirer
-              toute annonce qui ne respecte pas nos règles de publication. Merci
-              de votre compréhension.
+            {t(`Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`)}
+             
             </AlertDescription>
           </Alert>
           <Button
@@ -899,7 +895,7 @@ function CreateAd() {
             mb="24px"
             onClick={handleSubmit}
           >
-            Ajouter{' '}
+             {t(`Ajouter`)}{' '}
           </Button>{' '}
         </FormControl>
         <Flex

@@ -44,6 +44,7 @@ import { MdOutlineRemoveRedEye, MdOutlineMailOutline } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { t } from 'helpers/TransWrapper';
 const SignIn = () => {
   // Chakra color mode
   const history = useHistory();
@@ -165,7 +166,7 @@ const SignIn = () => {
 
     await axios(configuration)
       .then(result => {
-        btnPointer.innerHTML = 'Connexion';
+        btnPointer.innerHTML = t('Connexion');
         btnPointer.removeAttribute('disabled');
         const data = result.data;
         const currentUser = data.user;
@@ -248,7 +249,7 @@ const SignIn = () => {
       >
         <Box me="auto">
           <Heading color={textColor} fontSize="36px" mb="10px">
-            Connexion{' '}
+          {t('Connexion')}{' '}
           </Heading>{' '}
           <Text
             mb="36px"
@@ -257,7 +258,7 @@ const SignIn = () => {
             fontWeight="400"
             fontSize="md"
           >
-            Connecter vous sur votre compte JUMATIK{' '}
+            {t('Connecter vous sur votre compte JUMATIK')}{' '}
           </Text>{' '}
         </Box>{' '}
         <Flex
@@ -287,7 +288,7 @@ const SignIn = () => {
             _focus={googleActive}
           >
             <Icon as={FcGoogle} w="20px" h="20px" me="10px" />
-            Connexion avec Google{' '}
+             {t('Connexion avec Google')}{' '}
           </Button>
           <Button
             onClick={handleFacebookLogin}
@@ -311,7 +312,7 @@ const SignIn = () => {
               me="10px"
               color="blue.500"
             />
-            Connexion avec Facebook{' '}
+             {t('Connexion avec Facebook')}{' '}
           </Button>{' '} 
           <NavLink to="/register/registerForm" > 
           <Button
@@ -330,13 +331,13 @@ const SignIn = () => {
               me="10px"
               
             />
-              S'enregistrer avec votre adresse mail
+              {t(`S'enregistrer avec votre adresse mail`)}
             </Button></NavLink>
  
           <Flex align="center" mb="25px">
             <HSeparator />
             <Text color="gray.400" mx="14px">
-              ou{' '}
+                {t('ou')}{' '}
             </Text>{' '}
             <HSeparator />
           </Flex>{' '}
@@ -349,7 +350,7 @@ const SignIn = () => {
               color={textColor}
               mb="8px"
             >
-              Email <Text color={brandStars}> * </Text>{' '}
+              {t('Email')} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Input
               isRequired={true}
@@ -372,7 +373,7 @@ const SignIn = () => {
               color={textColor}
               display="flex"
             >
-              Mot de passe <Text color={brandStars}> * </Text>{' '}
+               {t('Mot de passe')}  <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup size="md">
               <Input
@@ -410,7 +411,7 @@ const SignIn = () => {
                   color={textColor}
                   fontSize="sm"
                 >
-                  Se souvenir de moi{' '}
+                   {t('Se souvenir de moi')} {' '}
                 </FormLabel>{' '}
               </FormControl>{' '}
               <NavLink to="/register/forgot-password">
@@ -420,7 +421,7 @@ const SignIn = () => {
                   w="124px"
                   fontWeight="500"
                 >
-                  Mot de passe perdu 
+                    {t('Mot de passe perdu')}
                 </Text>{' '}
               </NavLink>{' '}
             </Flex>{' '}
@@ -434,7 +435,7 @@ const SignIn = () => {
               mb="24px"
               onClick={handleSubmit}
             >
-              Connexion{' '}
+              {t('Connexion')}{' '}
             </Button>
           </FormControl>{' '}
           <Flex

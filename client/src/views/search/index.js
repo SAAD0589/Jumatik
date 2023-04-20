@@ -68,6 +68,7 @@ import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTop
 import { tableColumnsTopCreators } from 'views/admin/marketplace/variables/tableColumnsTopCreators';
 import AdAsList from 'views/ads/recentAds/components/AdAsList';
 import { SearchIcon } from '@chakra-ui/icons';
+import { t } from 'helpers/TransWrapper';
 
 export default function RecentAds() {
   // Chakra Color Mode
@@ -336,7 +337,7 @@ export default function RecentAds() {
                         fontWeight="200"
                         _placeholder={{ color: 'gray.400', fontSize: '14px' }}
                         borderRadius="10px"
-                        placeholder="Que Recherchez-vous ?"
+                        placeholder={t('Que Recherchez-vous ?')}
                       />
                     </InputGroup>{' '}
                   </Flex>{' '}
@@ -350,7 +351,7 @@ export default function RecentAds() {
                         name="location"
                         variant="outline"
                         ms={{ base: '0px', md: '0px' }}
-                        placeholder="Choisissez votre ville"
+                        placeholder={t('Choisissez votre ville')}
                         size="lg"
                         options={cities.map(city => ({
                           value: city.name,
@@ -380,7 +381,7 @@ export default function RecentAds() {
                         name="sector"
                         variant="outline"
                         ms={{ base: '0px', md: '0px' }}
-                        placeholder="Choisissez votre secteur"
+                        placeholder={t('Choisissez votre secteur')}
                         size="lg"
                         options={secteurs.map(secteur => ({
                           value: secteur.name,
@@ -424,7 +425,7 @@ export default function RecentAds() {
                         }}
                         value={selectedCategoryLabel}
 
-                        placeholder="Choisir une categorie"
+                        placeholder={t('Choisir une categorie')}
                       />
                     </InputGroup>{' '}
                   </Flex>{' '}
@@ -450,7 +451,7 @@ export default function RecentAds() {
                           );
                         }}
                         value={selectedSubcategory}
-                        placeholder="Choisir une sous-categorie"
+                        placeholder={t('Choisir une sous-categorie')}
                       />
                     
                     </InputGroup>{' '}
@@ -465,7 +466,7 @@ export default function RecentAds() {
                   h="50"
                   mb="15px"
                 >
-                  Rechercher{' '}
+                   {t('Rechercher')}{' '}
                 </Button>{' '}
               </FormControl>{' '}
             </Flex>{' '}
@@ -484,7 +485,7 @@ export default function RecentAds() {
                 variant="solid"
                 onClick={() => [setshowCard(true), setshowList(false)]}
               >
-                Cartes{' '}
+                 {t('Cartes')} {' '}
               </Button>{' '}
               <Button
                 w={100}
@@ -495,7 +496,7 @@ export default function RecentAds() {
                 variant="solid"
                 onClick={() => [setshowCard(false), setshowList(true)]}
               >
-                Listes{' '}
+                  {t('Listes')}{' '}
               </Button>{' '}
             </Flex>{' '}
           </Card>{' '}
@@ -517,9 +518,9 @@ export default function RecentAds() {
                       category={ad.categoryLabel}
                       //link={ad.name}
                       price={
-                        ad.price === 'Non défini'
-                          ? 'Non défini '
-                          : ad.price + ' MAD'
+                        ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
                       }
                       image={
                         ad.adPictures[0] && Object.keys(ad.adPictures[0]).length
@@ -579,9 +580,9 @@ export default function RecentAds() {
                           }
                           category={ad.categoryLabel}
                           currentbid={
-                            ad.price === 'Non défini'
-                              ? 'Non défini '
-                              : ad.price + ' MAD'
+                            ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
                           }
                           Click={handleClick}
                           city={ad.city}

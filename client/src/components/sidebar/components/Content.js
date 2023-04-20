@@ -35,6 +35,7 @@ import Links from '../../../components/sidebar/components/Links';
 import SidebarCard from '../../../components/sidebar/components/SidebarCard';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { t, LanguageSwitcher, getLocale  }  from 'helpers/TransWrapper';
 
 // FUNCTIONS
 
@@ -59,7 +60,8 @@ function SidebarContent(props) {
                 mx="auto"
               >
                 <Icon as={MdScreenSearchDesktop} w="20px" h="20px" me="10px" />
-                Recherche avancée
+               
+                {t('Recherche avancée')}
               </Button>
             </NavLink>
           </Flex>
@@ -76,10 +78,13 @@ function SidebarContent(props) {
                 mx="auto"
               >
                 <Icon as={MdOutlineAddToQueue} w="20px" h="20px" me="10px" />
-                Annonce gratuite
+                {t('Annonce gratuite')}
               </Button>
             </NavLink>
+
           </Flex>
+          <LanguageSwitcher />
+
         </Box>
       </Stack>
       <HStack

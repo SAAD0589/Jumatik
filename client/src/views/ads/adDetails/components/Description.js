@@ -25,6 +25,7 @@ import { MdUpload } from 'react-icons/md';
 import Dropzone from 'views/admin/profile/components/Dropzone';
 import axios from 'axios';
 import { NavLink, useHistory } from 'react-router-dom';
+import { t } from 'helpers/TransWrapper';
 
 export default function Description(props) {
   const { id,name, phone, category, description, price, dateCreated, city, receiverId  } = props;
@@ -206,7 +207,7 @@ const [conversations, setConversations] = useState([]);
               onClick={createConv}
                
             >
-              Contacter
+               {t('Contacter')}
             </Button>
             <Button
               leftIcon={<IoLogoWhatsapp />}
@@ -236,7 +237,7 @@ const [conversations, setConversations] = useState([]);
               ml="auto"
 
             >
-              Connectez vous pour contacter l'annonceur
+               {t(`Connectez vous pour contacter l'annonceur`)}
             </Button>
             </NavLink>)}
           

@@ -66,6 +66,7 @@ import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes.js';
 import { ThemeEditor } from './ThemeEditor';
 import axios from 'axios';
+import { t } from 'helpers/TransWrapper';
 export default function HeaderLinks(props) {
   const { secondary } = props;
   // Chakra Color Mode
@@ -161,11 +162,11 @@ export default function HeaderLinks(props) {
   const hours = date.getHours();
 
   if (hours < 12) {
-    timeOfDay = 'Bonjour';
+    timeOfDay = t('Bonjour');
   } else if (hours >= 12 && hours < 17) {
-    timeOfDay = 'Bonjour';
+    timeOfDay = t('Bonjour');
   } else {
-    timeOfDay = 'Bonsoir';
+    timeOfDay = t('Bonsoir');
   }
 
   const userToken = JSON.parse(localStorage.getItem('user-token'));
@@ -207,7 +208,7 @@ export default function HeaderLinks(props) {
           textAlign='center'
           px='10px'
           >
-          Téléchargez notre application mobile !
+          {t('Téléchargez notre application mobile !')}
         </Text>
         <HStack 
      
@@ -319,7 +320,7 @@ export default function HeaderLinks(props) {
             >
               <Flex jusitfy="space-between" w="100%" mb="20px">
                 <Text fontSize="md" fontWeight="600" color={textColor}>
-                  Boite de messagerie{' '}
+                {t('Boite de messagerie')}{' '}
                 </Text>{' '}
               </Flex>{' '}
               <Flex flexDirection="column">
@@ -385,7 +386,7 @@ export default function HeaderLinks(props) {
             >
               <Flex jusitfy="space-between" w="100%" mb="20px">
                 <Text fontSize="md" fontWeight="600" color={textColor}>
-                  Notifications{' '}
+                  {' '} {t('Notifications')}
                 </Text>
               </Flex>{' '}
               <Flex flexDirection="column">
@@ -427,7 +428,7 @@ export default function HeaderLinks(props) {
                 fontWeight="700"
                 color={textColor}
               >
-                👋 &nbsp; Bienvenu sur JUMATIK{' '}
+                👋 &nbsp;  {t('Bienvenu sur JUMATIK')}{' '}
               </Text>{' '}
             </Flex>{' '}
             <Flex flexDirection="column" p="10px">
@@ -438,7 +439,7 @@ export default function HeaderLinks(props) {
                   borderRadius="8px"
                   px="14px"
                 >
-                  <Text fontSize="sm"> Se connecter </Text>{' '}
+                  <Text fontSize="sm">   {t('Se connecter')}</Text>{' '}
                 </MenuItem>{' '}
               </NavLink>{' '}
               <NavLink to="/auth/register">
@@ -448,7 +449,7 @@ export default function HeaderLinks(props) {
                   borderRadius="8px"
                   px="14px"
                 >
-                  <Text fontSize="sm"> S 'enregistrer</Text>{' '}
+                  <Text fontSize="sm"> {t(`S'enregistrer`)}</Text>{' '}
                 </MenuItem>{' '}
               </NavLink>{' '}
             </Flex>{' '}
@@ -512,7 +513,7 @@ export default function HeaderLinks(props) {
                   borderRadius="8px"
                   px="14px"
                 >
-                  <Text fontSize="sm"> Afficher mon profile </Text>{' '}
+                  <Text fontSize="sm">  {t(`Afficher mon profile`)} </Text>{' '}
                 </MenuItem>{' '}
               </NavLink>
               <MenuItem
@@ -523,7 +524,7 @@ export default function HeaderLinks(props) {
                 borderRadius="8px"
                 px="14px"
               >
-                <Text fontSize="sm"> Déconnexion </Text>{' '}
+                <Text fontSize="sm">  {t(`Déconnexion`)} </Text>{' '}
               </MenuItem>{' '}
             </Flex>{' '}
           </MenuList>{' '}

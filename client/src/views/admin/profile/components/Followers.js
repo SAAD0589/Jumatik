@@ -17,6 +17,7 @@ import { MdOutlineCloudDone } from 'react-icons/md';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {GiNightSleep} from "react-icons/gi";
+import { t } from 'helpers/TransWrapper';
 export default function Followers(props) {
   const { currentUserId } = props;
   // Chakra Color Mode
@@ -71,7 +72,7 @@ export default function Followers(props) {
         mt="10px"
         mb="4px"
       >
-        Vos abonnés{' '}
+         {t('Vos abonnés')} {' '}
       </Text>
       {followers.length !== 0 ? <Box w="100%" mt="10px">
         {' '}
@@ -101,7 +102,7 @@ export default function Followers(props) {
       </Box> :    <Flex opacity='50%' m='auto' alignItems='center' flexDirection='column'>
   <Icon color={brandColor2} align='center' as={GiNightSleep} h='120px' w='120px' />
   <Text align='center' color={brandColor2} fontWeight="bold" fontSize="md" mt="10px" mb="4px">
-  Aucun abonné pour le moment{' '}
+  {' '}  {t('Aucun abonné pour le moment')}
   </Text>
 </Flex>}
       

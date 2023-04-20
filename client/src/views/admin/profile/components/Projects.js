@@ -13,6 +13,7 @@ import AdsCard from '../../../../components/sidebar/components/SidebarCard';
 import Nft3 from 'assets/img/nfts/Nft3.png';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { t } from 'helpers/TransWrapper';
 
 export default function Projects(props) {
   // Chakra Color Mode
@@ -83,11 +84,13 @@ export default function Projects(props) {
         mt="10px"
         mb="4px"
       >
-        Vos annonces{' '}
+                       {t(`Vos annonces`)}
+{' '}
       </Text>{' '}
       <Text color={textColorSecondary} fontSize="md" me="26px" mb="40px">
-        Ici vous pouvez gérer vos annonces publiées, en brouillons ou en cours
-        de validation{' '}
+      {t(`Ici vous pouvez gérer vos annonces publiées, en brouillons ou en cours de validation`)}
+
+        {' '}
       </Text>{' '}
       {ads && ads.length > 0 ? (
         ads.map(ad => {

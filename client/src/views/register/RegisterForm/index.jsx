@@ -44,6 +44,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import Card from 'components/card/Card.js';
+import { t } from 'helpers/TransWrapper';
 
 function RegisterForm() {
   // Chakra color mode
@@ -373,7 +374,7 @@ function RegisterForm() {
     mb={{ base: '20px', md: 'auto' }}
   >
   <Text mb={5} color={textColor} align='start' fontSize='2xl' fontWeight='600'>
-            Enregistement gratuit
+             {t('Enregistement gratuit')}
             </Text>
     <FormControl onSubmit={e => handleSubmit(e)}>
       <FormLabel
@@ -384,7 +385,7 @@ function RegisterForm() {
         color={textColor}
         mb="8px"
       >
-        Inserez votre image de profile
+         {t('Inserez votre image de profile')}
       </FormLabel>
       <Stack direction={['column', 'row']} spacing={6} mb="20px">
         <Center>
@@ -424,7 +425,7 @@ function RegisterForm() {
         color={textColor}
         mb="8px"
       >
-        Vous êtes ?<Text color={brandStars}>*</Text>
+         {t('Vous êtes ?')}<Text color={brandStars}>*</Text>
       </FormLabel>
       <RadioGroup
         name="ProPart"
@@ -435,10 +436,10 @@ function RegisterForm() {
       >
         <Stack spacing={40} direction="row">
           <Radio colorScheme="red" size="lg" value="pro">
-            Professionnel
+             {t('Professionnel')}
           </Radio>
           <Radio colorScheme="green" size="lg" value="part">
-            Particulier
+             {t('Particulier')}
           </Radio>
         </Stack>
       </RadioGroup>
@@ -452,7 +453,7 @@ function RegisterForm() {
             color={textColor}
             mb="8px"
           >
-            Nom<Text color={brandStars}>*</Text>
+             {t('Nom')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -461,7 +462,7 @@ function RegisterForm() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="text"
-            placeholder="Entrez votre nom"
+            placeholder={t('Nom')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -487,7 +488,7 @@ function RegisterForm() {
             color={textColor}
             mb="8px"
           >
-            Prénom<Text color={brandStars}>*</Text>
+             {t('Prénom')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -496,7 +497,7 @@ function RegisterForm() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="text"
-            placeholder="Entrez votre Prénom "
+            placeholder={t('Prénom')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -523,7 +524,7 @@ function RegisterForm() {
             color={textColor}
             mb="8px"
           >
-            Téléphone<Text color={brandStars}>*</Text>
+             {t('Téléphone')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -531,7 +532,7 @@ function RegisterForm() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="tel"
-            placeholder="Entrez votre Num de Téléphone "
+            placeholder={t('Téléphone')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -557,7 +558,7 @@ function RegisterForm() {
             color={textColor}
             mb="8px"
           >
-            Email<Text color={brandStars}>*</Text>
+             {t('Email')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -592,7 +593,7 @@ function RegisterForm() {
         color={textColor}
         mb="8px"
       >
-        Adresse complète<Text color={brandStars}>*</Text>
+         {t('Adresse complète')}<Text color={brandStars}>*</Text>
       </FormLabel>
 
       <Textarea
@@ -602,7 +603,7 @@ function RegisterForm() {
         size="lg"
         ms={{ base: '0px', md: '0px' }}
         isRequired={true}
-        placeholder="Entrez votre Adresse complète"
+        placeholder={t('Adresse complète')}
         value={user.address}
         onBlur={validateInput}
         name="address"
@@ -624,7 +625,7 @@ function RegisterForm() {
         color={textColor}
         mb="8px"
       >
-        Vous désirez ?<Text color={brandStars}>*</Text>
+         {t('Que désirez-vous ?')}<Text color={brandStars}>*</Text>
       </FormLabel>
       <Box mb={5}>
         {' '}
@@ -635,10 +636,10 @@ function RegisterForm() {
         >
           <Stack spacing={40} direction="row">
             <Checkbox colorScheme="red" size="lg" value="Acheter">
-              Acheter
+               {t('Acheter')}
             </Checkbox>
             <Checkbox colorScheme="green" size="lg" value="Vendre">
-              Vendre
+               {t('Vendre')}
             </Checkbox>
           </Stack>
         </CheckboxGroup>
@@ -652,7 +653,7 @@ function RegisterForm() {
             color={textColor}
             display="flex"
           >
-            Mot de passe<Text color={brandStars}>*</Text>
+             {t('Mot de passe')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <InputGroup size="md">
             <Input
@@ -693,7 +694,7 @@ function RegisterForm() {
             color={textColor}
             display="flex"
           >
-            Confirmez Mot de passe<Text color={brandStars}>*</Text>
+             {t('Confirmez Mot de passe')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <InputGroup size="md">
             <Input
@@ -739,7 +740,7 @@ function RegisterForm() {
         mb="24px"
         onClick={handleSubmit}
       >
-        S'enregistrer
+         {t(`S'enregistrer`)}
       </Button>
     </FormControl>
 
@@ -751,10 +752,10 @@ function RegisterForm() {
       mt="0px"
     >
       <Text color={textColorDetails} fontWeight="400" fontSize="14px">
-        Vous avez deja pas encore de compte?
+         {t(`Vous avez deja un compte ?`)}
         <NavLink to="/auth/sign-in">
           <Text color={textColorBrand} as="span" ms="5px" fontWeight="500">
-            Se connecter
+             {t(`Se connecter`)}
           </Text>
         </NavLink>
       </Text>

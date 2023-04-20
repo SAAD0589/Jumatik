@@ -18,6 +18,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {GiNightSleep} from "react-icons/gi";
 import { TiDelete } from 'react-icons/ti';
+import { t } from 'helpers/TransWrapper';
 export default function Following(props) {
   const { currentUserId } = props;
   // Chakra Color Mode
@@ -74,7 +75,7 @@ export default function Following(props) {
         mt="10px"
         mb="4px"
       >
-        Vos abonnements{' '}
+         {t('Vos abonnements')}{' '}
       </Text>
       {following.length !== 0  ? <Box w="100%" mt="10px">
         {' '}
@@ -104,7 +105,7 @@ export default function Following(props) {
       </Box> :<Flex opacity='50%' m='auto' alignItems='center' flexDirection='column'>
   <Icon color={brandColor2} align='center' as={GiNightSleep} h='120px' w='120px' />
   <Text align='center' color={brandColor2} fontWeight="bold" fontSize="md" mt="10px" mb="4px">
-  Aucun abonnement pour le moment{' '}
+   {t('Aucun abonnement pour le moment')}{' '}
   </Text>
 </Flex> }  
       {' '}

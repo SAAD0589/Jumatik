@@ -8,6 +8,7 @@ import { SidebarContext } from "../../contexts/SidebarContext";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "../../routes.js";
+import { t } from "helpers/TransWrapper.js";
 
 // Custom Chakra theme
 export default function Dashboard(props) {
@@ -20,7 +21,7 @@ export default function Dashboard(props) {
     return window.location.pathname !== "/router/full-screen-maps";
   };
   const getActiveRoute = (routes) => {
-    let activeRoute = "Détails de l'annonce";
+    let activeRoute = t(`Détails de l'annonce`);
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
         let collapseActiveRoute = getActiveRoute(routes[i].items);

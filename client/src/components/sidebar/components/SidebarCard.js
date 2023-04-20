@@ -14,6 +14,7 @@ import { FaAppStoreIos,FaGooglePlay } from 'react-icons/fa';
 import { NavLink } from "react-router-dom";
 import logoWhite from "../../../assets/img/layout/logoWhite.png";
 import React from "react";
+import { t } from "helpers/TransWrapper";
 
 export default function SidebarDocs() {
   const bgColor = "linear-gradient(135deg, #868CFF 0%, #4318FF 100%)";
@@ -58,7 +59,7 @@ export default function SidebarDocs() {
           textAlign='center'
           px='10px'
           mb='14px'>
-         JUMATIK votre Marketplace 100% digitale
+        {t('JUMATIK votre Marketplace 100% digitale')} 
 
         </Text>
       

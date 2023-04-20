@@ -126,13 +126,13 @@ export default function Footer(props) {
       
           <VStack align="flex-start">
             <Heading size="sm" textTransform="uppercase">
-              Infos Légales
+              {t('Infos Légales')}
             </Heading>
             <Link
             fontWeight='500'
             color={textColor}
             href='mailto:contact@jumatik.ma'>
-            Support
+             {t('Support')}
           </Link>
           <Link
             fontWeight='500'
@@ -146,19 +146,20 @@ export default function Footer(props) {
             color={textColor}
             href='#/infos/termofuse'
             target='_blank'>
+             {t(`Termes d'utilisation`)}
             
-            Termes d'utilisation
           </Link>
           <Link
             fontWeight='500'
             color={textColor}
             href='#/infos/mentions'
             target='_blank'>
-            Mentions Légales
+                        {t(`Mentions Légales`)}
+
           </Link>          </VStack>
           <VStack align="flex-start">
             <Heading size="sm" textTransform="uppercase">
-            Application mobile
+             {t(`Application mobile`)}
             </Heading>
             <ReactStoreBadges
           platform={'ios'}

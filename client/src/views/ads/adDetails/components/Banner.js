@@ -22,6 +22,7 @@ import {
   MdPersonSearch,
   MdSettings,
 } from 'react-icons/md';
+import { t } from 'helpers/TransWrapper';
 
 export default function Banner(props) {
   const { banner, avatar, name, job, posts, userId } = props;
@@ -198,7 +199,7 @@ export default function Banner(props) {
                 {posts}
               </Text>
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Annonces
+                 {t('Annonces')}
               </Text>
             </Flex>
           </Box>
@@ -208,7 +209,7 @@ export default function Banner(props) {
                 {followersCount ? followersCount : 0}
               </Text>
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Abonnes
+                 {t('Abonnes')}
               </Text>
             </Flex>
           </Box>
@@ -218,7 +219,7 @@ export default function Banner(props) {
                 {followingCount ? followingCount : 0}
               </Text>
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
-                Abonnements
+                  {t('Abonnements')}
               </Text>
             </Flex>
           </Box>
@@ -234,7 +235,7 @@ export default function Banner(props) {
             minW="100%"
             mx="auto"
           >
-            Afficher mon profile
+             {t('Afficher mon profile')} 
           </Button></NavLink>
          
           <Button
@@ -246,7 +247,7 @@ export default function Banner(props) {
             mx="auto"
             onClick={updateProfile}
           >
-            Modifier mon profile
+              {t('Modifier mon profile')} 
           </Button>
         </Stack>
       ) : (
@@ -262,7 +263,7 @@ export default function Banner(props) {
               mx="auto"
               onClick={handleFollow}
             >
-              Se désabonner
+               {t('Se désabonner')} 
             </Button>
           ) : (
             <Button
@@ -275,7 +276,7 @@ export default function Banner(props) {
               mx="auto"
               onClick={handleFollow}
             >
-              S'abonner
+              {t(`S'abonner`)}
             </Button>
           )}
 
@@ -291,7 +292,7 @@ export default function Banner(props) {
   }}
 
           >
-            Appeler
+             {t(`Appeler`)}
           </Button>
         </Stack>
       )}

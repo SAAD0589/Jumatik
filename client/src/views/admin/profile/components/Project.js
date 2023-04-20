@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card.js";
+import { t } from "helpers/TransWrapper";
 import React from "react";
 // Assets
 import { MdEdit } from "react-icons/md";
@@ -57,13 +58,13 @@ switch(status) {
             me='4px'>
             {ranking} •{" "}
             <Button variant='action' ml={3} fontWeight='500'  onClick={link} fontSize='sm'>
-              Voir l'annonce en details
+               {t(`Voir l'annonce en details`)}
             </Button>
              <Button variant='action' ml={3} fontWeight='500'  onClick={linkUpdate} fontSize='sm'>
-              Modifier l'annonce
+               {t(`Modifier l'annonce`)}
             </Button> 
              <Button colorScheme='red' ml={3} fontWeight='500'  onClick={linkDelete} fontSize='sm'>
-              Supprimer l'annonce
+               {t(`Supprimer l'annonce`)}
             </Button> 
           </Text>
         </Box>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // Chakra imports
 import {
   Box,
@@ -43,6 +44,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import Card from 'components/card/Card.js';
+import { t } from 'helpers/TransWrapper';
 
 export default function UpdateUser() {
   // Chakra color mode
@@ -75,7 +77,8 @@ export default function UpdateUser() {
     password: '',
     passwordVerification: '',
   });
-
+  const [selectedProPart, setSelectedProPart] = useState(user.ProPart);
+  const [SelectedBuyerSeller, setSelectedBuyerSeller] = useState(user.UserType);
 
   const HandleChange = e => {
     const { name, value } = e.target;
@@ -216,6 +219,8 @@ export default function UpdateUser() {
 
   return (
     <Card  padding="20px" mt={{ base: '80px', md: '10px' }}>   
+               <ToastContainer />
+
     <Flex
   
     direction="column"
@@ -228,7 +233,7 @@ export default function UpdateUser() {
     mb={{ base: '20px', md: 'auto' }}
   >
   <Text mb={5} color={textColor} align='start' fontSize='2xl' fontWeight='600'>
-            Modification de votre profile
+             {t('Modifier mon profile')}
             </Text>
     <FormControl onSubmit={e => handleSubmit(e)}>
       <FormLabel
@@ -239,7 +244,7 @@ export default function UpdateUser() {
         color={textColor}
         mb="8px"
       >
-        Ajoutez votre image de profile
+         {t('Inserez votre image de profile')}
       </FormLabel>
       <Stack direction={['column', 'row']} spacing={6} mb="20px">
         <Center>
@@ -271,7 +276,32 @@ export default function UpdateUser() {
           />{' '}
         </Center>
       </Stack>
-    
+      <FormLabel
+        display="flex"
+        ms="4px"
+        fontSize="sm"
+        fontWeight="500"
+        color={textColor}
+        mb="8px"
+      >
+         {t('Vous êtes ?')}<Text color={brandStars}>*</Text>
+      </FormLabel>
+      <RadioGroup
+        name="ProPart"
+        variant="auth"
+        onChange={setSelectedProPart}
+        value={selectedProPart}
+        mb="20px"
+      >
+        <Stack spacing={40} direction="row">
+          <Radio colorScheme="red" size="lg" value="pro">
+             {t('Professionnel')}
+          </Radio>
+          <Radio colorScheme="green" size="lg" value="part">
+             {t('Particulier')}
+          </Radio>
+        </Stack>
+      </RadioGroup>
       <SimpleGrid columns={2} spacing={10}>
         <Box height="90px">
           <FormLabel
@@ -282,7 +312,7 @@ export default function UpdateUser() {
             color={textColor}
             mb="8px"
           >
-            Nom<Text color={brandStars}>*</Text>
+             {t('Nom')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -291,7 +321,7 @@ export default function UpdateUser() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="text"
-            placeholder="Entrez votre nom"
+            placeholder={t('Nom')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -317,7 +347,7 @@ export default function UpdateUser() {
             color={textColor}
             mb="8px"
           >
-            Prénom<Text color={brandStars}>*</Text>
+             {t('Prénom')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -326,7 +356,7 @@ export default function UpdateUser() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="text"
-            placeholder="Entrez votre Prénom "
+            placeholder={t('Prénom')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -343,7 +373,7 @@ export default function UpdateUser() {
           )}
         </Box>
       </SimpleGrid>
-      <SimpleGrid columns={1} spacing={10}>
+      <SimpleGrid columns={2} spacing={10}>
         <Box height="90px">
           <FormLabel
             display="flex"
@@ -353,7 +383,7 @@ export default function UpdateUser() {
             color={textColor}
             mb="8px"
           >
-            Téléphone<Text color={brandStars}>*</Text>
+             {t('Téléphone')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <Input
             isRequired={true}
@@ -361,7 +391,7 @@ export default function UpdateUser() {
             fontSize="sm"
             ms={{ base: '0px', md: '0px' }}
             type="tel"
-            placeholder="Entrez votre Num de Téléphone "
+            placeholder={t('Téléphone')}
             mb="24px"
             fontWeight="500"
             size="lg"
@@ -378,7 +408,40 @@ export default function UpdateUser() {
             </Alert>
           )}
         </Box>
-        
+        <Box height="90px">
+          <FormLabel
+            display="flex"
+            ms="4px"
+            fontSize="sm"
+            fontWeight="500"
+            color={textColor}
+            mb="8px"
+          >
+             {t('Email')}<Text color={brandStars}>*</Text>
+          </FormLabel>
+          <Input
+            isRequired={true}
+            variant="auth"
+            fontSize="sm"
+            ms={{ base: '0px', md: '0px' }}
+            type="email"
+            placeholder="mail@gmail.com"
+            mb="24px"
+            fontWeight="500"
+            size="lg"
+            value={user.email}
+            name="email"
+            onBlur={validateInput}
+            onChange={HandleChange}
+          />
+          {error.email && (
+            <Alert status="error">
+              <AlertIcon />
+              <AlertTitle>Erreur </AlertTitle>
+              <AlertDescription>{error.email}</AlertDescription>
+            </Alert>
+          )}
+        </Box>
       </SimpleGrid>
 
       <FormLabel
@@ -389,7 +452,7 @@ export default function UpdateUser() {
         color={textColor}
         mb="8px"
       >
-        Adresse complète<Text color={brandStars}>*</Text>
+         {t('Adresse complète')}<Text color={brandStars}>*</Text>
       </FormLabel>
 
       <Textarea
@@ -399,7 +462,7 @@ export default function UpdateUser() {
         size="lg"
         ms={{ base: '0px', md: '0px' }}
         isRequired={true}
-        placeholder="Entrez votre Adresse complète"
+        placeholder={t('Adresse complète')}
         value={user.address}
         onBlur={validateInput}
         name="address"
@@ -413,7 +476,33 @@ export default function UpdateUser() {
         </Alert>
       )}
 
-   
+      <FormLabel
+        display="flex"
+        ms="4px"
+        fontSize="sm"
+        fontWeight="500"
+        color={textColor}
+        mb="8px"
+      >
+         {t('Que désirez-vous ?')}<Text color={brandStars}>*</Text>
+      </FormLabel>
+      <Box mb={5}>
+        {' '}
+        <CheckboxGroup
+          variant="auth"
+          onChange={setSelectedBuyerSeller}
+          value={SelectedBuyerSeller}
+        >
+          <Stack spacing={40} direction="row">
+            <Checkbox colorScheme="red" size="lg" value="Acheter">
+               {t('Acheter')}
+            </Checkbox>
+            <Checkbox colorScheme="green" size="lg" value="Vendre">
+               {t('Vendre')}
+            </Checkbox>
+          </Stack>
+        </CheckboxGroup>
+      </Box>
       <SimpleGrid columns={2} spacing={10}>
         <Box height="90px">
           <FormLabel
@@ -423,7 +512,7 @@ export default function UpdateUser() {
             color={textColor}
             display="flex"
           >
-            Mot de passe<Text color={brandStars}>*</Text>
+             {t('Mot de passe')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <InputGroup size="md">
             <Input
@@ -464,7 +553,7 @@ export default function UpdateUser() {
             color={textColor}
             display="flex"
           >
-            Confirmez Mot de passe<Text color={brandStars}>*</Text>
+             {t('Confirmez Mot de passe')}<Text color={brandStars}>*</Text>
           </FormLabel>
           <InputGroup size="md">
             <Input
@@ -510,7 +599,7 @@ export default function UpdateUser() {
         mb="24px"
         onClick={handleSubmit}
       >
-        Modifier
+         {t(`S'enregistrer`)}
       </Button>
     </FormControl>
 
@@ -521,7 +610,7 @@ export default function UpdateUser() {
       maxW="100%"
       mt="0px"
     >
-  
+    
     </Flex>
   </Flex></Card>
  

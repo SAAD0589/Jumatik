@@ -44,6 +44,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 import NFT from 'components/card/NFT';
+import { t } from 'helpers/TransWrapper';
 
 function AdDetails() {
   const { id } = useParams();
@@ -266,10 +267,11 @@ function AdDetails() {
           category={currentAd.categoryLabel}
           description={currentAd.description}
           price={
-            currentAd.price === 'Non défini'
-              ? 'Non défini '
-              : currentAd.price + ' MAD'
+            currentAd.price === currentAd.price + ' MAD'
+              ? currentAd.price + ' MAD'
+              : t('Non défini')
           }
+        
           dateCreated={formattedDate}
           city={currentAd.city}
           receiverId={currentAd.userId}
@@ -306,7 +308,7 @@ function AdDetails() {
                 mt="10px"
                 mb="4px"
               >
-                Caractéristiques
+                 {t('Caractéristiques')}
               </Text>
               <Grid templateColumns="repeat(2, 1fr)" gap={5}>
                 {customFieldsValues.map(value => {
@@ -356,7 +358,8 @@ function AdDetails() {
               mt="10px"
               mb="4px"
             >
-              Autre annonces
+              {t('Autre annonces')}
+
             </Text>
           </Card>
           <SimpleGrid
@@ -394,9 +397,9 @@ function AdDetails() {
                       }
                       category={ad.categoryLabel}
                       currentbid={
-                        ad.price === 'Non défini'
-                          ? 'Non défini '
-                          : ad.price + ' MAD'
+                        ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
                       }
                       Click={handleClick}
                       city={ad.city}

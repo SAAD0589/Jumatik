@@ -6,6 +6,7 @@ import { Button, Flex, Link, Text, Icon,Box } from "@chakra-ui/react";
 
 // Assets
 import banner from "assets/img/nfts/NftBanner1.png";
+import { t } from "helpers/TransWrapper";
 
 export default function Banner() {
   // Chakra Color Mode
@@ -33,7 +34,7 @@ export default function Banner() {
         }}
         fontWeight='700'
         lineHeight={{ base: "32px", md: "42px" }}>
-JUMATIK votre  Marketplace 100% digitale      </Text>
+{t('JUMATIK votre Marketplace 100% digitale')}     </Text>
       <Text
         fontSize='md'
         color='#E3DAFF'
@@ -48,7 +49,8 @@ JUMATIK votre  Marketplace 100% digitale      </Text>
         fontWeight='500'
         mb='40px'
         lineHeight='28px'>
-       Toutes vos transactions en toute sécurité et sans Intermédiaire
+        {t('Toutes vos transactions en toute sécurité et sans Intermédiaire')} 
+       
       </Text>
       <Box>
       <Button 
@@ -59,7 +61,7 @@ JUMATIK votre  Marketplace 100% digitale      </Text>
           minW='250px'
           mx='auto'>
           <Icon as={MdAddToQueue} w='20px' h='20px' me='10px' /><NavLink to={user ? "/ad/createAd" : "/auth/sign-in"}>
-          Ajouter une annonce</NavLink>
+          {t('Ajouter une annonce')} </NavLink>
         </Button>
       </Box>
    

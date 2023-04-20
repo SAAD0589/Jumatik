@@ -39,11 +39,13 @@ import RecentAds from 'views/ads/recentAds';
 import Search from 'views/search';
 import Chat from 'views/admin/chat';
 import axios from 'axios';
+import { t } from "helpers/TransWrapper";
+
 const userToken = JSON.parse(localStorage.getItem('user-token'));
 let combinedRoutes ;
 const routes = [
   {
-    name: 'Marketplace',
+    name: t('Marketplace'),
     layout: '/admin',
     path: '/default',
     icon: (
@@ -53,28 +55,28 @@ const routes = [
   },
 
   {
-    name: "Détails de l'annonce",
+    name: t(`Détails de l'annonce`) ,
     layout: '/ads',
     path: '/:id',
 
     component: AdDetails,
   },
   {
-    name: 'Récemment ajoutées',
+    name: t('Récemment ajoutées'),
     layout: '/ad',
     path: '/recentAds',
 
     component: RecentAds,
   },
   {
-    name: 'Recherche avancée',
+    name: t('Recherche avancée'),
     layout: '/search',
     path: '/',
 
     component: Search,
   },
   {
-    name: 'Recherche avancée',
+    name: t('Recherche avancée'),
     layout: '/search',
     path: '?text=:text',
 
@@ -103,7 +105,7 @@ const routes = [
   },
 
   {
-    name: 'Catégories',
+    name: t('Catégories'),
     layout: '/admin',
     path: '/categories',
     icon: (
@@ -112,7 +114,7 @@ const routes = [
     component: Categories,
   },
   {
-    name: 'Catégories',
+    name: t('Catégories'),
     layout: '/categories',
     path: '/category/:id',
     component: CategoryDetails,
@@ -153,26 +155,26 @@ const adminRoutes = [
   },
 
   {
-    name: 'Modifier votre profile',
+    name: t('Modifier mon profile'),
     component: UpdateUser,
     layout: '/register',
     path: '/updateUser',
   },
 
   {
-    name: 'Annonce ',
+    name: t('Annonce') ,
     component: CreateAd,
     layout: '/ad',
     path: '/createAd',
   },
   {
-    name: 'Modifier Annonce ',
+    name: t('Modifier Annonce'),
     component: UpdateAd,
     layout: '/ad',
     path: '/updateAd/:id',
   },
   {
-    name: 'Boite de messagerie',
+    name: t('Boite de messagerie'),
     icon: (
       <Icon
         as={MdEmail}
@@ -203,26 +205,26 @@ const regularUserRoutes = [    {
   },
 
   {
-    name: 'Modifier votre profile',
+    name: t('Modifier mon profile'),
     component: UpdateUser,
     layout: '/register',
     path: '/updateUser',
   },
 
   {
-    name: 'Annonce ',
+    name: t('Annonce'),
     component: CreateAd,
     layout: '/ad',
     path: '/createAd',
   },
   {
-    name: 'Modifier Annonce ',
+    name: t('Modifier Annonce'),
     component: CreateAd,
     layout: '/ad',
     path: '/updateAd/:id',
   },
   {
-    name: 'Boite de messagerie',
+    name: t('Boite de messagerie'),
     icon: (
       <Icon
         as={MdEmail}
@@ -237,7 +239,7 @@ const regularUserRoutes = [    {
     path: '/chat',
   },]
 const guestRoutes = [{
-    name: 'Connexion',
+    name: t('Connexion'),
     layout: '/auth',
     path: '/sign-in',
     icon: (
