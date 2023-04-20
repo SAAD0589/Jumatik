@@ -1,5 +1,5 @@
 
-# Project Title
+# JUMATIK APP
 
 JUMATIK Sell & Buy Web app based on MERN Stack
 Developement Version : V1.0
