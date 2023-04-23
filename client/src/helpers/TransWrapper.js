@@ -4,6 +4,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationEN from '../locales/en.json';
 import translationFR from '../locales/fr.json';
+import translationAR from '../locales/ar.json';
 import { Select, Menu, MenuButton, MenuItem, IconButton, useColorModeValue } from "@chakra-ui/react";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { useHistory } from 'react-router-dom';
@@ -11,10 +12,7 @@ import { Fr, Us } from 'react-flags-icons'
 import { FaLanguage } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 
-const options = [
-  { label: "English", value: "en", icon: <FaLanguage /> },
-  { label: "Français", value: "fr", icon: <MdLanguage /> },
-];
+
 
 
 const getLocale = () => i18n.language.toLowerCase();
@@ -28,6 +26,9 @@ i18n
       },
       fr: {
         translation: translationFR,
+      },
+      ar: {
+        translation: translationAR,
       },
     },
     fallbackLng: 'fr',
@@ -61,6 +62,7 @@ const LanguageSwitcher = () => {
     <Select variant='auth' name="language" value={getLocale()} onChange={handleLanguageChange} mt={5} icon={<MdLanguage />}>
       <option value="en"> English</option>
       <option value="fr"> Français</option>
+      <option value="ar"> Arab</option>
     </Select></>
   
   );

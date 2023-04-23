@@ -1,172 +1,305 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2022 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
+import React, { useState, useEffect } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import axios from 'axios';
 // Chakra imports
 import {
-  Avatar,
   Box,
+  Button,
   Flex,
-  FormLabel,
-  Icon,
-  Select,
-  SimpleGrid,
+  Grid,
+  Link,
+  Text,
   useColorModeValue,
-} from "@chakra-ui/react";
-// Assets
-import Usa from "assets/img/dashboards/usa.png";
+  SimpleGrid,
+} from '@chakra-ui/react';
+
 // Custom components
-import MiniCalendar from "components/calendar/MiniCalendar";
-import MiniStatistics from "components/card/MiniStatistics";
-import IconBox from "components/icons/IconBox";
-import React from "react";
-import {
-  MdAddTask,
-  MdAttachMoney,
-  MdBarChart,
-  MdFileCopy,
-} from "react-icons/md";
-import CheckTable from "views/admin/default/components/CheckTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
-import DailyTraffic from "views/admin/default/components/DailyTraffic";
-import PieCard from "views/admin/default/components/PieCard";
-import Tasks from "views/admin/default/components/Tasks";
-import TotalSpent from "views/admin/default/components/TotalSpent";
-import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
-import {
-  columnsDataCheck,
-  columnsDataComplex,
-} from "views/admin/default/variables/columnsData";
-import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
-import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
+import Banner from 'views/admin/marketplace/components/Banner';
+import TableTopCreators from 'views/admin/marketplace/components/TableTopCreators';
+import HistoryItem from 'views/admin/marketplace/components/HistoryItem';
+import NFT from 'components/card/NFT';
+import Card from 'components/card/Card.js';
 
-export default function UserReports() {
+// Assets
+import Nft1 from 'assets/img/nfts/Nft1.png';
+import Nft2 from 'assets/img/nfts/Nft2.png';
+import Nft3 from 'assets/img/nfts/Nft3.png';
+import Nft4 from 'assets/img/nfts/Nft4.png';
+import Nft5 from 'assets/img/nfts/Nft5.png';
+import Nft6 from 'assets/img/nfts/Nft6.png';
+import Avatar1 from 'assets/img/avatars/avatar1.png';
+import Avatar2 from 'assets/img/avatars/avatar2.png';
+import Avatar3 from 'assets/img/avatars/avatar3.png';
+import Avatar4 from 'assets/img/avatars/avatar4.png';
+import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTopCreators.json';
+import { tableColumnsTopCreators } from 'views/admin/marketplace/variables/tableColumnsTopCreators';
+import { t } from 'helpers/TransWrapper';
+
+export default function Marketplace() {
   // Chakra Color Mode
-  const brandColor = useColorModeValue("brand.500", "white");
-  const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
-  return (
-    <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 3, "2xl": 6 }}
-        gap='20px'
-        mb='20px'>
-        <MiniStatistics
-          startContent={
-            <IconBox
-              w='56px'
-              h='56px'
-              bg={boxBg}
-              icon={
-                <Icon w='32px' h='32px' as={MdBarChart} color={brandColor} />
-              }
-            />
-          }
-          name='Earnings'
-          value='$350.4'
-        />
-        <MiniStatistics
-          startContent={
-            <IconBox
-              w='56px'
-              h='56px'
-              bg={boxBg}
-              icon={
-                <Icon w='32px' h='32px' as={MdAttachMoney} color={brandColor} />
-              }
-            />
-          }
-          name='Spend this month'
-          value='$642.39'
-        />
-        <MiniStatistics growth='+23%' name='Sales' value='$574.34' />
-        <MiniStatistics
-          endContent={
-            <Flex me='-16px' mt='10px'>
-              <FormLabel htmlFor='balance'>
-                <Avatar src={Usa} />
-              </FormLabel>
-              <Select
-                id='balance'
-                variant='mini'
-                mt='5px'
-                me='0px'
-                defaultValue='usd'>
-                <option value='usd'>USD</option>
-                <option value='eur'>EUR</option>
-                <option value='gba'>GBA</option>
-              </Select>
-            </Flex>
-          }
-          name='Your balance'
-          value='$1,000'
-        />
-        <MiniStatistics
-          startContent={
-            <IconBox
-              w='56px'
-              h='56px'
-              bg='linear-gradient(90deg, #4481EB 0%, #04BEFE 100%)'
-              icon={<Icon w='28px' h='28px' as={MdAddTask} color='white' />}
-            />
-          }
-          name='New Tasks'
-          value='154'
-        />
-        <MiniStatistics
-          startContent={
-            <IconBox
-              w='56px'
-              h='56px'
-              bg={boxBg}
-              icon={
-                <Icon w='32px' h='32px' as={MdFileCopy} color={brandColor} />
-              }
-            />
-          }
-          name='Total Projects'
-          value='2935'
-        />
-      </SimpleGrid>
+  const textColor = useColorModeValue('secondaryGray.900', 'white');
+  const textColorBrand = useColorModeValue('brand.500', 'white');
+  const [ads, setAds] = useState([]);
+  const [adsCount, setAdsCount] = useState();
+  const [like, setLike] = useState();
+  const [SelectedAd, setSelectedAd] = useState([]);
+  const history = useHistory();
+  const userData = localStorage.getItem('user-token');
+  const currentUser = JSON.parse(userData);
+  const countAds = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API}/ads/count/ads`
+      );
+      setAdsCount(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <TotalSpent />
-        <WeeklyRevenue />
-      </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
-        <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <DailyTraffic />
-          <PieCard />
-        </SimpleGrid>
-      </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <Tasks />
-          <MiniCalendar h='100%' minW='100%' selectRange={false} />
-        </SimpleGrid>
-      </SimpleGrid>
+  useEffect(() => {
+    countAds();
+  }, []);
+
+  const getAdById = async id => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API}/ads/ad/${id}`
+      );
+      setSelectedAd(response.data);
+
+      history.push(`/ads/${id}`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchAds = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API}/ads`);
+      setAds(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAds();
+  }, []);
+
+  return (
+    <Box pt={{ base: '100px', md: '80px', xl: '80px' }}>
+      {' '}
+      {/* Main Fields */} <Banner />
+      <Grid
+        mb="20px"
+        gridTemplateColumns={{ xl: 'repeat(3, 1fr)', '2xl': '1fr 0.46fr' }}
+        gap={{ base: '20px', xl: '20px' }}
+        display={{ base: 'block', xl: 'block' }}
+      >
+        <Flex
+          flexDirection="column"
+          gridArea={{ xl: '1 / 1 / 2 / 3', '2xl': '1 / 1 / 2 / 2' }}
+        >
+          <Flex direction="column">
+            <Card p={1} mb={5}>
+              {' '}
+              <Flex
+                align={{ sm: 'flex-start', lg: 'center' }}
+                justify="space-between"
+                w="100%"
+                px="22px"
+                py="18px"
+              >
+                <Text color={textColor} fontSize="xl" fontWeight="600">
+                  {t('Ajoutées récemment')} ({adsCount})
+                </Text>{' '}
+                <NavLink to="/ad/recentAds">
+                  {' '}
+                  <Button variant="action"> {t('Voir plus')} </Button>{' '}
+                </NavLink>{' '}
+              </Flex>{' '}
+            </Card>{' '}
+            <SimpleGrid
+              columns={{ base: 1, md: 3 }}
+              gap="20px"
+              mb={{ base: '20px', xl: '0px' }}
+            >
+              {ads && ads.length > 0 ? (
+                ads.slice(0, 9).map(ad => {
+                  const handleClick = () => {
+                    getAdById(ad._id); // Get the ad by its id when the component is clicked
+                  };
+
+                  return (
+                    <Flex key={ad._id}>
+                      <NFT
+                        id={ad._id}
+                        //userId= {currentUser._id}
+                        name={ad.name}
+                        author={ad.firstName + ' ' + ad.lastName}
+                        bidders={[
+                          Avatar1,
+                          Avatar2,
+                          Avatar3,
+                          Avatar4,
+                          Avatar1,
+                          Avatar1,
+                          Avatar1,
+                          Avatar1,
+                        ]}
+                        image={ ad.adPictures[0] && Object.keys(ad.adPictures[0]).length ? ad.adPictures[0] : Nft3}
+                        category={ad.categoryLabel}
+                        currentbid={
+                        ad.price === ad.price + ' MAD' 
+                              ? ad.price + ' MAD'
+                              : t('Non défini')
+                      } 
+                        Click={handleClick}
+                        city={ad.city}
+                        dateCreated={
+                          new Date() - new Date(ad.createdAt) >= 86400000
+                            ? `${Math.floor(
+                                (new Date() - new Date(ad.createdAt)) /
+                                  1000 /
+                                  60 /
+                                  60 /
+                                  24
+                              )} Jours`
+                            : `${Math.floor(
+                                (new Date() - new Date(ad.createdAt)) /
+                                  1000 /
+                                  60 /
+                                  60
+                              )} Heures`
+                        }
+                      />{' '}
+                    </Flex>
+                  );
+                })
+              ) : (
+                <div> Loading... </div>
+              )}{' '}
+            </SimpleGrid>{' '}
+            <NavLink to="/ad/recentAds">
+              {' '}
+              <Button w="100%" mt={3} variant="action">
+                {' '}
+                {t('Voir plus')}              </Button>{' '}
+            </NavLink>{' '}
+          </Flex>{' '}
+        </Flex>{' '}
+        {/* <Flex
+                                              flexDirection="column"
+                                              gridArea={{ xl: '1 / 3 / 2 / 4', '2xl': '1 / 2 / 2 / 3' }}
+                                            > <Card px="0px"  mt={{ base: '20px', xl: '0px' }}>
+                                                <TableTopCreators
+                                                  tableData={tableDataTopCreators}
+                                                  columnsData={tableColumnsTopCreators}
+                                                />
+                                              </Card>
+                                              <Card p="0px" mb="20px">
+                                                <Flex
+                                                  align={{ sm: 'flex-start', lg: 'center' }}
+                                                  justify="space-between"
+                                                  w="100%"
+                                                  px="22px"
+                                                  py="18px"
+                                                >
+                                                  <Text color={textColor} fontSize="xl" fontWeight="600">
+                                                    Sponsorisées
+                                                  </Text>
+                                                  <Button variant="action">Voir plus</Button>
+                                                </Flex>
+
+                                                <HistoryItem
+                                                  name="Annonce sponsorise 1"
+                                                  author="achraf ait beni ifit"
+                                                  date="30s ago"
+                                                  image={Nft5}
+                                                  price="1000 MAD"
+                                                />
+                                                <HistoryItem
+                                                  name="Annonce sponsorise 2"
+                                                  author="achraf ait beni ifit"
+                                                  date="30s ago"
+                                                  image={Nft5}
+                                                  price="1000 MAD"
+                                                />
+                                                <HistoryItem
+                                                  name="Annonce sponsorise 3"
+                                                  author="achraf ait beni ifit"
+                                                  date="30s ago"
+                                                  image={Nft5}
+                                                  price="1000 MAD"
+                                                />
+                                                <HistoryItem
+                                                  name="Annonce sponsorise 4"
+                                                  author="achraf ait beni ifit"
+                                                  date="30s ago"
+                                                  image={Nft5}
+                                                  price="1000 MAD"
+                                                />
+                                              </Card> 
+                                          
+                                              
+                                               <Flex
+                                                  mt="45px"
+                                                  mb="20px"
+                                                  justifyContent="space-between"
+                                                  direction={{ base: 'column', md: 'row' }}
+                                                  align={{ base: 'start', md: 'center' }}
+                                                >
+                                                  <Text color={textColor} fontSize="2xl" ms="24px" fontWeight="700">
+                                                    Les mieux notées{' '}
+                                                  </Text>
+                                                 
+                                                </Flex>
+                                                <SimpleGrid columns={{ base: 1, md: 1 }} gap="20px">
+                                                {ads && ads.length > 0 ? (
+                                                    ads.slice(0, 3).map(ad => {
+                                                      const handleClick = () => {
+                                                        getAdById(ad._id); // Get the ad by its id when the component is clicked
+                                                      };
+                                                      
+                                                      return (
+                                                        <Flex key={ad._id} >
+                                                          <NFT
+                                                            name={ad.name}
+                                                            author={ad.firstName + ' ' + ad.lastName}
+                                                            bidders={[
+                                                              Avatar1,
+                                                              Avatar2,
+                                                              Avatar3,
+                                                              Avatar4,
+                                                              Avatar1,
+                                                              Avatar1,
+                                                              Avatar1,
+                                                              Avatar1,
+                                                            ]}
+                                                            image={ ad.adPictures[0] && Object.keys(ad.adPictures[0]).length ? ad.adPictures[0] : Nft3}
+                                                            category={ad.categoryName}
+                                                                               currentbid={ad.price === "Non défini" ? "Non défini " : ad.price + " MAD"}
+
+                                                            download={handleClick}
+                                                            city={ad.city}
+                                                            dateCreated= {(new Date() - new Date(ad.createdAt)) >= 86400000 ? (
+                                            `${Math.floor((new Date() - new Date(ad.createdAt)) / 1000 / 60 / 60 / 24)} Jours` 
+                                          ) : (
+                                            `${Math.floor((new Date() - new Date(ad.createdAt)) / 1000 / 60 / 60)} Heures`
+                                          ) }
+
+                                                          />
+                                                        </Flex>
+                                                      );
+                                                    })
+                                                  ) : (
+                                                    <div>Loading...</div>
+                                                  )}
+                                                </SimpleGrid> 
+                                                 
+                                            </Flex> */}{' '}
+      </Grid>{' '}
     </Box>
   );
 }

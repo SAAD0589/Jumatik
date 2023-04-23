@@ -125,6 +125,7 @@ export default function Dashboard(props) {
           toggleSidebar,
           setToggleSidebar,
         }}>
+        <Sidebar routes={routes} display='none' {...rest} />
         <Box
           float='right'
           minHeight='100vh'
@@ -139,7 +140,7 @@ export default function Dashboard(props) {
           transitionProperty='top, bottom, width'
           transitionTimingFunction='linear, linear, ease'>
           <Portal>
-                  <Sidebar routes={routes} display='none' {...rest} />
+                  
 
             <Box>
               <Navbar

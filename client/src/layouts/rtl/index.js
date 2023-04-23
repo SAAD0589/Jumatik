@@ -135,9 +135,9 @@ export default function Dashboard(props) {
           transitionTimingFunction='linear, linear, ease'>
           <Portal>
             <Box>
-              <Navbar
+            <Navbar
                 onOpen={onOpen}
-                logoText={"Horizon UI Dashboard"}
+                logoText={"JUMATIK"}
                 brandText={getActiveRoute(routes)}
                 secondary={getActiveNavbar(routes)}
                 message={getActiveNavbarText(routes)}
