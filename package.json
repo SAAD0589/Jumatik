@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "./client/public",
   "scripts": {
     "dev": "concurrently \"nodemon server\" \"npm start --prefix client\""
   },

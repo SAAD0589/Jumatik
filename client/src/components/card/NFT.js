@@ -84,11 +84,11 @@ export default function NFT(props) {
   return (
     <Card>
       <Flex direction={{ base: 'column' }}>
-        <Box align="center" mb={{ base: '20px', '2xl': '20px' }} position="relative">
+        <Box align="center"  >
           <Image
             src={image}
-            w={{ base: '100%', '100%': '100%' }}
-            h={{ base: '100%', '100%': '100%' }}
+            boxSize='350px'
+    objectFit='cover'
             borderRadius="10px"
           />{' '}
         </Box>{' '}

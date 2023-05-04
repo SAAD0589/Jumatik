@@ -1,7 +1,9 @@
 import { OAuth2Client } from 'google-auth-library';
 import  ClientOAuth2  from 'client-oauth2';
 import { Capacitor } from '@capacitor/core';
+import { Plugins } from '@capacitor/core';
 
+const { GoogleAuth } = Plugins;
 import fetch from 'node-fetch';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -98,69 +100,86 @@ export const loginWithGoogle = (req, res) => {
     res.redirect(url);
 };
 
-export const googleCallback = async(req, res) => {
-    const { code } = req.body;
+export const googleCallback = async (req, res) => {
+  const { code, token } = req.body;
 
-    try {
-        // Retrieve the access token using the authorization code
-        const { tokens } = await client.getToken(code);
-        const { access_token, id_token } = tokens;
+  try {
+    let access_token, id_token, data;
+    
+    if (code) { // for web flow
+      // Retrieve the access token using the authorization code
+      const { tokens } = await client.getToken(code);
+      const { access_token, id_token } = tokens;
 
-
-        // Retrieve the user's profile information using the access token
-        const data = await axios
-            .get("https://www.googleapis.com/oauth2/v3/userinfo", {
-                headers: { Authorization: `Bearer ${access_token}` },
-            })
-            .then((res) => res.data);
-
-
-
-        // Check if user with this email already exists
-        const existingUser = await User.findOne({ email: data.email });
-
-        // If user already exists, update profile picture and return user
-        if (existingUser) {
-            existingUser.profilePicture = data.picture;
-            existingUser.isVerified = data.email_verified;
-
-            await existingUser.save();
-
-            // Create and sign a JWT token
-            const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
-
-            // Set the token and user data in the response
-            res.status(200).json({ user: existingUser, token });
-        } else {
-            const password = generatePassword();
-            const salt = await bcrypt.genSalt();
-            const passwordHash = await bcrypt.hash(password, salt);
-            // Otherwise, create new user
-            const newUser = new User({
-                firstName: data.given_name,
-                lastName: data.family_name,
-                email: data.email,
-                phone: "060000000",
-                password: passwordHash,
-                passwordVerification: passwordHash,
-                address: "Veuillez rentre votre adresse",
-                isAdmin: false,
-                ProPart: "part",
-                UserType: "Vendre",
-                profilePicture: data.picture,
-                isVerified: true,
-            });
-
-            const savedUser = await newUser.save();
-
-            // Create and sign a JWT token
-            const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
-
-            // Set the token and user data in the response
-            res.status(200).json({ user: savedUser, token });
-        }
-    } catch (error) {
-        console.error(error);
-        res.redirect(`${process.env.APP_URL}#/auth/sign-in`);
+      // Retrieve the user's profile information using the access token
+      data = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: { Authorization: `Bearer ${access_token}` },
+      }).then(res => res.data);
+    } else if (token) { // for mobile flow
+      // Retrieve the user's profile information using the id token
+      const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: process.env.GOOGLE_CLIENT_ID
+      });
+      const payload = ticket.getPayload();
+      access_token = token;
+      id_token = token;
+      data = {
+        given_name: payload.given_name,
+        family_name: payload.family_name,
+        email: payload.email,
+        picture: payload.picture,
+        email_verified: payload.email_verified
+      };
     }
+
+    // Check if user with this email already exists
+    const existingUser = await User.findOne({ email: data.email });
+
+    // If user already exists, update profile picture and return user
+    if (existingUser) {
+      existingUser.profilePicture = data.picture;
+      existingUser.isVerified = data.email_verified;
+
+      await existingUser.save();
+
+      // Create and sign a JWT token
+      const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
+
+      // Set the token and user data in the response
+      res.status(200).json({ user: existingUser, token });
+    } else {
+      const password = generatePassword();
+      const salt = await bcrypt.genSalt();
+      const passwordHash = await bcrypt.hash(password, salt);
+
+      // Otherwise, create new user
+      const newUser = new User({
+        firstName: data.given_name,
+        lastName: data.family_name,
+        email: data.email,
+        phone: "060000000",
+        password: passwordHash,
+        passwordVerification: passwordHash,
+        address: "Veuillez rentre votre adresse",
+        isAdmin: false,
+        ProPart: "part",
+        UserType: "Vendre",
+        profilePicture: data.picture,
+        isVerified: true,
+      });
+
+      const savedUser = await newUser.save();
+
+      // Create and sign a JWT token
+      const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
+
+      // Set the token and user data in the response
+      res.status(200).json({ user: savedUser, token });
+    }
+  } catch (error) {
+    console.error(error);
+    res.redirect(`${process.env.APP_URL}#/auth/sign-in`);
+  }
 };
+

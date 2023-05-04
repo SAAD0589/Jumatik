@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Jumatik</string>
+    <string name="title_activity_main">Jumatik</string>
+    <string name="package_name">ma.jumatik.android</string>
+    <string name="custom_url_scheme">ma.jumatik.android</string>
+    <string name="facebook_app_id">599879425305048</string>
+    <string name="facebook_client_token">f1e92136ee7c56f2b44858e36a74cd6c</string>
+</resources>

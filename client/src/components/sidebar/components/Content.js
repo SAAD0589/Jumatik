@@ -83,7 +83,7 @@ function SidebarContent(props) {
             </NavLink>
 
           </Flex>
-          <LanguageSwitcher />
+          
 
         </Box>
       </Stack>

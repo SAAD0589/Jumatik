@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin  } from '@react-oauth/google';
+import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';
+
 import {
   FacebookLogin,
   FacebookLoginResponse,
@@ -45,7 +47,10 @@ import { RiEyeCloseLine } from 'react-icons/ri';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { t } from 'helpers/TransWrapper';
+import { Browser } from '@capacitor/browser';
+
 const SignIn = () => {
+
   // Chakra color mode
   const history = useHistory();
   const [email, setEmail] = useState('');
@@ -83,7 +88,7 @@ const SignIn = () => {
   };
   useEffect(() => {
     FacebookLogin.initialize({
-      appId: '    ',
+      appId: '599879425305048',
     });
   }, []);
 
@@ -113,9 +118,13 @@ const SignIn = () => {
       console.error(error);
     }
   };
-  
+  const [accessToken, setAccessToken] = useState(null);
+
  
-  const loginG = useGoogleLogin({
+ 
+
+
+  const loginG  = useGoogleLogin({
     flow: "auth-code",
     onSuccess: async response => {   
       
@@ -141,8 +150,10 @@ const SignIn = () => {
            catch (error) {
             console.error(error);
           }
-        },
-  });
+        }
+  })
+
+  
 
 
   const onFailure = (error) => {

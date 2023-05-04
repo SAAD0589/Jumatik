@@ -1,0 +1,7 @@
+{
+  "name": "jumatik",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

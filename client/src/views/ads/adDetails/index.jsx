@@ -159,86 +159,7 @@ function AdDetails() {
   return (
     <Box pt={{ base: '130px', md: '80px', xl: '20px' }}>
       {/* Main Fields */}
-      <Card
-        mb={{ base: '20px', lg: '20px' }}
-        align="start"
-        minW="auto"
-        maxW="auto"
-        flexGrow={1}
-        flexShrink={1}
-        minH="60%"
-      >
-        {currentAd.adPictures?.every(
-          picture => Object.keys(picture).length === 0
-        ) ? null : (
-          <Box
-            position={'relative'}
-            height={'full'}
-            width={'full'}
-            overflow={'hidden'}
-          >
-            {/* CSS files for react-slick */}
-            <link
-              rel="stylesheet"
-              type="text/css"
-              charSet="UTF-8"
-              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-            />
-            <link
-              rel="stylesheet"
-              type="text/css"
-              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-            />
-            {/* Left Icon */}
-            <IconButton
-              aria-label="left-arrow"
-              colorScheme="messenger"
-              borderRadius="full"
-              position="absolute"
-              left={side}
-              top={top}
-              transform={'translate(0%, -50%)'}
-              zIndex={2}
-              onClick={() => slider?.slickPrev()}
-            >
-              <BiLeftArrowAlt />
-            </IconButton>
-            {/* Right Icon */}
-            <IconButton
-              aria-label="right-arrow"
-              colorScheme="messenger"
-              borderRadius="full"
-              position="absolute"
-              right={side}
-              top={top}
-              transform={'translate(0%, -50%)'}
-              zIndex={2}
-              onClick={() => slider?.slickNext()}
-            >
-              <BiRightArrowAlt />
-            </IconButton>
-            {/* Slider */}
-            <Slider {...settings} ref={slider => setSlider(slider)}>
-              {' '}
-              {currentAd.adPictures?.map((picture, index) => (
-                <Box key={index}>
-                  <Image
-                    borderRadius="20px"
-                    p={3}
-                    boxSize="100%"
-                    objectFit="contain"
-                    id={index}
-                    src={picture}
-                    alt={picture}
-                    onClick={() => setSelectedImage(picture)}
-                    cursor="pointer"
-                  />
-                </Box>
-              ))}{' '}
-            </Slider>
-          </Box>
-        )}
-      </Card>
+
       <Grid
         mb="20px"
         templateColumns={{
@@ -253,6 +174,93 @@ function AdDetails() {
         }}
         gap={{ base: '20px', xl: '20px' }}
       >
+        <Card
+          mb={{ base: '20px', lg: '20px' }}
+          align="start"
+         
+          flexGrow={1}
+          flexShrink={1}
+          minH="50%"
+        >
+
+          {currentAd.adPictures?.every(
+            picture => Object.keys(picture).length === 0
+          ) ?     <Box align="center"  >
+          <Image
+            src={Nft3}
+            boxSize='400px'
+    objectFit='cover'
+            borderRadius="20px"
+          />{' '}
+        </Box> : (
+            <Box
+              position={'relative'}
+              height={'full'}
+              width={'full'}
+              overflow={'hidden'}
+            >
+              {/* CSS files for react-slick */}
+              <link
+                rel="stylesheet"
+                type="text/css"
+                charSet="UTF-8"
+                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+              />
+              <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+              />
+              {/* Left Icon */}
+              <IconButton
+                aria-label="left-arrow"
+                colorScheme="messenger"
+                borderRadius="full"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={'translate(0%, -50%)'}
+                zIndex={2}
+                onClick={() => slider?.slickPrev()}
+              >
+                <BiLeftArrowAlt />
+              </IconButton>
+              {/* Right Icon */}
+              <IconButton
+                aria-label="right-arrow"
+                colorScheme="messenger"
+                borderRadius="full"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={'translate(0%, -50%)'}
+                zIndex={2}
+                onClick={() => slider?.slickNext()}
+              >
+                <BiRightArrowAlt />
+              </IconButton>
+              {/* Slider */}
+              <Slider {...settings} ref={slider => setSlider(slider)}>
+                {' '}
+                {currentAd.adPictures?.map((picture, index) => (
+                  <Box key={index} align="center">
+                    <Image
+                      borderRadius="20px"
+                      p={1}
+                      boxSize="400px"
+                      objectFit="fit"
+                      id={index}
+                      src={picture}
+                      alt={picture}
+                      onClick={() => setSelectedImage(picture)}
+                      cursor="pointer"
+                    />
+                  </Box>
+                ))}{' '}
+              </Slider>
+            </Box>
+          )}
+        </Card>
         <Banner
           gridArea="1 / 2 / 2 / 2"
           banner={banner}
@@ -262,23 +270,22 @@ function AdDetails() {
           posts={count.adCount}
           userId={currentAd.userId}
         />
-        <Description
-          name={currentAd.name}
-          category={currentAd.categoryLabel}
-          description={currentAd.description}
-          price={
-            currentAd.price === currentAd.price + ' MAD'
-              ? currentAd.price + ' MAD'
-              : t('Non défini')
-          }
-        
-          dateCreated={formattedDate}
-          city={currentAd.city}
-          receiverId={currentAd.userId}
-          id={currentAd._id}
-          phone={currentAd.phone}
-        />
       </Grid>
+      <Description
+        name={currentAd.name}
+        category={currentAd.categoryLabel}
+        description={currentAd.description}
+        price={
+          currentAd.price === currentAd.price + ' MAD'
+            ? currentAd.price + ' MAD'
+            : t('Non défini')
+        }
+        dateCreated={formattedDate}
+        city={currentAd.city}
+        receiverId={currentAd.userId}
+        id={currentAd._id}
+        phone={currentAd.phone}
+      />
 
       <Grid
         mb="20px"
@@ -308,38 +315,40 @@ function AdDetails() {
                 mt="10px"
                 mb="4px"
               >
-                 {t('Caractéristiques')}
+                {t('Caractéristiques')}
               </Text>
               <Grid templateColumns="repeat(2, 1fr)" gap={5}>
                 {customFieldsValues.map(value => {
                   return (
-                    <>  <Flex>
-                    {' '}
-                    <Text
-                      color={textColorPrimary}
-                      fontWeight="bold"
-                      fontSize="xl"
-                      mt="10px"
-                      mb="4px"
-                    >
-                      {value.field_name}
-                    </Text>
-                  </Flex>
-                  <Flex>
-                    {' '}
-                    <Text
-                      color={textColorPrimary}
-                      fontWeight="regular"
-                      fontSize="xl"
-                      mt="10px"
-                      mb="4px"
-                    >
-                      {value.valeure}
-                    </Text>
-                  </Flex></>
-                
-
-        )})}
+                    <>
+                      {' '}
+                      <Flex>
+                        {' '}
+                        <Text
+                          color={textColorPrimary}
+                          fontWeight="bold"
+                          fontSize="xl"
+                          mt="10px"
+                          mb="4px"
+                        >
+                          {value.field_name}
+                        </Text>
+                      </Flex>
+                      <Flex>
+                        {' '}
+                        <Text
+                          color={textColorPrimary}
+                          fontWeight="regular"
+                          fontSize="xl"
+                          mt="10px"
+                          mb="4px"
+                        >
+                          {value.valeure}
+                        </Text>
+                      </Flex>
+                    </>
+                  );
+                })}
               </Grid>
             </Card>
           </Flex>
@@ -359,7 +368,6 @@ function AdDetails() {
               mb="4px"
             >
               {t('Autre annonces')}
-
             </Text>
           </Card>
           <SimpleGrid
@@ -397,9 +405,9 @@ function AdDetails() {
                       }
                       category={ad.categoryLabel}
                       currentbid={
-                        ad.price === ad.price + ' MAD' 
-                              ? ad.price + ' MAD'
-                              : t('Non défini')
+                        ad.price === ad.price + ' MAD'
+                          ? ad.price + ' MAD'
+                          : t('Non défini')
                       }
                       Click={handleClick}
                       city={ad.city}
