@@ -159,113 +159,138 @@ mongoose
     app.listen(PORT, () => {
       const categories = [
         {
-          label: "Mode et vêtements",
-          name: "mode",
-          description: "Vêtements, chaussures, accessoires de mode, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Beauté et soins personnels",
-          name: "beaute",
-          description: "Produits de beauté, soins personnels, parfums, etc.",
-          CatPicture: "http://localhost:6001/assets/info3.jpeg",
-        },
-        {
-          label: "Électronique",
-          name: "electronique",
-          description:
-            "Appareils électroniques, téléphones portables, ordinateurs, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Maison et jardin",
-          name: "maison",
-          description:
-            "Meubles, décoration, accessoires pour la maison, outils de jardinage, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Alimentation et boissons",
-          name: "alimentation",
-          description: "Produits alimentaires, boissons, snacks, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Sports et loisirs",
-          name: "sports",
-          description:
-            "Matériel de sport, équipements de loisirs, billets pour des événements sportifs, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Voitures et véhicules",
-          name: "voitures",
-          description: "Voitures, motos, bateaux, vélos, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Animaux de compagnie",
-          name: "animaux",
-          description:
-            "Animaux de compagnie, nourriture pour animaux, accessoires pour animaux, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Art et artisanat",
-          name: "art",
-          description:
-            "Peintures, sculptures, poteries, bijoux faits à la main, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Éducation et livres",
-          name: "education",
-          description: "Livres, fournitures scolaires, cours en ligne, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Conseil et consulting",
-          name: "conseil-consulting",
-          description:
-            "Services de conseil, d'accompagnement et de consulting dans différents domaines.",
-          CatPicture: "",
-        },
-        {
-          label: "Services informatiques",
-          name: "services-informatiques",
-          description:
-            "Services liés à l'informatique et aux technologies de l'information, tels que le développement de logiciels, la maintenance informatique, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Marketing et communication",
-          name: "marketing-communication",
-          description:
-            "Services de marketing et de communication, tels que la publicité, les relations publiques, etc.",
-          CatPicture: "",
-        },
-        {
-          label: "Formation et coaching",
-          name: "formation-coaching",
-          description:
-            "Services de formation et de coaching pour les individus et les entreprises.",
-          CatPicture: "",
-        },
-        {
-          label: "Services financiers",
-          name: "services-financiers",
-          description:
-            "Services financiers tels que la comptabilité, la gestion financière, etc.",
-          CatPicture: "",
-        },
-        {
-          name: "Autre",
-          label: "Autre",
-          description: "",
-        },
-      ];
+            "label": "J'ai besois de ...",
+            "name": "Jai-besois-de",
+            "CatPicture": 'http://localhost:6001/assets/need.jpg'
 
-      const addCategories = async () => {
+        },
+        {
+            "label": "Véhicules Vente",
+            "name": "vehicule-vente",
+            "CatPicture": 'http://localhost:6001/assets/sellCar.jpg'
+
+        },
+        {
+            "label": "Véhicules Location",
+            "name": "vehicules-location",
+            "CatPicture": 'http://localhost:6001/assets/rentCar.jpg'
+
+      
+        },
+        {
+            "label": "Auto - Moto",
+            "name": "Auto-Moto",
+            "CatPicture": 'http://localhost:6001/assets/moto.jpg'
+
+          
+        },
+        {
+            "label": "Matériels Professionnels",
+            "name": "Materiels-Professionnels",
+            "CatPicture": 'http://localhost:6001/assets/proTools.jpg'
+
+           
+        },
+        {
+            "label": "Pièces de rechange et Accessoires",
+            "name": "Pieces-de-rechange-et-Accessoires",
+            "CatPicture": 'http://localhost:6001/assets/parts.jpg'
+
+       
+        },
+        {
+            "label": ' Immobiliers Vente',
+            "name": ' Immobiliers-Vente',
+            "CatPicture": 'http://localhost:6001/assets/sellHouse.jpg'
+
+
+        },
+        {
+            "label": ' Immobiliers Location',
+            "name": ' Immobiliers-Location',
+            "CatPicture": 'http://localhost:6001/assets/rentHouse.jpg'
+
+
+        },
+        {
+            "label": ` Offres d'emploi et stages `,
+            "name": ' Offres-demploi-et-stages ',
+            "CatPicture": 'http://localhost:6001/assets/jobOffer.jpg'
+
+
+        },
+        {
+            "label": ` Demande d'emploi et stages `,
+            "name": ' Demande-demploi-et-stages ',
+            "CatPicture": 'http://localhost:6001/assets/jobRequest.jpg'
+
+
+        },
+        {
+            "label": ` Animaux et oiseaux  `,
+            "name": ' Animaux-et-oiseaux  ',
+            "CatPicture": 'http://localhost:6001/assets/animals.jpg'
+
+
+        },
+        {
+            "label": ` Téléphonie et Multimédia  `,
+            "name": ' Telephonie-et-Multimedia  ',
+            "CatPicture": 'http://localhost:6001/assets/phones.jpg'
+
+
+        },
+        {
+            "label": ` Espace d'affaires et Gros `,
+            "name": ' Espace-daffaires-et-Gros ',
+            "CatPicture": 'http://localhost:6001/assets/businessSpace.jpg'
+
+
+        },
+        {
+            "label": ` Prestations de services `,
+            "name": ' Prestations-de-services ',
+            "CatPicture": 'http://localhost:6001/assets/services.jpg'
+
+
+        },
+        {
+            "label": ` Jeux vidéo et Jouets `,
+            "name": ' Jeux-video-et-Jouets ',
+            "CatPicture": 'http://localhost:6001/assets/games.jpg'
+
+
+        },
+        {
+            "label": ` Loisirs/Vêtements/Vacances `,
+            "name": ' Loisirs/Vetements/Vacances ',
+            "CatPicture": 'http://localhost:6001/assets/clothing.jpg'
+
+
+        },
+        {
+            "label": ` Maison et Équipements `,
+            "name": ' Maison-et-Equipements ',
+            "CatPicture": 'http://localhost:6001/assets/houseEq.jpg'
+
+
+        },
+        {
+            "label": ` Beauté et Santé `,
+            "name": ' Beaute-et-Sante ',
+            "CatPicture": 'http://localhost:6001/assets/beaute.jpeg'
+
+        },
+        {
+            "label": ` Divers `,
+            "name": ' Divers ',
+            "CatPicture": 'http://localhost:6001/assets/need.jpg'
+
+
+        }
+    ];
+
+    const addCategories = async () => {
         for (let i = 0; i < categories.length; i++) {
           const category = categories[i];
           const existingCategory = await Category.findOne({

@@ -60,7 +60,7 @@ const store = configureStore({
 });
 window.t = t;
 ReactDOM.render(
-  <GoogleOAuthProvider clientId="764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com">
+  <GoogleOAuthProvider clientId="157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com">
     <ChakraProvider theme={theme}>
       <React.StrictMode key={getLocale()}>
         <Provider store={store}>

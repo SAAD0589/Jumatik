@@ -79,6 +79,9 @@ export default function ColumnsTable(props) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedCategoryLabel, setSelectedCategoryLabel] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
+  const [subcategories, setSubcategories] = useState([]);
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [selectedSubcategoryLabel, setSelectedSubcategoryLabel] = useState('');
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -90,6 +93,14 @@ export default function ColumnsTable(props) {
       .then(res => setCategories(res.data))
       .catch(err => console.error(err));
   }, []);
+  useEffect(() => {
+    if (selectedCategoryId) {
+      axios
+        .get(`${process.env.REACT_APP_API}/subcategories/${selectedCategoryId}`)
+        .then(res => setSubcategories(res.data))
+        .catch(err => console.error(err));
+    }
+  }, [selectedCategoryId]);
 
   const deleteField = async id => {
     try {
@@ -138,6 +149,7 @@ export default function ColumnsTable(props) {
       const newData = adData.map((item, index) => ({
         name: item.name,
         category: item.category,
+        subcategory: item.subcategory,
         type: item.type,
         options: item.options,
         date: new Date(item.createdAt).toLocaleDateString(),
@@ -173,6 +185,7 @@ export default function ColumnsTable(props) {
       data: {
         name: name,
         category: selectedCategory,
+        subcategory: selectedSubcategory,
         type: type,
         options: options?.split(","),
         action: id,
@@ -251,6 +264,7 @@ export default function ColumnsTable(props) {
     await update(id);
     setName('');
     setSelectedCategory('');
+    setSelectedSubcategory('');
     setType('');
     setOptions('');
 
@@ -344,7 +358,16 @@ export default function ColumnsTable(props) {
                         </Text>
                       </Flex>
                     );
-                  } else if (cell.column.Header === 'TYPE') {
+                  } 
+                  else if (cell.column.Header === 'SUBCATEGORIE') {
+                    data = (
+                      <Flex align="center">
+                        <Text color={textColor} fontSize="sm" fontWeight="700">
+                          {cell.value}
+                        </Text>
+                      </Flex>
+                    );
+                  }else if (cell.column.Header === 'TYPE') {
                     data = (
                       <Flex align="center">
                         <Text color={textColor} fontSize="sm" fontWeight="700">
@@ -475,6 +498,47 @@ export default function ColumnsTable(props) {
                                     ))}
                                   </Select>
                                 </Box>
+                                <Box height="90px">
+            <FormLabel
+              display="flex"
+              ms="4px"
+              fontSize="sm"
+              fontWeight="500"
+              color={textColor}
+              mb="8px"
+            >
+               Choisir une sous-categorie 
+            </FormLabel>{' '}
+            <Select
+              id="category"
+              name="categoryName"
+              isRequired={true}
+              fontSize="sm"
+              mb="24px"
+              size="lg"
+              variant="auth"
+              onChange={e => {
+
+                setSelectedSubcategory(e.target.value);
+                setSelectedSubcategoryLabel(
+                  e.target.options[e.target.selectedIndex].text
+                );
+              }}
+              placeholder="Choisir une sous-categorie"
+            >
+              {' '}
+              {subcategories.map(subcategory => (
+                <option
+                  key={subcategory._id}
+                  value={subcategory.name}
+                  name={subcategory.label}
+                >
+                  {' '}
+                  {subcategory.label}{' '}
+                </option>
+              ))}{' '}
+            </Select>
+          </Box>
                                 <Box height="90px">
                                   <FormLabel
                                     display="flex"

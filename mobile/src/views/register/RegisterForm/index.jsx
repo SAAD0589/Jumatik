@@ -434,7 +434,7 @@ function RegisterForm() {
         value={selectedProPart}
         mb="20px"
       >
-        <Stack spacing={40} direction="row">
+        <Stack  direction="row">
           <Radio colorScheme="red" size="lg" value="pro">
              {t('Professionnel')}
           </Radio>
@@ -443,7 +443,7 @@ function RegisterForm() {
           </Radio>
         </Stack>
       </RadioGroup>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={2} spacing={5}>
         <Box height="90px">
           <FormLabel
             display="flex"
@@ -514,7 +514,7 @@ function RegisterForm() {
           )}
         </Box>
       </SimpleGrid>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={2} spacing={5}>
         <Box height="90px">
           <FormLabel
             display="flex"
@@ -644,7 +644,7 @@ function RegisterForm() {
           </Stack>
         </CheckboxGroup>
       </Box>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={1} spacing={10}>
         <Box height="90px">
           <FormLabel
             ms="4px"

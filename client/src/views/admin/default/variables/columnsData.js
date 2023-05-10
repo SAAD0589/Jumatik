@@ -88,6 +88,10 @@ export const columnsDataComplex = [
     accessor: "category",
   },
   {
+    Header: "SUBCATEGORIE",
+    accessor: "subcategory",
+  },
+  {
     Header: "TYPE",
     accessor: "type",
   },

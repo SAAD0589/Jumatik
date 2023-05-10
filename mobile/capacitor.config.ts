@@ -8,8 +8,20 @@ const config: CapacitorConfig = {
   plugins: {
     GoogleAuth: {
       scopes: ['profile', 'email'],
-      serverClientId: '764637492527-i6nkvftt30q205ea50c8uo83okegjjok.apps.googleusercontent.com',
+      serverClientId: '157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com',
       forceCodeForRefreshToken: true,
+    },
+    FacebookLogin: {
+      appId: '3246208182295424',
+      appName: 'Jumatik',
+      loginMode: 'webview',
+      cookieEnabled: false,
+      reauthorizeEnabled: true,
+      requestLegacyPublishPermissions: false,
+      permissions: ['email', 'public_profile'],
+    },
+    CapacitorHttp: {
+      enabled: true,
     },
     resources: {
       android: {

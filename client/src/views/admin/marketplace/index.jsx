@@ -121,12 +121,12 @@ export default function Marketplace() {
               </Flex>{' '}
             </Card>{' '}
             <SimpleGrid
-              columns={{ base: 1, md: 3 }}
+              columns={{ base: 1, md: 4 }}
               gap="20px"
               mb={{ base: '20px', xl: '0px' }}
             >
               {ads && ads.length > 0 ? (
-                ads.slice(0, 9).map(ad => {
+                ads.slice(0, 12).map(ad => {
                   const handleClick = () => {
                     getAdById(ad._id); // Get the ad by its id when the component is clicked
                   };

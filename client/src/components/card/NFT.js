@@ -87,7 +87,7 @@ export default function NFT(props) {
         <Box align="center"  >
           <Image
             src={image}
-            boxSize='350px'
+            boxSize='250px'
     objectFit='cover'
             borderRadius="10px"
           />{' '}

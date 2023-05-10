@@ -11,9 +11,12 @@ import User from "../models/User.js";
 import axios from 'axios';
 import crypto from "crypto";
 const client = new OAuth2Client(
-    "764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com",
-    "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",
+    "157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com",
+    "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",
     "postmessage"
+);
+const clientmobile = new OAuth2Client(
+    "764637492527-i6nkvftt30q205ea50c8uo83okegjjok.apps.googleusercontent.com",
 );
 const facebookClient = new ClientOAuth2({
     clientId: '599879425305048',
@@ -117,9 +120,9 @@ export const googleCallback = async (req, res) => {
       }).then(res => res.data);
     } else if (token) { // for mobile flow
       // Retrieve the user's profile information using the id token
-      const ticket = await client.verifyIdToken({
+      const ticket = await clientmobile.verifyIdToken({
         idToken: token,
-        audience: process.env.GOOGLE_CLIENT_ID
+        audience: '764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com'
       });
       const payload = ticket.getPayload();
       access_token = token;

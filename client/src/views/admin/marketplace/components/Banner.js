@@ -17,8 +17,8 @@ export default function Banner() {
       direction='column'
       bgImage={banner}
       bgSize='cover'
-      py={{ base: "30px", md: "56px" }}
-      px={{ base: "30px", md: "64px" }}
+      py={{ base: "30px", md: "30px" }}
+      px={{ base: "30px", md: "30px" }}
       borderRadius='30px' mb={5}>
       <Text
         fontSize={{ base: "24px", md: "34px" }}
@@ -27,8 +27,8 @@ export default function Banner() {
         maxW={{
           base: "100%",
           md: "64%",
-          lg: "46%",
-          xl: "70%",
+          lg: "100%",
+          xl: "100%",
           "2xl": "50%",
           "3xl": "42%",
         }}
@@ -47,23 +47,11 @@ export default function Banner() {
           "3xl": "34%",
         }}
         fontWeight='500'
-        mb='40px'
         lineHeight='28px'>
         {t('Toutes vos transactions en toute sécurité et sans Intermédiaire')} 
        
       </Text>
-      <Box>
-      <Button 
-        alignContent="start"
-          variant='action'
-          fontWeight='regular'
-          fontSize='sm'
-          minW='250px'
-          mx='auto'>
-          <Icon as={MdAddToQueue} w='20px' h='20px' me='10px' /><NavLink to={user ? "/ad/createAd" : "/auth/sign-in"}>
-          {t('Ajouter une annonce')} </NavLink>
-        </Button>
-      </Box>
+  
    
       
       

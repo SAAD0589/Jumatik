@@ -8,6 +8,10 @@ const CustomFieldSchema = new mongoose.Schema({
         type: String,
        
     },
+    subcategory: {
+        type: String,
+       
+    },
 
     type: {
         type: String,

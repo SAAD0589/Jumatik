@@ -83,6 +83,7 @@ function UpdateAd() {
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedCityId, setSelectedCityId] = useState('');
+  const [tableFieldsCat, setTableFieldsCat] = useState([]);
 
   const [secteurs, setSecteurs] = useState([]);
   const [selectedSecteur, setSelectedsecteur] = useState('');
@@ -117,9 +118,29 @@ function UpdateAd() {
       })
       .catch(err => console.error(err));
   }, []);
-
-  console.log(ad);
-
+  useEffect(() => {
+    if (selectedCategory) {
+      axios.get(`${process.env.REACT_APP_API}/customFields/get/category/${selectedCategory}`)
+        .then(response => {
+          setTableFieldsCat(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }, [selectedCategory]);
+  
+  useEffect(() => {
+    if (selectedSubcategory) {
+      axios.get(`${process.env.REACT_APP_API}/customFields/get/subcategory/${selectedSubcategory}`)
+        .then(response => {
+          setTableFields(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }, [selectedSubcategory]);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API}/categories`)
@@ -255,12 +276,57 @@ function UpdateAd() {
           valeure: fieldsValues[field._id]?.valeure,
         };
       });
-      console.log('fieldValues:', fieldValues);
       for (const fieldValue of fieldValues) {
         try {
           const response = axios.post(
             `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
             fieldValue,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
+          console.log(response.data);
+          // show a success message to the user
+          toast.success("Field value created successfully!", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        } catch (error) {
+          console.log(error);
+          // show an error message to the user
+          toast.error("Error creating field value!", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      }
+      const fieldValuesCat = tableFieldsCat.map((field) => {
+        return {
+          ad_id: adToken._id,
+          field_id: field._id,
+          field_name: field.name,
+          valeure: fieldsValues[field._id]?.valeure,
+        };
+      });
+      for (const fieldValueCat of fieldValuesCat) {
+        try {
+          const response = axios.post(
+            `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
+            fieldValueCat,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -527,6 +593,8 @@ function UpdateAd() {
                 const selectedCategory = categories.find(
                   category => category._id === selectedCategoryId
                 );
+                setSelectedSubcategory(null);
+
                 setSelectedCategory(selectedCategory.name);
                 setSelectedCategoryId(selectedCategoryId);
                 setSelectedCategoryLabel(selectedCategory.label);
@@ -588,6 +656,82 @@ function UpdateAd() {
           </Box>
           {selectedCategory &&
   <>
+    {tableFieldsCat?.map(field => (
+      <Box height="90px">
+        <FormLabel
+          ms="4px"
+          fontSize="sm"
+          fontWeight="500"
+          color={textColor}
+          display="flex"
+        >
+          {field.name}
+        </FormLabel>
+        <FormControl isRequired={true}>
+          {field.type === 'text' &&
+            <InputGroup size="md">
+              <Input
+                fontSize="sm"
+                placeholder="Enter text"
+                mb="24px"
+                size="lg"
+                variant="auth"
+                value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}
+  name={field.name}
+              />
+            </InputGroup>
+          }
+          {field.type === 'textarea' &&
+            <Textarea
+              fontSize="sm"
+              placeholder="Enter text"
+              mb="24px"
+              size="lg"
+              variant="auth"
+              name={field.name}
+              value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
+          }
+          {field.type === 'radio' &&
+            <RadioGroup               variant="auth"
+
+                  name={field.name}
+                  value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}
+              mb="24px"
+              size="lg"
+            >
+              <Stack direction="row">
+                {field.options.map(option => (
+                  <Radio value={option} key={option}>{option}</Radio>
+                ))}
+              </Stack>
+            </RadioGroup>
+          }
+          {field.type === 'select' &&
+            <Select
+              placeholder="Select option"
+              name={field.name}
+              value={fieldsValues[field._id]?.valeure}
+    onChange={value => handleFieldsChange(field._id, field.type, value)}         
+    fontSize="sm"
+              mb="24px"
+              size="lg"
+              variant="auth"
+            >
+              {field.options.map(option => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </Select>
+          }
+        </FormControl>
+      </Box>
+    ))}
+  </>
+}
+          {selectedSubcategory &&
+  <>
     {tableFields?.map(field => (
       <Box height="90px">
         <FormLabel
@@ -646,8 +790,10 @@ function UpdateAd() {
               name={field.name}
               value={fieldsValues[field._id]?.valeure}
     onChange={value => handleFieldsChange(field._id, field.type, value)}         
-         mb="24px"
+    fontSize="sm"
+              mb="24px"
               size="lg"
+              variant="auth"
             >
               {field.options.map(option => (
                 <option key={option} value={option}>{option}</option>

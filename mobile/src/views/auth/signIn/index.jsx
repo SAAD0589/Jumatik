@@ -86,11 +86,7 @@ const SignIn = () => {
       password,
     },
   };
-  useEffect(() => {
-    FacebookLogin.initialize({
-      appId: '599879425305048',
-    });
-  }, []);
+  
 
 
   const handleFacebookLogin = async () => {
@@ -132,8 +128,11 @@ const SignIn = () => {
       const token = googleUser.authentication.idToken;
       const response = await axios.post(`${process.env.REACT_APP_API}/auth/oauth/google/callback`, { token });
 
-      setUser(response.data.token);
+      localStorage.setItem('token', response.data.token);
+
       localStorage.setItem('user-token', JSON.stringify(response.data.user));
+      history.push('/');
+      history.go();
     } catch (error) {
       console.error(error);
     }

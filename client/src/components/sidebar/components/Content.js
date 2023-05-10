@@ -8,6 +8,7 @@ import {
   HStack,
   IconButton,
   Link,
+  keyframes
 } from '@chakra-ui/react';
 import {
   MdScreenSearchDesktop,
@@ -33,16 +34,47 @@ import { FaTiktok } from 'react-icons/fa';
 import Brand from '../../../components/sidebar/components/Brand';
 import Links from '../../../components/sidebar/components/Links';
 import SidebarCard from '../../../components/sidebar/components/SidebarCard';
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { t, LanguageSwitcher, getLocale  }  from 'helpers/TransWrapper';
 
 // FUNCTIONS
 
 function SidebarContent(props) {
+  const shake = keyframes`
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+`;
   const { routes } = props;
   const user = localStorage.getItem('user-token');
-
+  const [colorIndex, setColorIndex] = useState(0);
+  const colors = ['brand', 'green', 'blue', 'purple', 'yellow'];
+  useInterval(() => {
+    setColorIndex((colorIndex + 1) % colors.length);
+  }, 500);
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+  
+    // Remember the latest callback
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+  
+    // Set up the interval
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+  
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
   // SIDEBAR
   return (
     <Flex direction="column" height="100%" pt="25px" borderRadius="30px">
@@ -71,7 +103,9 @@ function SidebarContent(props) {
           <Flex alignContent={'center'} pt="5px">
             <NavLink to={user ? '/ad/createAd' : '/auth/sign-in'}>
               <Button
-                variant="brand"
+              animation={`${shake} 1s ease-in-out infinite`}
+              variant="solid"
+              colorScheme={colors[colorIndex]}
                 fontWeight="regular"
                 fontSize="sm"
                 minW="250px"

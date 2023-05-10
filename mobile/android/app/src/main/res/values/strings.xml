@@ -2,8 +2,11 @@
 <resources>
     <string name="app_name">Jumatik</string>
     <string name="title_activity_main">Jumatik</string>
-    <string name="package_name">ma.jumatik.android</string>
-    <string name="custom_url_scheme">ma.jumatik.android</string>
-    <string name="facebook_app_id">599879425305048</string>
-    <string name="facebook_client_token">f1e92136ee7c56f2b44858e36a74cd6c</string>
+    <string name="package_name">com.marocapps.jumatik.sellandbuy</string>
+    <string name="custom_url_scheme">com.marocapps.jumatik.sellandbuy</string>
+    <string name="facebook_app_id">411663800863137</string>
+    <string name="fb_login_protocol_scheme">fb411663800863137</string>
+    <string name="facebook_client_token">b490109c4619007454b74844e66c14bc</string>
+    <string name="server_client_id">157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com</string>
+
 </resources>

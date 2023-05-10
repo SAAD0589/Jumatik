@@ -88,7 +88,7 @@ const SignIn = () => {
   };
   useEffect(() => {
     FacebookLogin.initialize({
-      appId: '599879425305048',
+      appId: '411663800863137',
     });
   }, []);
 
@@ -123,7 +123,19 @@ const SignIn = () => {
  
  
 
-
+  const onFailure = (error) => {
+    // Handle error
+    toast.error(`${error.response.data.msg}`, {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  };
   const loginG  = useGoogleLogin({
     flow: "auth-code",
     onSuccess: async response => {   
@@ -139,6 +151,7 @@ const SignIn = () => {
                 const currentUser = res.data.user;
                 localStorage.setItem('user-token', JSON.stringify(currentUser));
                 history.push('/');
+                history.go();
         history.go();
               })
               .catch((err) => {
@@ -150,25 +163,14 @@ const SignIn = () => {
            catch (error) {
             console.error(error);
           }
-        }
+        },
+        onFailure
   })
 
   
 
 
-  const onFailure = (error) => {
-    // Handle error
-    toast.error(`${error.response.data.msg}`, {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      });
-  };
+
 
   const connexion = async (values, onSubmitProps) => {
     const btnPointer = document.querySelector('#login-btn');
@@ -241,7 +243,7 @@ const SignIn = () => {
 
 
   return (
-    <GoogleOAuthProvider clientId="764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com">
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
       
            <ToastContainer />

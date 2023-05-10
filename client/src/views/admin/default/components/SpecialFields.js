@@ -70,10 +70,13 @@ export default function SpecialFields(props) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedCategoryLabel, setSelectedCategoryLabel] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
-
+  const [subcategories, setSubcategories] = useState([]);
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [selectedSubcategoryLabel, setSelectedSubcategoryLabel] = useState('');
  const customField = {
     name: name,
     category: selectedCategory,
+    subcategory: selectedSubcategory,
     type: type,
     options: options?.split(","),
   
@@ -84,6 +87,14 @@ export default function SpecialFields(props) {
       .then(res => setCategories(res.data))
       .catch(err => console.error(err));
   }, []);
+  useEffect(() => {
+    if (selectedCategoryId) {
+      axios
+        .get(`${process.env.REACT_APP_API}/subcategories/${selectedCategoryId}`)
+        .then(res => setSubcategories(res.data))
+        .catch(err => console.error(err));
+    }
+  }, [selectedCategoryId]);
 
   const add = async () => {
   
@@ -165,6 +176,7 @@ export default function SpecialFields(props) {
       });
       return;
     }
+ 
 
     await add();
     setName('');
@@ -186,7 +198,7 @@ export default function SpecialFields(props) {
 
       <Flex alignItems="start" w="100%" mb="30px">
         <Text align="left" color={textColor} fontSize="md" fontWeight="500">
-          Pour ajouter des champs personnalisés pour une catégorie spécifique,
+          Pour ajouter des champs personnalisés pour une catégorie  et une sous-catégorie spécifiques,
           suivez ces étapes simples :
           <UnorderedList>
             <ListItem>
@@ -283,6 +295,47 @@ export default function SpecialFields(props) {
                   {category.label}
                 </option>
               ))}
+            </Select>
+          </Box>
+          <Box height="90px">
+            <FormLabel
+              display="flex"
+              ms="4px"
+              fontSize="sm"
+              fontWeight="500"
+              color={textColor}
+              mb="8px"
+            >
+               Choisir une sous-categorie 
+            </FormLabel>{' '}
+            <Select
+              id="category"
+              name="categoryName"
+              isRequired={true}
+              fontSize="sm"
+              mb="24px"
+              size="lg"
+              variant="auth"
+              onChange={e => {
+
+                setSelectedSubcategory(e.target.value);
+                setSelectedSubcategoryLabel(
+                  e.target.options[e.target.selectedIndex].text
+                );
+              }}
+              placeholder="Choisir une sous-categorie"
+            >
+              {' '}
+              {subcategories.map(subcategory => (
+                <option
+                  key={subcategory._id}
+                  value={subcategory.name}
+                  name={subcategory.label}
+                >
+                  {' '}
+                  {subcategory.label}{' '}
+                </option>
+              ))}{' '}
             </Select>
           </Box>
         <Box height="90px">

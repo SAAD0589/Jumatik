@@ -76,8 +76,8 @@ export default function SubcategoriesTable(props) {
 
         const newData = adData.map((item, index) => ({
           nom: item.name,
-          categorie: categories.find(cat => cat._id === item.categoryId).label,
-          action: item._id
+          categorie: categories.find(cat => cat?._id === item.categoryId)?.label,
+          action: item?._id
         }));
         console.log(newData);
         setTableData(newData);
