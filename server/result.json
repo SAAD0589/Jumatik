@@ -1,0 +1,2776 @@
+[
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "AIWAYS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "U5"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ALEKO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      2141
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ALFA ROMEO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1300,
+      1600,
+      164,
+      1750,
+      2000,
+      "4C",
+      "ALFA 145",
+      "ALFA 146",
+      "ALFA 147",
+      "ALFA 155",
+      "ALFA 156",
+      "ALFA 159",
+      "ALFA 159 SW",
+      "ALFA 166",
+      "ALFA 33",
+      "ALFA 6",
+      "ALFA 75",
+      "ALFA 90",
+      "ALFA GT",
+      "ALFA GTV",
+      "ALFA-SUD",
+      "ALFETTA",
+      "BRERA",
+      "CROSSWAGON",
+      "GIULIA",
+      "GIULIETTA",
+      "MITO",
+      "RZ",
+      "SPIDER",
+      "SPORTWAGON",
+      "SPRINT",
+      "STELVIO",
+      "SZ"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ALPINE RENAULT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A110",
+      "A110 II",
+      "A310",
+      "A610",
+      "LE MANS",
+      "V6"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ARO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "4X4",
+      "SPARTANA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ASIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ROCSTA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ASTON MARTIN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CYGNET"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "AUDI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      100,
+      200,
+      50,
+      60,
+      70,
+      75,
+      80,
+      90,
+      "A1",
+      "A1 II",
+      "A2",
+      "A3",
+      "A3 *",
+      "A3 IV",
+      "A3 SPORTBACK",
+      "A4",
+      "A4 III - IV",
+      "A4 V",
+      "A5",
+      "A5 SPORTBACK",
+      "A6",
+      "A6 III",
+      "A6 IV",
+      "A6 V",
+      "A7",
+      "A8",
+      "ALLROAD",
+      "CABRIOLET",
+      "COUPE",
+      "E-TRON",
+      "E-TRON GT",
+      "GT",
+      "Q2",
+      "Q3",
+      "Q3 II",
+      "Q4 E-TRON",
+      "Q5",
+      "Q7",
+      "Q8",
+      "QUATTRO",
+      "R8",
+      "RO 80",
+      "RS3",
+      "RS4",
+      "RS5",
+      "RS6",
+      "RS7",
+      "S1",
+      "S3",
+      "S3 IV",
+      "S3 SPORTBACK",
+      "S4",
+      "S5",
+      "S6",
+      "S6 V",
+      "S7",
+      "S7 II",
+      "S8",
+      "TT",
+      "V8"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "AUSTIN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      850,
+      "ALLEGRO",
+      "JEEP",
+      "MAESTRO",
+      "METRO",
+      "MINI",
+      "MONTEGO",
+      "MORRISITAL",
+      "PRINCESS",
+      "SHERPA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "AUTOBIANCHI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      500,
+      "A111",
+      "A112",
+      "PRIMULA",
+      "Y10"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "AUVERLAND",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A3"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BEDFORD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CF",
+      "MIDI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BEE BEE AUTOMOTIVE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BEE BEE XS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BENTLEY",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ARNAGE",
+      "AZURE T",
+      "BROOKLANDS",
+      "CONTINENTAL FLYING SPUR",
+      "CONTINENTAL GT",
+      "MULSANNE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BERTONE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "4X4"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BMW",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1502,
+      1600,
+      1602,
+      1800,
+      1802,
+      2000,
+      2002,
+      2500,
+      "3,0",
+      "3,3",
+      315,
+      316,
+      318,
+      320,
+      323,
+      324,
+      325,
+      328,
+      330,
+      518,
+      520,
+      523,
+      524,
+      525,
+      528,
+      530,
+      535,
+      540,
+      545,
+      550,
+      628,
+      630,
+      633,
+      635,
+      645,
+      650,
+      725,
+      728,
+      730,
+      732,
+      733,
+      735,
+      740,
+      745,
+      750,
+      760,
+      840,
+      850,
+      "I3",
+      "I8",
+      "IX",
+      "L7",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M535",
+      "M6",
+      "M635",
+      "M8",
+      "SERIE 1",
+      "SERIE 1 II",
+      "SERIE 1 III",
+      "SERIE 2",
+      "SERIE 2 II",
+      "SERIE 3",
+      "SERIE 3 (SUITE)",
+      "SERIE 3 VI",
+      "SERIE 3 VII",
+      "SERIE 4",
+      "SERIE 4 II",
+      "SERIE 5",
+      "SERIE 6",
+      "SERIE 7",
+      "SERIE 8",
+      "X1",
+      "X2",
+      "X3",
+      "X4",
+      "X4 II",
+      "X5",
+      "X5 IV",
+      "X6",
+      "X6 III",
+      "X7",
+      "Z1",
+      "Z3",
+      "Z4",
+      "Z8"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "BUICK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "PARKAVENUE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "CADILLAC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CTS",
+      "ELDORADO",
+      "ESCALADE",
+      "SEVILLE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "CHEVROLET",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALERO",
+      "AVEO",
+      "BERETTA",
+      "BLAZER",
+      "CAMARO",
+      "CAPTIVA",
+      "CORSICA",
+      "CORVETTE",
+      "CRUZE",
+      "EPICA",
+      "EVANDA",
+      "KALOS",
+      "LACETTI",
+      "MALIBU",
+      "MATIZ",
+      "NUBIRA",
+      "ORLANDO",
+      "REZZO",
+      "SPARK",
+      "TRANS SPORT",
+      "TRAX",
+      "VOLT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "CHRYSLER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "300C",
+      "300M",
+      "CROSSFIRE",
+      "ES",
+      "GRAND VOYAGER",
+      "LE BARON",
+      "NEON",
+      "NEW YORKER",
+      "PT CRUISER",
+      "SARATOGA",
+      "SEBRING",
+      "STRATUS",
+      "VIPER",
+      "VISION",
+      "VOYAGER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "CITROEN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "2 CV",
+      "ACADIANE",
+      "AK",
+      "AMI",
+      "AX",
+      "AXEL",
+      "AZU",
+      "BERLINGO",
+      "BERLINGO II",
+      "BERLINGO III",
+      "BX",
+      "C-CROSSER",
+      "C-ELYSEE",
+      "C-ZERO",
+      "C1",
+      "C15",
+      "C2",
+      "C25",
+      "C25 COMBI",
+      "C3",
+      "C3 AIRCROSS",
+      "C3 II",
+      "C3 III",
+      "C3 PICASSO",
+      "C3 PLURIEL",
+      "C35",
+      "C4",
+      "C4 AIRCROSS",
+      "C4 CACTUS",
+      "C4 II",
+      "C4 III",
+      "C4 PICASSO",
+      "C4 PICASSO II",
+      "C4 SPACETOURER",
+      "C5",
+      "C5 AIRCROSS",
+      "C5 II",
+      "C5 II TOURER",
+      "C5 X",
+      "C6",
+      "C8",
+      "CX",
+      "CX SERIE2",
+      "D",
+      "DANGEL C15",
+      "DANGEL C25",
+      "DS",
+      "DS3",
+      "DS4",
+      "DS5",
+      "DYANE",
+      "EVASION",
+      "GS",
+      "GSA",
+      "HY",
+      "ID",
+      "JUMPER",
+      "JUMPY",
+      "KATAR",
+      "LN",
+      "LNA",
+      "MEHARI",
+      "NEMO",
+      "SAXO",
+      "SM",
+      "SPACETOURER",
+      "TANGARA",
+      "TRACTION",
+      "VISA",
+      "XANTIA",
+      "XM",
+      "XSARA",
+      "XSARA PICASSO",
+      "ZX"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "COURB",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C-ZEN"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "CUPRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ATECA",
+      "FORMENTOR",
+      "LEON"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DACIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DOKKER",
+      "DUSTER",
+      "LODGY",
+      "LOGAN",
+      "SANDERO",
+      "SANDERO III",
+      "SPRING"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DAEWOO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ESPERO",
+      "EVANDA",
+      "KALOS",
+      "KORANDO",
+      "LACETTI",
+      "LANOS",
+      "LEGANZA",
+      "MATIZ",
+      "MUSSO",
+      "NEXIA",
+      "NUBIRA",
+      "REXTON",
+      "REZZO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DAF",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      33,
+      400,
+      44,
+      46,
+      55,
+      66,
+      "VA400",
+      "VH400"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DAIHATSU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "APPLAUSE",
+      "CHARADE",
+      "COPEN",
+      "CUORE",
+      "DOMINO",
+      "FEROZA",
+      "GRAN MOVE",
+      "HIJET",
+      "MATERIA",
+      "MOVE",
+      "ROCKY",
+      "SIRION",
+      "TERIOS",
+      "TREVIS",
+      "YRV"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DAIMLER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DAIMLER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DATSUN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      100,
+      120,
+      1600,
+      180,
+      200,
+      220,
+      260,
+      280,
+      "BLUEBIRD",
+      "CEDRIC",
+      "CHERRY",
+      "KING-CAB",
+      "LAUREL",
+      "PATROL",
+      "PICK-UP",
+      "SILVIA",
+      "STANZA",
+      "SUNNY",
+      "VIOLET"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DFSK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "SERES 3"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DODGE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AVENGER",
+      "CALIBER",
+      "JOURNEY",
+      "NITRO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "DS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DS3",
+      "DS3 CROSSBACK",
+      "DS4",
+      "DS4 II",
+      "DS5",
+      "DS7 CROSSBACK",
+      "DS9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "EBRO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "F275",
+      "F350",
+      "JX20",
+      "JX28",
+      "PATROL",
+      "TRADE",
+      "VANETTE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "FIAT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      124,
+      "124 SPIDER",
+      126,
+      127,
+      128,
+      130,
+      131,
+      132,
+      133,
+      238,
+      "4X4 CROSS",
+      500,
+      "500 III",
+      "500L",
+      "500X",
+      600,
+      850,
+      900,
+      "ARGENTA",
+      "BARCHETTA",
+      "BRAVA",
+      "BRAVO",
+      "BRAVO II",
+      "CINQUECENTO",
+      "COUPE",
+      "CROMA",
+      "DOBLO",
+      "DUCATO",
+      "FIORINO",
+      "FIORINO QUBO",
+      "FREEMONT",
+      "FULLBACK",
+      "GRANDE PUNTO",
+      "IDEA",
+      "MAREA",
+      "MULTIPLA",
+      "PALIO",
+      "PANDA",
+      "PININFARINA",
+      "PUNTO",
+      "PUNTO EVO",
+      "REGATA",
+      "RITMO",
+      "SCUDO",
+      "SEDICI",
+      "SEICENTO",
+      "STILO",
+      "STRADA",
+      "TALENTO",
+      "TEMPRA",
+      "TIPO",
+      "ULYSSE",
+      "UNO",
+      "X1\\/9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "FISKER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "KARMA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "FORD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A0406",
+      "A0407",
+      "A0408",
+      "A0409",
+      "A0410",
+      "AEROSTAR",
+      "ANGLIA",
+      "B-MAX",
+      "CAPRI",
+      "CONSUL",
+      "CORTINA",
+      "COUGAR",
+      "COURRIER",
+      "ECOSPORT",
+      "EDGE",
+      "ESCORT",
+      "EXPLORER",
+      "FIESTA",
+      "FOCUS",
+      "FOCUS C-MAX",
+      "FOCUS IV",
+      "FUSION",
+      "GALAXY",
+      "GRANADA",
+      "KA",
+      "KA+",
+      "KUGA",
+      "KUGA III",
+      "MAVERICK",
+      "MONDEO",
+      "MONDEO*",
+      "MUSTANG",
+      "MUSTANG MACH-E",
+      "ORION",
+      "P 100",
+      "PROBE",
+      "PUMA",
+      "PUMA II",
+      "RANGER",
+      "S-MAX",
+      "SCORPIO",
+      "SIERRA",
+      "TAUNUS",
+      "TOURNEO",
+      "TOURNEO CONNECT",
+      "TOURNEO COURIER",
+      "TOURNEO CUSTOM",
+      "TRANSIT",
+      "TRANSIT CONNECT",
+      "TRANSIT COURIER",
+      "TRANSIT CUSTOM",
+      "TRANSIT VI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "FSO-POLSKI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      125,
+      "125P",
+      1500,
+      "ATOU",
+      "CARO",
+      "LINDA",
+      "POLONEZ",
+      "TRUCK"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "GAC GONOW",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "GA",
+      "WAY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "GME",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "MIDI",
+      "RASCAL"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "GRANDIN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DALLAS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "HONDA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACCORD",
+      "ACTY",
+      "CIVIC",
+      "CONCERTO",
+      "CR-Z",
+      "CRV",
+      "CRV V",
+      "CRX",
+      "FR-V",
+      "HONDA E",
+      "HR-V",
+      "INSIGHT",
+      "INTEGRA",
+      "JAZZ",
+      "JAZZ IV",
+      "LEGEND",
+      "LOGO",
+      "N360",
+      "NSX",
+      "PRELUDE",
+      "QUINTET",
+      "S2000",
+      "SHUTTLE",
+      "STREAM"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "HYUNDAI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACCENT",
+      "ATOS",
+      "AZERA",
+      "BAYON",
+      "COUPE",
+      "ELANTRA",
+      "GALLOPER",
+      "GENESIS",
+      "GETZ",
+      "H-1",
+      "H100",
+      "I10",
+      "I10 III",
+      "I20",
+      "I20 III",
+      "I30",
+      "I40",
+      "IONIQ",
+      "IONIQ 5",
+      "IX20",
+      "IX35",
+      "IX55",
+      "KONA",
+      "LANTRA",
+      "MATRIX",
+      "PONY",
+      "SANTA FE",
+      "SATELLITE",
+      "SCOUPE",
+      "SONATA",
+      "TERRACAN",
+      "TRAJET",
+      "TUCSON",
+      "TUCSON IV",
+      "VELOSTER",
+      "XG"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "INFINITI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "EX",
+      "FX",
+      "G",
+      "M",
+      "Q30",
+      "Q50",
+      "Q60",
+      "Q70",
+      "QX30",
+      "QX50",
+      "QX70"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "INNOCENTI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1000,
+      1100,
+      2200,
+      500,
+      650,
+      90,
+      990,
+      "DE TOMASO",
+      "MINI",
+      "MINIMATIC"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ISUZU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "D-MAX",
+      "SERIE N",
+      "TROOPER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "IVECO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DAILY",
+      "MASSIF"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "JAGUAR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      420,
+      "E",
+      "E-PACE",
+      "F-PACE",
+      "F-TYPE",
+      "I-PACE",
+      "S-TYPE",
+      "SOVEREIGN",
+      "V12",
+      "X-TYPE",
+      "XE",
+      "XF",
+      "XJ",
+      "XJ6",
+      "XJ8",
+      "XJR",
+      "XJS",
+      "XJSC",
+      "XK",
+      "XK8"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "JEEP",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CHEROKEE",
+      "COMMANDER",
+      "COMPASS",
+      "GRAND CHEROKEE",
+      "PATRIOT",
+      "RENEGADE",
+      "WRANGLER",
+      "WRANGLER IV"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "KIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BESTA",
+      "CARENS",
+      "CARNIVAL",
+      "CEED",
+      "CEED III",
+      "CERATO",
+      "CLARUS",
+      "E-SOUL",
+      "MAGENTIS",
+      "NIRO",
+      "OPIRUS",
+      "OPTIMA",
+      "PICANTO",
+      "PREGIO",
+      "PRIDE",
+      "RIO",
+      "SEPHIA",
+      "SHUMA",
+      "SORENTO",
+      "SORENTO IV",
+      "SOUL",
+      "SPORTAGE",
+      "STINGER",
+      "STONIC",
+      "VENGA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LADA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      110,
+      111,
+      1118,
+      112,
+      1200,
+      1300,
+      1500,
+      1600,
+      "GRANTA",
+      "KALINA",
+      "KALINKA",
+      "NIVA",
+      "PRIORA",
+      "SAGONA",
+      "SAMARA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LANCIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BETA",
+      "DEDRA",
+      "DELTA",
+      "FLAMINIA",
+      "FLAVIA",
+      "FULVIA",
+      "GAMMA",
+      "KAPPA",
+      "LYBRA",
+      "MUSA",
+      "PHEDRA",
+      "PRISMA",
+      "THEMA",
+      "THESIS",
+      "TREVI",
+      "VOYAGER",
+      "Y",
+      "Y10",
+      "YPSILON",
+      "ZETA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LAND ROVER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      110,
+      88,
+      90,
+      "DEFENDER",
+      "DEFENDER II",
+      "DISCOVERY",
+      "DISCOVERY SPORT",
+      "EVOQUE",
+      "EVOQUE II",
+      "FREELANDER",
+      "RANGE 4X4",
+      "RANGE ROVER SPORT",
+      "VELAR"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LDV",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CONVOY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LEXUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CT",
+      "ES",
+      "GS",
+      "IS",
+      "IS SPORTCROSS",
+      "LC",
+      "LFA",
+      "LS",
+      "LS II",
+      "NX",
+      "RC",
+      "RX",
+      "SC",
+      "UX"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LOTUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ELAN",
+      "ELISE",
+      "ESPRIT",
+      "EUROPA",
+      "EXIGE",
+      "OMEGA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "LYNK&CO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "01"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MAHINDRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BOLERO",
+      "CJ",
+      "GOA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TGE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MARUTI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      800
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MASERATI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "COUPE",
+      "GHIBLI",
+      "GRANCABRIO",
+      "GRANSPORT",
+      "GRANTURISMO",
+      "QUATTROPORTE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MATRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BAGHEERA",
+      "M530",
+      "MURENA",
+      "RANCHO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MAZDA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1000,
+      1200,
+      121,
+      1800,
+      323,
+      616,
+      626,
+      818,
+      929,
+      "BONGO",
+      "BT50",
+      "CX-3",
+      "CX-30",
+      "CX-5",
+      "CX-7",
+      "DEMIO",
+      "E2200",
+      "MAZDA2",
+      "MAZDA3",
+      "MAZDA3 IV",
+      "MAZDA5",
+      "MAZDA6",
+      "MINIBUS",
+      "MPV",
+      "MX-30",
+      "MX3",
+      "MX5",
+      "MX6",
+      "PICK-UP",
+      "PREMACY",
+      "R100",
+      "RX2",
+      "RX3",
+      "RX5",
+      "RX7",
+      "RX8",
+      "T2500",
+      "TRIBUTE",
+      "XEDOS 6",
+      "XEDOS 9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MCC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "SMART"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MEGA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CABRIOLET",
+      "CLUB",
+      "CONCEPT",
+      "FOURGON",
+      "RANCH"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MERCEDES",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      190,
+      200,
+      206,
+      207,
+      208,
+      209,
+      210,
+      220,
+      230,
+      240,
+      250,
+      260,
+      280,
+      300,
+      306,
+      307,
+      308,
+      309,
+      310,
+      320,
+      350,
+      400,
+      406,
+      407,
+      408,
+      409,
+      410,
+      420,
+      450,
+      500,
+      507,
+      508,
+      560,
+      600,
+      609,
+      611,
+      "CITAN",
+      "CLASSE A",
+      "CLASSE A IV",
+      "CLASSE B",
+      "CLASSE B III",
+      "CLASSE C",
+      "CLASSE C III",
+      "CLASSE C IV",
+      "CLASSE C V",
+      "CLASSE CL",
+      "CLASSE CLA",
+      "CLASSE CLA II",
+      "CLASSE CLC",
+      "CLASSE CLK",
+      "CLASSE CLS",
+      "CLASSE E",
+      "CLASSE E IV",
+      "CLASSE E V",
+      "CLASSE EQA",
+      "CLASSE EQC",
+      "CLASSE EQV",
+      "CLASSE G",
+      "CLASSE G II",
+      "CLASSE GL",
+      "CLASSE GLA",
+      "CLASSE GLA II",
+      "CLASSE GLB",
+      "CLASSE GLC",
+      "CLASSE GLE",
+      "CLASSE GLE II",
+      "CLASSE GLK",
+      "CLASSE GLS",
+      "CLASSE GLS II",
+      "CLASSE M",
+      "CLASSE R",
+      "CLASSE S",
+      "CLASSE S V",
+      "CLASSE SL",
+      "CLASSE SLC",
+      "CLASSE SLK",
+      "CLASSE SLS",
+      "CLASSE V",
+      "CLASSE X",
+      "GT",
+      "MB100",
+      "SPRINTER",
+      "VANEO",
+      "VARIO PLUS",
+      "VIANO",
+      "VITO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MG",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "F",
+      "TF",
+      "ZR",
+      "ZS",
+      "ZS EV",
+      "ZT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ELECTRIC"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MINI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "COUNTRYMAN",
+      "MINI",
+      "MINI CLUBMAN",
+      "PACEMAN"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MITSUBISHI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      3000,
+      "ASX",
+      "CANTER",
+      "CARISMA",
+      "COLT",
+      "ECLIPSE CROSS",
+      "ESTATE",
+      "GALANT",
+      "GRANDIS",
+      "I-MIEV",
+      "L200",
+      "LANCER",
+      "MONTERO",
+      "OUTLANDER",
+      "PAJERO",
+      "SAPPORO",
+      "SPACE RUNNER",
+      "SPACE STAR",
+      "SPACE STAR II",
+      "SPACE WAGON"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "MPM MOTORS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "PS160"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "NISSAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "100 NX",
+      "200 SX",
+      "300 ZX",
+      "350 Z",
+      "370 Z",
+      "ALMERA",
+      "ALMERA TINO",
+      "ATLEON",
+      "BLUEBIRD",
+      "CABSTAR",
+      "CEDRIC",
+      "CUBE",
+      "ECO T100",
+      "GT-R",
+      "INTERSTAR",
+      "JUKE",
+      "JUKE II",
+      "KING-CAB",
+      "KUBISTAR",
+      "L35",
+      "LEAF",
+      "MAXIMA",
+      "MAXIMA QX",
+      "MICRA",
+      "MURANO",
+      "NAVARA",
+      "NOTE",
+      "NP300",
+      "NV200",
+      "NV250",
+      "NV300",
+      "NV400",
+      "PATHFINDER",
+      "PATROL",
+      "PICK-UP",
+      "PIXO",
+      "PRAIRIE",
+      "PRIMASTAR",
+      "PRIMERA",
+      "PULSAR",
+      "QASHQAI",
+      "QASHQAI III",
+      "SERENA",
+      "SILVIA",
+      "STANZA",
+      "SUNNY",
+      "TERRANO",
+      "TERRANO II",
+      "TINO",
+      "TRADE",
+      "URVAN",
+      "VANETTE",
+      "X-TRAIL"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "OPEL",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ADAM",
+      "ADMIRAL",
+      "AGILA",
+      "AMPERA",
+      "ANTARA",
+      "ASCONA",
+      "ASTRA",
+      "CABRIO",
+      "CALIBRA",
+      "CAMPO",
+      "CASCADA",
+      "CITY",
+      "COMBO",
+      "COMBO III",
+      "COMBO LIFE",
+      "COMMODORE",
+      "CORSA",
+      "CORSA VI",
+      "CORSAVAN",
+      "CROSSLAND X",
+      "DIPLOMAT",
+      "FRONTERA",
+      "GRANDLAND X",
+      "GT",
+      "INSIGNIA",
+      "KADETT",
+      "KAPITAN",
+      "KARL",
+      "MANTA",
+      "MERIVA",
+      "MOKKA",
+      "MOKKA II",
+      "MONTEREY",
+      "MONZA",
+      "MOVANO",
+      "OMEGA",
+      "REKORD",
+      "SENATOR",
+      "SIGNUM",
+      "SINTRA",
+      "SPEEDSTER",
+      "TIGRA",
+      "VECTRA",
+      "VIVARO",
+      "VIVARO III",
+      "ZAFIRA",
+      "ZAFIRA LIFE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PANHARD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      24,
+      "DYNA",
+      "PL"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PEUGEOT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1007,
+      104,
+      106,
+      107,
+      108,
+      2008,
+      "2008 II",
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      "208 II",
+      3008,
+      304,
+      305,
+      306,
+      307,
+      308,
+      "308 III",
+      309,
+      4007,
+      4008,
+      403,
+      404,
+      405,
+      406,
+      407,
+      5008,
+      504,
+      505,
+      508,
+      "508 II",
+      604,
+      605,
+      607,
+      806,
+      807,
+      "BIPPER",
+      "BOXER",
+      "BOXER*",
+      "DANGEL 504",
+      "DANGEL 505",
+      "DANGEL J5",
+      "EXPERT",
+      "ION",
+      "J5",
+      "J5 COMBI",
+      "J7",
+      "J9",
+      "P4",
+      "PARTNER",
+      "PARTNER II",
+      "PARTNER III",
+      "RCZ",
+      "RIFTER",
+      "TRAVELLER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PIAGGIO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "PORTER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PONTIAC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "FIREBIRD",
+      "TRANS SPORT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PORSCHE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "718 BOXSTER",
+      "718 CAYMAN",
+      911,
+      "911 VIII",
+      912,
+      914,
+      918,
+      924,
+      928,
+      930,
+      944,
+      968,
+      "BOXSTER",
+      "CAYENNE",
+      "CAYMAN",
+      "MACAN",
+      "MACAN II",
+      "PANAMERA",
+      "TAYCAN"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "PROTON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      313,
+      315,
+      413,
+      415,
+      416,
+      418,
+      420
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "RENAULT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "4CV",
+      "ALASKAN",
+      "ARKANA",
+      "AVANTIME",
+      "B110",
+      "B120",
+      "B70",
+      "B80",
+      "B90",
+      "CAPTUR",
+      "CAPTUR II",
+      "CARAVELLE",
+      "CHEROKEE",
+      "CLIO",
+      "CLIO III",
+      "CLIO III ESTATE",
+      "CLIO IV",
+      "CLIO IV ESTATE",
+      "CLIO V",
+      "DAUPHINE",
+      "DAUPHINOIS",
+      "ESPACE",
+      "ESPACE IV",
+      "ESPACE V",
+      "ESTAFETTE",
+      "EXPRESS",
+      "FLORIDE",
+      "FLUENCE",
+      "FREGATE",
+      "FUEGO",
+      "GRAND ESPACE",
+      "GRAND ESPACE IV",
+      "GRAND SCENIC",
+      "JEEP CJ7",
+      "JUVAQUATRE",
+      "KADJAR",
+      "KANGOO",
+      "KANGOO EXPRESS",
+      "KANGOO EXPRESS II",
+      "KANGOO II",
+      "KANGOO III",
+      "KOLEOS",
+      "LAGUNA",
+      "LAGUNA II",
+      "LAGUNA II ESTATE",
+      "LAGUNA III",
+      "LAGUNA III ESTATE",
+      "LAGUNA NEVADA",
+      "LATITUDE",
+      "MASCOTT",
+      "MASTER",
+      "MASTER III",
+      "MAXITY",
+      "MEGANE",
+      "MEGANE II",
+      "MEGANE II ESTATE",
+      "MEGANE III",
+      "MEGANE III ESTATE",
+      "MEGANE IV",
+      "MESSENGER",
+      "MODUS",
+      "ONDINE",
+      "PRAIRIE",
+      "R10",
+      "R11",
+      "R12",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R21 NEVADA",
+      "R25",
+      "R30",
+      "R4",
+      "R5",
+      "R6",
+      "R8",
+      "R9",
+      "RODEO",
+      "SAFRANE",
+      "SAVANE",
+      "SAVIEM",
+      "SCENIC",
+      "SCENIC II",
+      "SCENIC III",
+      "SCENIC IV",
+      "SPIDER",
+      "SUPERCINQ",
+      "TALISMAN",
+      "TRAFIC",
+      "TRAFIC III",
+      "TWINGO",
+      "TWINGO II",
+      "TWINGO III",
+      "VEL SATIS",
+      "WIND",
+      "WRANGLER",
+      "ZOE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ROVER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      111,
+      114,
+      115,
+      200,
+      2000,
+      213,
+      214,
+      216,
+      218,
+      220,
+      2200,
+      2300,
+      2400,
+      25,
+      2600,
+      3500,
+      414,
+      416,
+      418,
+      420,
+      45,
+      618,
+      620,
+      623,
+      75,
+      820,
+      825,
+      827,
+      "ESTATE",
+      "FREIGHT",
+      "STREETWISE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SAAB",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "9-3",
+      "9-3 BERLINE DE SPORT",
+      "9-3 SPORT HATCH",
+      "9-3 X",
+      "9-5",
+      "9-5 ESTATE",
+      900,
+      9000
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SANTANA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "S300",
+      "S350",
+      "S410",
+      "S413",
+      "SAMURAI",
+      "VITARA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SEAT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALHAMBRA",
+      "ALTEA",
+      "ALTEA  XL",
+      "ARONA",
+      "AROSA",
+      "ATECA",
+      "CORDOBA",
+      "EXEO",
+      "FURA",
+      "IBIZA",
+      "IBIZA*",
+      "INCA",
+      "LEON",
+      "LEON IV",
+      "MALAGA",
+      "MARBELLA",
+      "MII",
+      "RONDA",
+      "TARRACO",
+      "TERRA",
+      "TOLEDO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SKODA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1050,
+      120,
+      130,
+      "CITIGO",
+      "ENYAQ",
+      "FABIA",
+      "FABIA IV",
+      "FAVORIT",
+      "FELICIA",
+      "KAMIQ",
+      "KAROQ",
+      "KODIAQ",
+      "OCTAVIA",
+      "OCTAVIA IV",
+      "RAPID",
+      "ROOMSTER",
+      "SCALA",
+      "SUPERB",
+      "YETI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SMART",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CABRIO",
+      "CITY-COUPE",
+      "FORFOUR",
+      "FORTWO",
+      "FORTWO BUSINESS",
+      "FORTWO CABRIO",
+      "FORTWO COUPE",
+      "ROADSTER",
+      "ROADSTER-COUPE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SSANGYONG",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACTYON",
+      "FAMILY",
+      "KORANDO",
+      "KORANDO II",
+      "KYRON",
+      "MUSSO",
+      "REXTON",
+      "REXTON III",
+      "RODIUS",
+      "TIVOLI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SUBARU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "B9 TRIBECA",
+      "BRZ",
+      "E12",
+      "FORESTER",
+      "FORESTER V",
+      "G3X JUSTY",
+      "IMPREZA",
+      "IMPREZA V",
+      "JUSTY",
+      "LEGACY",
+      "LEVORG",
+      "OUTBACK",
+      "OUTBACK VI",
+      "SVX",
+      "TREZIA",
+      "VIVIO",
+      "XV",
+      "XV II"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SUNBEAM",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1000,
+      1250,
+      1300,
+      1500,
+      1600,
+      1725,
+      "AVENGER",
+      "LOTUS",
+      "TI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "SUZUKI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACROSS",
+      "ALTO",
+      "BALENO",
+      "CELERIO",
+      "GRAND VITARA",
+      "IGNIS",
+      "JIMNY",
+      "JIMNY II",
+      "KIZASHI",
+      "LIANA",
+      "S-CROSS",
+      "SAMURAI",
+      "SPLASH",
+      "SUPERCARRY",
+      "SWACE",
+      "SWIFT",
+      "SX4",
+      "VITARA",
+      "WAGON R+",
+      "X90"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "TALBOT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1000,
+      1005,
+      1006,
+      1100,
+      1300,
+      1301,
+      1307,
+      1308,
+      1309,
+      1500,
+      1501,
+      1510,
+      160,
+      1610,
+      "2L",
+      "ARONDE",
+      "HORIZON",
+      "SAMBA",
+      "SIM QUATRE",
+      "SOLARA",
+      "TAGORA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "TATA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TELCOLINE",
+      "TELCOSPORT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "TESLA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "MODEL 3",
+      "MODEL S",
+      "MODEL X",
+      "MODEL Y"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "THINK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CITY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "TOYOTA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AURIS",
+      "AVENSIS",
+      "AYGO",
+      "C-HR",
+      "CAMRY",
+      "CAMRY II",
+      "CARINA",
+      "CARINA E",
+      "CARINA II",
+      "CELICA",
+      "COROLLA",
+      "COROLLA VERSO",
+      "COROLLA X",
+      "CORONA",
+      "CRESSIDA",
+      "CROWN",
+      "DYNA",
+      "FUNCRUISER",
+      "GT86",
+      "HI-ACE",
+      "HI-LUX",
+      "HIGHLANDER",
+      "IQ",
+      "LANDCRUISER",
+      "LEXUS",
+      "LITE ACE",
+      "MIRAI",
+      "MIRAI II",
+      "MODELE F",
+      "MR",
+      "PASEO",
+      "PICNIC",
+      "PREVIA",
+      "PRIUS",
+      "PROACE",
+      "PROACE CITY",
+      "RAV4",
+      "RAV4 III",
+      "RAV4 IV",
+      "RAV4 V",
+      "RUNNER",
+      "STARLET",
+      "SUPRA",
+      "SUPRA V",
+      "TERCEL",
+      "URBAN CRUISER",
+      "VERSO",
+      "VERSO-S",
+      "YARIS",
+      "YARIS CROSS",
+      "YARIS II",
+      "YARIS III",
+      "YARIS IV"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "TRIUMPH",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1300,
+      2000,
+      2500,
+      "ACCLAIM",
+      "DOLOMITE",
+      "HERALD",
+      "SPITFIRE",
+      "STAG",
+      "TOLEDO",
+      "TR",
+      "TR4",
+      "TR6"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "UMM",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALTER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "VOLKSWAGEN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "1,6L",
+      1600,
+      181,
+      183,
+      411,
+      412,
+      "AMAROK",
+      "ARTEON",
+      "BORA",
+      "CADDY",
+      "CADDY V",
+      "COCCINELLE",
+      "CORRADO",
+      "CRAFTER",
+      "EOS",
+      "FOX",
+      "GOLF",
+      "GOLF III",
+      "GOLF IV",
+      "GOLF PLUS",
+      "GOLF SPORTSVAN",
+      "GOLF V",
+      "GOLF VI",
+      "GOLF VII",
+      "GOLF VIII",
+      "ID.3",
+      "ID.4",
+      "JETTA",
+      "JETTA II",
+      "JETTA III",
+      "K70",
+      "LT28",
+      "LT31",
+      "LT32",
+      "LT35",
+      "LT40A",
+      "LT46A",
+      "LUPO",
+      "NEW BEETLE",
+      "PASSAT",
+      "PASSAT CC",
+      "PASSAT SW",
+      "PASSAT*",
+      "PHAETON",
+      "POLO",
+      "POLO V",
+      "POLO VI",
+      "SANTANA",
+      "SCIROCCO",
+      "SHARAN",
+      "T-CROSS",
+      "T-ROC",
+      "TARO",
+      "TIGUAN",
+      "TOUAREG",
+      "TOUAREG III",
+      "TOURAN",
+      "TRANSPORTER",
+      "UP",
+      "VENTO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "VOLVO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      122,
+      142,
+      144,
+      164,
+      1800,
+      240,
+      242,
+      244,
+      245,
+      262,
+      264,
+      265,
+      340,
+      360,
+      440,
+      460,
+      480,
+      66,
+      740,
+      760,
+      780,
+      850,
+      940,
+      960,
+      "C30",
+      "C70",
+      "CROSS COUNTRY",
+      "S40",
+      "S60",
+      "S60 III",
+      "S70",
+      "S80",
+      "S90",
+      "V40",
+      "V50",
+      "V60",
+      "V60 II",
+      "V70",
+      "V90",
+      "XC40",
+      "XC60",
+      "XC70",
+      "XC90"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ZASTAVA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1100,
+      1300,
+      "YUGO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645c0111ef1cd82b1af6f049"
+    },
+    "customFieldValue": "ZAZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TAVRIA"
+    ]
+  }
+]

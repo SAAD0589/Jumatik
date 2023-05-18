@@ -259,7 +259,7 @@ export default function HeaderLinks(props) {
             />
           </Box>
         </HStack>
-        <HStack spacing={2} px={2} alignItems="flex-start"><LanguageNavbar/></HStack>
+        <HStack spacing={2} px={2}><LanguageNavbar/></HStack>
       
       
       </Flex>
@@ -350,17 +350,7 @@ export default function HeaderLinks(props) {
                 </Text>{' '}
               </Box>
             </MenuButton>{' '}
-            <MenuList
-              boxShadow={shadow}
-              p="20px"
-              borderRadius="20px"
-              bg={menuBg}
-              border="none"
-              mt="22px"
-              me={{ base: '30px', md: 'unset' }}
-              minW={{ base: 'unset', md: '400px', xl: '450px' }}
-              maxW={{ base: '360px', md: 'unset' }}
-            ></MenuList>
+           
             <MenuList
               boxShadow={shadow}
               p="20px"

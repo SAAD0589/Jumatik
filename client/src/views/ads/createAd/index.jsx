@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import CategorySelect from '../component/CategorySelect';
 import useAlert from '../../../components/alert/useAlert';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDropzone } from 'react-dropzone';
+import { Responsive, WidthProvider } from 'react-grid-layout';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
+import { FaTrash } from 'react-icons/fa';
+import Nft3 from 'assets/img/nfts/Nft3.png';
 
 // Chakra imports
 import {
@@ -40,7 +46,16 @@ import {
   AlertTitle,
   AlertDescription,
   Select,
+  Image,
+  useDisclosure,
+  CloseButton,
+  Grid,
+  GridItem,
+  Progress,
+  ButtonGroup
 } from '@chakra-ui/react';
+import { CloseIcon, AddIcon } from '@chakra-ui/icons';
+
 import { MdUpload } from 'react-icons/md';
 import { SmallCloseIcon } from '@chakra-ui/icons';
 // Custom components
@@ -52,28 +67,13 @@ import Card from 'components/card/Card.js';
 import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { RiEyeCloseLine } from 'react-icons/ri';
-import { useDropzone } from 'react-dropzone';
 import { t } from 'helpers/TransWrapper';
-function CreateAd() {
+
+const CreateAd = () => {
   // Chakra color mode
   const textColor = useColorModeValue('navy.700', 'white');
-  const textColorDetails = useColorModeValue('navy.700', 'secondaryGray.600');
-  const textColorBrand = useColorModeValue('brand.500', 'white');
   const brandStars = useColorModeValue('brand.500', 'brand.400');
-  const textColorPrimary = useColorModeValue('secondaryGray.900', 'white');
-  const brandColor = useColorModeValue('brand.500', 'white');
-  const textColorSecondary = 'gray.400';
 
-  const googleBg = useColorModeValue('secondaryGray.300', 'whiteAlpha.200');
-  const googleText = useColorModeValue('navy.700', 'white');
-  const googleHover = useColorModeValue(
-    { bg: 'gray.200' },
-    { bg: 'whiteAlpha.300' }
-  );
-  const googleActive = useColorModeValue(
-    { bg: 'secondaryGray.300' },
-    { bg: 'whiteAlpha.200' }
-  );
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const bg = useColorModeValue('gray.100', 'navy.700');
@@ -100,15 +100,39 @@ function CreateAd() {
 
   const [secteurs, setSecteurs] = useState([]);
   const [selectedSecteur, setSelectedsecteur] = useState('');
-
+  const [step, setStep] = useState(1);
+  const [progress, setProgress] = useState(33.33);
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
-  const [tableFields, setTableFields] = useState([]);
+  const [tableFields, setTableFields] = useState({});
+  const [tableSubFields, setTableSubFields] = useState([]);
   const [tableFieldsCat, setTableFieldsCat] = useState([]);
-  const [adId , setAdId ] = useState();
+  const [adId, setAdId] = useState();
+
+  const useGetSubFields = (fieldId, fieldValue) => {
+    const [tableSubFields, setTableSubFields] = useState({});
+
+    useEffect(() => {
+      axios
+        .get(
+          `${process.env.REACT_APP_API}/subCustomFields/get/customField/value/${fieldValue}`
+        )
+        .then(response => {
+          setTableSubFields(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }, [fieldId, fieldValue]);
+
+    return { tableSubFields };
+  };
   useEffect(() => {
     if (selectedCategory) {
-      axios.get(`${process.env.REACT_APP_API}/customFields/get/category/${selectedCategory}`)
+      axios
+        .get(
+          `${process.env.REACT_APP_API}/customFields/get/category/${selectedCategory}`
+        )
         .then(response => {
           setTableFieldsCat(response.data);
         })
@@ -119,17 +143,18 @@ function CreateAd() {
   }, [selectedCategory]);
   useEffect(() => {
     if (selectedSubcategory) {
-      axios.get(`${process.env.REACT_APP_API}/customFields/get/subcategory/${selectedSubcategory}`)
+      axios
+        .get(
+          `${process.env.REACT_APP_API}/customFields/get/subcategory/${selectedSubcategory}`
+        )
         .then(response => {
-          setTableFields(response.data);
+          setTableFields(response.data[0]); // set the first object in the array as the state value
         })
         .catch(error => {
           console.log(error);
         });
     }
   }, [selectedSubcategory]);
-
-
 
   useEffect(() => {
     axios
@@ -146,14 +171,11 @@ function CreateAd() {
     }
   }, [selectedCategoryId]);
 
-
   useEffect(() => {
-  
-      axios
-        .get(`${process.env.REACT_APP_API}/cities/`)
-        .then(res => setCities(res.data))
-        .catch(err => console.error(err));
-    
+    axios
+      .get(`${process.env.REACT_APP_API}/cities/`)
+      .then(res => setCities(res.data))
+      .catch(err => console.error(err));
   }, []);
   useEffect(() => {
     if (selectedCityId) {
@@ -175,18 +197,28 @@ function CreateAd() {
     secteur: '',
     city: '',
     region: '',
-    price:  t('Non défini'),
+    price: t('Non défini'),
     description: '',
-    adPictures: '',
+    adPictures: [],
     status: t('En cours de Validation'),
     userProfilePicture: user.profilePicture,
   });
-  const [fieldsValues, setFieldsValues] = useState({
-    ad_id: '',
-    field_id: '',
-    field_name: '',
-    value: '',
-  });
+  const [fieldsValues, setFieldsValues] = useState([
+    {
+      ad_id: '',
+      field_id: '',
+      field_name: '',
+      value: '',
+    },
+  ]);
+  const [subFieldsValues, setSubFieldsValues] = useState([
+    {
+      ad_id: '',
+      field_id: '',
+      field_name: '',
+      value: '',
+    },
+  ]);
 
   const HandleChange = e => {
     const { name, value } = e.target;
@@ -195,16 +227,20 @@ function CreateAd() {
       [name]: value,
     });
   };
+  const [files, setFiles] = useState(new Array(6).fill(null));
+  // const fileInputs = useRef(new Array(6).fill(null));
+  // const [file, setFile] = useState([]);
 
-  const [file, setFile] = useState([]);
-
-  const onFileChange = event => {
-    setAd({
-      ...ad, //spread operator
-      adPictures: event.target.files,
-    });
-    setFile(event.target.files);
-  };
+  // const handleFileChange = (event,index) => {
+  //   setAd({
+  //     ...ad, //spread operator
+  //     adPictures: event.target.files,
+  //   });
+  //   setFile(event.target.files);
+  //   const newFiles = [...files];
+  //   newFiles[index] = event.target.files[0];
+  //   setFiles(newFiles);
+  // };
   function showToastAndRedirect() {
     try {
       history.push('/');
@@ -212,24 +248,147 @@ function CreateAd() {
       console.error(error);
     }
   }
+  const [images, setImages] = useState([]);
+  const [file, setFile] = useState(null);
+  const [adPictures, setAdPictures] = useState([]);
+
+  const handleFileChange = (event, index) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    //file.url=URL.createObjectURL(file);
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      const newImage = {
+        id: images.length + 1,
+        src: reader.result,
+      };
+      const updatedFiles = [...files];
+      updatedFiles[index] = file;
+      setFiles(updatedFiles);
+
+      const updatedImages = [...images];
+      updatedImages[index] = newImage;
+      setImages(updatedImages);
+
+      const updatedAdPictures = [...ad.adPictures];
+      updatedAdPictures[index] = reader.result;
+
+      setAd({
+        ...ad,
+        adPictures: updatedImages,
+      });
+    };
+
+    reader.onerror = error => {
+      console.error('Error: ', error);
+    };
+  };
+
+  // images.forEach(element => {
+  // console.log(element.src);
+  // })
+  const handleDelete = id => {
+    setImages(images.filter(image => image.id !== id));
+  };
+
+  const handleDragStart = (event, id) => {
+    event.dataTransfer.setData('text/plain', id);
+  };
+
+  const handleDragOver = event => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event, index) => {
+    event.preventDefault();
+
+    const data = event.dataTransfer.getData('text/plain');
+    const draggedImage = images.find(image => image.id === +data);
+
+    const remainingImages = images.filter(image => image.id !== +data);
+    const newImages = [
+      ...remainingImages.slice(0, index),
+      draggedImage,
+      ...remainingImages.slice(index),
+    ];
+
+    setImages(newImages);
+  };
+
   const handleFieldsChange = (fieldId, fieldType, e) => {
     let value;
-    if (fieldType === "radio") {
+    if (fieldType === 'radio') {
       value = e;
-    } else if (fieldType === "select") {
+    } else if (fieldType === 'select') {
       value = e.target.value;
     } else {
       value = e.target.value;
     }
-    setFieldsValues(prevFieldsValues => ({
-      ...prevFieldsValues,
-      [fieldId]: { valeure: value },
-    }));
+
+    setFieldsValues(prevFieldsValues => {
+      const updatedValues = [...prevFieldsValues];
+      const index = updatedValues.findIndex(item => item.field_id === fieldId);
+      if (index >= 0) {
+        updatedValues[index].value = value;
+      } else {
+        updatedValues.push({
+          ad_id: ad._id,
+          field_id: fieldId,
+          field_name: e.target.name,
+          value: value,
+        });
+      }
+      return updatedValues;
+    });
   };
-  
-  
-  
-  const add = async (fieldsValues) => {
+  useEffect(() => {
+    console.log(fieldsValues.find(item => item.field_id === tableFields._id));
+
+    axios
+      .get(
+        `${process.env.REACT_APP_API}/subCustomFields/get/customField/value/${
+          fieldsValues.find(item => item.field_id === tableFields._id)?.value
+        }`
+      )
+      .then(response => {
+        setTableSubFields(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [fieldsValues, tableFields._id]);
+
+  const handleSubFieldsChange = (subfieldId, subfieldType, e) => {
+    let value;
+    if (subfieldType === 'radio') {
+      value = e;
+    } else if (subfieldType === 'select') {
+      value = e.target.value;
+    } else {
+      value = e.target.value;
+    }
+
+    setSubFieldsValues(prevFieldsValues => {
+      const updatedValues = [...prevFieldsValues];
+      const index = updatedValues.findIndex(
+        item => item.field_id === subfieldId
+      );
+      if (index >= 0) {
+        updatedValues[index].value = value;
+      } else {
+        updatedValues.push({
+          ad_id: ad._id,
+          field_id: subfieldId,
+          field_name: e.target.name,
+          value: value,
+        });
+      }
+      return updatedValues;
+    });
+  };
+// 
+  const add = async (fieldsValues, subfieldsValues) => {
     const formData = new FormData();
     const promises = [];
     formData.append('userId', ad.userId);
@@ -248,23 +407,14 @@ function CreateAd() {
     formData.append('description', ad.description);
     formData.append('userProfilePicture', ad.userProfilePicture);
     formData.append('status', ad.status);
-
-    const dataURL = [...ad.adPictures];
-    async function appendDataURL() {
-      for (const img of dataURL) {
-        const blobToDataURL = blob =>
-          new Promise(resolve => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result);
-            reader.readAsDataURL(blob);
-          });
-
-        const data = await blobToDataURL(img);
-        formData.append('adPictures', data);
-      }
-    }
-
-    await appendDataURL();
+    console.log(images);
+    images.forEach(element => {
+      formData.append("adPictures", element.src) // check this out for more info: https://developer.mozilla.org/en-US/docs/Web/API/FormData/append#example
+   })
+    
+    
+    
+    
 
     const configuration = {
       method: 'put',
@@ -272,6 +422,7 @@ function CreateAd() {
       data: formData,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'multipart/form-data',
       },
     };
 
@@ -281,58 +432,63 @@ function CreateAd() {
 
         const adToken = result.data;
         setAdId(adToken._id);
-        const fieldValues = tableFields.map((field) => {
-          return {
-            ad_id: adToken._id,
-            field_id: field._id,
-            field_name: field.name,
-            valeure: fieldsValues[field._id]?.valeure,
-          };
-        });
-        for (const fieldValue of fieldValues) {
-          try {
-            const response = axios.post(
-              `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
-              fieldValue,
-              {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              }
-            );
-            console.log(response.data);
-            // show a success message to the user
-            toast.success("Field value created successfully!", {
-              position: "top-center",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          } catch (error) {
-            console.log(error);
-            // show an error message to the user
-            toast.error("Error creating field value!", {
-              position: "top-center",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          }
+        const foundFieldValue = fieldsValues.find(
+          item => item.field_id === tableFields._id
+        );
+
+        const fieldValue = {
+          ad_id: adToken._id,
+          field_id: tableFields._id,
+          field_name: tableFields.name,
+          value: foundFieldValue ? foundFieldValue.value : '',
+        };
+
+        try {
+          const response = axios.post(
+            `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
+            fieldValue,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+              },
+            }
+          );
+          console.log(response.data);
+          // show a success message to the user
+          toast.success('Field value created successfully!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+          });
+        } catch (error) {
+          console.log(error);
+          // show an error message to the user
+          toast.error('Error creating field value!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+          });
         }
-        const fieldValuesCat = tableFieldsCat.map((field) => {
+
+        const fieldValuesCat = tableFieldsCat.map(field => {
+          const foundFieldValue = fieldsValues.find(
+            item => item.field_id === field._id
+          );
           return {
             ad_id: adToken._id,
             field_id: field._id,
             field_name: field.name,
-            valeure: fieldsValues[field._id]?.valeure,
+            value: foundFieldValue ? foundFieldValue.value : '',
           };
         });
         for (const fieldValueCat of fieldValuesCat) {
@@ -342,34 +498,84 @@ function CreateAd() {
               fieldValueCat,
               {
                 headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                  Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
               }
             );
             console.log(response.data);
             // show a success message to the user
-            toast.success("Field value created successfully!", {
-              position: "top-center",
+            toast.success('Field value created successfully!', {
+              position: 'top-center',
               autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "colored",
+              theme: 'colored',
             });
           } catch (error) {
             console.log(error);
             // show an error message to the user
-            toast.error("Error creating field value!", {
-              position: "top-center",
+            toast.error('Error creating field value!', {
+              position: 'top-center',
               autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "colored",
+              theme: 'colored',
+            });
+          }
+        }
+
+        const subfieldValues = tableSubFields.map(field => {
+          const foundFieldValue = subfieldsValues.find(
+            item => item.field_id === field._id
+          );
+          return {
+            ad_id: adToken._id,
+            field_id: field._id,
+            field_name: field.name,
+            value: foundFieldValue ? foundFieldValue.value : '',
+          };
+        });
+        for (const subfield of subfieldValues) {
+          try {
+            const response = axios.post(
+              `${process.env.REACT_APP_API}/subCustomFieldsValues/add/new`,
+              subfield,
+              {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+              }
+            );
+            console.log(response.data);
+            // show a success message to the user
+            toast.success('Field value created successfully!', {
+              position: 'top-center',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'colored',
+            });
+          } catch (error) {
+            console.log(error);
+            // show an error message to the user
+            toast.error('Error creating field value!', {
+              position: 'top-center',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'colored',
             });
           }
         }
@@ -381,7 +587,6 @@ function CreateAd() {
       .catch(error => {
         error = new Error();
       });
-    
   };
   const adData = {
     name: document.getElementById('name')?.value,
@@ -471,7 +676,6 @@ function CreateAd() {
 
   // Add beforeunload event listener to save draft when user leaves the current view
 
-  
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -540,8 +744,8 @@ function CreateAd() {
       });
       return;
     }
-    
-    await add(fieldsValues);
+
+    await add(fieldsValues, subFieldsValues);
 
     toast(
       `Nous avons bien reçu votre annonce et nous vous remercions de votre confiance. Votre annonce est en cours de vérification et sera publiée prochainement si elle respecte nos critères de publication.
@@ -562,6 +766,11 @@ function CreateAd() {
       showToastAndRedirect();
     }, 4000);
   };
+
+
+
+
+
 
   return (
     <Card padding="20px" mt={{ base: '80px', md: '10px' }}>
@@ -594,9 +803,51 @@ function CreateAd() {
           fontSize="2xl"
           fontWeight="600"
         >
-{t('Ajoutez une annonce gratuitement')}        </Text>
+          {t('Ajoutez une annonce gratuitement')}{' '}
+        </Text>
+        <Box textAlign="left">
+        <Progress
+        alignContent="start"
+          hasStripe
+          size='md'
+          value={progress}
+          mb="5%"
+          colorScheme="purple"
+          width="100%"
+         
+        borderRadius="full"
+        boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)"
+          isAnimated></Progress>
+        </Box>
+      
         <FormControl onSubmit={e => handleSubmit(e)}>
-          <FormLabel
+       
+        <Box
+        borderWidth="1px"
+        rounded="lg"
+        shadow="1px 1px 3px rgba(0,0,0,0.3)"
+        p={6}
+        m="10px auto"
+        as="form">
+        
+       
+        {step === 1 ?   <>
+        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+       { t('Etape 1: Identification de votre annonce')}
+      </Heading>
+      <FormControl>
+      <FormLabel
+            display="flex"
+            ms="4px"
+            fontSize="md"
+            fontWeight="500"
+            color={textColor}
+            mb="8px"
+            mt={10}
+          >
+            {t('Ajoutez les images du produit (Max 6 images)')}  
+          </FormLabel>{' '}
+      <FormLabel
             display="flex"
             ms="4px"
             fontSize="sm"
@@ -605,37 +856,120 @@ function CreateAd() {
             mb="8px"
             mt={10}
           >
-             {t('Ajoutez les images du produit (Max 6 images)')}{' '}
-          </FormLabel>{' '}
-          <Stack direction={['column', 'row']} spacing={6} mb="20px">
-            <Center w="full">
-              <Input
-                accept="image/*"
-                variant="auth"
-                name="adPictures"
-                fontSize="sm"
-                ms={{ base: '0px', md: '0px' }}
-                pt="10px"
-                mb="24px"
-                fontWeight="500"
-                size="lg"
-                type="file"
-                multiple
-                onChange={onFileChange}
-              />
-            </Center>
-          </Stack>
+          <ul>
+            <li>{t('Une annonce avec des images a plus de visibilité')} </li>
+            <li>{t('La première image est la principale')} </li>
+            <li>{t(`Pour changer l'image principale glisser l'image de votre choix vers la première case`)}
+ </li>
+          </ul>
+         </FormLabel>{' '}
+          <Box>
+            <Grid  gridTemplateColumns={{ xl: 'repeat(3, 1fr)', '2xl': '1fr 0.46fr' }} display={{ base: 'block', xl: 'grid' }} gap={4} mb="10px">
+              {Array.from({ length: 6 }).map((_, index) => {
+                const image = images[index];
+
+                return (
+                  <GridItem key={index} mb={2}>
+                  <Box
+      border={index === 0 ? '4px dashed red' : '2px dashed gray'}
+      height="100%"
+      width="100%"
+      onDragOver={handleDragOver}
+      onDrop={(event) => handleDrop(event, index)}
+    >
+                      {image ? (
+                        <>
+                          <Box position="relative">
+                            <IconButton
+                              colorScheme="red"
+                              aria-label="Delete Image"
+                              icon={<CloseIcon />}
+                              size="sm"
+                              onClick={() => handleDelete(image.id)}
+                              position="absolute"
+                              top="2"
+                              right="2"
+                            />
+                            <Image
+                              src={image.src}
+                              w="100%"
+                              h="100%"
+                              objectFit="cover"
+                              draggable
+                              onDragStart={event =>
+                                handleDragStart(event, image.id)
+                              }
+                            />
+                          </Box>
+                        </>
+                      ) : (
+                        index === 0 ?
+                        <Button
+                          as="label"
+                          htmlFor="fileInput"
+                          w="100px"
+                          h="100px"
+                          bg="transparent"
+                          _hover={{ bg: 'transparent' }}
+                          _active={{ bg: 'transparent' }}
+                          _focus={{ boxShadow: 'none' }}
+                          leftIcon={<AddIcon />}
+                          cursor="pointer"
+                        >
+                          
+                          {t(`Image principale`)}
+                          <Input
+                            id="fileInput"
+                            type="file"
+                            accept="image/*"
+                            style={{
+                              display: 'none',
+                            }}
+                            onChange={event => handleFileChange(event, index)}
+                          />
+                        </Button> : <Button
+                          as="label"
+                          htmlFor="fileInput"
+                          w="100px"
+                          h="100px"
+                          bg="transparent"
+                          _hover={{ bg: 'transparent' }}
+                          _active={{ bg: 'transparent' }}
+                          _focus={{ boxShadow: 'none' }}
+                          leftIcon={<AddIcon />}
+                          cursor="pointer"
+                        >
+                          {t('Ajouter une image')}
+                          <Input
+                            id="fileInput"
+                            type="file"
+                            accept="image/*"
+                            style={{
+                              display: 'none',
+                            }}
+                            onChange={event => handleFileChange(event, index)}
+                          />
+                        </Button>
+                        
+                      )}
+                    </Box>
+                  </GridItem>
+                );
+              })}
+            </Grid>
+          </Box>
           <Flex h="100%" px={5} mb={2}></Flex>
           <Box height="90px">
             <FormLabel
               display="flex"
               ms="4px"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="500"
               color={textColor}
               mb="8px"
             >
-               {t(`Nom de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
+              {t(`Nom de l 'annonce`)}
+              <Text color={brandStars}>*</Text>{' '}
             </FormLabel>{' '}
             <Input
               id="name"
@@ -651,18 +985,73 @@ function CreateAd() {
               size="lg"
               value={ad.name}
               onChange={HandleChange}
+              
             />
-          </Box>{' '}
+          </Box>
+          <FormLabel
+            display="flex"
+            ms="4px"
+            fontSize="md"
+            fontWeight="500"
+            color={textColor}
+            mb="8px"
+          >
+            {t(`Entrez la description de l 'annonce`)}
+            <Text color={brandStars}>*</Text>{' '}
+          </FormLabel>
+          <Textarea
+            id="description"
+            fontSize="sm"
+            mb="24px"
+            fontWeight="500"
+            size="lg"
+            ms={{ base: '0px', md: '0px' }}
+            isRequired={true}
+            placeholder="description de l'annonce"
+            value={ad.description}
+            name="description"
+            onChange={HandleChange}
+          />
           <Box height="90px">
             <FormLabel
-              display="flex"
               ms="4px"
               fontSize="sm"
               fontWeight="500"
               color={textColor}
+              display="flex"
+            >
+              {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
+            </FormLabel>{' '}
+            <InputGroup size="md">
+              <Input
+                isRequired={true}
+                fontSize="sm"
+                placeholder={t(`Entrez le prix en MAD`)}
+                mb="24px"
+                size="lg"
+                variant="auth"
+                value={ad.price}
+                name="price"
+                onChange={HandleChange}
+              />
+            </InputGroup>{' '}
+          </Box>{' '}
+      </FormControl>
+      </> : step === 2 ? <>
+        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+ { t('Etape 2: Classification de votre annonce ')}
+      </Heading>
+      <FormControl>
+      <Box height="90px">
+            <FormLabel
+              display="flex"
+              ms="4px"
+              fontSize="md"
+              fontWeight="500"
+              color={textColor}
               mb="8px"
             >
-               {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -701,12 +1090,13 @@ function CreateAd() {
             <FormLabel
               display="flex"
               ms="4px"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="500"
               color={textColor}
               mb="8px"
             >
-               {t(`Choisir une sous-categorie`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisir une sous-categorie`)}{' '}
+              <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -717,7 +1107,6 @@ function CreateAd() {
               size="lg"
               variant="auth"
               onChange={e => {
-
                 setSelectedSubcategory(e.target.value);
                 setSelectedSubcategoryLabel(
                   e.target.options[e.target.selectedIndex].text
@@ -738,193 +1127,371 @@ function CreateAd() {
               ))}{' '}
             </Select>
           </Box>
-          {selectedCategory &&
-  <>
-    {tableFieldsCat?.map(field => (
-      <Box height="90px">
-        <FormLabel
-          ms="4px"
-          fontSize="sm"
-          fontWeight="500"
-          color={textColor}
-          display="flex"
-        >
-          {field.name}
-        </FormLabel>
-        <FormControl isRequired={true}>
-          {field.type === 'text' &&
-            <InputGroup size="md">
-              <Input
-                fontSize="sm"
-                placeholder="Enter text"
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-  name={field.name}
-              />
-            </InputGroup>
-          }
-          {field.type === 'textarea' &&
-            <Textarea
-              fontSize="sm"
-              placeholder="Enter text"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
-          }
-          {field.type === 'radio' &&
-            <RadioGroup               variant="auth"
-
-                  name={field.name}
-                  value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-              mb="24px"
-              size="lg"
-            >
-              <Stack direction="row">
-                {field.options.map(option => (
-                  <Radio value={option} key={option}>{option}</Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
-          }
-          {field.type === 'select' &&
-            <Select
-              placeholder="Select option"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}         
-    fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-            >
-              {field.options.map(option => (
-                <option key={option} value={option}>{option}</option>
+          {selectedSubcategory && (
+            <>
+              <>
+                <Box height="90px">
+                  <FormLabel
+                    ms="4px"
+                    fontSize="md"
+                    fontWeight="500"
+                    color={textColor}
+                    display="flex"
+                  >
+                    {tableFields.name}
+                  </FormLabel>
+                  <FormControl isRequired={true}>
+                    {tableFields.type === 'text' && (
+                      <InputGroup size="md">
+                        <Input
+                          fontSize="sm"
+                          placeholder="Enter text"
+                          mb="24px"
+                          size="lg"
+                          variant="auth"
+                          value={
+                            fieldsValues.find(
+                              item => item.field_id === tableFields._id
+                            )?.value
+                          }
+                          onChange={value =>
+                            handleFieldsChange(
+                              tableFields._id,
+                              tableFields.type,
+                              value
+                            )
+                          }
+                          name={tableFields.name}
+                        />
+                      </InputGroup>
+                    )}
+                    {tableFields.type === 'textarea' && (
+                      <Textarea
+                        fontSize="sm"
+                        placeholder="Enter text"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                        name={tableFields.name}
+                        value={
+                          fieldsValues.find(
+                            item => item.field_id === tableFields._id
+                          )?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(
+                            tableFields._id,
+                            tableFields.type,
+                            value
+                          )
+                        }
+                      />
+                    )}
+                    {tableFields.type === 'radio' && (
+                      <RadioGroup
+                        variant="auth"
+                        name={tableFields.name}
+                        value={
+                          fieldsValues.find(
+                            item => item.field_id === tableFields._id
+                          )?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(
+                            tableFields._id,
+                            tableFields.type,
+                            value
+                          )
+                        }
+                        mb="24px"
+                        size="lg"
+                      >
+                        <Stack direction="row">
+                          {tableFields.options.map(option => (
+                            <Radio value={option} key={option}>
+                              {option}
+                            </Radio>
+                          ))}
+                        </Stack>
+                      </RadioGroup>
+                    )}
+                    {tableFields.type === 'select' && (
+                      <Select
+                        placeholder="Select option"
+                        name={tableFields.name}
+                        value={
+                          fieldsValues.find(
+                            item => item.field_id === tableFields._id
+                          )?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(
+                            tableFields._id,
+                            tableFields.type,
+                            value
+                          )
+                        }
+                        fontSize="sm"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                      >
+                        {tableFields.options.map(option => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  </FormControl>
+                </Box>
+                {console.log(
+                  fieldsValues.find(item => item.field_id === tableFields._id)
+                )}
+                {fieldsValues.find(
+                  item => item.field_id === tableFields._id
+                ) && (
+                  <>
+                    {tableSubFields.map(subField => (
+                      <Box height="90px">
+                        <FormLabel
+                          ms="4px"
+                          fontSize="md"
+                          fontWeight="500"
+                          color={textColor}
+                          display="flex"
+                        >
+                          {subField.name}
+                        </FormLabel>
+                        <FormControl isRequired={true}>
+                          {subField.type === 'text' && (
+                            <InputGroup size="md">
+                              <Input
+                                fontSize="sm"
+                                placeholder="Enter text"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                                value={
+                                  subFieldsValues.find(
+                                    item => item.field_id === subField._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    subField._id,
+                                    subField.type,
+                                    value
+                                  )
+                                }
+                                name={subField.name}
+                              />
+                            </InputGroup>
+                          )}
+                          {subField.type === 'textarea' && (
+                            <Textarea
+                              fontSize="sm"
+                              placeholder="Enter text"
+                              mb="24px"
+                              size="lg"
+                              variant="auth"
+                              name={subField.name}
+                              value={
+                                subFieldsValues.find(
+                                  item => item.field_id === subField._id
+                                )?.value
+                              }
+                              onChange={value =>
+                                handleSubFieldsChange(
+                                  subField._id,
+                                  subField.type,
+                                  value
+                                )
+                              }
+                            />
+                          )}
+                          {subField.type === 'radio' && (
+                            <RadioGroup
+                              variant="auth"
+                              name={subField.name}
+                              value={
+                                subFieldsValues.find(
+                                  item => item.field_id === subField._id
+                                )?.value
+                              }
+                              onChange={value =>
+                                handleSubFieldsChange(
+                                  subField._id,
+                                  subField.type,
+                                  value
+                                )
+                              }
+                              mb="24px"
+                              size="lg"
+                            >
+                              <Stack direction="row">
+                                {subField.options.map(option => (
+                                  <Radio value={option} key={option}>
+                                    {option}
+                                  </Radio>
+                                ))}
+                              </Stack>
+                            </RadioGroup>
+                          )}
+                          {subField.type === 'select' && (
+                            <Select
+                              placeholder="Select option"
+                              name={subField.name}
+                              value={
+                                subFieldsValues.find(
+                                  item => item.field_id === subField._id
+                                )?.value
+                              }
+                              onChange={value =>
+                                handleSubFieldsChange(
+                                  subField._id,
+                                  subField.type,
+                                  value
+                                )
+                              }
+                              fontSize="sm"
+                              mb="24px"
+                              size="lg"
+                              variant="auth"
+                            >
+                              {subField.options.map(option => (
+                                <option key={option} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </Select>
+                          )}
+                        </FormControl>
+                      </Box>
+                    ))}
+                  </>
+                )}
+              </>
+            </>
+          )}
+          {selectedCategory && (
+            <>
+              {tableFieldsCat.map(field => (
+                <Box height="90px">
+                  <FormLabel
+                    ms="4px"
+                    fontSize="md"
+                    fontWeight="500"
+                    color={textColor}
+                    display="flex"
+                  >
+                    {field.name}
+                  </FormLabel>
+                  <FormControl isRequired={true}>
+                    {field.type === 'text' && (
+                      <InputGroup size="md">
+                        <Input
+                          fontSize="sm"
+                          placeholder="Enter text"
+                          mb="24px"
+                          size="lg"
+                          variant="auth"
+                          value={
+                            fieldsValues.find(
+                              item => item.field_id === field._id
+                            )?.value
+                          }
+                          onChange={value =>
+                            handleFieldsChange(field._id, field.type, value)
+                          }
+                          name={field.name}
+                        />
+                      </InputGroup>
+                    )}
+                    {field.type === 'textarea' && (
+                      <Textarea
+                        fontSize="sm"
+                        placeholder="Enter text"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                        name={field.name}
+                        value={
+                          fieldsValues.find(item => item.field_id === field._id)
+                            ?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                      />
+                    )}
+                    {field.type === 'radio' && (
+                      <RadioGroup
+                        variant="auth"
+                        name={field.name}
+                        value={
+                          fieldsValues.find(item => item.field_id === field._id)
+                            ?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                        mb="24px"
+                        size="lg"
+                      >
+                        <Stack direction="row">
+                          {field.options.map(option => (
+                            <Radio value={option} key={option}>
+                              {option}
+                            </Radio>
+                          ))}
+                        </Stack>
+                      </RadioGroup>
+                    )}
+                    {field.type === 'select' && (
+                      <Select
+                        placeholder="Select option"
+                        name={field.name}
+                        value={
+                          fieldsValues.find(item => item.field_id === field._id)
+                            ?.value
+                        }
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                        fontSize="sm"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                      >
+                        {field.options.map(option => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  </FormControl>
+                </Box>
               ))}
-            </Select>
-          }
-        </FormControl>
-      </Box>
-    ))}
-  </>
-}
-          {selectedSubcategory &&
-  <>
-    {tableFields?.map(field => (
+            </>
+          )}
+      </FormControl>
+      </> : <>
+        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+          { t('Etape 3: Localisation de votre annonce ')}
+
+      </Heading>
+      <FormControl>
       <Box height="90px">
-        <FormLabel
-          ms="4px"
-          fontSize="sm"
-          fontWeight="500"
-          color={textColor}
-          display="flex"
-        >
-          {field.name}
-        </FormLabel>
-        <FormControl isRequired={true}>
-          {field.type === 'text' &&
-            <InputGroup size="md">
-              <Input
-                fontSize="sm"
-                placeholder="Enter text"
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-  name={field.name}
-              />
-            </InputGroup>
-          }
-          {field.type === 'textarea' &&
-            <Textarea
-              fontSize="sm"
-              placeholder="Enter text"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
-          }
-          {field.type === 'radio' &&
-            <RadioGroup               variant="auth"
-
-                  name={field.name}
-                  value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-              mb="24px"
-              size="lg"
-            >
-              <Stack direction="row">
-                {field.options.map(option => (
-                  <Radio value={option} key={option}>{option}</Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
-          }
-          {field.type === 'select' &&
-            <Select
-              placeholder="Select option"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}         
-    fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-            >
-              {field.options.map(option => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </Select>
-          }
-        </FormControl>
-      </Box>
-    ))}
-  </>
-}
-
-          <Box height="90px">
             <FormLabel
               ms="4px"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="500"
               color={textColor}
               display="flex"
             >
-               {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <InputGroup size="md">
-              <Input
-                isRequired={true}
-                fontSize="sm"
-                placeholder={t(`Entrez le prix en MAD`)}
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={ad.price}
-                name="price"
-                onChange={HandleChange}
-              />
-            </InputGroup>{' '}
-          </Box>{' '}
-         
-          <Box height="90px">
-            <FormLabel
-              ms="4px"
-              fontSize="sm"
-              fontWeight="500"
-              color={textColor}
-              display="flex"
-            >
-               {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -963,12 +1530,13 @@ function CreateAd() {
           <Box height="90px">
             <FormLabel
               ms="4px"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="500"
               color={textColor}
               display="flex"
             >
-              {t(`Choisissez votre secteur`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre secteur`)}{' '}
+              <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -992,55 +1560,68 @@ function CreateAd() {
               </Select>
             </InputGroup>
           </Box>{' '}
-          <FormLabel
-            display="flex"
-            ms="4px"
-            fontSize="sm"
-            fontWeight="500"
-            color={textColor}
-            mb="8px"
-          >
-             {t(`Entrez la description de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
-          </FormLabel>
-          <Textarea
-            id="description"
-            fontSize="sm"
-            mb="24px"
-            fontWeight="500"
-            size="lg"
-            ms={{ base: '0px', md: '0px' }}
-            isRequired={true}
-            placeholder="description de l'annonce"
-            value={ad.description}
-            name="description"
-            onChange={HandleChange}
-          />
           <Alert status="error" mb={5} align="start">
             <AlertDescription>
-            {t(`Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`)}
-             
+              {t(
+                `Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`
+              )}
             </AlertDescription>
           </Alert>
-          <Button
+      </FormControl>
+      </>}
+        <ButtonGroup mt="5%" w="100%">
+          <Flex w="100%" justifyContent="space-between">
+            <Flex>
+              <Button
+                onClick={() => {
+                  setStep(step - 1);
+                  setProgress(progress - 33.33);
+                }}
+                isDisabled={step === 1}
+                colorScheme="purple"
+                variant="solid"
+                w="7rem"
+                mr="5%">
+                 {t('Précédent')}
+              </Button>
+              <Button
+                w="7rem"
+                isDisabled={step === 3}
+                onClick={() => {
+                  setStep(step + 1);
+                  if (step === 3) {
+                    setProgress(100);
+                  } else {
+                    setProgress(progress + 33.33);
+                  }
+                }}
+                colorScheme="purple"
+                variant="outline">
+                {t('Suivant')}
+              </Button>
+            </Flex>
+            {step === 3 ? (
+              <Button
             fontSize="sm"
             variant="brand"
             fontWeight="500"
-            w="100%"
-            h="50"
-            mb="24px"
+            w="7rem"            
             onClick={handleSubmit}
           >
-             {t(`Ajouter`)}{' '}
-          </Button>{' '}
+            {t(`Ajouter`)}{' '}
+          </Button>
+            ) : null}
+          </Flex>
+        </ButtonGroup>
+      </Box>
+
+
+     
+         
         </FormControl>
-        <Flex
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="start"
-          maxW="100%"
-          mt="0px"
-        ></Flex>{' '}
+    
       </Flex>
+
     </Card>
   );
 }

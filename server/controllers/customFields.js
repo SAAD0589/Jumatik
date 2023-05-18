@@ -26,7 +26,7 @@ export const getCustomFieldByCategory = async (req, res) => {
   const { category } = req.params;
 
   try {
-    const customField = await CustomField.find({category: category});
+    const customField = await CustomField.find({category: category, subcategory: ""});
     if (!customField) {
       return res.status(404).json({ message: "customField not found" });
     }

@@ -95,10 +95,38 @@ export const columnsDataComplex = [
     Header: "TYPE",
     accessor: "type",
   },
+
   {
-    Header: "OPTIONS",
-    accessor: "options",
+    Header: "DATE",
+    accessor: "date",
   },
+  {
+    Header: "ACTION",
+    accessor: "action",
+  },
+];
+export const columnsDataComplexSc = [
+  {
+    Header: "NOM",
+    accessor: "name",
+  },
+  {
+    Header: "CHAMPS",
+    accessor: "customFieldValue",
+  },
+  {
+    Header: "CATEGORIE",
+    accessor: "category",
+  },
+  {
+    Header: "SUBCATEGORIE",
+    accessor: "subcategory",
+  },
+  {
+    Header: "TYPE",
+    accessor: "type",
+  },
+
   {
     Header: "DATE",
     accessor: "date",

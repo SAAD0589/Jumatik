@@ -1,0 +1,2172 @@
+[
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AEBI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AGCO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DT Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AL-GHAZI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      480,
+      640,
+      "GHAZI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ALLGAIER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series A",
+      "Series R"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AMW",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series 1600",
+      "Series 2500",
+      "Series 3100",
+      "Series 4000",
+      "Series 4900"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ARMATRAC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Serie-11"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ASKAM",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "8 Litre",
+      "AS 950",
+      "Hi-Ex"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ASTRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "HD 7",
+      "HD 7-C",
+      "HD 8",
+      "HD 9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AVIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "D-Line"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "AYATS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Bravo"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BASAK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "2000 Series",
+      "BE Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BAUTZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series AS/AL/AW"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BCS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "VOLCAN"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BEDFORD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TK/MK"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BELARUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series 100",
+      "Series 1000"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BERKHOF",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Ambassador"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BHARATBENZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "HEAVY-DUTY",
+      "MEDIUM-DUTY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BMC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALYOS",
+      "BELDE",
+      "CONDOR",
+      "FATIH",
+      "HAWK",
+      "KARISMA",
+      "LEVEND",
+      "MEGASTAR",
+      "MIDILUX",
+      "NIFTY",
+      "PROBUS",
+      "PROCITY",
+      "PROFESSIONAL",
+      "SCHOOLBUS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BOVA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Futura",
+      "Jonkheere",
+      "Lexio",
+      "Magiq",
+      "Synergy"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BRANSON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Serie-00",
+      "Serie-10",
+      "Serie-20"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BREDAMENARINIBUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AVANCITY",
+      "LANDER",
+      "M-Serie",
+      "VIVACITY",
+      "ZEUS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BUCHER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series D"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "BYD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C7",
+      "K9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "CARON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Serie-CT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "CARRARO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AGRICUBE",
+      "ERGIT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "CLAAS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ARION",
+      "ATOS",
+      "AXION",
+      "ELIOS",
+      "NEXOS",
+      "XERION"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DAEWOO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "NOVUS",
+      "PRIMA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DAF",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      45,
+      55,
+      65,
+      "65 CF",
+      75,
+      "75 CF",
+      85,
+      "85 CF",
+      95,
+      "95 XF",
+      "CF",
+      "CF 65",
+      "CF 75",
+      "CF 85",
+      "DB",
+      "F 1000",
+      "F 1100",
+      "F 1200",
+      "F 1300",
+      "F 1400",
+      "F 1500",
+      "F 1600",
+      "F 1700",
+      "F 1800",
+      "F 1900",
+      "F 2100",
+      "F 2200",
+      "F 2300",
+      "F 2500",
+      "F 2600",
+      "F 2700",
+      "F 2800",
+      "F 2900",
+      "F 3200",
+      "F 3300",
+      "F 3600",
+      "F 500",
+      "F 600",
+      "F 700",
+      "F 800",
+      "F 900",
+      "F2000",
+      "LF",
+      "LF 45",
+      "LF 55",
+      "N 2800",
+      "N 3300",
+      "SB",
+      "TB",
+      "XF",
+      "XF 105",
+      "XF 95"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DENNIS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DAGGER",
+      "ELITE",
+      "ELITE 2",
+      "ENVIRO",
+      "OLYMPUS",
+      "PHÃ–NIX 2"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DEUTZ-FAHR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AGROFARM",
+      "AGROKID",
+      "AGROLUX",
+      "AGROPLUS",
+      "AGROPRIMA",
+      "AGROSTAR",
+      "AGROTRON",
+      "AGROTRON K",
+      "AGROTRON L",
+      "AGROTRON M",
+      "AGROTRON TTV",
+      "AGROTRON X",
+      "AGROXTRA",
+      "D05",
+      "D06",
+      "D07",
+      "DX",
+      "F-Serie",
+      "Series 11",
+      "Series 5",
+      "Series 5 C",
+      "Series 5 G",
+      "Series 6",
+      "Series 7",
+      "Series 9"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DODGE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "E"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DONGFENG",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BISON",
+      "DF",
+      "KINGRUN",
+      "KINLAND",
+      "T-LIFT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "DURSO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "FARMER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "EBRO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "F-Serie",
+      "L-Serie"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "EICHER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "PRO SERIES 1000",
+      "PRO SERIES 3000",
+      "PRO SERIES 6000",
+      "PRO SERIES 8000",
+      "VE SERIES"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ERF",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      54,
+      64,
+      "B-Serie",
+      "C-Serie",
+      "ECM",
+      "ECT",
+      "E-Serie",
+      "M-Serie"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FAHR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "D",
+      "GT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FAP",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A-Series",
+      "B-Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FENDT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Dieselross",
+      "Farmer",
+      "Favorit",
+      "GT",
+      "Vario"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FIAT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      1000,
+      400,
+      "500 Serie",
+      "600 Serie",
+      66,
+      700,
+      800,
+      88,
+      90,
+      900,
+      94,
+      "F",
+      "L",
+      "Series 100",
+      "Series 110",
+      "Series 180",
+      "Series 260",
+      "Series 300",
+      "Series 330",
+      "Series 400",
+      "Series 50",
+      "Series 55",
+      "Series 600",
+      "Series 65",
+      "Series 70",
+      "Series 75",
+      "Series 80",
+      "Series 90",
+      "Series C40",
+      "Series C50",
+      "TL"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FNM",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "HEAVY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FORD",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "5000-Serie",
+      "6000-Serie",
+      "7000-Serie",
+      "Cargo",
+      "F-MAX",
+      "F-SERIES"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FOTON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AUMAN",
+      "AUMARK",
+      "BISON",
+      "BJ-Bus"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "FREIGHTLINER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CENTURY"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GAZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ON",
+      "SADKO",
+      "VALDAI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GINAF",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C-Series",
+      "X-Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GMC",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      6
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GOLDONI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Boxter",
+      "Ronin",
+      "Series-100"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GRUAU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "MICROBUS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "GUELDNER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A",
+      "Multitrak"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "HATTAT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "200 Series",
+      "A Series",
+      "B Series",
+      "C Series",
+      "H Series",
+      "T Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "HEULIEZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "GX"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "HICOM",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "MTB"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "HINO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "300 Series",
+      "500 Series MK 4",
+      "700 Series MK 2",
+      "AK",
+      "CITI BUS",
+      "DUTRO",
+      "FD",
+      "KING",
+      "RB",
+      "RK",
+      "RM",
+      "RN",
+      "ROADLINER SUPREME",
+      "XZ"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "HYUNDAI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AERO CITY",
+      "AERO TOWN",
+      "COUNTY",
+      "HD HEAVY",
+      "HD LIGHT",
+      "HD MEDIUM",
+      "SUPER AERO CITY",
+      "UNIVERSE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "CHALLENGER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "MT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "CHEVROLET",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "D",
+      "N"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "INBUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AS 280"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "IRISBUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACCESS BUS 127",
+      "AGORA",
+      "ARES",
+      "ARWAY",
+      "AXER",
+      "CITELIS",
+      "CITYCLASS",
+      "CREALIS",
+      "CROSSWAY",
+      "DAILY TOURYS",
+      "DOMINO",
+      "EUROMIDI",
+      "EUROPOLIS",
+      "EURORIDER",
+      "EVADYS",
+      "ILIADE",
+      "MAGELYS",
+      "MIDIBUS",
+      "MIDIRIDER",
+      "PROWAY",
+      "RECREO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "IRIZAR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "i2",
+      "i3",
+      "i4",
+      "i6",
+      "i8",
+      "PB"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ISUZU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "FORWARD F",
+      "GRAFTER",
+      "N (5th Generation)",
+      "N (6th Generation)"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "IVECO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      370,
+      "CITYCLASS",
+      "CROSSWAY",
+      "EUROCARGO I-III",
+      "EUROCARGO IV",
+      "EuroCargo V",
+      "EUROFIRE",
+      "EUROSTAR",
+      "EUROTECH MH",
+      "EUROTECH MP",
+      "EUROTECH MT",
+      "EUROTRAKKER",
+      "M",
+      "MAGELYS",
+      "MK",
+      "P/PA",
+      "P/PA-Haubenfahrzeuge",
+      "POWERSTAR",
+      "STRALIS",
+      "STRATOR",
+      "S-WAY",
+      "TECTOR",
+      "TRAKKER",
+      "TURBOCITY",
+      "TURBOSTAR",
+      "TURBOTECH",
+      "URBANWAY",
+      "VERTIS",
+      "X-WAY",
+      "ZETA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "JCB",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "FASTTRAC"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KAMAZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KAROSA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C-Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KARSAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ATAK",
+      "JEST",
+      "STAR"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KAVZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AURORA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KENWORTH",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "T-Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "GRANBIRD"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KIOTI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series CK",
+      "Series CS",
+      "Series DK",
+      "Series NX",
+      "Series PX",
+      "Series RX"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KRAMER",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "14-Serie",
+      "KA-Serie",
+      "KB-Serie",
+      "KL-Serie",
+      "KLS-Serie",
+      "K-Serie",
+      "KT",
+      "Pionier"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "KUBOTA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series-M"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "LAMBORGHINI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CRONO",
+      "MACH",
+      "NITRO",
+      "R1",
+      "R2",
+      "RF / RS / RV",
+      "SPARK",
+      "SPIRE",
+      "STRIKE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "LANDINI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALPINE",
+      "GLOBALFARM",
+      "LANDPOWER",
+      "MISTRAL",
+      "POWERFARM",
+      "POWERMONDIAL",
+      "REX",
+      "Series 1",
+      "Series 4",
+      "Series 5",
+      "Series 60",
+      "Series 7",
+      "TECHNOFARM",
+      "VISION"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "LAZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "LEMBERG"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "LEYLAND",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "LE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MACK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Midlum"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MAGIRUS-DEUTZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "D-Series",
+      "M-Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MAHINDRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DI 3200",
+      "LOADKING",
+      "MN",
+      "TORRO",
+      "TOURISTER",
+      "TRACO",
+      "TRUXO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CLA",
+      "E2000",
+      "EL",
+      "EM",
+      "F2000",
+      "F9",
+      "F90",
+      "F90 Unterflur",
+      "FOCL",
+      "G",
+      "G90",
+      "HELICON",
+      "HOCL",
+      "L2000",
+      "LIONÂ´S CITY",
+      "LIONÂ´S CLASSIC",
+      "LIONÂ´S COACH",
+      "LIONÂ´S COMFORT",
+      "LIONÂ´S REGIO",
+      "LIONÂ´S STAR",
+      "M 2000 L",
+      "M 2000 M",
+      "M90",
+      "ND",
+      "NG",
+      "NL",
+      "NM",
+      "NÃœ",
+      "R",
+      "SD",
+      "SG",
+      "SL",
+      "SL II",
+      "SM",
+      "SR",
+      "SÃœ",
+      "TGA",
+      "TGL",
+      "TGM",
+      "TGS",
+      "TGX",
+      "ÃœL"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MARBUS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "VIVE"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MAZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Serie 100",
+      "Serie 150",
+      "Serie 170",
+      "Serie 200",
+      "Serie 5"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MAZ-MAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "F 2000"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MCCORMICK",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C-L Series",
+      "C-Max Series",
+      "CX Series",
+      "F Series",
+      "GM",
+      "V/FN Series",
+      "X4",
+      "X50",
+      "X6",
+      "X60",
+      "X7"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MCW",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "DR"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MERCEDES-BENZ",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ACCELO",
+      "ACTROS",
+      "ACTROS MP2 / MP3",
+      "ACTROS MP4 / MP5",
+      "ANTOS",
+      "AROCS",
+      "ATEGO",
+      "ATEGO 2",
+      "ATEGO 3",
+      "ATRON",
+      "AXOR",
+      "AXOR 2",
+      "CAPACITY",
+      "CITARO (O 530)",
+      "CITO (O 520)",
+      "CONECTO (O 345)",
+      "ECONIC",
+      "ECONIC 2",
+      "INTEGRO (O 550)",
+      "INTOURO",
+      "LK/LN2",
+      "LP",
+      "MB-TRAC",
+      "MK",
+      "NG",
+      "O 100",
+      "O 301",
+      "O 302",
+      "O 303",
+      "O 304",
+      "O 305",
+      "O 307",
+      "O 309",
+      "O 317",
+      "O 330",
+      "O 340",
+      "O 371",
+      "O 400",
+      "O 402",
+      "O 403",
+      "O 404",
+      "O 405",
+      "O 407",
+      "O 408",
+      "OF",
+      "OH",
+      "SK",
+      "T2/L",
+      "TOURINO (O 510)",
+      "TOURISMO (O 350)",
+      "TOURO (O 500)",
+      "TRAVEGO (O 580)",
+      "UNIMOG",
+      "ZETROS"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MITSUBISHI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Canter (FB7, FB8, FE7, FE8) VII",
+      "Canter (FE3, FE4) V",
+      "Canter (FE5, FE6) VI",
+      "FIGHTER",
+      "Fuso",
+      "Shogun"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "MULTICAR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Fumo",
+      "M25",
+      "M26",
+      "M27",
+      "Tremo",
+      "UX100"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "NEOPLAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Airliner",
+      "Centroliner",
+      "Cityliner",
+      "Euroliner",
+      "Jetliner",
+      "Megaliner",
+      "Megashuttle",
+      "N-Serie",
+      "Skyliner",
+      "Spaceliner",
+      "Sportliner",
+      "Starliner",
+      "Tourliner",
+      "Transliner",
+      "Trendliner"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "NISSAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ATLEON",
+      "ECO-T",
+      "L-Serie",
+      "NT500"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "OPTARE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "OLYMPUS",
+      "SOLO",
+      "SOLO SR",
+      "TEMPO",
+      "TORO",
+      "VERSA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "OTOKAR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CENTRO",
+      "KENT",
+      "NAVIGO",
+      "TERRITO",
+      "VECTIO"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "PADANE",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Z-Serie"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "PASQUALI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ORION"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "PEGASO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "TRONER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "PFANZELT",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "PM TRAC"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "PLAXTON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BEAVER",
+      "CENTRO",
+      "ELITE",
+      "PANTHER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SAME",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AUDAX ST",
+      "DORADO",
+      "EXPLORER",
+      "FORTIS",
+      "LASER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SCANIA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "2 - series",
+      "3 - series",
+      "3 - series bus",
+      "4 - series",
+      "4 - series bus",
+      "CITYWIDE",
+      "F - series bus",
+      "INTERLINK",
+      "IRIZAR",
+      "IRIZAR CENTURY",
+      "IRIZAR PB",
+      "K - series",
+      "K - series bus",
+      "L,P,G,R,S - series",
+      "N - series bus",
+      "OMNICITY",
+      "OMNIEXPRESS",
+      "OMNILINK",
+      "P,G,R,T - series",
+      "TOURING"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SETRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Series 200",
+      "Series 300",
+      "Series 400",
+      "Series 500"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SHAANXI",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "F2000",
+      "F3000"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SHACMAN",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      ""
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SILEO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "S"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SISU",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "POLAR"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SML",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "COSMO",
+      "SAMRAT",
+      "SARTAJ",
+      "SUPER",
+      "SUPREME"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "SOLARIS",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ALPINO",
+      "TROLLINO",
+      "URBINO",
+      "VACANZA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "STEYR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "1290-Serie",
+      "1291-Serie",
+      "1390-Serie",
+      "1490-Serie",
+      "1491-Serie",
+      "1890-Serie",
+      "19 S-Serie (Facel.)",
+      "590-Serie",
+      "690-Serie",
+      "691-Serie",
+      "790-Serie",
+      "791-Serie",
+      "890-Serie",
+      "891-Serie",
+      "990-Serie",
+      "991-Serie",
+      "CVT",
+      "KOMPAKT",
+      "MULTI",
+      "PROFI"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "TATA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CITYRIDE",
+      "LP",
+      "LPK",
+      "LPS",
+      "LPT",
+      "NOVUS",
+      "PRIMA",
+      "SE",
+      "SFC",
+      "SK",
+      "ULTRA"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "TEMSA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AVENUE",
+      "DIAMOND",
+      "MD9",
+      "PRESTIJ",
+      "SAFARI",
+      "SAFIR",
+      "SAFIR PLUS",
+      "TOURMALIN"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "TERBERG-BENSCHOP",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "BC",
+      "RT",
+      "TT",
+      "URBIN",
+      "YT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "URAL",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      4320
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "VALTRA",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "A SERIES",
+      "N SERIES",
+      "S SERIES",
+      "T SERIES"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "VDL",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Citea",
+      "Futura",
+      "Jonkheere"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "VISEON",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "C Series",
+      "L Series"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "VOLVO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      7700,
+      7900,
+      8300,
+      8500,
+      8700,
+      8900,
+      9300,
+      9400,
+      9500,
+      9700,
+      9900,
+      "A",
+      "B10",
+      "B11",
+      "B12",
+      "B5",
+      "B6",
+      "B7",
+      "B9",
+      "F10",
+      "F12",
+      "F16",
+      "F4",
+      "F6",
+      "F7",
+      "F80",
+      "FE",
+      "FE II",
+      "FH",
+      "FH II",
+      "FH12",
+      "FH16",
+      "FH16 II",
+      "FL",
+      "FL II",
+      "FL III",
+      "FL10",
+      "FL12",
+      "FL4",
+      "FL6",
+      "FL7",
+      "FLC",
+      "FM",
+      "FM II",
+      "FM10",
+      "FM12",
+      "FM7",
+      "FM9",
+      "FMX",
+      "FMX II",
+      "FS7",
+      "N10",
+      "N12",
+      "N7",
+      "NH12",
+      "NL",
+      "VM"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "VW",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "CONSTELLATION",
+      "DELIVERY",
+      "L 80",
+      "VOLKSBUS",
+      "WORKER"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "WEITUO",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "AOYE",
+      "SWT"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "YAGMUR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Agriform"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "YUTONG",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "ZK6128"
+    ]
+  },
+  {
+    "name": "Modèle",
+    "customFieldId": {
+      "$oid": "645ff7fbfd3a9ff9897889a9"
+    },
+    "customFieldValue": "ZETOR",
+    "category": "vehicule-vente",
+    "subcategory": "Voitures",
+    "type": "select",
+    "options": [
+      "Antar",
+      "Forterra",
+      "Major",
+      "Proxima"
+    ]
+  }
+]

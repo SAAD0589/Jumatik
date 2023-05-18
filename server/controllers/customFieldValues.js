@@ -38,12 +38,12 @@ export const getCustomFieldValueByAd = async (req, res) => {
 // ADD
 export const createCustomFieldValue = async (req, res) => {
   try {
-    const { ad_id, field_id, field_name, valeure } = req.body;
+    const { ad_id, field_id, field_name, value } = req.body;
     const data = {
         ad_id: ad_id,
         field_id: field_id ,
         field_name: field_name,
-        valeure: valeure,
+        value: value,
       
     };
     console.log('req.body:', req.body);

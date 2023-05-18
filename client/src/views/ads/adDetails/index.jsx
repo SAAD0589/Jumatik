@@ -54,6 +54,7 @@ function AdDetails() {
   const [currentAd, setAd] = useState([]);
   const [selectedImage, setSelectedImage] = useState();
   const [customFieldsValues, setCustomFieldsValues] = useState([]);
+  const [subCustomFieldsValues, setSubCustomFieldsValues] = useState([]);
   const textColorPrimary = useColorModeValue('secondaryGray.900', 'white');
   const history = useHistory();
   const settings = {
@@ -110,6 +111,20 @@ function AdDetails() {
   };
   useEffect(() => {
     fetchCustomFieldsValues();
+  }, [id]);
+  const fetchSubCustomFieldsValues = async () => {
+    try {
+      await axios
+        .get(`${process.env.REACT_APP_API}/subCustomFieldsValues/get/ad/${id}`)
+        .then(response => {
+          setSubCustomFieldsValues(response.data);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    fetchSubCustomFieldsValues();
   }, [id]);
 
   const fetchUserAdsCount = async () => {
@@ -318,6 +333,37 @@ function AdDetails() {
                 {t('Caractéristiques')}
               </Text>
               <Grid templateColumns="repeat(2, 1fr)" gap={5}>
+              {subCustomFieldsValues.map(value => {
+                  return (
+                    <>
+                      {' '}
+                      <Flex>
+                        {' '}
+                        <Text
+                          color={textColorPrimary}
+                          fontWeight="bold"
+                          fontSize="xl"
+                          mt="10px"
+                          mb="4px"
+                        >
+                          {value.field_name}
+                        </Text>
+                      </Flex>
+                      <Flex>
+                        {' '}
+                        <Text
+                          color={textColorPrimary}
+                          fontWeight="regular"
+                          fontSize="xl"
+                          mt="10px"
+                          mb="4px"
+                        >
+                          {value.value}
+                        </Text>
+                      </Flex>
+                    </>
+                  );
+                })}
                 {customFieldsValues.map(value => {
                   return (
                     <>
@@ -343,12 +389,13 @@ function AdDetails() {
                           mt="10px"
                           mb="4px"
                         >
-                          {value.valeure}
+                          {value.value}
                         </Text>
                       </Flex>
                     </>
                   );
                 })}
+              
               </Grid>
             </Card>
           </Flex>

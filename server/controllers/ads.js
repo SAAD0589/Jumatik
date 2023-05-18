@@ -102,68 +102,61 @@ export const updateAd = async (req, res) => {
     }
   };
 
-export const createAd = async(req, res) => {
+  export const createAd = async (req, res) => {
     try {
-        const { secteur, userId, name, region, description, price, categoryName,subcategoryName,subcategoryLabel, adPictures, city, categoryLabel } = req.body;
-        
-        // Check if a draft already exists for the user
-        let ad = await Ad.findOne({ userId: userId, name: name, description: description, status: "Brouillon" });
-        if (!ad) {
-          // If no draft exists, create a new one
-          const user = await User.findById(userId);
-          let adPicturesResized = [];
-          if (req.files && req.files.length > 0) {
-            for (const file of req.files) {
-              const resizedFile = await sharp(file.buffer).resize(500, 500, { fit: 'cover' }).toBuffer();
-              adPicturesResized.push(resizedFile);
-            }
-          }
-          ad = new Ad({
-            userId,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            phone: user.phone,
-            categoryName,
-            categoryLabel,
-            subcategoryName,
-            subcategoryLabel,
-            name,
-            city,
-            region,
-            secteur,
-
-            description,
-            userProfilePicture: user.profilePicture,
-            adPictures: adPicturesResized,
-            price,
-            status: "En cours de Validation",
-            likes: {},
-          });
-        } else {
-          // If a draft already exists, update it with the new data
-          ad.categoryName = categoryName;
-          ad.categoryLabel = categoryLabel;
-          ad.subcategoryName = subcategoryName;
-          ad.subcategoryLabel =subcategoryLabel;
-          ad.name = name;
-          ad.city = city;
-          ad.region = region;
-          ad.secteur = secteur;
-
-          ad.description = description;
-          ad.adPictures = adPictures;
-          ad.price = price;
-          ad.status = "En cours de Validation"
-          ad.updatedAt = new Date();
-        }
-    
-        await ad.save();
-        
-        res.status(201).json(ad);
-      } catch (error) {
-        res.status(409).json({ message: error.message });
+      const { secteur, userId, name, region, description, price, categoryName, subcategoryName, subcategoryLabel, adPictures, city, categoryLabel } = req.body;
+  
+      // Check if a draft already exists for the user
+      let ad = await Ad.findOne({ userId: userId, name: name, description: description, status: "Brouillon" });
+      if (!ad) {
+        // If no draft exists, create a new one
+        const user = await User.findById(userId);
+        ad = new Ad({
+          userId,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          phone: user.phone,
+          categoryName,
+          categoryLabel,
+          subcategoryName,
+          subcategoryLabel,
+          name,
+          city,
+          region,
+          secteur,
+          description,
+          userProfilePicture: user.profilePicture,
+          adPictures,
+          price,
+          status: "En cours de Validation",
+          likes: {},
+        });
+      } else {
+        // If a draft already exists, update it with the new data
+        ad.categoryName = categoryName;
+        ad.categoryLabel = categoryLabel;
+        ad.subcategoryName = subcategoryName;
+        ad.subcategoryLabel = subcategoryLabel;
+        ad.name = name;
+        ad.city = city;
+        ad.region = region;
+        ad.secteur = secteur;
+        ad.description = description;
+        ad.adPictures = adPictures;
+        ad.price = price;
+        ad.status = "En cours de Validation";
+        ad.updatedAt = new Date();
       }
-};
+  
+      await ad.save();
+  
+      res.status(201).json(ad);
+    } catch (error) {
+      res.status(409).json({ message: error.message });
+    }
+  };
+  
+  
 
 // READ
 export const getAd = async(req, res) => {

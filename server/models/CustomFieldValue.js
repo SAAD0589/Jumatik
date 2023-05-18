@@ -13,7 +13,7 @@ const CustomFieldValueSchema = new mongoose.Schema({
        
     },
 
-    valeure: {
+    value: {
         type: String,
        
     },

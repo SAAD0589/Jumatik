@@ -79,6 +79,7 @@ function UpdateAd() {
 
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('');
+  const [tableSubFields, setTableSubFields] = useState([]);
 
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState('');
@@ -132,9 +133,10 @@ function UpdateAd() {
   
   useEffect(() => {
     if (selectedSubcategory) {
-      axios.get(`${process.env.REACT_APP_API}/customFields/get/subcategory/${selectedSubcategory}`)
+      axios
+        .get(`${process.env.REACT_APP_API}/customFields/get/subcategory/${selectedSubcategory}`)
         .then(response => {
-          setTableFields(response.data);
+          setTableFields(response.data[0]); // set the first object in the array as the state value
         })
         .catch(error => {
           console.log(error);
@@ -181,27 +183,97 @@ function UpdateAd() {
       [name]: value,
     });
   };
-  const [fieldsValues, setFieldsValues] = useState({
+  const [fieldsValues, setFieldsValues] = useState([{
     ad_id: '',
     field_id: '',
     field_name: '',
     value: '',
-  });
+  }]);
+  const [subFieldsValues, setSubFieldsValues] = useState([{
+    ad_id: '',
+    field_id: '',
+    field_name: '',
+    value: '',
+  }]);
   const [file, setFile] = useState([]);
   const handleFieldsChange = (fieldId, fieldType, e) => {
     let value;
-    if (fieldType === "radio") {
+    if (fieldType === 'radio') {
       value = e;
-    } else if (fieldType === "select") {
+    } else if (fieldType === 'select') {
       value = e.target.value;
     } else {
       value = e.target.value;
     }
-    setFieldsValues(prevFieldsValues => ({
-      ...prevFieldsValues,
-      [fieldId]: { valeure: value },
-    }));
+  
+    setFieldsValues(prevFieldsValues => {
+      const updatedValues = [...prevFieldsValues];
+      const index = updatedValues.findIndex(item => item.field_id === fieldId);
+      if (index >= 0) {
+        updatedValues[index].value = value;
+      } else {
+        updatedValues.push({
+          ad_id: ad._id,
+          field_id: fieldId,
+          field_name: e.target.name,
+          value: value,
+        });
+      }
+      return updatedValues;
+    });
   };
+  useEffect(() => {
+    
+     
+    console.log(fieldsValues.find(item => item.field_id === tableFields._id));
+  
+    axios
+    .get(
+      `${process.env.REACT_APP_API}/subCustomFields/get/customField/value/${fieldsValues.find(item => item.field_id === tableFields._id)?.value}`
+    )
+    .then(response => {
+      setTableSubFields(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    ;
+  
+  
+  }, [fieldsValues,tableFields._id]);
+  
+    
+  
+  
+    
+    
+    const handleSubFieldsChange = (subfieldId, subfieldType, e) => {
+      let value;
+    if (subfieldType === 'radio') {
+      value = e;
+    } else if (subfieldType === 'select') {
+      value = e.target.value;
+    } else {
+      value = e.target.value;
+    }
+  
+    setSubFieldsValues(prevFieldsValues => {
+      const updatedValues = [...prevFieldsValues];
+      const index = updatedValues.findIndex(item => item.field_id === subfieldId);
+      if (index >= 0) {
+        updatedValues[index].value = value;
+      } else {
+        updatedValues.push({
+          ad_id: ad._id,
+          field_id: subfieldId,
+          field_name: e.target.name,
+          value: value,
+        });
+      }
+      return updatedValues;
+    });
+    };
+  
   const onFileChange = event => {
     setAd({
       ...ad, //spread operator
@@ -216,7 +288,7 @@ function UpdateAd() {
       console.error(error);
     }
   }
-  const add = async (fieldsValues) => {
+  const add = async (fieldsValues,subfieldsValues) => {
     const formData = new FormData();
     const promises = [];
     formData.append('userId', ad.userId);
@@ -268,58 +340,62 @@ function UpdateAd() {
 
       const adToken = result.data;
       setAdId(adToken._id);
-      const fieldValues = tableFields.map((field) => {
-        return {
+      const foundFieldValue = fieldsValues.find(item => item.field_id === tableFields._id);
+
+      const fieldValue = {
+        
           ad_id: adToken._id,
-          field_id: field._id,
-          field_name: field.name,
-          valeure: fieldsValues[field._id]?.valeure,
+          field_id: tableFields._id,
+          field_name: tableFields.name,
+          value: foundFieldValue ? foundFieldValue.value : ''
         };
-      });
-      for (const fieldValue of fieldValues) {
+      
+      
         try {
           const response = axios.post(
             `${process.env.REACT_APP_API}/customFieldsValues/add/new`,
             fieldValue,
             {
               headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
               },
             }
           );
           console.log(response.data);
           // show a success message to the user
-          toast.success("Field value created successfully!", {
-            position: "top-center",
+          toast.success('Field value created successfully!', {
+            position: 'top-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: 'colored',
           });
         } catch (error) {
           console.log(error);
           // show an error message to the user
-          toast.error("Error creating field value!", {
-            position: "top-center",
+          toast.error('Error creating field value!', {
+            position: 'top-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: 'colored',
           });
         }
-      }
-      const fieldValuesCat = tableFieldsCat.map((field) => {
+      
+
+      const fieldValuesCat = tableFieldsCat.map(field => {
+        const foundFieldValue = fieldsValues.find(item => item.field_id === field._id);
         return {
           ad_id: adToken._id,
           field_id: field._id,
           field_name: field.name,
-          valeure: fieldsValues[field._id]?.valeure,
+          value: foundFieldValue ? foundFieldValue.value : ''
         };
       });
       for (const fieldValueCat of fieldValuesCat) {
@@ -329,34 +405,82 @@ function UpdateAd() {
             fieldValueCat,
             {
               headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
               },
             }
           );
           console.log(response.data);
           // show a success message to the user
-          toast.success("Field value created successfully!", {
-            position: "top-center",
+          toast.success('Field value created successfully!', {
+            position: 'top-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: 'colored',
           });
         } catch (error) {
           console.log(error);
           // show an error message to the user
-          toast.error("Error creating field value!", {
-            position: "top-center",
+          toast.error('Error creating field value!', {
+            position: 'top-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: 'colored',
+          });
+        }
+      }
+   
+      const subfieldValues = tableSubFields.map(field => {
+        const foundFieldValue = subfieldsValues.find(item => item.field_id === field._id);
+        return {
+          ad_id: adToken._id,
+          field_id: field._id,
+          field_name: field.name,
+          value: foundFieldValue ? foundFieldValue.value : ''
+        };
+      });
+      for (const subfield of subfieldValues) {
+        try {
+          const response = axios.post(
+            `${process.env.REACT_APP_API}/subCustomFieldsValues/add/new`,
+            subfield,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+              },
+            }
+          );
+          console.log(response.data);
+          // show a success message to the user
+          toast.success('Field value created successfully!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+          });
+        } catch (error) {
+          console.log(error);
+          // show an error message to the user
+          toast.error('Error creating field value!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
           });
         }
       }
@@ -457,7 +581,7 @@ function UpdateAd() {
       return;
     }
 
-    await add(fieldsValues);
+    await add(fieldsValues,subFieldsValues);
     toast(
       `Nous avons bien reçu votre annonce et nous vous remercions de votre confiance. Votre annonce est en cours de vérification et sera publiée prochainement si elle respecte nos critères de publication.
 
@@ -510,7 +634,7 @@ function UpdateAd() {
           fontWeight="600"
         >
 {t('Modifier votre annonce')}        </Text>
-        <FormControl onSubmit={e => handleSubmit(e)}>
+<FormControl onSubmit={e => handleSubmit(e)}>
           <FormLabel
             display="flex"
             ms="4px"
@@ -520,7 +644,7 @@ function UpdateAd() {
             mb="8px"
             mt={10}
           >
-             {t('Ajoutez les images du produit (Max 6 images)')}{' '}
+            {t('Ajoutez les images du produit (Max 6 images)')}{' '}
           </FormLabel>{' '}
           <Stack direction={['column', 'row']} spacing={6} mb="20px">
             <Center w="full">
@@ -550,7 +674,8 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-               {t(`Nom de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
+              {t(`Nom de l 'annonce`)}
+              <Text color={brandStars}>*</Text>{' '}
             </FormLabel>{' '}
             <Input
               id="name"
@@ -577,7 +702,7 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-               {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -594,7 +719,6 @@ function UpdateAd() {
                   category => category._id === selectedCategoryId
                 );
                 setSelectedSubcategory(null);
-
                 setSelectedCategory(selectedCategory.name);
                 setSelectedCategoryId(selectedCategoryId);
                 setSelectedCategoryLabel(selectedCategory.label);
@@ -622,7 +746,8 @@ function UpdateAd() {
               color={textColor}
               mb="8px"
             >
-               {t(`Choisir une sous-categorie`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisir une sous-categorie`)}{' '}
+              <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <Select
               id="category"
@@ -633,7 +758,6 @@ function UpdateAd() {
               size="lg"
               variant="auth"
               onChange={e => {
-
                 setSelectedSubcategory(e.target.value);
                 setSelectedSubcategoryLabel(
                   e.target.options[e.target.selectedIndex].text
@@ -654,158 +778,296 @@ function UpdateAd() {
               ))}{' '}
             </Select>
           </Box>
-          {selectedCategory &&
-  <>
-    {tableFieldsCat?.map(field => (
-      <Box height="90px">
-        <FormLabel
-          ms="4px"
-          fontSize="sm"
-          fontWeight="500"
-          color={textColor}
-          display="flex"
-        >
-          {field.name}
-        </FormLabel>
-        <FormControl isRequired={true}>
-          {field.type === 'text' &&
-            <InputGroup size="md">
-              <Input
-                fontSize="sm"
-                placeholder="Enter text"
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-  name={field.name}
-              />
-            </InputGroup>
-          }
-          {field.type === 'textarea' &&
-            <Textarea
-              fontSize="sm"
-              placeholder="Enter text"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
-          }
-          {field.type === 'radio' &&
-            <RadioGroup               variant="auth"
-
-                  name={field.name}
-                  value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-              mb="24px"
-              size="lg"
-            >
-              <Stack direction="row">
-                {field.options.map(option => (
-                  <Radio value={option} key={option}>{option}</Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
-          }
-          {field.type === 'select' &&
-            <Select
-              placeholder="Select option"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}         
-    fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-            >
-              {field.options.map(option => (
-                <option key={option} value={option}>{option}</option>
+          {selectedSubcategory && (
+            <>
+              
+                <>
+                <Box height="90px">
+                  <FormLabel
+                    ms="4px"
+                    fontSize="sm"
+                    fontWeight="500"
+                    color={textColor}
+                    display="flex"
+                  >
+                    {tableFields.name}
+                  </FormLabel>
+                  <FormControl isRequired={true}>
+                    {tableFields.type === 'text' && (
+                      <InputGroup size="md">
+                        <Input
+                          fontSize="sm"
+                          placeholder="Enter text"
+                          mb="24px"
+                          size="lg"
+                          variant="auth"
+                          value={fieldsValues.find(item => item.field_id === tableFields._id)?.value}
+                          onChange={value =>
+                            handleFieldsChange(tableFields._id, tableFields.type, value)
+                          }
+                          name={tableFields.name}
+                        />
+                      </InputGroup>
+                    )}
+                    {tableFields.type === 'textarea' && (
+                      <Textarea
+                        fontSize="sm"
+                        placeholder="Enter text"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                        name={tableFields.name}
+                        value={fieldsValues.find(item => item.field_id === tableFields._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(tableFields._id, tableFields.type, value)
+                        }
+                      />
+                    )}
+                    {tableFields.type === 'radio' && (
+                      <RadioGroup
+                        variant="auth"
+                        name={tableFields.name}
+                        value={fieldsValues.find(item => item.field_id === tableFields._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(tableFields._id, tableFields.type, value)
+                        }
+                        mb="24px"
+                        size="lg"
+                      >
+                        <Stack direction="row">
+                          {tableFields.options.map(option => (
+                            <Radio value={option} key={option}>
+                              {option}
+                            </Radio>
+                          ))}
+                        </Stack>
+                      </RadioGroup>
+                    )}
+                    {tableFields.type === 'select' && (
+                      <Select
+                        placeholder="Select option"
+                        name={tableFields.name}
+                        value={fieldsValues.find(item => item.field_id === tableFields._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(tableFields._id, tableFields.type, value)
+                        }
+                        fontSize="sm"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                      >
+                        {tableFields.options.map(option => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  </FormControl>
+                </Box>
+                  {console.log(fieldsValues.find(item => item.field_id === tableFields._id))}
+                  {fieldsValues.find(item => item.field_id === tableFields._id) && (
+                    <>
+                      {tableSubFields.map(subField => (
+                        
+                        <Box height="90px">
+                          <FormLabel
+                            ms="4px"
+                            fontSize="sm"
+                            fontWeight="500"
+                            color={textColor}
+                            display="flex"
+                          >
+                            {subField.name}
+                          </FormLabel>
+                          <FormControl isRequired={true}>
+                            {subField.type === 'text' && (
+                              <InputGroup size="md">
+                                <Input
+                                  fontSize="sm"
+                                  placeholder="Enter text"
+                                  mb="24px"
+                                  size="lg"
+                                  variant="auth"
+                                  value={subFieldsValues.find(item => item.field_id === subField._id)?.value}
+                                  onChange={value =>
+                                    handleFieldsChange(
+                                      subField._id,
+                                      subField.type,
+                                      value
+                                    )
+                                  }
+                                  name={subField.name}
+                                />
+                              </InputGroup>
+                            )}
+                            {subField.type === 'textarea' && (
+                              <Textarea
+                                fontSize="sm"
+                                placeholder="Enter text"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                                name={subField.name}
+                                value={subFieldsValues.find(item => item.field_id === subField._id)?.value}
+                                onChange={value =>
+                                  handleSubFieldsChange(
+                                    subField._id,
+                                    subField.type,
+                                    value
+                                  )
+                                }
+                              />
+                            )}
+                            {subField.type === 'radio' && (
+                              <RadioGroup
+                                variant="auth"
+                                name={subField.name}
+                                value={subFieldsValues.find(item => item.field_id === subField._id)?.value}
+                                onChange={value =>
+                                  handleSubFieldsChange(
+                                    subField._id,
+                                    subField.type,
+                                    value
+                                  )
+                                }
+                                mb="24px"
+                                size="lg"
+                              >
+                                <Stack direction="row">
+                                  {subField.options.map(option => (
+                                    <Radio value={option} key={option}>
+                                      {option}
+                                    </Radio>
+                                  ))}
+                                </Stack>
+                              </RadioGroup>
+                            )}
+                            {subField.type === 'select' && (
+                              <Select
+                                placeholder="Select option"
+                                name={subField.name}
+                                value={subFieldsValues.find(item => item.field_id === subField._id)?.value}
+                                onChange={value =>
+                                  handleSubFieldsChange(
+                                    subField._id,
+                                    subField.type,
+                                    value
+                                  )
+                                }
+                                fontSize="sm"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                              >
+                                {subField.options.map(option => (
+                                  <option key={option} value={option}>
+                                    {option}
+                                  </option>
+                                ))}
+                              </Select>
+                            )}
+                          </FormControl>
+                        </Box>
+                      ))}
+                      
+                    </>
+                  )}
+                 
+                  </> 
+              
+            </>
+          )}
+          {selectedCategory && (
+            <>
+              {tableFieldsCat.map(field => (
+                <Box height="90px">
+                  <FormLabel
+                    ms="4px"
+                    fontSize="sm"
+                    fontWeight="500"
+                    color={textColor}
+                    display="flex"
+                  >
+                    {field.name}
+                  </FormLabel>
+                  <FormControl isRequired={true}>
+                    {field.type === 'text' && (
+                      <InputGroup size="md">
+                        <Input
+                          fontSize="sm"
+                          placeholder="Enter text"
+                          mb="24px"
+                          size="lg"
+                          variant="auth"
+                          value={fieldsValues.find(item => item.field_id === field._id)?.value}
+                          onChange={value =>
+                            handleFieldsChange(field._id, field.type, value)
+                          }
+                          name={field.name}
+                        />
+                      </InputGroup>
+                    )}
+                    {field.type === 'textarea' && (
+                      <Textarea
+                        fontSize="sm"
+                        placeholder="Enter text"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                        name={field.name}
+                        value={fieldsValues.find(item => item.field_id === field._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                      />
+                    )}
+                    {field.type === 'radio' && (
+                      <RadioGroup
+                        variant="auth"
+                        name={field.name}
+                        value={fieldsValues.find(item => item.field_id === field._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                        mb="24px"
+                        size="lg"
+                      >
+                        <Stack direction="row">
+                          {field.options.map(option => (
+                            <Radio value={option} key={option}>
+                              {option}
+                            </Radio>
+                          ))}
+                        </Stack>
+                      </RadioGroup>
+                    )}
+                    {field.type === 'select' && (
+                      <Select
+                        placeholder="Select option"
+                        name={field.name}
+                        value={fieldsValues.find(item => item.field_id === field._id)?.value}
+                        onChange={value =>
+                          handleFieldsChange(field._id, field.type, value)
+                        }
+                        fontSize="sm"
+                        mb="24px"
+                        size="lg"
+                        variant="auth"
+                      >
+                        {field.options.map(option => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </Select>
+                    )}
+                  </FormControl>
+                </Box>
               ))}
-            </Select>
-          }
-        </FormControl>
-      </Box>
-    ))}
-  </>
-}
-          {selectedSubcategory &&
-  <>
-    {tableFields?.map(field => (
-      <Box height="90px">
-        <FormLabel
-          ms="4px"
-          fontSize="sm"
-          fontWeight="500"
-          color={textColor}
-          display="flex"
-        >
-          {field.name}
-        </FormLabel>
-        <FormControl isRequired={true}>
-          {field.type === 'text' &&
-            <InputGroup size="md">
-              <Input
-                fontSize="sm"
-                placeholder="Enter text"
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-  name={field.name}
-              />
-            </InputGroup>
-          }
-          {field.type === 'textarea' &&
-            <Textarea
-              fontSize="sm"
-              placeholder="Enter text"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}            />
-          }
-          {field.type === 'radio' &&
-            <RadioGroup
-                  name={field.name}
-                  value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}
-              mb="24px"
-              size="lg"
-            >
-              <Stack direction="row">
-                {field.options.map(option => (
-                  <Radio value={option} key={option}>{option}</Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
-          }
-          {field.type === 'select' &&
-            <Select
-              placeholder="Select option"
-              name={field.name}
-              value={fieldsValues[field._id]?.valeure}
-    onChange={value => handleFieldsChange(field._id, field.type, value)}         
-    fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-            >
-              {field.options.map(option => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </Select>
-          }
-        </FormControl>
-      </Box>
-    ))}
-  </>
-}
-
+            </>
+          )}
+         
           <Box height="90px">
             <FormLabel
               ms="4px"
@@ -814,7 +1076,7 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-               {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup size="md">
               <Input
@@ -830,7 +1092,6 @@ function UpdateAd() {
               />
             </InputGroup>{' '}
           </Box>{' '}
-         
           <Box height="90px">
             <FormLabel
               ms="4px"
@@ -839,7 +1100,7 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-               {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -883,7 +1144,8 @@ function UpdateAd() {
               color={textColor}
               display="flex"
             >
-              {t(`Choisissez votre secteur`)} <Text color={brandStars}> * </Text>{' '}
+              {t(`Choisissez votre secteur`)}{' '}
+              <Text color={brandStars}> * </Text>{' '}
             </FormLabel>{' '}
             <InputGroup>
               <Select
@@ -915,7 +1177,8 @@ function UpdateAd() {
             color={textColor}
             mb="8px"
           >
-             {t(`Entrez la description de l 'annonce`)}<Text color={brandStars}>*</Text>{' '}
+            {t(`Entrez la description de l 'annonce`)}
+            <Text color={brandStars}>*</Text>{' '}
           </FormLabel>
           <Textarea
             id="description"
@@ -932,8 +1195,9 @@ function UpdateAd() {
           />
           <Alert status="error" mb={5} align="start">
             <AlertDescription>
-            {t(`Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`)}
-             
+              {t(
+                `Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`
+              )}
             </AlertDescription>
           </Alert>
           <Button
@@ -945,7 +1209,7 @@ function UpdateAd() {
             mb="24px"
             onClick={handleSubmit}
           >
-             {t(`Ajouter`)}{' '}
+            {t(`Ajouter`)}{' '}
           </Button>{' '}
         </FormControl>
         <Flex

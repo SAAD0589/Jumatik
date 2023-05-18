@@ -1,0 +1,3652 @@
+[
+  {
+    "id": 1,
+    "marque": "AEBI",
+    "modele": "TT"
+  },
+  {
+    "id": 2,
+    "marque": "AGCO",
+    "modele": "DT Series"
+  },
+  {
+    "id": 3,
+    "marque": "AL-GHAZI",
+    "modele": 480
+  },
+  {
+    "id": 4,
+    "marque": "AL-GHAZI",
+    "modele": 640
+  },
+  {
+    "id": 5,
+    "marque": "AL-GHAZI",
+    "modele": "GHAZI"
+  },
+  {
+    "id": 6,
+    "marque": "ALLGAIER",
+    "modele": "Series A"
+  },
+  {
+    "id": 7,
+    "marque": "ALLGAIER",
+    "modele": "Series R"
+  },
+  {
+    "id": 8,
+    "marque": "AMW",
+    "modele": "Series 1600"
+  },
+  {
+    "id": 9,
+    "marque": "AMW",
+    "modele": "Series 2500"
+  },
+  {
+    "id": 10,
+    "marque": "AMW",
+    "modele": "Series 3100"
+  },
+  {
+    "id": 11,
+    "marque": "AMW",
+    "modele": "Series 4000"
+  },
+  {
+    "id": 12,
+    "marque": "AMW",
+    "modele": "Series 4900"
+  },
+  {
+    "id": 13,
+    "marque": "ARMATRAC",
+    "modele": "Serie-11"
+  },
+  {
+    "id": 14,
+    "marque": "ASKAM",
+    "modele": "8 Litre"
+  },
+  {
+    "id": 15,
+    "marque": "ASKAM",
+    "modele": "AS 950"
+  },
+  {
+    "id": 16,
+    "marque": "ASKAM",
+    "modele": "Hi-Ex"
+  },
+  {
+    "id": 17,
+    "marque": "ASTRA",
+    "modele": "HD 7"
+  },
+  {
+    "id": 18,
+    "marque": "ASTRA",
+    "modele": "HD 7-C"
+  },
+  {
+    "id": 19,
+    "marque": "ASTRA",
+    "modele": "HD 8"
+  },
+  {
+    "id": 20,
+    "marque": "ASTRA",
+    "modele": "HD 9"
+  },
+  {
+    "id": 21,
+    "marque": "AVIA",
+    "modele": "D-Line"
+  },
+  {
+    "id": 22,
+    "marque": "AYATS",
+    "modele": "Bravo"
+  },
+  {
+    "id": 23,
+    "marque": "BASAK",
+    "modele": "2000 Series"
+  },
+  {
+    "id": 24,
+    "marque": "BASAK",
+    "modele": "BE Series"
+  },
+  {
+    "id": 25,
+    "marque": "BAUTZ",
+    "modele": "Series AS/AL/AW"
+  },
+  {
+    "id": 26,
+    "marque": "BCS",
+    "modele": "VOLCAN"
+  },
+  {
+    "id": 27,
+    "marque": "BEDFORD",
+    "modele": "TK/MK"
+  },
+  {
+    "id": 28,
+    "marque": "BELARUS",
+    "modele": "Series 100"
+  },
+  {
+    "id": 29,
+    "marque": "BELARUS",
+    "modele": "Series 1000"
+  },
+  {
+    "id": 30,
+    "marque": "BERKHOF",
+    "modele": "Ambassador"
+  },
+  {
+    "id": 31,
+    "marque": "BHARATBENZ",
+    "modele": "HEAVY-DUTY"
+  },
+  {
+    "id": 32,
+    "marque": "BHARATBENZ",
+    "modele": "MEDIUM-DUTY"
+  },
+  {
+    "id": 33,
+    "marque": "BMC",
+    "modele": "ALYOS"
+  },
+  {
+    "id": 34,
+    "marque": "BMC",
+    "modele": "BELDE"
+  },
+  {
+    "id": 35,
+    "marque": "BMC",
+    "modele": "CONDOR"
+  },
+  {
+    "id": 36,
+    "marque": "BMC",
+    "modele": "FATIH"
+  },
+  {
+    "id": 37,
+    "marque": "BMC",
+    "modele": "HAWK"
+  },
+  {
+    "id": 38,
+    "marque": "BMC",
+    "modele": "KARISMA"
+  },
+  {
+    "id": 39,
+    "marque": "BMC",
+    "modele": "LEVEND"
+  },
+  {
+    "id": 40,
+    "marque": "BMC",
+    "modele": "MEGASTAR"
+  },
+  {
+    "id": 41,
+    "marque": "BMC",
+    "modele": "MIDILUX"
+  },
+  {
+    "id": 42,
+    "marque": "BMC",
+    "modele": "NIFTY"
+  },
+  {
+    "id": 43,
+    "marque": "BMC",
+    "modele": "PROBUS"
+  },
+  {
+    "id": 44,
+    "marque": "BMC",
+    "modele": "PROCITY"
+  },
+  {
+    "id": 45,
+    "marque": "BMC",
+    "modele": "PROFESSIONAL"
+  },
+  {
+    "id": 46,
+    "marque": "BMC",
+    "modele": "SCHOOLBUS"
+  },
+  {
+    "id": 47,
+    "marque": "BOVA",
+    "modele": "Futura"
+  },
+  {
+    "id": 48,
+    "marque": "BOVA",
+    "modele": "Jonkheere"
+  },
+  {
+    "id": 49,
+    "marque": "BOVA",
+    "modele": "Lexio"
+  },
+  {
+    "id": 50,
+    "marque": "BOVA",
+    "modele": "Magiq"
+  },
+  {
+    "id": 51,
+    "marque": "BOVA",
+    "modele": "Synergy"
+  },
+  {
+    "id": 52,
+    "marque": "BRANSON",
+    "modele": "Serie-00"
+  },
+  {
+    "id": 53,
+    "marque": "BRANSON",
+    "modele": "Serie-10"
+  },
+  {
+    "id": 54,
+    "marque": "BRANSON",
+    "modele": "Serie-20"
+  },
+  {
+    "id": 55,
+    "marque": "BREDAMENARINIBUS",
+    "modele": "AVANCITY"
+  },
+  {
+    "id": 56,
+    "marque": "BREDAMENARINIBUS",
+    "modele": "LANDER"
+  },
+  {
+    "id": 57,
+    "marque": "BREDAMENARINIBUS",
+    "modele": "M-Serie"
+  },
+  {
+    "id": 58,
+    "marque": "BREDAMENARINIBUS",
+    "modele": "VIVACITY"
+  },
+  {
+    "id": 59,
+    "marque": "BREDAMENARINIBUS",
+    "modele": "ZEUS"
+  },
+  {
+    "id": 60,
+    "marque": "BUCHER",
+    "modele": "Series D"
+  },
+  {
+    "id": 61,
+    "marque": "BYD",
+    "modele": "C7"
+  },
+  {
+    "id": 62,
+    "marque": "BYD",
+    "modele": "K9"
+  },
+  {
+    "id": 63,
+    "marque": "CARON",
+    "modele": "Serie-CT"
+  },
+  {
+    "id": 64,
+    "marque": "CARRARO",
+    "modele": "AGRICUBE"
+  },
+  {
+    "id": 65,
+    "marque": "CARRARO",
+    "modele": "ERGIT"
+  },
+  {
+    "id": 66,
+    "marque": "CLAAS",
+    "modele": "ARION"
+  },
+  {
+    "id": 67,
+    "marque": "CLAAS",
+    "modele": "ATOS"
+  },
+  {
+    "id": 68,
+    "marque": "CLAAS",
+    "modele": "AXION"
+  },
+  {
+    "id": 69,
+    "marque": "CLAAS",
+    "modele": "ELIOS"
+  },
+  {
+    "id": 70,
+    "marque": "CLAAS",
+    "modele": "NEXOS"
+  },
+  {
+    "id": 71,
+    "marque": "CLAAS",
+    "modele": "XERION"
+  },
+  {
+    "id": 72,
+    "marque": "DAEWOO",
+    "modele": "NOVUS"
+  },
+  {
+    "id": 73,
+    "marque": "DAEWOO",
+    "modele": "PRIMA"
+  },
+  {
+    "id": 74,
+    "marque": "DAF",
+    "modele": 45
+  },
+  {
+    "id": 75,
+    "marque": "DAF",
+    "modele": 55
+  },
+  {
+    "id": 76,
+    "marque": "DAF",
+    "modele": 65
+  },
+  {
+    "id": 77,
+    "marque": "DAF",
+    "modele": "65 CF"
+  },
+  {
+    "id": 78,
+    "marque": "DAF",
+    "modele": 75
+  },
+  {
+    "id": 79,
+    "marque": "DAF",
+    "modele": "75 CF"
+  },
+  {
+    "id": 80,
+    "marque": "DAF",
+    "modele": 85
+  },
+  {
+    "id": 81,
+    "marque": "DAF",
+    "modele": "85 CF"
+  },
+  {
+    "id": 82,
+    "marque": "DAF",
+    "modele": 95
+  },
+  {
+    "id": 83,
+    "marque": "DAF",
+    "modele": "95 XF"
+  },
+  {
+    "id": 84,
+    "marque": "DAF",
+    "modele": "CF"
+  },
+  {
+    "id": 85,
+    "marque": "DAF",
+    "modele": "CF 65"
+  },
+  {
+    "id": 86,
+    "marque": "DAF",
+    "modele": "CF 75"
+  },
+  {
+    "id": 87,
+    "marque": "DAF",
+    "modele": "CF 85"
+  },
+  {
+    "id": 88,
+    "marque": "DAF",
+    "modele": "DB"
+  },
+  {
+    "id": 89,
+    "marque": "DAF",
+    "modele": "F 1000"
+  },
+  {
+    "id": 90,
+    "marque": "DAF",
+    "modele": "F 1100"
+  },
+  {
+    "id": 91,
+    "marque": "DAF",
+    "modele": "F 1200"
+  },
+  {
+    "id": 92,
+    "marque": "DAF",
+    "modele": "F 1300"
+  },
+  {
+    "id": 93,
+    "marque": "DAF",
+    "modele": "F 1400"
+  },
+  {
+    "id": 94,
+    "marque": "DAF",
+    "modele": "F 1500"
+  },
+  {
+    "id": 95,
+    "marque": "DAF",
+    "modele": "F 1600"
+  },
+  {
+    "id": 96,
+    "marque": "DAF",
+    "modele": "F 1700"
+  },
+  {
+    "id": 97,
+    "marque": "DAF",
+    "modele": "F 1800"
+  },
+  {
+    "id": 98,
+    "marque": "DAF",
+    "modele": "F 1900"
+  },
+  {
+    "id": 99,
+    "marque": "DAF",
+    "modele": "F 2100"
+  },
+  {
+    "id": 100,
+    "marque": "DAF",
+    "modele": "F 2200"
+  },
+  {
+    "id": 101,
+    "marque": "DAF",
+    "modele": "F 2300"
+  },
+  {
+    "id": 102,
+    "marque": "DAF",
+    "modele": "F 2500"
+  },
+  {
+    "id": 103,
+    "marque": "DAF",
+    "modele": "F 2600"
+  },
+  {
+    "id": 104,
+    "marque": "DAF",
+    "modele": "F 2700"
+  },
+  {
+    "id": 105,
+    "marque": "DAF",
+    "modele": "F 2800"
+  },
+  {
+    "id": 106,
+    "marque": "DAF",
+    "modele": "F 2900"
+  },
+  {
+    "id": 107,
+    "marque": "DAF",
+    "modele": "F 3200"
+  },
+  {
+    "id": 108,
+    "marque": "DAF",
+    "modele": "F 3300"
+  },
+  {
+    "id": 109,
+    "marque": "DAF",
+    "modele": "F 3600"
+  },
+  {
+    "id": 110,
+    "marque": "DAF",
+    "modele": "F 500"
+  },
+  {
+    "id": 111,
+    "marque": "DAF",
+    "modele": "F 600"
+  },
+  {
+    "id": 112,
+    "marque": "DAF",
+    "modele": "F 700"
+  },
+  {
+    "id": 113,
+    "marque": "DAF",
+    "modele": "F 800"
+  },
+  {
+    "id": 114,
+    "marque": "DAF",
+    "modele": "F 900"
+  },
+  {
+    "id": 115,
+    "marque": "DAF",
+    "modele": "F2000"
+  },
+  {
+    "id": 116,
+    "marque": "DAF",
+    "modele": "LF"
+  },
+  {
+    "id": 117,
+    "marque": "DAF",
+    "modele": "LF 45"
+  },
+  {
+    "id": 118,
+    "marque": "DAF",
+    "modele": "LF 55"
+  },
+  {
+    "id": 119,
+    "marque": "DAF",
+    "modele": "N 2800"
+  },
+  {
+    "id": 120,
+    "marque": "DAF",
+    "modele": "N 3300"
+  },
+  {
+    "id": 121,
+    "marque": "DAF",
+    "modele": "SB"
+  },
+  {
+    "id": 122,
+    "marque": "DAF",
+    "modele": "TB"
+  },
+  {
+    "id": 123,
+    "marque": "DAF",
+    "modele": "XF"
+  },
+  {
+    "id": 124,
+    "marque": "DAF",
+    "modele": "XF 105"
+  },
+  {
+    "id": 125,
+    "marque": "DAF",
+    "modele": "XF 95"
+  },
+  {
+    "id": 126,
+    "marque": "DENNIS",
+    "modele": "DAGGER"
+  },
+  {
+    "id": 127,
+    "marque": "DENNIS",
+    "modele": "ELITE"
+  },
+  {
+    "id": 128,
+    "marque": "DENNIS",
+    "modele": "ELITE 2"
+  },
+  {
+    "id": 129,
+    "marque": "DENNIS",
+    "modele": "ENVIRO"
+  },
+  {
+    "id": 130,
+    "marque": "DENNIS",
+    "modele": "OLYMPUS"
+  },
+  {
+    "id": 131,
+    "marque": "DENNIS",
+    "modele": "PHÃ–NIX 2"
+  },
+  {
+    "id": 132,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROFARM"
+  },
+  {
+    "id": 133,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROKID"
+  },
+  {
+    "id": 134,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROLUX"
+  },
+  {
+    "id": 135,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROPLUS"
+  },
+  {
+    "id": 136,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROPRIMA"
+  },
+  {
+    "id": 137,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROSTAR"
+  },
+  {
+    "id": 138,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON"
+  },
+  {
+    "id": 139,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON K"
+  },
+  {
+    "id": 140,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON L"
+  },
+  {
+    "id": 141,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON M"
+  },
+  {
+    "id": 142,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON TTV"
+  },
+  {
+    "id": 143,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROTRON X"
+  },
+  {
+    "id": 144,
+    "marque": "DEUTZ-FAHR",
+    "modele": "AGROXTRA"
+  },
+  {
+    "id": 145,
+    "marque": "DEUTZ-FAHR",
+    "modele": "D05"
+  },
+  {
+    "id": 146,
+    "marque": "DEUTZ-FAHR",
+    "modele": "D06"
+  },
+  {
+    "id": 147,
+    "marque": "DEUTZ-FAHR",
+    "modele": "D07"
+  },
+  {
+    "id": 148,
+    "marque": "DEUTZ-FAHR",
+    "modele": "DX"
+  },
+  {
+    "id": 149,
+    "marque": "DEUTZ-FAHR",
+    "modele": "F-Serie"
+  },
+  {
+    "id": 150,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 11"
+  },
+  {
+    "id": 151,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 5"
+  },
+  {
+    "id": 152,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 5 C"
+  },
+  {
+    "id": 153,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 5 G"
+  },
+  {
+    "id": 154,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 6"
+  },
+  {
+    "id": 155,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 7"
+  },
+  {
+    "id": 156,
+    "marque": "DEUTZ-FAHR",
+    "modele": "Series 9"
+  },
+  {
+    "id": 157,
+    "marque": "DODGE",
+    "modele": "E"
+  },
+  {
+    "id": 158,
+    "marque": "DONGFENG",
+    "modele": "BISON"
+  },
+  {
+    "id": 159,
+    "marque": "DONGFENG",
+    "modele": "DF"
+  },
+  {
+    "id": 160,
+    "marque": "DONGFENG",
+    "modele": "KINGRUN"
+  },
+  {
+    "id": 161,
+    "marque": "DONGFENG",
+    "modele": "KINLAND"
+  },
+  {
+    "id": 162,
+    "marque": "DONGFENG",
+    "modele": "T-LIFT"
+  },
+  {
+    "id": 163,
+    "marque": "DURSO",
+    "modele": "FARMER"
+  },
+  {
+    "id": 164,
+    "marque": "EBRO",
+    "modele": "F-Serie"
+  },
+  {
+    "id": 165,
+    "marque": "EBRO",
+    "modele": "L-Serie"
+  },
+  {
+    "id": 166,
+    "marque": "EICHER",
+    "modele": "PRO SERIES 1000"
+  },
+  {
+    "id": 167,
+    "marque": "EICHER",
+    "modele": "PRO SERIES 3000"
+  },
+  {
+    "id": 168,
+    "marque": "EICHER",
+    "modele": "PRO SERIES 6000"
+  },
+  {
+    "id": 169,
+    "marque": "EICHER",
+    "modele": "PRO SERIES 8000"
+  },
+  {
+    "id": 170,
+    "marque": "EICHER",
+    "modele": "VE SERIES"
+  },
+  {
+    "id": 171,
+    "marque": "ERF",
+    "modele": 54
+  },
+  {
+    "id": 172,
+    "marque": "ERF",
+    "modele": 64
+  },
+  {
+    "id": 173,
+    "marque": "ERF",
+    "modele": "B-Serie"
+  },
+  {
+    "id": 174,
+    "marque": "ERF",
+    "modele": "C-Serie"
+  },
+  {
+    "id": 175,
+    "marque": "ERF",
+    "modele": "ECM"
+  },
+  {
+    "id": 176,
+    "marque": "ERF",
+    "modele": "ECT"
+  },
+  {
+    "id": 177,
+    "marque": "ERF",
+    "modele": "E-Serie"
+  },
+  {
+    "id": 178,
+    "marque": "ERF",
+    "modele": "M-Serie"
+  },
+  {
+    "id": 179,
+    "marque": "FAHR",
+    "modele": "D"
+  },
+  {
+    "id": 180,
+    "marque": "FAHR",
+    "modele": "GT"
+  },
+  {
+    "id": 181,
+    "marque": "FAP",
+    "modele": "A-Series"
+  },
+  {
+    "id": 182,
+    "marque": "FAP",
+    "modele": "B-Series"
+  },
+  {
+    "id": 183,
+    "marque": "FENDT",
+    "modele": "Dieselross"
+  },
+  {
+    "id": 184,
+    "marque": "FENDT",
+    "modele": "Farmer"
+  },
+  {
+    "id": 185,
+    "marque": "FENDT",
+    "modele": "Favorit"
+  },
+  {
+    "id": 186,
+    "marque": "FENDT",
+    "modele": "GT"
+  },
+  {
+    "id": 187,
+    "marque": "FENDT",
+    "modele": "Vario"
+  },
+  {
+    "id": 188,
+    "marque": "FIAT",
+    "modele": 1000
+  },
+  {
+    "id": 189,
+    "marque": "FIAT",
+    "modele": 400
+  },
+  {
+    "id": 190,
+    "marque": "FIAT",
+    "modele": "500 Serie"
+  },
+  {
+    "id": 191,
+    "marque": "FIAT",
+    "modele": "600 Serie"
+  },
+  {
+    "id": 192,
+    "marque": "FIAT",
+    "modele": 66
+  },
+  {
+    "id": 193,
+    "marque": "FIAT",
+    "modele": 700
+  },
+  {
+    "id": 194,
+    "marque": "FIAT",
+    "modele": 800
+  },
+  {
+    "id": 195,
+    "marque": "FIAT",
+    "modele": 88
+  },
+  {
+    "id": 196,
+    "marque": "FIAT",
+    "modele": 90
+  },
+  {
+    "id": 197,
+    "marque": "FIAT",
+    "modele": 900
+  },
+  {
+    "id": 198,
+    "marque": "FIAT",
+    "modele": 94
+  },
+  {
+    "id": 199,
+    "marque": "FIAT",
+    "modele": "F"
+  },
+  {
+    "id": 200,
+    "marque": "FIAT",
+    "modele": "L"
+  },
+  {
+    "id": 201,
+    "marque": "FIAT",
+    "modele": "Series 100"
+  },
+  {
+    "id": 202,
+    "marque": "FIAT",
+    "modele": "Series 110"
+  },
+  {
+    "id": 203,
+    "marque": "FIAT",
+    "modele": "Series 180"
+  },
+  {
+    "id": 204,
+    "marque": "FIAT",
+    "modele": "Series 260"
+  },
+  {
+    "id": 205,
+    "marque": "FIAT",
+    "modele": "Series 300"
+  },
+  {
+    "id": 206,
+    "marque": "FIAT",
+    "modele": "Series 330"
+  },
+  {
+    "id": 207,
+    "marque": "FIAT",
+    "modele": "Series 400"
+  },
+  {
+    "id": 208,
+    "marque": "FIAT",
+    "modele": "Series 50"
+  },
+  {
+    "id": 209,
+    "marque": "FIAT",
+    "modele": "Series 55"
+  },
+  {
+    "id": 210,
+    "marque": "FIAT",
+    "modele": "Series 600"
+  },
+  {
+    "id": 211,
+    "marque": "FIAT",
+    "modele": "Series 65"
+  },
+  {
+    "id": 212,
+    "marque": "FIAT",
+    "modele": "Series 70"
+  },
+  {
+    "id": 213,
+    "marque": "FIAT",
+    "modele": "Series 75"
+  },
+  {
+    "id": 214,
+    "marque": "FIAT",
+    "modele": "Series 80"
+  },
+  {
+    "id": 215,
+    "marque": "FIAT",
+    "modele": "Series 90"
+  },
+  {
+    "id": 216,
+    "marque": "FIAT",
+    "modele": "Series C40"
+  },
+  {
+    "id": 217,
+    "marque": "FIAT",
+    "modele": "Series C50"
+  },
+  {
+    "id": 218,
+    "marque": "FIAT",
+    "modele": "TL"
+  },
+  {
+    "id": 219,
+    "marque": "FNM",
+    "modele": "HEAVY"
+  },
+  {
+    "id": 220,
+    "marque": "FORD",
+    "modele": "5000-Serie"
+  },
+  {
+    "id": 221,
+    "marque": "FORD",
+    "modele": "6000-Serie"
+  },
+  {
+    "id": 222,
+    "marque": "FORD",
+    "modele": "7000-Serie"
+  },
+  {
+    "id": 223,
+    "marque": "FORD",
+    "modele": "Cargo"
+  },
+  {
+    "id": 224,
+    "marque": "FORD",
+    "modele": "F-MAX"
+  },
+  {
+    "id": 225,
+    "marque": "FORD",
+    "modele": "F-SERIES"
+  },
+  {
+    "id": 226,
+    "marque": "FOTON",
+    "modele": "AUMAN"
+  },
+  {
+    "id": 227,
+    "marque": "FOTON",
+    "modele": "AUMARK"
+  },
+  {
+    "id": 228,
+    "marque": "FOTON",
+    "modele": "BISON"
+  },
+  {
+    "id": 229,
+    "marque": "FOTON",
+    "modele": "BJ-Bus"
+  },
+  {
+    "id": 230,
+    "marque": "FREIGHTLINER",
+    "modele": "CENTURY"
+  },
+  {
+    "id": 231,
+    "marque": "GAZ",
+    "modele": "ON"
+  },
+  {
+    "id": 232,
+    "marque": "GAZ",
+    "modele": "SADKO"
+  },
+  {
+    "id": 233,
+    "marque": "GAZ",
+    "modele": "VALDAI"
+  },
+  {
+    "id": 234,
+    "marque": "GINAF",
+    "modele": "C-Series"
+  },
+  {
+    "id": 235,
+    "marque": "GINAF",
+    "modele": "X-Series"
+  },
+  {
+    "id": 236,
+    "marque": "GMC",
+    "modele": 6
+  },
+  {
+    "id": 237,
+    "marque": "GOLDONI",
+    "modele": "Boxter"
+  },
+  {
+    "id": 238,
+    "marque": "GOLDONI",
+    "modele": "Ronin"
+  },
+  {
+    "id": 239,
+    "marque": "GOLDONI",
+    "modele": "Series-100"
+  },
+  {
+    "id": 240,
+    "marque": "GRUAU",
+    "modele": "MICROBUS"
+  },
+  {
+    "id": 241,
+    "marque": "GUELDNER",
+    "modele": "A"
+  },
+  {
+    "id": 242,
+    "marque": "GUELDNER",
+    "modele": "Multitrak"
+  },
+  {
+    "id": 243,
+    "marque": "HATTAT",
+    "modele": "200 Series"
+  },
+  {
+    "id": 244,
+    "marque": "HATTAT",
+    "modele": "A Series"
+  },
+  {
+    "id": 245,
+    "marque": "HATTAT",
+    "modele": "B Series"
+  },
+  {
+    "id": 246,
+    "marque": "HATTAT",
+    "modele": "C Series"
+  },
+  {
+    "id": 247,
+    "marque": "HATTAT",
+    "modele": "H Series"
+  },
+  {
+    "id": 248,
+    "marque": "HATTAT",
+    "modele": "T Series"
+  },
+  {
+    "id": 249,
+    "marque": "HEULIEZ",
+    "modele": "GX"
+  },
+  {
+    "id": 250,
+    "marque": "HICOM",
+    "modele": "MTB"
+  },
+  {
+    "id": 251,
+    "marque": "HINO",
+    "modele": "300 Series"
+  },
+  {
+    "id": 252,
+    "marque": "HINO",
+    "modele": "500 Series MK 4"
+  },
+  {
+    "id": 253,
+    "marque": "HINO",
+    "modele": "700 Series MK 2"
+  },
+  {
+    "id": 254,
+    "marque": "HINO",
+    "modele": "AK"
+  },
+  {
+    "id": 255,
+    "marque": "HINO",
+    "modele": "CITI BUS"
+  },
+  {
+    "id": 256,
+    "marque": "HINO",
+    "modele": "DUTRO"
+  },
+  {
+    "id": 257,
+    "marque": "HINO",
+    "modele": "FD"
+  },
+  {
+    "id": 258,
+    "marque": "HINO",
+    "modele": "KING"
+  },
+  {
+    "id": 259,
+    "marque": "HINO",
+    "modele": "RB"
+  },
+  {
+    "id": 260,
+    "marque": "HINO",
+    "modele": "RK"
+  },
+  {
+    "id": 261,
+    "marque": "HINO",
+    "modele": "RM"
+  },
+  {
+    "id": 262,
+    "marque": "HINO",
+    "modele": "RN"
+  },
+  {
+    "id": 263,
+    "marque": "HINO",
+    "modele": "ROADLINER SUPREME"
+  },
+  {
+    "id": 264,
+    "marque": "HINO",
+    "modele": "XZ"
+  },
+  {
+    "id": 265,
+    "marque": "HYUNDAI",
+    "modele": "AERO CITY"
+  },
+  {
+    "id": 266,
+    "marque": "HYUNDAI",
+    "modele": "AERO TOWN"
+  },
+  {
+    "id": 267,
+    "marque": "HYUNDAI",
+    "modele": "COUNTY"
+  },
+  {
+    "id": 268,
+    "marque": "HYUNDAI",
+    "modele": "HD HEAVY"
+  },
+  {
+    "id": 269,
+    "marque": "HYUNDAI",
+    "modele": "HD LIGHT"
+  },
+  {
+    "id": 270,
+    "marque": "HYUNDAI",
+    "modele": "HD MEDIUM"
+  },
+  {
+    "id": 271,
+    "marque": "HYUNDAI",
+    "modele": "SUPER AERO CITY"
+  },
+  {
+    "id": 272,
+    "marque": "HYUNDAI",
+    "modele": "UNIVERSE"
+  },
+  {
+    "id": 273,
+    "marque": "CHALLENGER",
+    "modele": "MT"
+  },
+  {
+    "id": 274,
+    "marque": "CHEVROLET",
+    "modele": "D"
+  },
+  {
+    "id": 275,
+    "marque": "CHEVROLET",
+    "modele": "N"
+  },
+  {
+    "id": 276,
+    "marque": "INBUS",
+    "modele": "AS 280"
+  },
+  {
+    "id": 277,
+    "marque": "IRISBUS",
+    "modele": "ACCESS BUS 127"
+  },
+  {
+    "id": 278,
+    "marque": "IRISBUS",
+    "modele": "AGORA"
+  },
+  {
+    "id": 279,
+    "marque": "IRISBUS",
+    "modele": "ARES"
+  },
+  {
+    "id": 280,
+    "marque": "IRISBUS",
+    "modele": "ARWAY"
+  },
+  {
+    "id": 281,
+    "marque": "IRISBUS",
+    "modele": "AXER"
+  },
+  {
+    "id": 282,
+    "marque": "IRISBUS",
+    "modele": "CITELIS"
+  },
+  {
+    "id": 283,
+    "marque": "IRISBUS",
+    "modele": "CITYCLASS"
+  },
+  {
+    "id": 284,
+    "marque": "IRISBUS",
+    "modele": "CREALIS"
+  },
+  {
+    "id": 285,
+    "marque": "IRISBUS",
+    "modele": "CROSSWAY"
+  },
+  {
+    "id": 286,
+    "marque": "IRISBUS",
+    "modele": "DAILY TOURYS"
+  },
+  {
+    "id": 287,
+    "marque": "IRISBUS",
+    "modele": "DOMINO"
+  },
+  {
+    "id": 288,
+    "marque": "IRISBUS",
+    "modele": "EUROMIDI"
+  },
+  {
+    "id": 289,
+    "marque": "IRISBUS",
+    "modele": "EUROPOLIS"
+  },
+  {
+    "id": 290,
+    "marque": "IRISBUS",
+    "modele": "EURORIDER"
+  },
+  {
+    "id": 291,
+    "marque": "IRISBUS",
+    "modele": "EVADYS"
+  },
+  {
+    "id": 292,
+    "marque": "IRISBUS",
+    "modele": "ILIADE"
+  },
+  {
+    "id": 293,
+    "marque": "IRISBUS",
+    "modele": "MAGELYS"
+  },
+  {
+    "id": 294,
+    "marque": "IRISBUS",
+    "modele": "MIDIBUS"
+  },
+  {
+    "id": 295,
+    "marque": "IRISBUS",
+    "modele": "MIDIRIDER"
+  },
+  {
+    "id": 296,
+    "marque": "IRISBUS",
+    "modele": "PROWAY"
+  },
+  {
+    "id": 297,
+    "marque": "IRISBUS",
+    "modele": "RECREO"
+  },
+  {
+    "id": 298,
+    "marque": "IRIZAR",
+    "modele": "i2"
+  },
+  {
+    "id": 299,
+    "marque": "IRIZAR",
+    "modele": "i3"
+  },
+  {
+    "id": 300,
+    "marque": "IRIZAR",
+    "modele": "i4"
+  },
+  {
+    "id": 301,
+    "marque": "IRIZAR",
+    "modele": "i6"
+  },
+  {
+    "id": 302,
+    "marque": "IRIZAR",
+    "modele": "i8"
+  },
+  {
+    "id": 303,
+    "marque": "IRIZAR",
+    "modele": "PB"
+  },
+  {
+    "id": 304,
+    "marque": "ISUZU",
+    "modele": "FORWARD F"
+  },
+  {
+    "id": 305,
+    "marque": "ISUZU",
+    "modele": "GRAFTER"
+  },
+  {
+    "id": 306,
+    "marque": "ISUZU",
+    "modele": "N (5th Generation)"
+  },
+  {
+    "id": 307,
+    "marque": "ISUZU",
+    "modele": "N (6th Generation)"
+  },
+  {
+    "id": 308,
+    "marque": "IVECO",
+    "modele": 370
+  },
+  {
+    "id": 309,
+    "marque": "IVECO",
+    "modele": "CITYCLASS"
+  },
+  {
+    "id": 310,
+    "marque": "IVECO",
+    "modele": "CROSSWAY"
+  },
+  {
+    "id": 311,
+    "marque": "IVECO",
+    "modele": "EUROCARGO I-III"
+  },
+  {
+    "id": 312,
+    "marque": "IVECO",
+    "modele": "EUROCARGO IV"
+  },
+  {
+    "id": 313,
+    "marque": "IVECO",
+    "modele": "EuroCargo V"
+  },
+  {
+    "id": 314,
+    "marque": "IVECO",
+    "modele": "EUROFIRE"
+  },
+  {
+    "id": 315,
+    "marque": "IVECO",
+    "modele": "EUROSTAR"
+  },
+  {
+    "id": 316,
+    "marque": "IVECO",
+    "modele": "EUROTECH MH"
+  },
+  {
+    "id": 317,
+    "marque": "IVECO",
+    "modele": "EUROTECH MP"
+  },
+  {
+    "id": 318,
+    "marque": "IVECO",
+    "modele": "EUROTECH MT"
+  },
+  {
+    "id": 319,
+    "marque": "IVECO",
+    "modele": "EUROTRAKKER"
+  },
+  {
+    "id": 320,
+    "marque": "IVECO",
+    "modele": "M"
+  },
+  {
+    "id": 321,
+    "marque": "IVECO",
+    "modele": "MAGELYS"
+  },
+  {
+    "id": 322,
+    "marque": "IVECO",
+    "modele": "MK"
+  },
+  {
+    "id": 323,
+    "marque": "IVECO",
+    "modele": "P/PA"
+  },
+  {
+    "id": 324,
+    "marque": "IVECO",
+    "modele": "P/PA-Haubenfahrzeuge"
+  },
+  {
+    "id": 325,
+    "marque": "IVECO",
+    "modele": "POWERSTAR"
+  },
+  {
+    "id": 326,
+    "marque": "IVECO",
+    "modele": "STRALIS"
+  },
+  {
+    "id": 327,
+    "marque": "IVECO",
+    "modele": "STRATOR"
+  },
+  {
+    "id": 328,
+    "marque": "IVECO",
+    "modele": "S-WAY"
+  },
+  {
+    "id": 329,
+    "marque": "IVECO",
+    "modele": "TECTOR"
+  },
+  {
+    "id": 330,
+    "marque": "IVECO",
+    "modele": "TRAKKER"
+  },
+  {
+    "id": 331,
+    "marque": "IVECO",
+    "modele": "TURBOCITY"
+  },
+  {
+    "id": 332,
+    "marque": "IVECO",
+    "modele": "TURBOSTAR"
+  },
+  {
+    "id": 333,
+    "marque": "IVECO",
+    "modele": "TURBOTECH"
+  },
+  {
+    "id": 334,
+    "marque": "IVECO",
+    "modele": "URBANWAY"
+  },
+  {
+    "id": 335,
+    "marque": "IVECO",
+    "modele": "VERTIS"
+  },
+  {
+    "id": 336,
+    "marque": "IVECO",
+    "modele": "X-WAY"
+  },
+  {
+    "id": 337,
+    "marque": "IVECO",
+    "modele": "ZETA"
+  },
+  {
+    "id": 338,
+    "marque": "JCB",
+    "modele": "FASTTRAC"
+  },
+  {
+    "id": 339,
+    "marque": "KAMAZ",
+    "modele": 4
+  },
+  {
+    "id": 340,
+    "marque": "KAMAZ",
+    "modele": 5
+  },
+  {
+    "id": 341,
+    "marque": "KAMAZ",
+    "modele": 6
+  },
+  {
+    "id": 342,
+    "marque": "KAROSA",
+    "modele": "C-Series"
+  },
+  {
+    "id": 343,
+    "marque": "KARSAN",
+    "modele": "ATAK"
+  },
+  {
+    "id": 344,
+    "marque": "KARSAN",
+    "modele": "JEST"
+  },
+  {
+    "id": 345,
+    "marque": "KARSAN",
+    "modele": "STAR"
+  },
+  {
+    "id": 346,
+    "marque": "KAVZ",
+    "modele": "AURORA"
+  },
+  {
+    "id": 347,
+    "marque": "KENWORTH",
+    "modele": "T-Series"
+  },
+  {
+    "id": 348,
+    "marque": "KIA",
+    "modele": "GRANBIRD"
+  },
+  {
+    "id": 349,
+    "marque": "KIOTI",
+    "modele": "Series CK"
+  },
+  {
+    "id": 350,
+    "marque": "KIOTI",
+    "modele": "Series CS"
+  },
+  {
+    "id": 351,
+    "marque": "KIOTI",
+    "modele": "Series DK"
+  },
+  {
+    "id": 352,
+    "marque": "KIOTI",
+    "modele": "Series NX"
+  },
+  {
+    "id": 353,
+    "marque": "KIOTI",
+    "modele": "Series PX"
+  },
+  {
+    "id": 354,
+    "marque": "KIOTI",
+    "modele": "Series RX"
+  },
+  {
+    "id": 355,
+    "marque": "KRAMER",
+    "modele": "14-Serie"
+  },
+  {
+    "id": 356,
+    "marque": "KRAMER",
+    "modele": "KA-Serie"
+  },
+  {
+    "id": 357,
+    "marque": "KRAMER",
+    "modele": "KB-Serie"
+  },
+  {
+    "id": 358,
+    "marque": "KRAMER",
+    "modele": "KL-Serie"
+  },
+  {
+    "id": 359,
+    "marque": "KRAMER",
+    "modele": "KLS-Serie"
+  },
+  {
+    "id": 360,
+    "marque": "KRAMER",
+    "modele": "K-Serie"
+  },
+  {
+    "id": 361,
+    "marque": "KRAMER",
+    "modele": "KT"
+  },
+  {
+    "id": 362,
+    "marque": "KRAMER",
+    "modele": "Pionier"
+  },
+  {
+    "id": 363,
+    "marque": "KUBOTA",
+    "modele": "Series-M"
+  },
+  {
+    "id": 364,
+    "marque": "LAMBORGHINI",
+    "modele": "CRONO"
+  },
+  {
+    "id": 365,
+    "marque": "LAMBORGHINI",
+    "modele": "MACH"
+  },
+  {
+    "id": 366,
+    "marque": "LAMBORGHINI",
+    "modele": "NITRO"
+  },
+  {
+    "id": 367,
+    "marque": "LAMBORGHINI",
+    "modele": "R1"
+  },
+  {
+    "id": 368,
+    "marque": "LAMBORGHINI",
+    "modele": "R2"
+  },
+  {
+    "id": 369,
+    "marque": "LAMBORGHINI",
+    "modele": "RF / RS / RV"
+  },
+  {
+    "id": 370,
+    "marque": "LAMBORGHINI",
+    "modele": "SPARK"
+  },
+  {
+    "id": 371,
+    "marque": "LAMBORGHINI",
+    "modele": "SPIRE"
+  },
+  {
+    "id": 372,
+    "marque": "LAMBORGHINI",
+    "modele": "STRIKE"
+  },
+  {
+    "id": 373,
+    "marque": "LANDINI",
+    "modele": "ALPINE"
+  },
+  {
+    "id": 374,
+    "marque": "LANDINI",
+    "modele": "GLOBALFARM"
+  },
+  {
+    "id": 375,
+    "marque": "LANDINI",
+    "modele": "LANDPOWER"
+  },
+  {
+    "id": 376,
+    "marque": "LANDINI",
+    "modele": "MISTRAL"
+  },
+  {
+    "id": 377,
+    "marque": "LANDINI",
+    "modele": "POWERFARM"
+  },
+  {
+    "id": 378,
+    "marque": "LANDINI",
+    "modele": "POWERMONDIAL"
+  },
+  {
+    "id": 379,
+    "marque": "LANDINI",
+    "modele": "REX"
+  },
+  {
+    "id": 380,
+    "marque": "LANDINI",
+    "modele": "Series 1"
+  },
+  {
+    "id": 381,
+    "marque": "LANDINI",
+    "modele": "Series 4"
+  },
+  {
+    "id": 382,
+    "marque": "LANDINI",
+    "modele": "Series 5"
+  },
+  {
+    "id": 383,
+    "marque": "LANDINI",
+    "modele": "Series 60"
+  },
+  {
+    "id": 384,
+    "marque": "LANDINI",
+    "modele": "Series 7"
+  },
+  {
+    "id": 385,
+    "marque": "LANDINI",
+    "modele": "TECHNOFARM"
+  },
+  {
+    "id": 386,
+    "marque": "LANDINI",
+    "modele": "VISION"
+  },
+  {
+    "id": 387,
+    "marque": "LAZ",
+    "modele": "LEMBERG"
+  },
+  {
+    "id": 388,
+    "marque": "LEYLAND",
+    "modele": "LE"
+  },
+  {
+    "id": 389,
+    "marque": "MACK",
+    "modele": "Midlum"
+  },
+  {
+    "id": 390,
+    "marque": "MAGIRUS-DEUTZ",
+    "modele": "D-Series"
+  },
+  {
+    "id": 391,
+    "marque": "MAGIRUS-DEUTZ",
+    "modele": "M-Series"
+  },
+  {
+    "id": 392,
+    "marque": "MAHINDRA",
+    "modele": "DI 3200"
+  },
+  {
+    "id": 393,
+    "marque": "MAHINDRA",
+    "modele": "LOADKING"
+  },
+  {
+    "id": 394,
+    "marque": "MAHINDRA",
+    "modele": "MN"
+  },
+  {
+    "id": 395,
+    "marque": "MAHINDRA",
+    "modele": "TORRO"
+  },
+  {
+    "id": 396,
+    "marque": "MAHINDRA",
+    "modele": "TOURISTER"
+  },
+  {
+    "id": 397,
+    "marque": "MAHINDRA",
+    "modele": "TRACO"
+  },
+  {
+    "id": 398,
+    "marque": "MAHINDRA",
+    "modele": "TRUXO"
+  },
+  {
+    "id": 399,
+    "marque": "MAN",
+    "modele": "CLA"
+  },
+  {
+    "id": 400,
+    "marque": "MAN",
+    "modele": "E2000"
+  },
+  {
+    "id": 401,
+    "marque": "MAN",
+    "modele": "EL"
+  },
+  {
+    "id": 402,
+    "marque": "MAN",
+    "modele": "EM"
+  },
+  {
+    "id": 403,
+    "marque": "MAN",
+    "modele": "F2000"
+  },
+  {
+    "id": 404,
+    "marque": "MAN",
+    "modele": "F9"
+  },
+  {
+    "id": 405,
+    "marque": "MAN",
+    "modele": "F90"
+  },
+  {
+    "id": 406,
+    "marque": "MAN",
+    "modele": "F90 Unterflur"
+  },
+  {
+    "id": 407,
+    "marque": "MAN",
+    "modele": "FOCL"
+  },
+  {
+    "id": 408,
+    "marque": "MAN",
+    "modele": "G"
+  },
+  {
+    "id": 409,
+    "marque": "MAN",
+    "modele": "G90"
+  },
+  {
+    "id": 410,
+    "marque": "MAN",
+    "modele": "HELICON"
+  },
+  {
+    "id": 411,
+    "marque": "MAN",
+    "modele": "HOCL"
+  },
+  {
+    "id": 412,
+    "marque": "MAN",
+    "modele": "L2000"
+  },
+  {
+    "id": 413,
+    "marque": "MAN",
+    "modele": "LIONÂ´S CITY"
+  },
+  {
+    "id": 414,
+    "marque": "MAN",
+    "modele": "LIONÂ´S CLASSIC"
+  },
+  {
+    "id": 415,
+    "marque": "MAN",
+    "modele": "LIONÂ´S COACH"
+  },
+  {
+    "id": 416,
+    "marque": "MAN",
+    "modele": "LIONÂ´S COMFORT"
+  },
+  {
+    "id": 417,
+    "marque": "MAN",
+    "modele": "LIONÂ´S REGIO"
+  },
+  {
+    "id": 418,
+    "marque": "MAN",
+    "modele": "LIONÂ´S STAR"
+  },
+  {
+    "id": 419,
+    "marque": "MAN",
+    "modele": "M 2000 L"
+  },
+  {
+    "id": 420,
+    "marque": "MAN",
+    "modele": "M 2000 M"
+  },
+  {
+    "id": 421,
+    "marque": "MAN",
+    "modele": "M90"
+  },
+  {
+    "id": 422,
+    "marque": "MAN",
+    "modele": "ND"
+  },
+  {
+    "id": 423,
+    "marque": "MAN",
+    "modele": "NG"
+  },
+  {
+    "id": 424,
+    "marque": "MAN",
+    "modele": "NL"
+  },
+  {
+    "id": 425,
+    "marque": "MAN",
+    "modele": "NM"
+  },
+  {
+    "id": 426,
+    "marque": "MAN",
+    "modele": "NÃœ"
+  },
+  {
+    "id": 427,
+    "marque": "MAN",
+    "modele": "R"
+  },
+  {
+    "id": 428,
+    "marque": "MAN",
+    "modele": "SD"
+  },
+  {
+    "id": 429,
+    "marque": "MAN",
+    "modele": "SG"
+  },
+  {
+    "id": 430,
+    "marque": "MAN",
+    "modele": "SL"
+  },
+  {
+    "id": 431,
+    "marque": "MAN",
+    "modele": "SL II"
+  },
+  {
+    "id": 432,
+    "marque": "MAN",
+    "modele": "SM"
+  },
+  {
+    "id": 433,
+    "marque": "MAN",
+    "modele": "SR"
+  },
+  {
+    "id": 434,
+    "marque": "MAN",
+    "modele": "SÃœ"
+  },
+  {
+    "id": 435,
+    "marque": "MAN",
+    "modele": "TGA"
+  },
+  {
+    "id": 436,
+    "marque": "MAN",
+    "modele": "TGL"
+  },
+  {
+    "id": 437,
+    "marque": "MAN",
+    "modele": "TGM"
+  },
+  {
+    "id": 438,
+    "marque": "MAN",
+    "modele": "TGS"
+  },
+  {
+    "id": 439,
+    "marque": "MAN",
+    "modele": "TGX"
+  },
+  {
+    "id": 440,
+    "marque": "MAN",
+    "modele": "ÃœL"
+  },
+  {
+    "id": 441,
+    "marque": "MARBUS",
+    "modele": "VIVE"
+  },
+  {
+    "id": 442,
+    "marque": "MAZ",
+    "modele": "Serie 100"
+  },
+  {
+    "id": 443,
+    "marque": "MAZ",
+    "modele": "Serie 150"
+  },
+  {
+    "id": 444,
+    "marque": "MAZ",
+    "modele": "Serie 170"
+  },
+  {
+    "id": 445,
+    "marque": "MAZ",
+    "modele": "Serie 200"
+  },
+  {
+    "id": 446,
+    "marque": "MAZ",
+    "modele": "Serie 5"
+  },
+  {
+    "id": 447,
+    "marque": "MAZ-MAN",
+    "modele": "F 2000"
+  },
+  {
+    "id": 448,
+    "marque": "MCCORMICK",
+    "modele": "C-L Series"
+  },
+  {
+    "id": 449,
+    "marque": "MCCORMICK",
+    "modele": "C-Max Series"
+  },
+  {
+    "id": 450,
+    "marque": "MCCORMICK",
+    "modele": "CX Series"
+  },
+  {
+    "id": 451,
+    "marque": "MCCORMICK",
+    "modele": "F Series"
+  },
+  {
+    "id": 452,
+    "marque": "MCCORMICK",
+    "modele": "GM"
+  },
+  {
+    "id": 453,
+    "marque": "MCCORMICK",
+    "modele": "V/FN Series"
+  },
+  {
+    "id": 454,
+    "marque": "MCCORMICK",
+    "modele": "X4"
+  },
+  {
+    "id": 455,
+    "marque": "MCCORMICK",
+    "modele": "X50"
+  },
+  {
+    "id": 456,
+    "marque": "MCCORMICK",
+    "modele": "X6"
+  },
+  {
+    "id": 457,
+    "marque": "MCCORMICK",
+    "modele": "X60"
+  },
+  {
+    "id": 458,
+    "marque": "MCCORMICK",
+    "modele": "X7"
+  },
+  {
+    "id": 459,
+    "marque": "MCW",
+    "modele": "DR"
+  },
+  {
+    "id": 460,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ACCELO"
+  },
+  {
+    "id": 461,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ACTROS"
+  },
+  {
+    "id": 462,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ACTROS MP2 / MP3"
+  },
+  {
+    "id": 463,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ACTROS MP4 / MP5"
+  },
+  {
+    "id": 464,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ANTOS"
+  },
+  {
+    "id": 465,
+    "marque": "MERCEDES-BENZ",
+    "modele": "AROCS"
+  },
+  {
+    "id": 466,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ATEGO"
+  },
+  {
+    "id": 467,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ATEGO 2"
+  },
+  {
+    "id": 468,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ATEGO 3"
+  },
+  {
+    "id": 469,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ATRON"
+  },
+  {
+    "id": 470,
+    "marque": "MERCEDES-BENZ",
+    "modele": "AXOR"
+  },
+  {
+    "id": 471,
+    "marque": "MERCEDES-BENZ",
+    "modele": "AXOR 2"
+  },
+  {
+    "id": 472,
+    "marque": "MERCEDES-BENZ",
+    "modele": "CAPACITY"
+  },
+  {
+    "id": 473,
+    "marque": "MERCEDES-BENZ",
+    "modele": "CITARO (O 530)"
+  },
+  {
+    "id": 474,
+    "marque": "MERCEDES-BENZ",
+    "modele": "CITO (O 520)"
+  },
+  {
+    "id": 475,
+    "marque": "MERCEDES-BENZ",
+    "modele": "CONECTO (O 345)"
+  },
+  {
+    "id": 476,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ECONIC"
+  },
+  {
+    "id": 477,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ECONIC 2"
+  },
+  {
+    "id": 478,
+    "marque": "MERCEDES-BENZ",
+    "modele": "INTEGRO (O 550)"
+  },
+  {
+    "id": 479,
+    "marque": "MERCEDES-BENZ",
+    "modele": "INTOURO"
+  },
+  {
+    "id": 480,
+    "marque": "MERCEDES-BENZ",
+    "modele": "LK/LN2"
+  },
+  {
+    "id": 481,
+    "marque": "MERCEDES-BENZ",
+    "modele": "LP"
+  },
+  {
+    "id": 482,
+    "marque": "MERCEDES-BENZ",
+    "modele": "MB-TRAC"
+  },
+  {
+    "id": 483,
+    "marque": "MERCEDES-BENZ",
+    "modele": "MK"
+  },
+  {
+    "id": 484,
+    "marque": "MERCEDES-BENZ",
+    "modele": "NG"
+  },
+  {
+    "id": 485,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 100"
+  },
+  {
+    "id": 486,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 301"
+  },
+  {
+    "id": 487,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 302"
+  },
+  {
+    "id": 488,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 303"
+  },
+  {
+    "id": 489,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 304"
+  },
+  {
+    "id": 490,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 305"
+  },
+  {
+    "id": 491,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 307"
+  },
+  {
+    "id": 492,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 309"
+  },
+  {
+    "id": 493,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 317"
+  },
+  {
+    "id": 494,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 330"
+  },
+  {
+    "id": 495,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 340"
+  },
+  {
+    "id": 496,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 371"
+  },
+  {
+    "id": 497,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 400"
+  },
+  {
+    "id": 498,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 402"
+  },
+  {
+    "id": 499,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 403"
+  },
+  {
+    "id": 500,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 404"
+  },
+  {
+    "id": 501,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 405"
+  },
+  {
+    "id": 502,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 407"
+  },
+  {
+    "id": 503,
+    "marque": "MERCEDES-BENZ",
+    "modele": "O 408"
+  },
+  {
+    "id": 504,
+    "marque": "MERCEDES-BENZ",
+    "modele": "OF"
+  },
+  {
+    "id": 505,
+    "marque": "MERCEDES-BENZ",
+    "modele": "OH"
+  },
+  {
+    "id": 506,
+    "marque": "MERCEDES-BENZ",
+    "modele": "SK"
+  },
+  {
+    "id": 507,
+    "marque": "MERCEDES-BENZ",
+    "modele": "T2/L"
+  },
+  {
+    "id": 508,
+    "marque": "MERCEDES-BENZ",
+    "modele": "TOURINO (O 510)"
+  },
+  {
+    "id": 509,
+    "marque": "MERCEDES-BENZ",
+    "modele": "TOURISMO (O 350)"
+  },
+  {
+    "id": 510,
+    "marque": "MERCEDES-BENZ",
+    "modele": "TOURO (O 500)"
+  },
+  {
+    "id": 511,
+    "marque": "MERCEDES-BENZ",
+    "modele": "TRAVEGO (O 580)"
+  },
+  {
+    "id": 512,
+    "marque": "MERCEDES-BENZ",
+    "modele": "UNIMOG"
+  },
+  {
+    "id": 513,
+    "marque": "MERCEDES-BENZ",
+    "modele": "ZETROS"
+  },
+  {
+    "id": 514,
+    "marque": "MITSUBISHI",
+    "modele": "Canter (FB7, FB8, FE7, FE8) VII"
+  },
+  {
+    "id": 515,
+    "marque": "MITSUBISHI",
+    "modele": "Canter (FE3, FE4) V"
+  },
+  {
+    "id": 516,
+    "marque": "MITSUBISHI",
+    "modele": "Canter (FE5, FE6) VI"
+  },
+  {
+    "id": 517,
+    "marque": "MITSUBISHI",
+    "modele": "FIGHTER"
+  },
+  {
+    "id": 518,
+    "marque": "MITSUBISHI",
+    "modele": "Fuso"
+  },
+  {
+    "id": 519,
+    "marque": "MITSUBISHI",
+    "modele": "Shogun"
+  },
+  {
+    "id": 520,
+    "marque": "MULTICAR",
+    "modele": "Fumo"
+  },
+  {
+    "id": 521,
+    "marque": "MULTICAR",
+    "modele": "M25"
+  },
+  {
+    "id": 522,
+    "marque": "MULTICAR",
+    "modele": "M26"
+  },
+  {
+    "id": 523,
+    "marque": "MULTICAR",
+    "modele": "M27"
+  },
+  {
+    "id": 524,
+    "marque": "MULTICAR",
+    "modele": "Tremo"
+  },
+  {
+    "id": 525,
+    "marque": "MULTICAR",
+    "modele": "UX100"
+  },
+  {
+    "id": 526,
+    "marque": "NEOPLAN",
+    "modele": "Airliner"
+  },
+  {
+    "id": 527,
+    "marque": "NEOPLAN",
+    "modele": "Centroliner"
+  },
+  {
+    "id": 528,
+    "marque": "NEOPLAN",
+    "modele": "Cityliner"
+  },
+  {
+    "id": 529,
+    "marque": "NEOPLAN",
+    "modele": "Euroliner"
+  },
+  {
+    "id": 530,
+    "marque": "NEOPLAN",
+    "modele": "Jetliner"
+  },
+  {
+    "id": 531,
+    "marque": "NEOPLAN",
+    "modele": "Megaliner"
+  },
+  {
+    "id": 532,
+    "marque": "NEOPLAN",
+    "modele": "Megashuttle"
+  },
+  {
+    "id": 533,
+    "marque": "NEOPLAN",
+    "modele": "N-Serie"
+  },
+  {
+    "id": 534,
+    "marque": "NEOPLAN",
+    "modele": "Skyliner"
+  },
+  {
+    "id": 535,
+    "marque": "NEOPLAN",
+    "modele": "Spaceliner"
+  },
+  {
+    "id": 536,
+    "marque": "NEOPLAN",
+    "modele": "Sportliner"
+  },
+  {
+    "id": 537,
+    "marque": "NEOPLAN",
+    "modele": "Starliner"
+  },
+  {
+    "id": 538,
+    "marque": "NEOPLAN",
+    "modele": "Tourliner"
+  },
+  {
+    "id": 539,
+    "marque": "NEOPLAN",
+    "modele": "Transliner"
+  },
+  {
+    "id": 540,
+    "marque": "NEOPLAN",
+    "modele": "Trendliner"
+  },
+  {
+    "id": 541,
+    "marque": "NISSAN",
+    "modele": "ATLEON"
+  },
+  {
+    "id": 542,
+    "marque": "NISSAN",
+    "modele": "ECO-T"
+  },
+  {
+    "id": 543,
+    "marque": "NISSAN",
+    "modele": "L-Serie"
+  },
+  {
+    "id": 544,
+    "marque": "NISSAN",
+    "modele": "NT500"
+  },
+  {
+    "id": 545,
+    "marque": "OPTARE",
+    "modele": "OLYMPUS"
+  },
+  {
+    "id": 546,
+    "marque": "OPTARE",
+    "modele": "SOLO"
+  },
+  {
+    "id": 547,
+    "marque": "OPTARE",
+    "modele": "SOLO SR"
+  },
+  {
+    "id": 548,
+    "marque": "OPTARE",
+    "modele": "TEMPO"
+  },
+  {
+    "id": 549,
+    "marque": "OPTARE",
+    "modele": "TORO"
+  },
+  {
+    "id": 550,
+    "marque": "OPTARE",
+    "modele": "VERSA"
+  },
+  {
+    "id": 551,
+    "marque": "OTOKAR",
+    "modele": "CENTRO"
+  },
+  {
+    "id": 552,
+    "marque": "OTOKAR",
+    "modele": "KENT"
+  },
+  {
+    "id": 553,
+    "marque": "OTOKAR",
+    "modele": "NAVIGO"
+  },
+  {
+    "id": 554,
+    "marque": "OTOKAR",
+    "modele": "TERRITO"
+  },
+  {
+    "id": 555,
+    "marque": "OTOKAR",
+    "modele": "VECTIO"
+  },
+  {
+    "id": 556,
+    "marque": "PADANE",
+    "modele": "Z-Serie"
+  },
+  {
+    "id": 557,
+    "marque": "PASQUALI",
+    "modele": "ORION"
+  },
+  {
+    "id": 558,
+    "marque": "PEGASO",
+    "modele": "TRONER"
+  },
+  {
+    "id": 559,
+    "marque": "PFANZELT",
+    "modele": "PM TRAC"
+  },
+  {
+    "id": 560,
+    "marque": "PLAXTON",
+    "modele": "BEAVER"
+  },
+  {
+    "id": 561,
+    "marque": "PLAXTON",
+    "modele": "CENTRO"
+  },
+  {
+    "id": 562,
+    "marque": "PLAXTON",
+    "modele": "ELITE"
+  },
+  {
+    "id": 563,
+    "marque": "PLAXTON",
+    "modele": "PANTHER"
+  },
+  {
+    "id": 564,
+    "marque": "SAME",
+    "modele": "AUDAX ST"
+  },
+  {
+    "id": 565,
+    "marque": "SAME",
+    "modele": "DORADO"
+  },
+  {
+    "id": 566,
+    "marque": "SAME",
+    "modele": "EXPLORER"
+  },
+  {
+    "id": 567,
+    "marque": "SAME",
+    "modele": "FORTIS"
+  },
+  {
+    "id": 568,
+    "marque": "SAME",
+    "modele": "LASER"
+  },
+  {
+    "id": 569,
+    "marque": "SCANIA",
+    "modele": "2 - series"
+  },
+  {
+    "id": 570,
+    "marque": "SCANIA",
+    "modele": "3 - series"
+  },
+  {
+    "id": 571,
+    "marque": "SCANIA",
+    "modele": "3 - series bus"
+  },
+  {
+    "id": 572,
+    "marque": "SCANIA",
+    "modele": "4 - series"
+  },
+  {
+    "id": 573,
+    "marque": "SCANIA",
+    "modele": "4 - series bus"
+  },
+  {
+    "id": 574,
+    "marque": "SCANIA",
+    "modele": "CITYWIDE"
+  },
+  {
+    "id": 575,
+    "marque": "SCANIA",
+    "modele": "F - series bus"
+  },
+  {
+    "id": 576,
+    "marque": "SCANIA",
+    "modele": "INTERLINK"
+  },
+  {
+    "id": 577,
+    "marque": "SCANIA",
+    "modele": "IRIZAR"
+  },
+  {
+    "id": 578,
+    "marque": "SCANIA",
+    "modele": "IRIZAR CENTURY"
+  },
+  {
+    "id": 579,
+    "marque": "SCANIA",
+    "modele": "IRIZAR PB"
+  },
+  {
+    "id": 580,
+    "marque": "SCANIA",
+    "modele": "K - series"
+  },
+  {
+    "id": 581,
+    "marque": "SCANIA",
+    "modele": "K - series bus"
+  },
+  {
+    "id": 582,
+    "marque": "SCANIA",
+    "modele": "L,P,G,R,S - series"
+  },
+  {
+    "id": 583,
+    "marque": "SCANIA",
+    "modele": "N - series bus"
+  },
+  {
+    "id": 584,
+    "marque": "SCANIA",
+    "modele": "OMNICITY"
+  },
+  {
+    "id": 585,
+    "marque": "SCANIA",
+    "modele": "OMNIEXPRESS"
+  },
+  {
+    "id": 586,
+    "marque": "SCANIA",
+    "modele": "OMNILINK"
+  },
+  {
+    "id": 587,
+    "marque": "SCANIA",
+    "modele": "P,G,R,T - series"
+  },
+  {
+    "id": 588,
+    "marque": "SCANIA",
+    "modele": "TOURING"
+  },
+  {
+    "id": 589,
+    "marque": "SETRA",
+    "modele": "Series 200"
+  },
+  {
+    "id": 590,
+    "marque": "SETRA",
+    "modele": "Series 300"
+  },
+  {
+    "id": 591,
+    "marque": "SETRA",
+    "modele": "Series 400"
+  },
+  {
+    "id": 592,
+    "marque": "SETRA",
+    "modele": "Series 500"
+  },
+  {
+    "id": 593,
+    "marque": "SHAANXI",
+    "modele": "F2000"
+  },
+  {
+    "id": 594,
+    "marque": "SHAANXI",
+    "modele": "F3000"
+  },
+  {
+    "id": 595,
+    "marque": "SHACMAN",
+    "modele": ""
+  },
+  {
+    "id": 596,
+    "marque": "SILEO",
+    "modele": "S"
+  },
+  {
+    "id": 597,
+    "marque": "SISU",
+    "modele": "POLAR"
+  },
+  {
+    "id": 598,
+    "marque": "SML",
+    "modele": "COSMO"
+  },
+  {
+    "id": 599,
+    "marque": "SML",
+    "modele": "SAMRAT"
+  },
+  {
+    "id": 600,
+    "marque": "SML",
+    "modele": "SARTAJ"
+  },
+  {
+    "id": 601,
+    "marque": "SML",
+    "modele": "SUPER"
+  },
+  {
+    "id": 602,
+    "marque": "SML",
+    "modele": "SUPREME"
+  },
+  {
+    "id": 603,
+    "marque": "SOLARIS",
+    "modele": "ALPINO"
+  },
+  {
+    "id": 604,
+    "marque": "SOLARIS",
+    "modele": "TROLLINO"
+  },
+  {
+    "id": 605,
+    "marque": "SOLARIS",
+    "modele": "URBINO"
+  },
+  {
+    "id": 606,
+    "marque": "SOLARIS",
+    "modele": "VACANZA"
+  },
+  {
+    "id": 607,
+    "marque": "STEYR",
+    "modele": "1290-Serie"
+  },
+  {
+    "id": 608,
+    "marque": "STEYR",
+    "modele": "1291-Serie"
+  },
+  {
+    "id": 609,
+    "marque": "STEYR",
+    "modele": "1390-Serie"
+  },
+  {
+    "id": 610,
+    "marque": "STEYR",
+    "modele": "1490-Serie"
+  },
+  {
+    "id": 611,
+    "marque": "STEYR",
+    "modele": "1491-Serie"
+  },
+  {
+    "id": 612,
+    "marque": "STEYR",
+    "modele": "1890-Serie"
+  },
+  {
+    "id": 613,
+    "marque": "STEYR",
+    "modele": "19 S-Serie (Facel.)"
+  },
+  {
+    "id": 614,
+    "marque": "STEYR",
+    "modele": "590-Serie"
+  },
+  {
+    "id": 615,
+    "marque": "STEYR",
+    "modele": "690-Serie"
+  },
+  {
+    "id": 616,
+    "marque": "STEYR",
+    "modele": "691-Serie"
+  },
+  {
+    "id": 617,
+    "marque": "STEYR",
+    "modele": "790-Serie"
+  },
+  {
+    "id": 618,
+    "marque": "STEYR",
+    "modele": "791-Serie"
+  },
+  {
+    "id": 619,
+    "marque": "STEYR",
+    "modele": "890-Serie"
+  },
+  {
+    "id": 620,
+    "marque": "STEYR",
+    "modele": "891-Serie"
+  },
+  {
+    "id": 621,
+    "marque": "STEYR",
+    "modele": "990-Serie"
+  },
+  {
+    "id": 622,
+    "marque": "STEYR",
+    "modele": "991-Serie"
+  },
+  {
+    "id": 623,
+    "marque": "STEYR",
+    "modele": "CVT"
+  },
+  {
+    "id": 624,
+    "marque": "STEYR",
+    "modele": "KOMPAKT"
+  },
+  {
+    "id": 625,
+    "marque": "STEYR",
+    "modele": "MULTI"
+  },
+  {
+    "id": 626,
+    "marque": "STEYR",
+    "modele": "PROFI"
+  },
+  {
+    "id": 627,
+    "marque": "TATA",
+    "modele": "CITYRIDE"
+  },
+  {
+    "id": 628,
+    "marque": "TATA",
+    "modele": "LP"
+  },
+  {
+    "id": 629,
+    "marque": "TATA",
+    "modele": "LPK"
+  },
+  {
+    "id": 630,
+    "marque": "TATA",
+    "modele": "LPS"
+  },
+  {
+    "id": 631,
+    "marque": "TATA",
+    "modele": "LPT"
+  },
+  {
+    "id": 632,
+    "marque": "TATA",
+    "modele": "NOVUS"
+  },
+  {
+    "id": 633,
+    "marque": "TATA",
+    "modele": "PRIMA"
+  },
+  {
+    "id": 634,
+    "marque": "TATA",
+    "modele": "SE"
+  },
+  {
+    "id": 635,
+    "marque": "TATA",
+    "modele": "SFC"
+  },
+  {
+    "id": 636,
+    "marque": "TATA",
+    "modele": "SK"
+  },
+  {
+    "id": 637,
+    "marque": "TATA",
+    "modele": "ULTRA"
+  },
+  {
+    "id": 638,
+    "marque": "TEMSA",
+    "modele": "AVENUE"
+  },
+  {
+    "id": 639,
+    "marque": "TEMSA",
+    "modele": "DIAMOND"
+  },
+  {
+    "id": 640,
+    "marque": "TEMSA",
+    "modele": "MD9"
+  },
+  {
+    "id": 641,
+    "marque": "TEMSA",
+    "modele": "PRESTIJ"
+  },
+  {
+    "id": 642,
+    "marque": "TEMSA",
+    "modele": "SAFARI"
+  },
+  {
+    "id": 643,
+    "marque": "TEMSA",
+    "modele": "SAFIR"
+  },
+  {
+    "id": 644,
+    "marque": "TEMSA",
+    "modele": "SAFIR PLUS"
+  },
+  {
+    "id": 645,
+    "marque": "TEMSA",
+    "modele": "TOURMALIN"
+  },
+  {
+    "id": 646,
+    "marque": "TERBERG-BENSCHOP",
+    "modele": "BC"
+  },
+  {
+    "id": 647,
+    "marque": "TERBERG-BENSCHOP",
+    "modele": "RT"
+  },
+  {
+    "id": 648,
+    "marque": "TERBERG-BENSCHOP",
+    "modele": "TT"
+  },
+  {
+    "id": 649,
+    "marque": "TERBERG-BENSCHOP",
+    "modele": "URBIN"
+  },
+  {
+    "id": 650,
+    "marque": "TERBERG-BENSCHOP",
+    "modele": "YT"
+  },
+  {
+    "id": 651,
+    "marque": "URAL",
+    "modele": 4320
+  },
+  {
+    "id": 652,
+    "marque": "VALTRA",
+    "modele": "A SERIES"
+  },
+  {
+    "id": 653,
+    "marque": "VALTRA",
+    "modele": "N SERIES"
+  },
+  {
+    "id": 654,
+    "marque": "VALTRA",
+    "modele": "S SERIES"
+  },
+  {
+    "id": 655,
+    "marque": "VALTRA",
+    "modele": "T SERIES"
+  },
+  {
+    "id": 656,
+    "marque": "VDL",
+    "modele": "Citea"
+  },
+  {
+    "id": 657,
+    "marque": "VDL",
+    "modele": "Futura"
+  },
+  {
+    "id": 658,
+    "marque": "VDL",
+    "modele": "Jonkheere"
+  },
+  {
+    "id": 659,
+    "marque": "VISEON",
+    "modele": "C Series"
+  },
+  {
+    "id": 660,
+    "marque": "VISEON",
+    "modele": "L Series"
+  },
+  {
+    "id": 661,
+    "marque": "VOLVO",
+    "modele": 7700
+  },
+  {
+    "id": 662,
+    "marque": "VOLVO",
+    "modele": 7900
+  },
+  {
+    "id": 663,
+    "marque": "VOLVO",
+    "modele": 8300
+  },
+  {
+    "id": 664,
+    "marque": "VOLVO",
+    "modele": 8500
+  },
+  {
+    "id": 665,
+    "marque": "VOLVO",
+    "modele": 8700
+  },
+  {
+    "id": 666,
+    "marque": "VOLVO",
+    "modele": 8900
+  },
+  {
+    "id": 667,
+    "marque": "VOLVO",
+    "modele": 9300
+  },
+  {
+    "id": 668,
+    "marque": "VOLVO",
+    "modele": 9400
+  },
+  {
+    "id": 669,
+    "marque": "VOLVO",
+    "modele": 9500
+  },
+  {
+    "id": 670,
+    "marque": "VOLVO",
+    "modele": 9700
+  },
+  {
+    "id": 671,
+    "marque": "VOLVO",
+    "modele": 9900
+  },
+  {
+    "id": 672,
+    "marque": "VOLVO",
+    "modele": "A"
+  },
+  {
+    "id": 673,
+    "marque": "VOLVO",
+    "modele": "B10"
+  },
+  {
+    "id": 674,
+    "marque": "VOLVO",
+    "modele": "B11"
+  },
+  {
+    "id": 675,
+    "marque": "VOLVO",
+    "modele": "B12"
+  },
+  {
+    "id": 676,
+    "marque": "VOLVO",
+    "modele": "B5"
+  },
+  {
+    "id": 677,
+    "marque": "VOLVO",
+    "modele": "B6"
+  },
+  {
+    "id": 678,
+    "marque": "VOLVO",
+    "modele": "B7"
+  },
+  {
+    "id": 679,
+    "marque": "VOLVO",
+    "modele": "B9"
+  },
+  {
+    "id": 680,
+    "marque": "VOLVO",
+    "modele": "F10"
+  },
+  {
+    "id": 681,
+    "marque": "VOLVO",
+    "modele": "F12"
+  },
+  {
+    "id": 682,
+    "marque": "VOLVO",
+    "modele": "F16"
+  },
+  {
+    "id": 683,
+    "marque": "VOLVO",
+    "modele": "F4"
+  },
+  {
+    "id": 684,
+    "marque": "VOLVO",
+    "modele": "F6"
+  },
+  {
+    "id": 685,
+    "marque": "VOLVO",
+    "modele": "F7"
+  },
+  {
+    "id": 686,
+    "marque": "VOLVO",
+    "modele": "F80"
+  },
+  {
+    "id": 687,
+    "marque": "VOLVO",
+    "modele": "FE"
+  },
+  {
+    "id": 688,
+    "marque": "VOLVO",
+    "modele": "FE II"
+  },
+  {
+    "id": 689,
+    "marque": "VOLVO",
+    "modele": "FH"
+  },
+  {
+    "id": 690,
+    "marque": "VOLVO",
+    "modele": "FH II"
+  },
+  {
+    "id": 691,
+    "marque": "VOLVO",
+    "modele": "FH12"
+  },
+  {
+    "id": 692,
+    "marque": "VOLVO",
+    "modele": "FH16"
+  },
+  {
+    "id": 693,
+    "marque": "VOLVO",
+    "modele": "FH16 II"
+  },
+  {
+    "id": 694,
+    "marque": "VOLVO",
+    "modele": "FL"
+  },
+  {
+    "id": 695,
+    "marque": "VOLVO",
+    "modele": "FL II"
+  },
+  {
+    "id": 696,
+    "marque": "VOLVO",
+    "modele": "FL III"
+  },
+  {
+    "id": 697,
+    "marque": "VOLVO",
+    "modele": "FL10"
+  },
+  {
+    "id": 698,
+    "marque": "VOLVO",
+    "modele": "FL12"
+  },
+  {
+    "id": 699,
+    "marque": "VOLVO",
+    "modele": "FL4"
+  },
+  {
+    "id": 700,
+    "marque": "VOLVO",
+    "modele": "FL6"
+  },
+  {
+    "id": 701,
+    "marque": "VOLVO",
+    "modele": "FL7"
+  },
+  {
+    "id": 702,
+    "marque": "VOLVO",
+    "modele": "FLC"
+  },
+  {
+    "id": 703,
+    "marque": "VOLVO",
+    "modele": "FM"
+  },
+  {
+    "id": 704,
+    "marque": "VOLVO",
+    "modele": "FM II"
+  },
+  {
+    "id": 705,
+    "marque": "VOLVO",
+    "modele": "FM10"
+  },
+  {
+    "id": 706,
+    "marque": "VOLVO",
+    "modele": "FM12"
+  },
+  {
+    "id": 707,
+    "marque": "VOLVO",
+    "modele": "FM7"
+  },
+  {
+    "id": 708,
+    "marque": "VOLVO",
+    "modele": "FM9"
+  },
+  {
+    "id": 709,
+    "marque": "VOLVO",
+    "modele": "FMX"
+  },
+  {
+    "id": 710,
+    "marque": "VOLVO",
+    "modele": "FMX II"
+  },
+  {
+    "id": 711,
+    "marque": "VOLVO",
+    "modele": "FS7"
+  },
+  {
+    "id": 712,
+    "marque": "VOLVO",
+    "modele": "N10"
+  },
+  {
+    "id": 713,
+    "marque": "VOLVO",
+    "modele": "N12"
+  },
+  {
+    "id": 714,
+    "marque": "VOLVO",
+    "modele": "N7"
+  },
+  {
+    "id": 715,
+    "marque": "VOLVO",
+    "modele": "NH12"
+  },
+  {
+    "id": 716,
+    "marque": "VOLVO",
+    "modele": "NL"
+  },
+  {
+    "id": 717,
+    "marque": "VOLVO",
+    "modele": "VM"
+  },
+  {
+    "id": 718,
+    "marque": "VW",
+    "modele": "CONSTELLATION"
+  },
+  {
+    "id": 719,
+    "marque": "VW",
+    "modele": "DELIVERY"
+  },
+  {
+    "id": 720,
+    "marque": "VW",
+    "modele": "L 80"
+  },
+  {
+    "id": 721,
+    "marque": "VW",
+    "modele": "VOLKSBUS"
+  },
+  {
+    "id": 722,
+    "marque": "VW",
+    "modele": "WORKER"
+  },
+  {
+    "id": 723,
+    "marque": "WEITUO",
+    "modele": "AOYE"
+  },
+  {
+    "id": 724,
+    "marque": "WEITUO",
+    "modele": "SWT"
+  },
+  {
+    "id": 725,
+    "marque": "YAGMUR",
+    "modele": "Agriform"
+  },
+  {
+    "id": 726,
+    "marque": "YUTONG",
+    "modele": "ZK6128"
+  },
+  {
+    "id": 727,
+    "marque": "ZETOR",
+    "modele": "Antar"
+  },
+  {
+    "id": 728,
+    "marque": "ZETOR",
+    "modele": "Forterra"
+  },
+  {
+    "id": 729,
+    "marque": "ZETOR",
+    "modele": "Major"
+  },
+  {
+    "id": 730,
+    "marque": "ZETOR",
+    "modele": "Proxima"
+  }
+]

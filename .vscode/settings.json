@@ -9,5 +9,8 @@
   "editor.defaultFormatter": "Mohamed-khaled.mern-snippets",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

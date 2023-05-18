@@ -309,7 +309,7 @@ export default function ColumnsTable(props) {
         >
           Liste des champs spéciaux
         </Text>
-        <Menu />
+       
       </Flex>
       <TableContainer overflowX="auto" maxWidth="full">
 
@@ -368,14 +368,6 @@ export default function ColumnsTable(props) {
                       </Flex>
                     );
                   }else if (cell.column.Header === 'TYPE') {
-                    data = (
-                      <Flex align="center">
-                        <Text color={textColor} fontSize="sm" fontWeight="700">
-                          {cell.value}
-                        </Text>
-                      </Flex>
-                    );
-                  } else if (cell.column.Header === 'OPTIONS') {
                     data = (
                       <Flex align="center">
                         <Text color={textColor} fontSize="sm" fontWeight="700">

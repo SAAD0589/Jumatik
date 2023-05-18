@@ -83,13 +83,14 @@ const LanguageSwitcher = () => {
 };
 const LanguageNavbar = () => {
   const history = useHistory();
-  const storedLanguage = localStorage.getItem('selectedLanguage');
+  localStorage.setItem('language', getLocale());
+
 
   const [selectedLanguage, setSelectedLanguage] = useState(getLocale()); // update the initial value
 
   const languages = useMemo(() => [
-    { label: "English", value: "en", flag: <LanguageIcon language="en" selected={selectedLanguage === "en"} /> },
-    { label: "Français", value: "fr", flag: <LanguageIcon language="fr" selected={selectedLanguage === "fr"} /> },
+    { label: "English", value: "en-gb", flag: <LanguageIcon language="en" selected={selectedLanguage === "en"} /> },
+    { label: "Français", value: "fr-fr", flag: <LanguageIcon language="fr" selected={selectedLanguage === "fr"} /> },
     { label: "عربى", value: "ar", flag: <LanguageIcon language="ar" selected={selectedLanguage === "ar"} /> },
   ], []);
   const handleLanguageChange = (event) => {

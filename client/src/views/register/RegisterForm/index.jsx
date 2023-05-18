@@ -250,7 +250,6 @@ function RegisterForm() {
         });
       return;
     }
-    await register();
     if (!user.email.trim()) {
       toast.error('Email obligatoire!', {
         position: "bottom-center",
