@@ -58,10 +58,10 @@ export default function Footer(props) {
         <VStack spacing={2} align="flex-start" w={{ base: 'full', lg: 2 / 5 }} mr={8}>
         <Brand />          <Text>
         {t('JUMATIK votre Marketplace 100% digitale Toutes vos transactions en toute sécurité et sans Intermédiaire')}          </Text>
-          <HStack
+        <HStack
         mt={{ base: 5, lg: 5, md: 5 }}
         spacing={1}
-     
+        px={5}
         alignItems="flex-start"
       >
         <Link target="_blank" href='https://facebook.com/jumatikads'>    
@@ -90,7 +90,7 @@ export default function Footer(props) {
           isRound={true}
           icon={<BsLinkedin size="22px" />}
         />
-                <Link target="_blank" href='https://youtube.com'>    
+                <Link target="_blank" href='https://www.youtube.com/@jumatikmaroc3885'>    
 
         <IconButton
           aria-label="Youtube"
@@ -100,13 +100,18 @@ export default function Footer(props) {
           icon={<BsYoutube size="22px" />}
         />
          </Link>{' '}
+         <Link target="_blank" href='https://twitter.com/JumatikMaroc'>    
         <IconButton
           aria-label="Twitter"
           variant="action"
           size="md"
           isRound={true}
           icon={<BsTwitter size="22px" />}
+          
         />
+                           </Link>{' '}
+              
+
         <IconButton
           aria-label="Twitter"
           variant="action"
@@ -114,6 +119,7 @@ export default function Footer(props) {
           isRound={true}
           icon={<FaTiktok size="22px" />}
         />
+
       </HStack>
         </VStack>
         <SimpleGrid columns={[3, 3, 3]} w="full" gap={6} justifyContent="space-between">
@@ -169,7 +175,7 @@ export default function Footer(props) {
         />
               <ReactStoreBadges
           platform={'android'}
-          url={'YOUR_PLAY_STORE_URL'}
+          url={'https://play.google.com/store/apps/details?id=com.marocapps.jumatik.sellandbuy'}
           locale={'fr-fr'}
         />
           </VStack>

@@ -18,6 +18,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {GiNightSleep} from "react-icons/gi";
 import { t } from 'helpers/TransWrapper';
+import { TiDelete } from 'react-icons/ti';
+import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
+
 export default function Followers(props) {
   const { currentUserId } = props;
   // Chakra Color Mode
@@ -27,6 +31,8 @@ export default function Followers(props) {
   const textColorSecondary = 'gray.400';
   const box = useColorModeValue('secondaryGray.300', 'whiteAlpha.100');
   const [followers, setFollowers] = useState([]);
+  const history = useHistory();
+  const notificationColor = useColorModeValue('red.600', 'red.200');
 
   const fetchFollowers = async () => {
     try {
@@ -63,6 +69,26 @@ export default function Followers(props) {
   useEffect(() => {
     fetchFollowers();
   }, [currentUserId]);
+
+  const deleteFollower = async (id) =>{
+
+    try {
+  const response = await axios.put(
+    `${process.env.REACT_APP_API}/users/delete/follower/${currentUserId}/${id}`,{},
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }
+  );
+  console.log(response.data);
+
+  
+} catch (error) {
+  console.error(error);
+}
+
+}
   return (
     <Card mb={{ base: '0px', lg: '20px' }}>
       <Text
@@ -74,37 +100,74 @@ export default function Followers(props) {
       >
          {t('Vos abonnés')} {' '}
       </Text>
-      {followers.length !== 0 ? <Box w="100%" mt="10px">
-        {' '}
-        {followers.slice(0, 6).map(f => (
-          <Flex key={f._id} mt={3}>
-            <Avatar
-              _hover={{ cursor: 'pointer' }}
-              color="white"
-              src={f.profilePicture}
-              bg="#11047A"
-              size="sm"
-              w="40px"
-              h="40px"
-            />
-            <Flex w="100%" ml={3} align="center">
-              {' '}
-              <Text fontWeight={500} fontSize="md">
-                {' '}
-                {f.userData.firstName + ' ' + f.userData.lastName}{' '}
-              </Text>{' '}
-            </Flex>{' '}
-            <Flex alignItems='end'  w='100%' >
-                                                  <Menu ms='auto' />
-                                                </Flex> {' '}
+      {followers.length !== 0 ? (
+  <Box w="100%" mt="10px">
+    {followers.slice(0, 6).map(f => {
+      const handleDelete = () => {
+        Swal.fire({
+          title: `Êtes-vous sûr(e) de vouloir supprimer ${f.userData.firstName } de vos abonnés ?`,
+          text: "Vous ne pourrez pas revenir en arrière !",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Oui, supprimer !',
+          cancelButtonText: 'Annuler',
+        }).then(result => {
+          if (result.isConfirmed) {
+            deleteFollower(f._id)
+              .then(() => {
+                Swal.fire('Supprimée !', 'Votre abonné a été supprimé.', 'success');
+                history.go(0);
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          }
+        });
+      };
+
+      return (
+        <Flex key={f._id} mt={3}>
+          <Avatar
+            _hover={{ cursor: 'pointer' }}
+            color="white"
+            src={f.profilePicture}
+            bg="#11047A"
+            size="sm"
+            w="40px"
+            h="40px"
+          />
+          <Flex w="100%" ml={3} align="center">
+            <Text fontWeight={500} fontSize="md">
+              {f.userData.firstName + ' ' + f.userData.lastName}
+            </Text>
           </Flex>
-        ))}{' '}
-      </Box> :    <Flex opacity='50%' m='auto' alignItems='center' flexDirection='column'>
-  <Icon color={brandColor2} align='center' as={GiNightSleep} h='120px' w='120px' />
-  <Text align='center' color={brandColor2} fontWeight="bold" fontSize="md" mt="10px" mb="4px">
-  {' '}  {t('Aucun abonné pour le moment')}
-  </Text>
-</Flex>}
+          <Flex alignItems="end" w="100%">
+            <Icon
+              cursor="pointer"
+              onClick={handleDelete}
+              ms="auto"
+              mb={15}
+              alignContent="center"
+              color={notificationColor}
+              as={TiDelete}
+              h="25px"
+              w="25px"
+            />
+          </Flex>
+        </Flex>
+      );
+    })}
+  </Box>
+) : (
+  <Flex opacity="50%" m="auto" alignItems="center" flexDirection="column">
+    <Icon color={brandColor2} align="center" as={GiNightSleep} h="120px" w="120px" />
+    <Text align="center" color={brandColor2} fontWeight="bold" fontSize="md" mt="10px" mb="4px">
+      {t('Aucun abboné pour le moment')}
+    </Text>
+  </Flex>
+)}
       
     </Card>
   );

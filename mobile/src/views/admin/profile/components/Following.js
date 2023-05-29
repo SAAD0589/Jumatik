@@ -66,6 +66,26 @@ export default function Following(props) {
   useEffect(() => {
     fetchFollowing();
   }, [currentUserId]);
+
+  const deleteFollowing = async (id) =>{
+
+        try {
+      const response = await axios.patch(
+        `${process.env.REACT_APP_API}/users/delete/${currentUserId}/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }
+      );
+      console.log(response.data);
+
+      
+    } catch (error) {
+      console.error(error);
+    }
+
+  }
   return (
     <Card mb={{ base: '0px', lg: '20px' }}>
       <Text
@@ -98,7 +118,7 @@ export default function Following(props) {
               </Text>{' '}
             </Flex>{' '}
              <Flex alignItems='end'  w='100%' >
-             <Icon ms='auto' mb={15} alignContent='center' color={notificationColor}  as={TiDelete} h='25px' w='25px' />                       
+             <Icon cursor="pointer" onClick={deleteFollowing(f._id)} ms='auto' mb={15} alignContent='center' color={notificationColor}  as={TiDelete} h='25px' w='25px' />                       
                                                                     </Flex> {' '}
           </Flex>
         ))}{' '}

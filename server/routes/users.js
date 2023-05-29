@@ -6,7 +6,9 @@ import {
     follow,
     getUserIdEmail,
     updateUser,
-    getUsers
+    getUsers,
+    deleteFollowings,
+    deleteFollowers,
 } from "../controllers/users.js";
 import { verifyToken } from "../middleware/auth.js";
 
@@ -30,6 +32,9 @@ router.get("/:id/following", getFollowings);
 // UPDATE
 // router.patch("/:id/:friendsId", verifyToken, addRemoveFriends);
 router.patch("/follow/:id/:followedId", verifyToken, follow);
+router.put("/delete/follower/:id/:followerId", verifyToken, deleteFollowers);
+router.put("/delete/following/:id/:followingId", verifyToken, deleteFollowings);
+
 
 
 export default router;

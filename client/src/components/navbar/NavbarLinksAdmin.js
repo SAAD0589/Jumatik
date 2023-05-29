@@ -222,6 +222,8 @@ export default function HeaderLinks(props) {
               animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
             }}
           >
+                          <Link target="_blank" href='https://play.google.com/store/apps/details?id=com.marocapps.jumatik.sellandbuy'>    
+
             <IconButton
               position="absolute"
               top={0}
@@ -230,6 +232,8 @@ export default function HeaderLinks(props) {
               size="md"
               icon={<FaGooglePlay size="25px" />}
             />
+                     </Link>{' '}
+
           </Box>
           <Box
             position="relative"

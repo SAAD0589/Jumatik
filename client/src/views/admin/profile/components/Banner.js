@@ -129,7 +129,7 @@ export default function Banner(props) {
             <Flex mx="auto" direction="column">
               <Text color={textColorPrimary} fontSize="2xl" fontWeight="700">
                 {' '}
-                {posts}{' '}
+                {posts ? posts : 0}{' '}
               </Text>{' '}
               <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
                  {t('Annonces')} {' '}

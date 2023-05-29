@@ -6,7 +6,7 @@
     },
     "customFieldValue": "AEBI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "TT"
@@ -19,7 +19,7 @@
     },
     "customFieldValue": "AGCO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "DT Series"
@@ -32,7 +32,7 @@
     },
     "customFieldValue": "AL-GHAZI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       480,
@@ -47,7 +47,7 @@
     },
     "customFieldValue": "ALLGAIER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series A",
@@ -61,7 +61,7 @@
     },
     "customFieldValue": "AMW",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series 1600",
@@ -78,7 +78,7 @@
     },
     "customFieldValue": "ARMATRAC",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Serie-11"
@@ -91,7 +91,7 @@
     },
     "customFieldValue": "ASKAM",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "8 Litre",
@@ -106,7 +106,7 @@
     },
     "customFieldValue": "ASTRA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "HD 7",
@@ -122,7 +122,7 @@
     },
     "customFieldValue": "AVIA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "D-Line"
@@ -135,7 +135,7 @@
     },
     "customFieldValue": "AYATS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Bravo"
@@ -148,7 +148,7 @@
     },
     "customFieldValue": "BASAK",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "2000 Series",
@@ -162,7 +162,7 @@
     },
     "customFieldValue": "BAUTZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series AS/AL/AW"
@@ -175,7 +175,7 @@
     },
     "customFieldValue": "BCS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "VOLCAN"
@@ -188,7 +188,7 @@
     },
     "customFieldValue": "BEDFORD",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "TK/MK"
@@ -201,7 +201,7 @@
     },
     "customFieldValue": "BELARUS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series 100",
@@ -215,7 +215,7 @@
     },
     "customFieldValue": "BERKHOF",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Ambassador"
@@ -228,7 +228,7 @@
     },
     "customFieldValue": "BHARATBENZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "HEAVY-DUTY",
@@ -242,7 +242,7 @@
     },
     "customFieldValue": "BMC",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ALYOS",
@@ -268,7 +268,7 @@
     },
     "customFieldValue": "BOVA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Futura",
@@ -285,7 +285,7 @@
     },
     "customFieldValue": "BRANSON",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Serie-00",
@@ -300,7 +300,7 @@
     },
     "customFieldValue": "BREDAMENARINIBUS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AVANCITY",
@@ -317,7 +317,7 @@
     },
     "customFieldValue": "BUCHER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series D"
@@ -330,7 +330,7 @@
     },
     "customFieldValue": "BYD",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "C7",
@@ -344,7 +344,7 @@
     },
     "customFieldValue": "CARON",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Serie-CT"
@@ -357,7 +357,7 @@
     },
     "customFieldValue": "CARRARO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AGRICUBE",
@@ -371,7 +371,7 @@
     },
     "customFieldValue": "CLAAS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ARION",
@@ -389,7 +389,7 @@
     },
     "customFieldValue": "DAEWOO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "NOVUS",
@@ -403,7 +403,7 @@
     },
     "customFieldValue": "DAF",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       45,
@@ -467,7 +467,7 @@
     },
     "customFieldValue": "DENNIS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "DAGGER",
@@ -485,7 +485,7 @@
     },
     "customFieldValue": "DEUTZ-FAHR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AGROFARM",
@@ -522,7 +522,7 @@
     },
     "customFieldValue": "DODGE",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "E"
@@ -535,7 +535,7 @@
     },
     "customFieldValue": "DONGFENG",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "BISON",
@@ -552,7 +552,7 @@
     },
     "customFieldValue": "DURSO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "FARMER"
@@ -565,7 +565,7 @@
     },
     "customFieldValue": "EBRO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "F-Serie",
@@ -579,7 +579,7 @@
     },
     "customFieldValue": "EICHER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "PRO SERIES 1000",
@@ -596,7 +596,7 @@
     },
     "customFieldValue": "ERF",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       54,
@@ -616,7 +616,7 @@
     },
     "customFieldValue": "FAHR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "D",
@@ -630,7 +630,7 @@
     },
     "customFieldValue": "FAP",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "A-Series",
@@ -644,7 +644,7 @@
     },
     "customFieldValue": "FENDT",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Dieselross",
@@ -661,7 +661,7 @@
     },
     "customFieldValue": "FIAT",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       1000,
@@ -704,7 +704,7 @@
     },
     "customFieldValue": "FNM",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "HEAVY"
@@ -717,7 +717,7 @@
     },
     "customFieldValue": "FORD",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "5000-Serie",
@@ -735,7 +735,7 @@
     },
     "customFieldValue": "FOTON",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AUMAN",
@@ -751,7 +751,7 @@
     },
     "customFieldValue": "FREIGHTLINER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CENTURY"
@@ -764,7 +764,7 @@
     },
     "customFieldValue": "GAZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ON",
@@ -779,7 +779,7 @@
     },
     "customFieldValue": "GINAF",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "C-Series",
@@ -793,7 +793,7 @@
     },
     "customFieldValue": "GMC",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       6
@@ -806,7 +806,7 @@
     },
     "customFieldValue": "GOLDONI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Boxter",
@@ -821,7 +821,7 @@
     },
     "customFieldValue": "GRUAU",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "MICROBUS"
@@ -834,7 +834,7 @@
     },
     "customFieldValue": "GUELDNER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "A",
@@ -848,7 +848,7 @@
     },
     "customFieldValue": "HATTAT",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "200 Series",
@@ -866,7 +866,7 @@
     },
     "customFieldValue": "HEULIEZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "GX"
@@ -879,7 +879,7 @@
     },
     "customFieldValue": "HICOM",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "MTB"
@@ -892,7 +892,7 @@
     },
     "customFieldValue": "HINO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "300 Series",
@@ -918,7 +918,7 @@
     },
     "customFieldValue": "HYUNDAI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AERO CITY",
@@ -938,7 +938,7 @@
     },
     "customFieldValue": "CHALLENGER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "MT"
@@ -951,7 +951,7 @@
     },
     "customFieldValue": "CHEVROLET",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "D",
@@ -965,7 +965,7 @@
     },
     "customFieldValue": "INBUS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AS 280"
@@ -978,7 +978,7 @@
     },
     "customFieldValue": "IRISBUS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ACCESS BUS 127",
@@ -1011,7 +1011,7 @@
     },
     "customFieldValue": "IRIZAR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "i2",
@@ -1029,7 +1029,7 @@
     },
     "customFieldValue": "ISUZU",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "FORWARD F",
@@ -1045,7 +1045,7 @@
     },
     "customFieldValue": "IVECO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       370,
@@ -1087,7 +1087,7 @@
     },
     "customFieldValue": "JCB",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "FASTTRAC"
@@ -1100,7 +1100,7 @@
     },
     "customFieldValue": "KAMAZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       4,
@@ -1115,7 +1115,7 @@
     },
     "customFieldValue": "KAROSA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "C-Series"
@@ -1128,7 +1128,7 @@
     },
     "customFieldValue": "KARSAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ATAK",
@@ -1143,7 +1143,7 @@
     },
     "customFieldValue": "KAVZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AURORA"
@@ -1156,7 +1156,7 @@
     },
     "customFieldValue": "KENWORTH",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "T-Series"
@@ -1169,7 +1169,7 @@
     },
     "customFieldValue": "KIA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "GRANBIRD"
@@ -1182,7 +1182,7 @@
     },
     "customFieldValue": "KIOTI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series CK",
@@ -1200,7 +1200,7 @@
     },
     "customFieldValue": "KRAMER",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "14-Serie",
@@ -1220,7 +1220,7 @@
     },
     "customFieldValue": "KUBOTA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series-M"
@@ -1233,7 +1233,7 @@
     },
     "customFieldValue": "LAMBORGHINI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CRONO",
@@ -1254,7 +1254,7 @@
     },
     "customFieldValue": "LANDINI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ALPINE",
@@ -1280,7 +1280,7 @@
     },
     "customFieldValue": "LAZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "LEMBERG"
@@ -1293,7 +1293,7 @@
     },
     "customFieldValue": "LEYLAND",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "LE"
@@ -1306,7 +1306,7 @@
     },
     "customFieldValue": "MACK",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Midlum"
@@ -1319,7 +1319,7 @@
     },
     "customFieldValue": "MAGIRUS-DEUTZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "D-Series",
@@ -1333,7 +1333,7 @@
     },
     "customFieldValue": "MAHINDRA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "DI 3200",
@@ -1352,7 +1352,7 @@
     },
     "customFieldValue": "MAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CLA",
@@ -1406,7 +1406,7 @@
     },
     "customFieldValue": "MARBUS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "VIVE"
@@ -1419,7 +1419,7 @@
     },
     "customFieldValue": "MAZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Serie 100",
@@ -1436,7 +1436,7 @@
     },
     "customFieldValue": "MAZ-MAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "F 2000"
@@ -1449,7 +1449,7 @@
     },
     "customFieldValue": "MCCORMICK",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "C-L Series",
@@ -1472,7 +1472,7 @@
     },
     "customFieldValue": "MCW",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "DR"
@@ -1485,7 +1485,7 @@
     },
     "customFieldValue": "MERCEDES-BENZ",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ACCELO",
@@ -1551,7 +1551,7 @@
     },
     "customFieldValue": "MITSUBISHI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Canter (FB7, FB8, FE7, FE8) VII",
@@ -1569,7 +1569,7 @@
     },
     "customFieldValue": "MULTICAR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Fumo",
@@ -1587,7 +1587,7 @@
     },
     "customFieldValue": "NEOPLAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Airliner",
@@ -1614,7 +1614,7 @@
     },
     "customFieldValue": "NISSAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ATLEON",
@@ -1630,7 +1630,7 @@
     },
     "customFieldValue": "OPTARE",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "OLYMPUS",
@@ -1648,7 +1648,7 @@
     },
     "customFieldValue": "OTOKAR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CENTRO",
@@ -1665,7 +1665,7 @@
     },
     "customFieldValue": "PADANE",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Z-Serie"
@@ -1678,7 +1678,7 @@
     },
     "customFieldValue": "PASQUALI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ORION"
@@ -1691,7 +1691,7 @@
     },
     "customFieldValue": "PEGASO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "TRONER"
@@ -1704,7 +1704,7 @@
     },
     "customFieldValue": "PFANZELT",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "PM TRAC"
@@ -1717,7 +1717,7 @@
     },
     "customFieldValue": "PLAXTON",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "BEAVER",
@@ -1733,7 +1733,7 @@
     },
     "customFieldValue": "SAME",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AUDAX ST",
@@ -1750,7 +1750,7 @@
     },
     "customFieldValue": "SCANIA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "2 - series",
@@ -1782,7 +1782,7 @@
     },
     "customFieldValue": "SETRA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Series 200",
@@ -1798,7 +1798,7 @@
     },
     "customFieldValue": "SHAANXI",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "F2000",
@@ -1812,7 +1812,7 @@
     },
     "customFieldValue": "SHACMAN",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       ""
@@ -1825,7 +1825,7 @@
     },
     "customFieldValue": "SILEO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "S"
@@ -1838,7 +1838,7 @@
     },
     "customFieldValue": "SISU",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "POLAR"
@@ -1851,7 +1851,7 @@
     },
     "customFieldValue": "SML",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "COSMO",
@@ -1868,7 +1868,7 @@
     },
     "customFieldValue": "SOLARIS",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ALPINO",
@@ -1884,7 +1884,7 @@
     },
     "customFieldValue": "STEYR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "1290-Serie",
@@ -1916,7 +1916,7 @@
     },
     "customFieldValue": "TATA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CITYRIDE",
@@ -1939,7 +1939,7 @@
     },
     "customFieldValue": "TEMSA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AVENUE",
@@ -1959,7 +1959,7 @@
     },
     "customFieldValue": "TERBERG-BENSCHOP",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "BC",
@@ -1976,7 +1976,7 @@
     },
     "customFieldValue": "URAL",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       4320
@@ -1989,7 +1989,7 @@
     },
     "customFieldValue": "VALTRA",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "A SERIES",
@@ -2005,7 +2005,7 @@
     },
     "customFieldValue": "VDL",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Citea",
@@ -2020,7 +2020,7 @@
     },
     "customFieldValue": "VISEON",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "C Series",
@@ -2034,7 +2034,7 @@
     },
     "customFieldValue": "VOLVO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       7700,
@@ -2103,7 +2103,7 @@
     },
     "customFieldValue": "VW",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "CONSTELLATION",
@@ -2120,7 +2120,7 @@
     },
     "customFieldValue": "WEITUO",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "AOYE",
@@ -2134,7 +2134,7 @@
     },
     "customFieldValue": "YAGMUR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Agriform"
@@ -2147,7 +2147,7 @@
     },
     "customFieldValue": "YUTONG",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "ZK6128"
@@ -2160,7 +2160,7 @@
     },
     "customFieldValue": "ZETOR",
     "category": "vehicule-vente",
-    "subcategory": "Voitures",
+    "subcategory": "Camions",
     "type": "select",
     "options": [
       "Antar",

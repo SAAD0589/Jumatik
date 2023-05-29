@@ -12,7 +12,7 @@ import {
   useColorModeValue,
   Box,
   Button,
-  IconButton,
+  IconButton,Input
 } from '@chakra-ui/react';
 import React, { useMemo, useState, useEffect } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -31,6 +31,9 @@ import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 export default function SubcategoriesTable(props) {
   const { columnsData } = props;
+  const [searchQuery, setSearchQuery] = useState('');
+const [filteredTableData, setFilteredTableData] = useState([]);
+
   const [cat, setCat] = useState();
   const [tableData, setTableData] = useState([]);
   const getCategoryById = async id => {
@@ -55,46 +58,58 @@ export default function SubcategoriesTable(props) {
       console.error(error);
     }
   };
-
+  const handleSearchQueryChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+  
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_API}/subcategories`,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
-            },
-          }
-        );
-
+        let url = `${process.env.REACT_APP_API}/subcategories`;
+        
+        if (searchQuery) {
+          url += `?name=${searchQuery}`;
+        }
+  
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+  
         const adData = response.data;
-
+  
         const promises = adData.map(item => getCategoryById(item.categoryId));
         const categories = await Promise.all(promises);
         console.log(categories);
-
+  
         const newData = adData.map((item, index) => ({
           nom: item.name,
           categorie: categories.find(cat => cat?._id === item.categoryId)?.label,
           action: item?._id
         }));
+        const filteredData = newData.filter((item) =>
+        item.nom.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+  
+      setFilteredTableData(filteredData);
         console.log(newData);
         setTableData(newData);
       } catch (error) {
         console.log(error);
       }
     }
-
+  
     fetchData();
-  }, []);
+  }, [searchQuery]);
+  
 
   const columns = useMemo(() => columnsData, [columnsData]);
 
   const tableInstance = useTable(
     {
       columns,
-      data: tableData,
+    data: filteredTableData,
     },
     useGlobalFilter,
     useSortBy,
@@ -149,6 +164,15 @@ export default function SubcategoriesTable(props) {
           Liste des Sous-categories
         </Text>
       </Flex>
+      <Flex px="25px" mt={5} justify="space-between" align="center">
+      <Input
+        type="text"
+        variant="auth"
+        value={searchQuery}
+        onChange={handleSearchQueryChange}
+        placeholder="Recherche par nom"
+      />
+    </Flex>
       <Table
         p="50px"
         {...getTableProps()}

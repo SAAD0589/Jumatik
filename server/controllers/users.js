@@ -140,3 +140,46 @@ export const updateUser = async(req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+export const deleteFollowers = async (req, res) => {
+    try {
+      const { id, followerId } = req.params;
+      const user = await User.findById(id);
+      const followers = user.followers;
+  
+      // Filter out the follower with the specified followerId
+      const updatedFollowers = followers.filter(follower => follower !== followerId);
+  
+      // Update the user's followers array with the filtered array
+      user.followers = updatedFollowers;
+  
+      // Save the updated user
+      await user.save();
+  
+      res.status(200).json(updatedFollowers);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  };
+  
+export const deleteFollowings = async(req, res) => {
+    try {
+        const { id, followingId } = req.params;
+        const user = await User.findById(id);
+        const followings = user.following;
+    
+
+        const updatedFollowings = followings.filter(following => following.toString() !== followingId.toString());
+        
+        
+    
+        // Update the user's followers array with the filtered array
+        user.following = updatedFollowings;
+    
+        // Save the updated user
+        await user.save();
+    
+        res.status(200).json(updatedFollowings);
+      } catch (error) {
+        res.status(404).json({ message: error.message });
+      }
+    };

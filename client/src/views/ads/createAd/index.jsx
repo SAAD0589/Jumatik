@@ -52,7 +52,14 @@ import {
   Grid,
   GridItem,
   Progress,
-  ButtonGroup
+  ButtonGroup,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import { CloseIcon, AddIcon } from '@chakra-ui/icons';
 
@@ -185,7 +192,7 @@ const CreateAd = () => {
         .catch(err => console.error(err));
     }
   }, [selectedCityId]);
-
+const [price , setPrice] = useState();
   const [ad, setAd] = useState({
     userId: user._id,
     firstName: user?.firstName,
@@ -222,11 +229,22 @@ const CreateAd = () => {
 
   const HandleChange = e => {
     const { name, value } = e.target;
-    setAd({
-      ...ad, //spread operator
-      [name]: value,
-    });
+    
+    // Conditionally update the price field if it is changed
+    if (name === 'price') {
+   setPrice(e.target.value);
+   setAd({
+    ...ad,
+    price: value,
+  });
+    } else {
+      setAd({
+        ...ad,
+        [name]: value,
+      });
+    }
   };
+  
   const [files, setFiles] = useState(new Array(6).fill(null));
   // const fileInputs = useRef(new Array(6).fill(null));
   // const [file, setFile] = useState([]);
@@ -335,13 +353,19 @@ const CreateAd = () => {
         updatedValues.push({
           ad_id: ad._id,
           field_id: fieldId,
-          field_name: e.target.name,
+          field_name: e.target?.name || '',
           value: value,
         });
       }
+      console.log(updatedValues);
       return updatedValues;
     });
   };
+
+  useEffect(() => {
+    console.log(fieldsValues);
+  }, [fieldsValues]);
+
   useEffect(() => {
     console.log(fieldsValues.find(item => item.field_id === tableFields._id));
 
@@ -357,7 +381,7 @@ const CreateAd = () => {
       .catch(error => {
         console.log(error);
       });
-  }, [fieldsValues, tableFields._id]);
+  }, [fieldsValues]);
 
   const handleSubFieldsChange = (subfieldId, subfieldType, e) => {
     let value;
@@ -387,7 +411,7 @@ const CreateAd = () => {
       return updatedValues;
     });
   };
-// 
+  //
   const add = async (fieldsValues, subfieldsValues) => {
     const formData = new FormData();
     const promises = [];
@@ -403,18 +427,14 @@ const CreateAd = () => {
     formData.append('subcategoryLabel', selectedSubcategoryLabel);
     formData.append('categoryName', selectedCategory);
     formData.append('categoryLabel', selectedCategoryLabel);
-    formData.append('price', ad.price);
+    formData.append('price', price);
     formData.append('description', ad.description);
     formData.append('userProfilePicture', ad.userProfilePicture);
     formData.append('status', ad.status);
     console.log(images);
     images.forEach(element => {
-      formData.append("adPictures", element.src) // check this out for more info: https://developer.mozilla.org/en-US/docs/Web/API/FormData/append#example
-   })
-    
-    
-    
-    
+      formData.append('adPictures', element.src); // check this out for more info: https://developer.mozilla.org/en-US/docs/Web/API/FormData/append#example
+    });
 
     const configuration = {
       method: 'put',
@@ -491,6 +511,7 @@ const CreateAd = () => {
             value: foundFieldValue ? foundFieldValue.value : '',
           };
         });
+        console.log(fieldValuesCat);
         for (const fieldValueCat of fieldValuesCat) {
           try {
             const response = axios.post(
@@ -675,7 +696,40 @@ const CreateAd = () => {
   }, [adData]);
 
   // Add beforeunload event listener to save draft when user leaves the current view
-
+  const updateUserPhone = async (phone) => {
+    try {
+      const response = await axios.patch(
+        `${process.env.REACT_APP_API}/users/update/${user._id}`,
+        { phone },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json', // Update the Content-Type header to 'application/json'
+          },
+        }
+      );
+  
+      if (response.status === 200) {
+        // Return the updated user object
+        const updatedUser = response.data;
+        localStorage.setItem('user-token', JSON.stringify(updatedUser)); // Assuming the updated user object contains a 'token' property
+  
+        return updatedUser;
+      } else {
+        throw new Error('Failed to update user phone number');
+      }
+    } catch (error) {
+      console.error('Error updating user phone number:', error);
+      throw error;
+    }
+  };
+  
+  const [showModal, setShowModal] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState(user.phone);
+  console.log(user.phone);
+  const handlePhoneNumberChange = e => {
+    user.phone = e.target.value;
+  };
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -744,7 +798,21 @@ const CreateAd = () => {
       });
       return;
     }
+    if (user.phone === '060000000' && user.phone.trim().length > 0) {
+      // Update user's phone if a valid phone number is provided
+      updateUserPhone(phoneNumber )
+        .then(updatedUser => {
+          console.log('User phone updated:', updatedUser);
+          setShowModal(false);
+        })
+        .catch(error => {
+          console.error('Error updating user phone number:', error);
+        });
+    } else {
+      console.log('Invalid phone number entered');
+    }
 
+    // Rest of the code...
     await add(fieldsValues, subFieldsValues);
 
     toast(
@@ -769,9 +837,6 @@ const CreateAd = () => {
 
 
 
-
-
-
   return (
     <Card padding="20px" mt={{ base: '80px', md: '10px' }}>
       <ToastContainer
@@ -786,6 +851,7 @@ const CreateAd = () => {
         pauseOnHover
         theme="light"
       />
+
       <Flex
         direction="column"
         w={{ base: '100%', md: '100%' }}
@@ -806,824 +872,998 @@ const CreateAd = () => {
           {t('Ajoutez une annonce gratuitement')}{' '}
         </Text>
         <Box textAlign="left">
-        <Progress
-        alignContent="start"
-          hasStripe
-          size='md'
-          value={progress}
-          mb="5%"
-          colorScheme="purple"
-          width="100%"
-         
-        borderRadius="full"
-        boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)"
-          isAnimated></Progress>
+          <Progress
+            alignContent="start"
+            hasStripe
+            size="md"
+            value={progress}
+            mb="5%"
+            colorScheme="purple"
+            width="100%"
+            borderRadius="full"
+            boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)"
+            isAnimated
+          ></Progress>
         </Box>
-      
-        <FormControl onSubmit={e => handleSubmit(e)}>
-       
-        <Box
-        borderWidth="1px"
-        rounded="lg"
-        shadow="1px 1px 3px rgba(0,0,0,0.3)"
-        p={6}
-        m="10px auto"
-        as="form">
-        
-       
-        {step === 1 ?   <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-       { t('Etape 1: Identification de votre annonce')}
-      </Heading>
-      <FormControl>
-      <FormLabel
-            display="flex"
-            ms="4px"
-            fontSize="md"
-            fontWeight="500"
-            color={textColor}
-            mb="8px"
-            mt={10}
-          >
-            {t('Ajoutez les images du produit (Max 6 images)')}  
-          </FormLabel>{' '}
-      <FormLabel
-            display="flex"
-            ms="4px"
-            fontSize="sm"
-            fontWeight="500"
-            color={textColor}
-            mb="8px"
-            mt={10}
-          >
-          <ul>
-            <li>{t('Une annonce avec des images a plus de visibilité')} </li>
-            <li>{t('La première image est la principale')} </li>
-            <li>{t(`Pour changer l'image principale glisser l'image de votre choix vers la première case`)}
- </li>
-          </ul>
-         </FormLabel>{' '}
-          <Box>
-            <Grid  gridTemplateColumns={{ xl: 'repeat(3, 1fr)', '2xl': '1fr 0.46fr' }} display={{ base: 'block', xl: 'grid' }} gap={4} mb="10px">
-              {Array.from({ length: 6 }).map((_, index) => {
-                const image = images[index];
 
-                return (
-                  <GridItem key={index} mb={2}>
-                  <Box
-      border={index === 0 ? '4px dashed red' : '2px dashed gray'}
-      height="100%"
-      width="100%"
-      onDragOver={handleDragOver}
-      onDrop={(event) => handleDrop(event, index)}
-    >
-                      {image ? (
-                        <>
-                          <Box position="relative">
-                            <IconButton
-                              colorScheme="red"
-                              aria-label="Delete Image"
-                              icon={<CloseIcon />}
-                              size="sm"
-                              onClick={() => handleDelete(image.id)}
-                              position="absolute"
-                              top="2"
-                              right="2"
-                            />
-                            <Image
-                              src={image.src}
-                              w="100%"
-                              h="100%"
-                              objectFit="cover"
-                              draggable
-                              onDragStart={event =>
-                                handleDragStart(event, image.id)
-                              }
-                            />
-                          </Box>
-                        </>
-                      ) : (
-                        index === 0 ?
-                        <Button
-                          as="label"
-                          htmlFor="fileInput"
-                          w="100px"
-                          h="100px"
-                          bg="transparent"
-                          _hover={{ bg: 'transparent' }}
-                          _active={{ bg: 'transparent' }}
-                          _focus={{ boxShadow: 'none' }}
-                          leftIcon={<AddIcon />}
-                          cursor="pointer"
-                        >
-                          
-                          {t(`Image principale`)}
-                          <Input
-                            id="fileInput"
-                            type="file"
-                            accept="image/*"
-                            style={{
-                              display: 'none',
-                            }}
-                            onChange={event => handleFileChange(event, index)}
-                          />
-                        </Button> : <Button
-                          as="label"
-                          htmlFor="fileInput"
-                          w="100px"
-                          h="100px"
-                          bg="transparent"
-                          _hover={{ bg: 'transparent' }}
-                          _active={{ bg: 'transparent' }}
-                          _focus={{ boxShadow: 'none' }}
-                          leftIcon={<AddIcon />}
-                          cursor="pointer"
-                        >
-                          {t('Ajouter une image')}
-                          <Input
-                            id="fileInput"
-                            type="file"
-                            accept="image/*"
-                            style={{
-                              display: 'none',
-                            }}
-                            onChange={event => handleFileChange(event, index)}
-                          />
-                        </Button>
-                        
-                      )}
-                    </Box>
-                  </GridItem>
-                );
-              })}
-            </Grid>
-          </Box>
-          <Flex h="100%" px={5} mb={2}></Flex>
-          <Box height="90px">
-            <FormLabel
-              display="flex"
-              ms="4px"
-              fontSize="md"
-              fontWeight="500"
-              color={textColor}
-              mb="8px"
-            >
-              {t(`Nom de l 'annonce`)}
-              <Text color={brandStars}>*</Text>{' '}
-            </FormLabel>{' '}
-            <Input
-              id="name"
-              isRequired={true}
-              variant="auth"
-              name="name"
-              fontSize="sm"
-              ms={{ base: '0px', md: '0px' }}
-              type="text"
-              placeholder={t(`Entrez le nom de l'annonce`)}
-              mb="24px"
-              fontWeight="500"
-              size="lg"
-              value={ad.name}
-              onChange={HandleChange}
-              
-            />
-          </Box>
-          <FormLabel
-            display="flex"
-            ms="4px"
-            fontSize="md"
-            fontWeight="500"
-            color={textColor}
-            mb="8px"
+        <FormControl onSubmit={e => handleSubmit(e)}>
+          <Box
+            borderWidth="1px"
+            rounded="lg"
+            shadow="1px 1px 3px rgba(0,0,0,0.3)"
+            p={6}
+            m="10px auto"
+            as="form"
           >
-            {t(`Entrez la description de l 'annonce`)}
-            <Text color={brandStars}>*</Text>{' '}
-          </FormLabel>
-          <Textarea
-            id="description"
-            fontSize="sm"
-            mb="24px"
-            fontWeight="500"
-            size="lg"
-            ms={{ base: '0px', md: '0px' }}
-            isRequired={true}
-            placeholder="description de l'annonce"
-            value={ad.description}
-            name="description"
-            onChange={HandleChange}
-          />
-          <Box height="90px">
-            <FormLabel
-              ms="4px"
-              fontSize="sm"
-              fontWeight="500"
-              color={textColor}
-              display="flex"
-            >
-              {t(`Entrez le prix en MAD`)} <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <InputGroup size="md">
-              <Input
-                isRequired={true}
-                fontSize="sm"
-                placeholder={t(`Entrez le prix en MAD`)}
-                mb="24px"
-                size="lg"
-                variant="auth"
-                value={ad.price}
-                name="price"
-                onChange={HandleChange}
-              />
-            </InputGroup>{' '}
-          </Box>{' '}
-      </FormControl>
-      </> : step === 2 ? <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
- { t('Etape 2: Classification de votre annonce ')}
-      </Heading>
-      <FormControl>
-      <Box height="90px">
-            <FormLabel
-              display="flex"
-              ms="4px"
-              fontSize="md"
-              fontWeight="500"
-              color={textColor}
-              mb="8px"
-            >
-              {t(`Choisir une categorie`)} <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <Select
-              id="category"
-              name="categoryName"
-              isRequired={true}
-              fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              onChange={e => {
-                const selectedCategoryId =
-                  e.target.options[e.target.selectedIndex].dataset.id;
-                const selectedCategory = categories.find(
-                  category => category._id === selectedCategoryId
-                );
-                setSelectedSubcategory(null);
-                setSelectedCategory(selectedCategory.name);
-                setSelectedCategoryId(selectedCategoryId);
-                setSelectedCategoryLabel(selectedCategory.label);
-              }}
-              placeholder={t(`Choisir une categorie`)}
-            >
-              {categories.map(category => (
-                <option
-                  key={category._id}
-                  value={category.name}
-                  name={category.label}
-                  data-id={category._id}
-                >
-                  {category.label}
-                </option>
-              ))}
-            </Select>
-          </Box>
-          <Box height="90px">
-            <FormLabel
-              display="flex"
-              ms="4px"
-              fontSize="md"
-              fontWeight="500"
-              color={textColor}
-              mb="8px"
-            >
-              {t(`Choisir une sous-categorie`)}{' '}
-              <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <Select
-              id="category"
-              name="categoryName"
-              isRequired={true}
-              fontSize="sm"
-              mb="24px"
-              size="lg"
-              variant="auth"
-              onChange={e => {
-                setSelectedSubcategory(e.target.value);
-                setSelectedSubcategoryLabel(
-                  e.target.options[e.target.selectedIndex].text
-                );
-              }}
-              placeholder={t(`Choisir une sous-categorie`)}
-            >
-              {' '}
-              {subcategories.map(subcategory => (
-                <option
-                  key={subcategory._id}
-                  value={subcategory.name}
-                  name={subcategory.label}
-                >
-                  {' '}
-                  {subcategory.label}{' '}
-                </option>
-              ))}{' '}
-            </Select>
-          </Box>
-          {selectedSubcategory && (
-            <>
+            {step === 1 ? (
               <>
-                <Box height="90px">
-                  <FormLabel
-                    ms="4px"
-                    fontSize="md"
-                    fontWeight="500"
-                    color={textColor}
-                    display="flex"
-                  >
-                    {tableFields.name}
-                  </FormLabel>
-                  <FormControl isRequired={true}>
-                    {tableFields.type === 'text' && (
-                      <InputGroup size="md">
-                        <Input
-                          fontSize="sm"
-                          placeholder="Enter text"
-                          mb="24px"
-                          size="lg"
-                          variant="auth"
-                          value={
-                            fieldsValues.find(
-                              item => item.field_id === tableFields._id
-                            )?.value
-                          }
-                          onChange={value =>
-                            handleFieldsChange(
-                              tableFields._id,
-                              tableFields.type,
-                              value
-                            )
-                          }
-                          name={tableFields.name}
-                        />
-                      </InputGroup>
-                    )}
-                    {tableFields.type === 'textarea' && (
-                      <Textarea
-                        fontSize="sm"
-                        placeholder="Enter text"
-                        mb="24px"
-                        size="lg"
-                        variant="auth"
-                        name={tableFields.name}
-                        value={
-                          fieldsValues.find(
-                            item => item.field_id === tableFields._id
-                          )?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(
-                            tableFields._id,
-                            tableFields.type,
-                            value
-                          )
-                        }
-                      />
-                    )}
-                    {tableFields.type === 'radio' && (
-                      <RadioGroup
-                        variant="auth"
-                        name={tableFields.name}
-                        value={
-                          fieldsValues.find(
-                            item => item.field_id === tableFields._id
-                          )?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(
-                            tableFields._id,
-                            tableFields.type,
-                            value
-                          )
-                        }
-                        mb="24px"
-                        size="lg"
-                      >
-                        <Stack direction="row">
-                          {tableFields.options.map(option => (
-                            <Radio value={option} key={option}>
-                              {option}
-                            </Radio>
-                          ))}
-                        </Stack>
-                      </RadioGroup>
-                    )}
-                    {tableFields.type === 'select' && (
-                      <Select
-                        placeholder="Select option"
-                        name={tableFields.name}
-                        value={
-                          fieldsValues.find(
-                            item => item.field_id === tableFields._id
-                          )?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(
-                            tableFields._id,
-                            tableFields.type,
-                            value
-                          )
-                        }
-                        fontSize="sm"
-                        mb="24px"
-                        size="lg"
-                        variant="auth"
-                      >
-                        {tableFields.options.map(option => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </Select>
-                    )}
-                  </FormControl>
-                </Box>
-                {console.log(
-                  fieldsValues.find(item => item.field_id === tableFields._id)
-                )}
-                {fieldsValues.find(
-                  item => item.field_id === tableFields._id
-                ) && (
-                  <>
-                    {tableSubFields.map(subField => (
-                      <Box height="90px">
-                        <FormLabel
-                          ms="4px"
-                          fontSize="md"
-                          fontWeight="500"
-                          color={textColor}
-                          display="flex"
+                <Heading
+                  w="100%"
+                  textAlign={'center'}
+                  fontWeight="normal"
+                  mb="2%"
+                >
+                  {t('Etape 1: Classification de votre annonce ')}
+                </Heading>
+                <FormControl>
+                  <Box height="90px">
+                    <FormLabel
+                      display="flex"
+                      ms="4px"
+                      fontSize="md"
+                      fontWeight="500"
+                      color={textColor}
+                      mb="8px"
+                    >
+                      {t(`Choisir une categorie`)}{' '}
+                      <Text color={brandStars}> * </Text>{' '}
+                    </FormLabel>{' '}
+                    <Select
+                      id="category"
+                      name="categoryName"
+                      isRequired={true}
+                      fontSize="sm"
+                      mb="24px"
+                      size="lg"
+                      variant="auth"
+                      onChange={e => {
+                        const selectedCategoryId =
+                          e.target.options[e.target.selectedIndex].dataset.id;
+                        const selectedCategory = categories.find(
+                          category => category._id === selectedCategoryId
+                        );
+                        setSelectedSubcategory(null);
+                        setSelectedCategory(selectedCategory.name);
+                        setSelectedCategoryId(selectedCategoryId);
+                        setSelectedCategoryLabel(selectedCategory.label);
+                      }}
+                      placeholder={t(`Choisir une categorie`)}
+                    >
+                      {categories.map(category => (
+                        <option
+                          key={category._id}
+                          value={category.name}
+                          name={category.label}
+                          data-id={category._id}
                         >
-                          {subField.name}
-                        </FormLabel>
-                        <FormControl isRequired={true}>
-                          {subField.type === 'text' && (
-                            <InputGroup size="md">
-                              <Input
+                          {category.label}
+                        </option>
+                      ))}
+                    </Select>
+                  </Box>
+                  <Box height="90px">
+                    <FormLabel
+                      display="flex"
+                      ms="4px"
+                      fontSize="md"
+                      fontWeight="500"
+                      color={textColor}
+                      mb="8px"
+                    >
+                      {t(`Choisir une sous-categorie`)}{' '}
+                      <Text color={brandStars}> * </Text>{' '}
+                    </FormLabel>{' '}
+                    <Select
+                      id="category"
+                      name="categoryName"
+                      isRequired={true}
+                      fontSize="sm"
+                      mb="24px"
+                      size="lg"
+                      variant="auth"
+                      onChange={e => {
+                        setSelectedSubcategory(e.target.value);
+                        setSelectedSubcategoryLabel(
+                          e.target.options[e.target.selectedIndex].text
+                        );
+                      }}
+                      placeholder={t(`Choisir une sous-categorie`)}
+                    >
+                      {' '}
+                      {subcategories.map(subcategory => (
+                        <option
+                          key={subcategory._id}
+                          value={subcategory.name}
+                          name={subcategory.label}
+                        >
+                          {' '}
+                          {subcategory.label}{' '}
+                        </option>
+                      ))}{' '}
+                    </Select>
+                  </Box>
+                  {selectedSubcategory && (
+                    <>
+                      <>
+                        <Box height="90px">
+                          <FormLabel
+                            ms="4px"
+                            fontSize="md"
+                            fontWeight="500"
+                            color={textColor}
+                            display="flex"
+                          >
+                            {tableFields?.name}
+                          </FormLabel>
+                          <FormControl isRequired={true}>
+                            {tableFields?.type === 'text' && (
+                              <InputGroup size="md">
+                                <Input
+                                  fontSize="sm"
+                                  placeholder="Enter text"
+                                  mb="24px"
+                                  size="lg"
+                                  variant="auth"
+                                  value={
+                                    fieldsValues.find(
+                                      item => item.field_id === tableFields?._id
+                                    )?.value
+                                  }
+                                  onChange={value =>
+                                    handleFieldsChange(
+                                      tableFields?._id,
+                                      tableFields?.type,
+                                      value
+                                    )
+                                  }
+                                  name={tableFields?.name}
+                                />
+                              </InputGroup>
+                            )}
+                            {tableFields?.type === 'textarea' && (
+                              <Textarea
                                 fontSize="sm"
                                 placeholder="Enter text"
                                 mb="24px"
                                 size="lg"
                                 variant="auth"
+                                name={tableFields?.name}
                                 value={
-                                  subFieldsValues.find(
-                                    item => item.field_id === subField._id
+                                  fieldsValues.find(
+                                    item => item.field_id === tableFields?._id
                                   )?.value
                                 }
                                 onChange={value =>
                                   handleFieldsChange(
-                                    subField._id,
-                                    subField.type,
+                                    tableFields?._id,
+                                    tableFields?.type,
                                     value
                                   )
                                 }
-                                name={subField.name}
                               />
-                            </InputGroup>
-                          )}
-                          {subField.type === 'textarea' && (
-                            <Textarea
-                              fontSize="sm"
-                              placeholder="Enter text"
-                              mb="24px"
-                              size="lg"
-                              variant="auth"
-                              name={subField.name}
-                              value={
-                                subFieldsValues.find(
-                                  item => item.field_id === subField._id
-                                )?.value
-                              }
-                              onChange={value =>
-                                handleSubFieldsChange(
-                                  subField._id,
-                                  subField.type,
-                                  value
-                                )
-                              }
-                            />
-                          )}
-                          {subField.type === 'radio' && (
-                            <RadioGroup
-                              variant="auth"
-                              name={subField.name}
-                              value={
-                                subFieldsValues.find(
-                                  item => item.field_id === subField._id
-                                )?.value
-                              }
-                              onChange={value =>
-                                handleSubFieldsChange(
-                                  subField._id,
-                                  subField.type,
-                                  value
-                                )
-                              }
-                              mb="24px"
-                              size="lg"
-                            >
-                              <Stack direction="row">
-                                {subField.options.map(option => (
-                                  <Radio value={option} key={option}>
+                            )}
+                            {tableFields?.type === 'radio' && (
+                              <RadioGroup
+                                variant="auth"
+                                name={tableFields?.name}
+                                value={
+                                  fieldsValues.find(
+                                    item => item.field_id === tableFields?._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    tableFields?._id,
+                                    tableFields?.type,
+                                    value
+                                  )
+                                }
+                                mb="24px"
+                                size="lg"
+                              >
+                                <Stack direction="row">
+                                  {tableFields?.options.map(option => (
+                                    <Radio value={option} key={option}>
+                                      {option}
+                                    </Radio>
+                                  ))}
+                                </Stack>
+                              </RadioGroup>
+                            )}
+                            {tableFields?.type === 'select' && (
+                              <Select
+                                placeholder="Select option"
+                                name={tableFields?.name}
+                                value={
+                                  fieldsValues.find(
+                                    item => item.field_id === tableFields?._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    tableFields?._id,
+                                    tableFields?.type,
+                                    value
+                                  )
+                                }
+                                fontSize="sm"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                              >
+                                {tableFields?.options.map(option => (
+                                  <option key={option} value={option}>
                                     {option}
-                                  </Radio>
+                                  </option>
                                 ))}
-                              </Stack>
-                            </RadioGroup>
-                          )}
-                          {subField.type === 'select' && (
-                            <Select
-                              placeholder="Select option"
-                              name={subField.name}
-                              value={
-                                subFieldsValues.find(
-                                  item => item.field_id === subField._id
-                                )?.value
+                              </Select>
+                            )}
+                          </FormControl>
+                        </Box>
+                        {console.log(
+                          fieldsValues.find(
+                            item => item.field_id === tableFields?._id
+                          )
+                        )}
+                        {fieldsValues.find(
+                          item => item.field_id === tableFields?._id
+                        ) && (
+                          <>
+                            {tableSubFields.map(subField => (
+                              <Box height="90px">
+                                <FormLabel
+                                  ms="4px"
+                                  fontSize="md"
+                                  fontWeight="500"
+                                  color={textColor}
+                                  display="flex"
+                                >
+                                  {subField.name}
+                                </FormLabel>
+                                <FormControl isRequired={true}>
+                                  {subField.type === 'text' && (
+                                    <InputGroup size="md">
+                                      <Input
+                                        fontSize="sm"
+                                        placeholder="Enter text"
+                                        mb="24px"
+                                        size="lg"
+                                        variant="auth"
+                                        value={
+                                          subFieldsValues.find(
+                                            item =>
+                                              item.field_id === subField._id
+                                          )?.value
+                                        }
+                                        onChange={value =>
+                                          handleFieldsChange(
+                                            subField._id,
+                                            subField.type,
+                                            value
+                                          )
+                                        }
+                                        name={subField.name}
+                                      />
+                                    </InputGroup>
+                                  )}
+                                  {subField.type === 'textarea' && (
+                                    <Textarea
+                                      fontSize="sm"
+                                      placeholder="Enter text"
+                                      mb="24px"
+                                      size="lg"
+                                      variant="auth"
+                                      name={subField.name}
+                                      value={
+                                        subFieldsValues.find(
+                                          item => item.field_id === subField._id
+                                        )?.value
+                                      }
+                                      onChange={value =>
+                                        handleSubFieldsChange(
+                                          subField._id,
+                                          subField.type,
+                                          value
+                                        )
+                                      }
+                                    />
+                                  )}
+                                  {subField.type === 'radio' && (
+                                    <RadioGroup
+                                      variant="auth"
+                                      name={subField.name}
+                                      value={
+                                        subFieldsValues.find(
+                                          item => item.field_id === subField._id
+                                        )?.value
+                                      }
+                                      onChange={value =>
+                                        handleSubFieldsChange(
+                                          subField._id,
+                                          subField.type,
+                                          value
+                                        )
+                                      }
+                                      mb="24px"
+                                      size="lg"
+                                    >
+                                      <Stack direction="row">
+                                        {subField.options.map(option => (
+                                          <Radio value={option} key={option}>
+                                            {option}
+                                          </Radio>
+                                        ))}
+                                      </Stack>
+                                    </RadioGroup>
+                                  )}
+                                  {subField.type === 'select' && (
+                                    <Select
+                                      placeholder="Select option"
+                                      name={subField.name}
+                                      value={
+                                        subFieldsValues.find(
+                                          item => item.field_id === subField._id
+                                        )?.value
+                                      }
+                                      onChange={value =>
+                                        handleSubFieldsChange(
+                                          subField._id,
+                                          subField.type,
+                                          value
+                                        )
+                                      }
+                                      fontSize="sm"
+                                      mb="24px"
+                                      size="lg"
+                                      variant="auth"
+                                    >
+                                      {subField.options.map(option => (
+                                        <option key={option} value={option}>
+                                          {option}
+                                        </option>
+                                      ))}
+                                    </Select>
+                                  )}
+                                </FormControl>
+                              </Box>
+                            ))}
+                          </>
+                        )}
+                      </>
+                    </>
+                  )}
+                  {selectedCategory && (
+                    <>
+                      {tableFieldsCat.map(field => (
+                        <Box height="90px">
+                          <FormLabel
+                            ms="4px"
+                            fontSize="md"
+                            fontWeight="500"
+                            color={textColor}
+                            display="flex"
+                          >
+                            {field.name}
+                          </FormLabel>
+                          <FormControl isRequired={true}>
+                            {field.type === 'text' && (
+                              <InputGroup size="md">
+                                <Input
+                                  name={field.name}
+                                  fontSize="sm"
+                                  placeholder="Enter text"
+                                  mb="24px"
+                                  size="lg"
+                                  variant="auth"
+                                  value={
+                                    fieldsValues.find(
+                                      item => item.field_id === field._id
+                                    )?.value
+                                  }
+                                  onChange={value =>
+                                    handleFieldsChange(
+                                      field._id,
+                                      field.type,
+                                      value
+                                    )
+                                  }
+                                />
+                              </InputGroup>
+                            )}
+                            {field.type === 'textarea' && (
+                              <Textarea
+                                fontSize="sm"
+                                placeholder="Enter text"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                                name={field.name}
+                                value={
+                                  fieldsValues.find(
+                                    item => item.field_id === field._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    field._id,
+                                    field.type,
+                                    value
+                                  )
+                                }
+                              />
+                            )}
+                            {field.type === 'radio' && (
+                              <RadioGroup
+                                variant="auth"
+                                name={field.name}
+                                value={
+                                  fieldsValues.find(
+                                    item => item.field_id === field._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    field._id,
+                                    field.type,
+                                    value
+                                  )
+                                }
+                                mb="24px"
+                                size="lg"
+                              >
+                                <Stack direction="row">
+                                  {field.options.map(option => (
+                                    <Radio value={option} key={option}>
+                                      {option}
+                                    </Radio>
+                                  ))}
+                                </Stack>
+                              </RadioGroup>
+                            )}
+
+                            {field.type === 'select' && (
+                              <Select
+                                placeholder="Select option"
+                                name={field.name}
+                                value={
+                                  fieldsValues.find(
+                                    item => item.field_id === field._id
+                                  )?.value
+                                }
+                                onChange={value =>
+                                  handleFieldsChange(
+                                    field._id,
+                                    field.type,
+                                    value
+                                  )
+                                }
+                                fontSize="sm"
+                                mb="24px"
+                                size="lg"
+                                variant="auth"
+                              >
+                                {field.options.map(option => (
+                                  <option key={option} value={option}>
+                                    {option}
+                                  </option>
+                                ))}
+                              </Select>
+                            )}
+                          </FormControl>
+                        </Box>
+                      ))}
+                    </>
+                  )}
+                </FormControl>
+                <ButtonGroup mt="5%" w="100%">
+                  <Flex w="100%" justifyContent="space-between">
+                    <Flex>
+                      <Button
+                        onClick={() => {
+                          setStep(step - 1);
+                          setProgress(progress - 33.33);
+                        }}
+                        isDisabled={step === 1}
+                        colorScheme="purple"
+                        variant="solid"
+                        w="7rem"
+                        mr="5%"
+                      >
+                        {t('Précédent')}
+                      </Button>
+                      <Button
+                        w="7rem"
+                        isDisabled={step === 3}
+                        onClick={() => {
+                          if (!selectedCategory.trim()) {
+                            toast.error(
+                              'Attribuez une catégorie à votre annonce!',
+                              {
+                                position: 'bottom-center',
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: 'colored',
                               }
-                              onChange={value =>
-                                handleSubFieldsChange(
-                                  subField._id,
-                                  subField.type,
-                                  value
-                                )
-                              }
-                              fontSize="sm"
-                              mb="24px"
-                              size="lg"
-                              variant="auth"
-                            >
-                              {subField.options.map(option => (
-                                <option key={option} value={option}>
-                                  {option}
-                                </option>
-                              ))}
-                            </Select>
-                          )}
-                        </FormControl>
-                      </Box>
-                    ))}
-                  </>
-                )}
+                            );
+                          } else {
+                            setStep(step + 1);
+                            if (step === 3) {
+                              setProgress(100);
+                            } else {
+                              setProgress(progress + 33.33);
+                            }
+                          }
+                        }}
+                        colorScheme="purple"
+                        variant="outline"
+                      >
+                        {t('Suivant')}
+                      </Button>
+                    </Flex>
+                  </Flex>
+                </ButtonGroup>
               </>
-            </>
-          )}
-          {selectedCategory && (
-            <>
-              {tableFieldsCat.map(field => (
-                <Box height="90px">
+            ) : step === 2 ? (
+              <>
+                <Heading
+                  w="100%"
+                  textAlign={'center'}
+                  fontWeight="normal"
+                  mb="2%"
+                >
+                  {t('Etape 2: Identification de votre annonce')}
+                </Heading>
+                <FormControl>
                   <FormLabel
+                    display="flex"
                     ms="4px"
                     fontSize="md"
                     fontWeight="500"
                     color={textColor}
-                    display="flex"
+                    mb="8px"
+                    mt={10}
                   >
-                    {field.name}
+                    {t('Ajoutez les images du produit (Max 6 images)')}
+                  </FormLabel>{' '}
+                  <FormLabel
+                    display="flex"
+                    ms="4px"
+                    fontSize="sm"
+                    fontWeight="500"
+                    color={textColor}
+                    mb="8px"
+                    mt={10}
+                  >
+                    <ul>
+                      <li>
+                        {t('Une annonce avec des images a plus de visibilité')}{' '}
+                      </li>
+                      <li>{t('La première image est la principale')} </li>
+                      <li>
+                        {t(
+                          `Pour changer l'image principale glisser l'image de votre choix vers la première case`
+                        )}
+                      </li>
+                    </ul>
+                  </FormLabel>{' '}
+                  <Box>
+                    <Grid
+                      gridTemplateColumns={{
+                        xl: 'repeat(3, 1fr)',
+                        '2xl': '1fr 0.46fr',
+                      }}
+                      display={{ base: 'block', xl: 'grid' }}
+                      gap={4}
+                      mb="10px"
+                    >
+                      {Array.from({ length: 6 }).map((_, index) => {
+                        const image = images[index];
+
+                        return (
+                          <GridItem key={index} mb={2}>
+                            <Box
+                              border={
+                                index === 0
+                                  ? '4px dashed red'
+                                  : '2px dashed gray'
+                              }
+                              height="100%"
+                              width="100%"
+                              onDragOver={handleDragOver}
+                              onDrop={event => handleDrop(event, index)}
+                            >
+                              {image ? (
+                                <>
+                                  <Box position="relative">
+                                    <IconButton
+                                      colorScheme="red"
+                                      aria-label="Delete Image"
+                                      icon={<CloseIcon />}
+                                      size="sm"
+                                      onClick={() => handleDelete(image.id)}
+                                      position="absolute"
+                                      top="2"
+                                      right="2"
+                                    />
+                                    <Image
+                                      src={image.src}
+                                      w="100%"
+                                      h="100%"
+                                      objectFit="cover"
+                                      draggable
+                                      onDragStart={event =>
+                                        handleDragStart(event, image.id)
+                                      }
+                                    />
+                                  </Box>
+                                </>
+                              ) : index === 0 ? (
+                                <Button
+                                  as="label"
+                                  htmlFor="fileInput"
+                                  w="100px"
+                                  h="100px"
+                                  bg="transparent"
+                                  _hover={{ bg: 'transparent' }}
+                                  _active={{ bg: 'transparent' }}
+                                  _focus={{ boxShadow: 'none' }}
+                                  leftIcon={<AddIcon />}
+                                  cursor="pointer"
+                                >
+                                  {t(`Image principale`)}
+                                  <Input
+                                    id="fileInput"
+                                    type="file"
+                                    accept="image/*"
+                                    style={{
+                                      display: 'none',
+                                    }}
+                                    onChange={event =>
+                                      handleFileChange(event, index)
+                                    }
+                                  />
+                                </Button>
+                              ) : (
+                                <Button
+                                  as="label"
+                                  htmlFor="fileInput"
+                                  w="100px"
+                                  h="100px"
+                                  bg="transparent"
+                                  _hover={{ bg: 'transparent' }}
+                                  _active={{ bg: 'transparent' }}
+                                  _focus={{ boxShadow: 'none' }}
+                                  leftIcon={<AddIcon />}
+                                  cursor="pointer"
+                                >
+                                  {t('Ajouter une image')}
+                                  <Input
+                                    id="fileInput"
+                                    type="file"
+                                    accept="image/*"
+                                    style={{
+                                      display: 'none',
+                                    }}
+                                    onChange={event =>
+                                      handleFileChange(event, index)
+                                    }
+                                  />
+                                </Button>
+                              )}
+                            </Box>
+                          </GridItem>
+                        );
+                      })}
+                    </Grid>
+                  </Box>
+                  <Flex h="100%" px={5} mb={2}></Flex>
+                  <Box height="90px">
+                    <FormLabel
+                      display="flex"
+                      ms="4px"
+                      fontSize="md"
+                      fontWeight="500"
+                      color={textColor}
+                      mb="8px"
+                    >
+                      {t(`Nom de l 'annonce`)}
+                      <Text color={brandStars}>*</Text>{' '}
+                    </FormLabel>{' '}
+                    <Input
+                      id="name"
+                      isRequired={true}
+                      variant="auth"
+                      name="name"
+                      fontSize="sm"
+                      ms={{ base: '0px', md: '0px' }}
+                      type="text"
+                      placeholder={t(`Entrez le nom de l'annonce`)}
+                      mb="24px"
+                      fontWeight="500"
+                      size="lg"
+                      value={ad.name}
+                      onChange={HandleChange}
+                    />
+                  </Box>
+                  <FormLabel
+                    display="flex"
+                    ms="4px"
+                    fontSize="md"
+                    fontWeight="500"
+                    color={textColor}
+                    mb="8px"
+                  >
+                    {t(`Entrez la description de l 'annonce`)}
+                    <Text color={brandStars}>*</Text>{' '}
                   </FormLabel>
-                  <FormControl isRequired={true}>
-                    {field.type === 'text' && (
-                      <InputGroup size="md">
-                        <Input
-                          fontSize="sm"
-                          placeholder="Enter text"
-                          mb="24px"
-                          size="lg"
-                          variant="auth"
-                          value={
-                            fieldsValues.find(
-                              item => item.field_id === field._id
-                            )?.value
-                          }
-                          onChange={value =>
-                            handleFieldsChange(field._id, field.type, value)
-                          }
-                          name={field.name}
-                        />
-                      </InputGroup>
-                    )}
-                    {field.type === 'textarea' && (
-                      <Textarea
+                  <Textarea
+                    id="description"
+                    fontSize="sm"
+                    mb="24px"
+                    fontWeight="500"
+                    size="lg"
+                    ms={{ base: '0px', md: '0px' }}
+                    isRequired={true}
+                    placeholder="description de l'annonce"
+                    value={ad.description}
+                    name="description"
+                    onChange={HandleChange}
+                  />
+                  <Box height="90px">
+                    <FormLabel
+                      ms="4px"
+                      fontSize="sm"
+                      fontWeight="500"
+                      color={textColor}
+                      display="flex"
+                    >
+                      {t(`Entrez le prix en MAD`)}{' '}
+                      <Text color={brandStars}> * </Text>{' '}
+                    </FormLabel>{' '}
+                    <InputGroup size="md">
+                      <Input
+                        isRequired={true}
                         fontSize="sm"
-                        placeholder="Enter text"
+                        placeholder={t(`Entrez le prix en MAD`)}
                         mb="24px"
                         size="lg"
                         variant="auth"
-                        name={field.name}
-                        value={
-                          fieldsValues.find(item => item.field_id === field._id)
-                            ?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(field._id, field.type, value)
-                        }
+                        value={ad.price}
+                        name="price"
+                        onChange={HandleChange}
                       />
-                    )}
-                    {field.type === 'radio' && (
-                      <RadioGroup
-                        variant="auth"
-                        name={field.name}
-                        value={
-                          fieldsValues.find(item => item.field_id === field._id)
-                            ?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(field._id, field.type, value)
-                        }
-                        mb="24px"
-                        size="lg"
+                    </InputGroup>{' '}
+                  </Box>{' '}
+                </FormControl>
+                <ButtonGroup mt="5%" w="100%">
+                  <Flex w="100%" justifyContent="space-between">
+                    <Flex>
+                      <Button
+                        onClick={() => {
+                          setStep(step - 1);
+                          setProgress(progress - 33.33);
+                        }}
+                        isDisabled={step === 1}
+                        colorScheme="purple"
+                        variant="solid"
+                        w="7rem"
+                        mr="5%"
                       >
-                        <Stack direction="row">
-                          {field.options.map(option => (
-                            <Radio value={option} key={option}>
-                              {option}
-                            </Radio>
-                          ))}
-                        </Stack>
-                      </RadioGroup>
-                    )}
-                    {field.type === 'select' && (
+                        {t('Précédent')}
+                      </Button>
+                      <Button
+                        w="7rem"
+                        isDisabled={step === 3}
+                        onClick={() => {
+                          if (!ad.name.trim()) {
+                            toast.error('Nommez votre annonce!', {
+                              position: 'bottom-center',
+                              autoClose: 5000,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: 'colored',
+                            });
+                            return;
+                          }
+                          if (!ad.description.trim()) {
+                            toast.error('Décrivez votre annonce!', {
+                              position: 'bottom-center',
+                              autoClose: 5000,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: 'colored',
+                            });
+                            return;
+                          } else {
+                            setStep(step + 1);
+                            if (step === 3) {
+                              setProgress(100);
+                            } else {
+                              setProgress(progress + 33.33);
+                            }
+                          }
+                        }}
+                        colorScheme="purple"
+                        variant="outline"
+                      >
+                        {t('Suivant')}
+                      </Button>
+                    </Flex>
+                  </Flex>
+                </ButtonGroup>
+              </>
+            ) : (
+              <>
+                <Heading
+                  w="100%"
+                  textAlign={'center'}
+                  fontWeight="normal"
+                  mb="2%"
+                >
+                  {t('Etape 3: Localisation de votre annonce ')}
+                </Heading>
+                <FormControl>
+                  <Box height="90px">
+                    <FormLabel
+                      ms="4px"
+                      fontSize="md"
+                      fontWeight="500"
+                      color={textColor}
+                      display="flex"
+                    >
+                      {t(`Choisissez votre ville`)}{' '}
+                      <Text color={brandStars}> * </Text>{' '}
+                    </FormLabel>{' '}
+                    <InputGroup>
                       <Select
-                        placeholder="Select option"
-                        name={field.name}
-                        value={
-                          fieldsValues.find(item => item.field_id === field._id)
-                            ?.value
-                        }
-                        onChange={value =>
-                          handleFieldsChange(field._id, field.type, value)
-                        }
+                        id="city"
+                        name="location"
                         fontSize="sm"
+                        ms={{ base: '0px', md: '0px' }}
+                        placeholder={t(`Choisissez votre ville`)}
                         mb="24px"
+                        fontWeight="200"
                         size="lg"
-                        variant="auth"
+                        onChange={e => {
+                          const selectedCityName = e.target.value;
+
+                          const selectedCity = cities.find(
+                            city => city.name === selectedCityName
+                          );
+
+                          if (selectedCity) {
+                            setSelectedCityId(selectedCity.id);
+                            // do something with the selected city id
+                          }
+                          setSelectedCity(e.target.value);
+                        }}
                       >
-                        {field.options.map(option => (
-                          <option key={option} value={option}>
-                            {option}
+                        {' '}
+                        {cities.map(city => (
+                          <option key={city.id} value={city.name}>
+                            {' '}
+                            {city.name}{' '}
                           </option>
-                        ))}
+                        ))}{' '}
                       </Select>
-                    )}
-                  </FormControl>
-                </Box>
-              ))}
-            </>
-          )}
-      </FormControl>
-      </> : <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-          { t('Etape 3: Localisation de votre annonce ')}
-
-      </Heading>
-      <FormControl>
-      <Box height="90px">
-            <FormLabel
-              ms="4px"
-              fontSize="md"
-              fontWeight="500"
-              color={textColor}
-              display="flex"
-            >
-              {t(`Choisissez votre ville`)} <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <InputGroup>
-              <Select
-                id="city"
-                name="location"
-                fontSize="sm"
-                ms={{ base: '0px', md: '0px' }}
-                placeholder={t(`Choisissez votre ville`)}
-                mb="24px"
-                fontWeight="200"
-                size="lg"
-                onChange={e => {
-                  const selectedCityName = e.target.value;
-
-                  const selectedCity = cities.find(
-                    city => city.name === selectedCityName
-                  );
-
-                  if (selectedCity) {
-                    setSelectedCityId(selectedCity.id);
-                    // do something with the selected city id
-                  }
-                  setSelectedCity(e.target.value);
-                }}
-              >
-                {' '}
-                {cities.map(city => (
-                  <option key={city.id} value={city.name}>
-                    {' '}
-                    {city.name}{' '}
-                  </option>
-                ))}{' '}
-              </Select>
-            </InputGroup>
-          </Box>{' '}
-          <Box height="90px">
-            <FormLabel
-              ms="4px"
-              fontSize="md"
-              fontWeight="500"
-              color={textColor}
-              display="flex"
-            >
-              {t(`Choisissez votre secteur`)}{' '}
-              <Text color={brandStars}> * </Text>{' '}
-            </FormLabel>{' '}
-            <InputGroup>
-              <Select
-                id="city"
-                name="location"
-                fontSize="sm"
-                ms={{ base: '0px', md: '0px' }}
-                placeholder={t(`Choisissez votre secteur`)}
-                mb="24px"
-                fontWeight="200"
-                size="lg"
-                onChange={e => setSelectedsecteur(e.target.value)}
-              >
-                {' '}
-                {secteurs.map(secteur => (
-                  <option key={secteur._id} value={secteur.name}>
-                    {' '}
-                    {secteur.name}{' '}
-                  </option>
-                ))}{' '}
-              </Select>
-            </InputGroup>
-          </Box>{' '}
-          <Alert status="error" mb={5} align="start">
-            <AlertDescription>
-              {t(
-                `Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`
-              )}
-            </AlertDescription>
-          </Alert>
-      </FormControl>
-      </>}
-        <ButtonGroup mt="5%" w="100%">
-          <Flex w="100%" justifyContent="space-between">
-            <Flex>
-              <Button
-                onClick={() => {
-                  setStep(step - 1);
-                  setProgress(progress - 33.33);
-                }}
-                isDisabled={step === 1}
-                colorScheme="purple"
-                variant="solid"
-                w="7rem"
-                mr="5%">
-                 {t('Précédent')}
-              </Button>
-              <Button
-                w="7rem"
-                isDisabled={step === 3}
-                onClick={() => {
-                  setStep(step + 1);
-                  if (step === 3) {
-                    setProgress(100);
-                  } else {
-                    setProgress(progress + 33.33);
-                  }
-                }}
-                colorScheme="purple"
-                variant="outline">
-                {t('Suivant')}
-              </Button>
-            </Flex>
-            {step === 3 ? (
-              <Button
-            fontSize="sm"
-            variant="brand"
-            fontWeight="500"
-            w="7rem"            
-            onClick={handleSubmit}
-          >
-            {t(`Ajouter`)}{' '}
-          </Button>
-            ) : null}
-          </Flex>
-        </ButtonGroup>
-      </Box>
-
-
-     
-         
+                    </InputGroup>
+                  </Box>{' '}
+                  <Box height="90px">
+                    <FormLabel
+                      ms="4px"
+                      fontSize="md"
+                      fontWeight="500"
+                      color={textColor}
+                      display="flex"
+                    >
+                      {t(`Choisissez votre secteur`)}{' '}
+                      <Text color={brandStars}> * </Text>{' '}
+                    </FormLabel>{' '}
+                    <InputGroup>
+                      <Select
+                        id="city"
+                        name="location"
+                        fontSize="sm"
+                        ms={{ base: '0px', md: '0px' }}
+                        placeholder={t(`Choisissez votre secteur`)}
+                        mb="24px"
+                        fontWeight="200"
+                        size="lg"
+                        onChange={e => setSelectedsecteur(e.target.value)}
+                      >
+                        {' '}
+                        {secteurs.map(secteur => (
+                          <option key={secteur._id} value={secteur.name}>
+                            {' '}
+                            {secteur.name}{' '}
+                          </option>
+                        ))}{' '}
+                      </Select>
+                    </InputGroup>
+                  </Box>
+                  {user.phone === '060000000' ? (
+                    <Box height="90px">
+                      <FormLabel
+                        ms="4px"
+                        fontSize="md"
+                        fontWeight="500"
+                        color={textColor}
+                        display="flex"
+                      >
+                        {t(`Modifier votre numéro de téléphone`)}{' '}
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        value={phoneNumber}
+                        onChange={e => setPhoneNumber(e.target.value)}
+                      />
+                    </Box>
+                  ) : null}
+                  <Alert status="error" mb={5} align="start">
+                    <AlertDescription>
+                      {t(
+                        `Pour créer une nouvelle annonce, veuillez noter que les contenus à caractère sexuel, promotionnels de produits illégaux ou dangereux, ou tout autre contenu considéré comme inapproprié ne seront pas acceptés. Nous nous réservons le droit de refuser ou de retirer toute annonce qui ne respecte pas nos règles de publication. Merci de votre compréhension.`
+                      )}
+                    </AlertDescription>
+                  </Alert>
+                </FormControl>
+              </>
+            )}
+            <ButtonGroup mt="5%" w="100%" alignContent="flex-end">
+              <Flex w="100%" justifyContent="space-between">
+                {step === 3 ? (
+                  <Button
+                    onClick={() => {
+                      setStep(step - 1);
+                      setProgress(progress - 33.33);
+                    }}
+                    isDisabled={step === 1}
+                    colorScheme="purple"
+                    variant="solid"
+                    w="7rem"
+                    mr="5%"
+                  >
+                    {t('Précédent')}
+                  </Button>
+                ) : null}
+                {step === 3 ? (
+                  <Button
+                    fontSize="sm"
+                    variant="brand"
+                    fontWeight="500"
+                    w="7rem"
+                    onClick={handleSubmit}
+                  >
+                    {t(`Ajouter`)}{' '}
+                  </Button>
+                ) : null}
+              </Flex>
+            </ButtonGroup>
+          </Box>
         </FormControl>
-    
       </Flex>
-
     </Card>
   );
-}
+};
 
 export default CreateAd;

@@ -24,7 +24,7 @@ originalData.forEach(item => {
     customFieldId,
     customFieldValue: marque,
     category: "vehicule-vente",
-    subcategory: "Voitures",
+    subcategory: "Camions",
     type: "select",
     options
   });

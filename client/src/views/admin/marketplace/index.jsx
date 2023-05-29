@@ -150,11 +150,12 @@ export default function Marketplace() {
                         ]}
                         image={ ad.adPictures[0] && Object.keys(ad.adPictures[0]).length ? ad.adPictures[0] : Nft3}
                         category={ad.categoryLabel}
-                        currentbid={
-                        ad.price === ad.price + ' MAD' 
-                              ? ad.price + ' MAD'
-                              : t('Non défini')
-                      } 
+                    
+                      currentbid={
+                        ad.price === t('Non défini') 
+            ? t('Non défini') 
+            : (ad.price + ' MAD')
+        }
                         Click={handleClick}
                         city={ad.city}
                         dateCreated={

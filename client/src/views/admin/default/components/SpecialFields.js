@@ -141,7 +141,7 @@ export default function SpecialFields(props) {
   const add = async () => {
     const configuration = {
       method: 'post',
-      url: `${process.env.REACT_APP_API}/customFields//add/new`,
+      url: `${process.env.REACT_APP_API}/customFields/add/new`,
       data: customField,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,

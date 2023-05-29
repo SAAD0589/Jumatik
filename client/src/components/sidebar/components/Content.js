@@ -153,7 +153,7 @@ function SidebarContent(props) {
           isRound={true}
           icon={<BsLinkedin size="22px" />}
         />
-                <Link target="_blank" href='https://youtube.com'>    
+                <Link target="_blank" href='https://www.youtube.com/@jumatikmaroc3885'>    
 
         <IconButton
           aria-label="Youtube"
@@ -163,13 +163,17 @@ function SidebarContent(props) {
           icon={<BsYoutube size="22px" />}
         />
          </Link>{' '}
+         <Link target="_blank" href='https://twitter.com/JumatikMaroc'>    
         <IconButton
           aria-label="Twitter"
           variant="action"
           size="md"
           isRound={true}
           icon={<BsTwitter size="22px" />}
+          
         />
+                           </Link>{' '}
+
         <IconButton
           aria-label="Twitter"
           variant="action"
@@ -177,6 +181,8 @@ function SidebarContent(props) {
           isRound={true}
           icon={<FaTiktok size="22px" />}
         />
+                 
+
       </HStack>
       <Box
         ps="20px"

@@ -89,6 +89,7 @@ function AdDetails() {
       await axios
         .get(`${process.env.REACT_APP_API}/ads/ad/${id}`)
         .then(response => {
+          console.log(response.data);
           setAd(response.data);
         });
     } catch (error) {
@@ -291,9 +292,9 @@ function AdDetails() {
         category={currentAd.categoryLabel}
         description={currentAd.description}
         price={
-          currentAd.price === currentAd.price + ' MAD'
-            ? currentAd.price + ' MAD'
-            : t('Non défini')
+          currentAd.price === t('Non défini') 
+            ? t('Non défini') 
+            : currentAd.price + ' MAD'
         }
         dateCreated={formattedDate}
         city={currentAd.city}

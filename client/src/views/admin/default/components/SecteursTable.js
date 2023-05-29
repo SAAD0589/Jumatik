@@ -12,7 +12,7 @@ import {
     useColorModeValue,
     Box,
     Button,
-    IconButton
+    IconButton,Input
   } from '@chakra-ui/react';
   import React, { useMemo, useState, useEffect } from 'react';
   import {
@@ -32,7 +32,8 @@ import {
   import { useHistory } from 'react-router-dom';
   export default function SecteursTable(props) {
     const { columnsData } = props;
-  
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredTableData, setFilteredTableData] = useState([]);
     const [tableData, setTableData] = useState([]);
 
     const deleteSecteur = async (id) => {
@@ -58,19 +59,24 @@ import {
       }
     };
 
-  
+    const handleSearchQueryChange = (event) => {
+      setSearchQuery(event.target.value);}
   
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await axios.get(
-            `${process.env.REACT_APP_API}/secteurs/get/all`,
-            {
+         
+            let url = `${process.env.REACT_APP_API}/secteurs/get/all`;
+            
+            if (searchQuery) {
+              url += `?name=${searchQuery}`;
+            }
+      
+            const response = await axios.get(url, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
               },
-            }
-          );
+            });
   
           const adData = response.data;
           console.log(adData);
@@ -85,6 +91,11 @@ import {
             ville: citiesArray.find(city => city.id === item.city).name,
             action: item._id
           }));
+          const filteredData = newData.filter((item) =>
+          item.nom.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    
+        setFilteredTableData(filteredData);
           console.log(newData);
           setTableData(newData);
         } catch (error) {
@@ -93,14 +104,14 @@ import {
       }
   
       fetchData();
-    }, []);
+    }, [searchQuery]);
   
     const columns = useMemo(() => columnsData, [columnsData]);
   
     const tableInstance = useTable(
       {
         columns,
-        data: tableData,
+        data: filteredTableData,
       },
       useGlobalFilter,
       useSortBy,
@@ -154,8 +165,17 @@ import {
           >
             Liste des secteurs
           </Text>
-          
+  
         </Flex>
+        <Flex px="25px" mt={5} justify="space-between" align="center">
+      <Input
+        type="text"
+        variant="auth"
+        value={searchQuery}
+        onChange={handleSearchQueryChange}
+        placeholder="Recherche par nom"
+      />
+    </Flex>
         <Table p='50px' {...getTableProps()} variant="simple" color="gray.500" mb="24px">
           <Thead>
             {headerGroups?.map((headerGroup, index) => (
@@ -268,4 +288,3 @@ import {
       </Card>
     );
   }
-  
