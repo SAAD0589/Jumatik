@@ -2,11 +2,24 @@ import SubCustomField from "../models/SubCustomField.js";
 
 // READ
 export const getAllSubCustomFields = async (req, res) => {
+
   try {
-    const customFields = await SubCustomField.find();
-    res.status(200).json(customFields);
+    const searchQuery = req.query.name;
+
+    // Define the query object
+    const query = {};
+
+    if (searchQuery) {
+      // Use a regular expression to perform a case-insensitive search
+      query.name = { $regex: new RegExp(searchQuery, 'i') };
+    }
+
+    // Perform the search query and return the filtered subcategories
+    const customFields = await SubCustomField.find(query);
+    res.json(customFields);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 export const getSubCustomField = async (req, res) => {
@@ -36,10 +49,10 @@ export const getSubCustomFieldByFieldId = async (req, res) => {
   }
 };
 export const getSubCustomFieldByFieldValue = async (req, res) => {
-  const { customFieldValue } = req.params;
+  const { customFieldValue, subcategory } = req.params;
 
   try {
-    const subCustomField = await SubCustomField.find({customFieldValue: customFieldValue});
+    const subCustomField = await SubCustomField.find({customFieldValue: customFieldValue, subcategory: subcategory });
     if (!subCustomField) {
       return res.status(404).json({ message: "subCustomField not found" });
     }

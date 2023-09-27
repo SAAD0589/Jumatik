@@ -120,9 +120,9 @@ export const googleCallback = async (req, res) => {
       }).then(res => res.data);
     } else if (token) { // for mobile flow
       // Retrieve the user's profile information using the id token
-      const ticket = await clientmobile.verifyIdToken({
+      const ticket = await client.verifyIdToken({
         idToken: token,
-        audience: '764637492527-ipbna7b0ig65url663gpdbnqsc0gkhec.apps.googleusercontent.com'
+        audience: '157748997984-fbpdo0bkfvv8t0cs9so42s1ghp35k6qs.apps.googleusercontent.com'
       });
       const payload = ticket.getPayload();
       access_token = token;
@@ -141,7 +141,6 @@ export const googleCallback = async (req, res) => {
 
     // If user already exists, update profile picture and return user
     if (existingUser) {
-      existingUser.profilePicture = data.picture;
       existingUser.isVerified = data.email_verified;
 
       await existingUser.save();

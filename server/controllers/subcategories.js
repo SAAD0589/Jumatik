@@ -13,10 +13,22 @@ export const getSubcategories = async (req, res) => {
 export const getAllSubcategories = async (req, res) => {
 
   try {
-    const subcategories = await Subcategory.find(); 
-    res.status(200).json(subcategories);
+    const searchQuery = req.query.name;
+
+    // Define the query object
+    const query = {};
+
+    if (searchQuery) {
+      // Use a regular expression to perform a case-insensitive search
+      query.name = { $regex: new RegExp(searchQuery, 'i') };
+    }
+
+    // Perform the search query and return the filtered subcategories
+    const subcategories = await Subcategory.find(query);
+    res.json(subcategories);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 export const createSubcategory = async (req, res) => {

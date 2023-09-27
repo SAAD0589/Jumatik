@@ -14,7 +14,8 @@ const CustomFieldValueSchema = new mongoose.Schema({
     },
 
     value: {
-        type: String,
+        type: Array,
+        default: [],
        
     },
 

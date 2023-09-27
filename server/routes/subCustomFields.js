@@ -19,7 +19,7 @@ const router = express.Router();
 router.get("/get/all", getAllSubCustomFields);
 router.get("/get/:id", getSubCustomField);
 router.get("/get/customField/:customFieldId", getSubCustomFieldByFieldId);
-router.get("/get/customField/value/:customFieldValue", getSubCustomFieldByFieldValue);
+router.get("/get/customField/value/:customFieldValue/:subcategory", getSubCustomFieldByFieldValue);
 router.post("/add/new", verifyToken, createSubCustomField);
 router.delete('/delete/:id',verifyToken, deleteSubCustomField);
 router.put('/update/:id',verifyToken, updateSubCustomField);

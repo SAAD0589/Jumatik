@@ -2,7 +2,8 @@ import Ad from "../models/Ad.js";
 import User from "../models/User.js";
 import Category from "../models/Category.js";
 import jwt from "jsonwebtoken";
-import sharp from "sharp";
+import CustomFieldValue from "../models/CustomFieldValue.js";
+import SubCustomFieldValue from "../models/SubCustomFieldValue.js";
 
 
 //CREATE
@@ -31,6 +32,7 @@ export const createDraft = async (req, res) => {
           price,
           status: "Brouillon",
           likes: {},
+          ProPart: user.ProPart,
         });
  
   
@@ -43,7 +45,7 @@ export const createDraft = async (req, res) => {
   };
 export const updateDraft = async (req, res) => {
     try {
-      const { secteur, region, name, description, price, categoryName,subcategoryName,subcategoryLabel, adPictures, city, categoryLabel } = req.body;
+      const { secteur, region, name, description, price, categoryName,subcategoryName,subcategoryLabel, adPictures, city, categoryLabel,  } = req.body;
       const id = req.params;
       // Check if a draft already exists for the user
       let ad = await Ad.findById(id);
@@ -130,6 +132,7 @@ export const updateAd = async (req, res) => {
           price,
           status: "En cours de Validation",
           likes: {},
+          ProPart: user.ProPart
         });
       } else {
         // If a draft already exists, update it with the new data
@@ -198,7 +201,7 @@ export const getFeedValideAds = async(req, res) => {
 };
 export const getAllAds = async(req, res) => {
     try {
-        const ads = await Ad.find().sort({ createdAt: -1 });
+        const ads = await Ad.find({status:'En cours de Validation'}).sort({ createdAt: -1 });
         res.status(200).json(ads);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -312,51 +315,131 @@ export const getLike = async(req, res) => {
         res.status(404).json({ message: error.message });
     }
 };
+
+
+
 export const searchAds = async (req, res) => {
-    try {
-      const category = req.query.category || "";
-      const subcategory = req.query.subcategory || "";
-      const secteur = req.query.secteur || "";
-      const region = req.query.region || "";
-      const city = req.query.city || "";
-      const text = req.query.text || "";
-  
-      const query = { status: "Validée" };
-      const options = {};
-  
-      if (category !== "") {
-        query.categoryName = category;
-      }
-  
-      if (subcategory !== "") {
-        query.subcategoryName = subcategory;
-      }
-  
-      if (secteur !== "") {
-        query.secteur = secteur;
-      }
-  
-      if (region !== "") {
-        query.region = region;
-      }
-  
-      if (city !== "") {
-        query.city = city;
-      }
-  
-      if (text !== "") {
-        query.$text = { $search: text };
-        options.score = { $meta: "textScore" };
-      }
-  
-      const ads = await Ad.find(query, options).sort(options);
-  
-      res.json(ads);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: error });
+  try {
+    // Retrieve query parameters
+    const category = req.query.category || "";
+    const subcategory = req.query.subcategory || "";
+    const cities = req.query.cities || "";
+    const text = req.query.text || "";
+    const minPrice = req.query.minValue || ""; 
+    const maxPrice = req.query.maxValue || ""; 
+    const customFields = req.query.customFields || [];
+    const subCustomFields = req.query.subCustomFields || [];
+
+    // Build the query
+    const query = { status: "Validée" };
+    const options = {};
+
+    if (category !== "") {
+      query.categoryName = category;
     }
-  };
+
+    if (subcategory !== "" && subcategory !== "null") {
+      query.subcategoryName = subcategory;
+    }
+
+    if (cities !== "") {
+      query.city = cities;
+    }
+
+    if (text !== "") {
+      query.$text = { $search: text };
+      options.score = { $meta: "textScore" };
+    }
+    if (minPrice !== "" && maxPrice !== "") {
+      query.price = { $gte: minPrice, $lte: maxPrice };
+    }
+    // Handle custom fields
+    if (customFields.length > 0) {
+      const customFieldConditions = customFields.map((field) => ({
+        field_name: field.field_name,
+        value: field.value
+      }));
+
+      const customFieldAdIds = await CustomFieldValue.aggregate([
+        { $match: { $or: customFieldConditions } },
+        {
+          $group: {
+            _id: "$ad_id",
+            count: { $sum: 1 }
+          }
+        },
+        {
+          $match: { count: { $gte: customFieldConditions.length } }
+        },
+        {
+          $project: {
+            _id: 1
+          }
+        }
+      ]).exec();
+
+      const customFieldAdIdArray = customFieldAdIds.map((ad) => ad._id);
+
+      query._id = { $in: customFieldAdIdArray };
+    }
+
+    // Handle sub custom fields
+    if (subCustomFields.length > 0) {
+      const subCustomFieldConditions = subCustomFields.map((field) => ({
+        field_name: field.field_name,
+        value: field.value
+      }));
+
+      const subCustomFieldAdIds = await SubCustomFieldValue.aggregate([
+        { $match: { $or: subCustomFieldConditions } },
+        {
+          $group: {
+            _id: "$ad_id",
+            count: { $sum: 1 }
+          }
+        },
+        {
+          $match: { count: { $gte: subCustomFieldConditions.length } }
+        },
+        {
+          $project: {
+            _id: 1
+          }
+        }
+      ]).exec();
+
+      const subCustomFieldAdIdArray = subCustomFieldAdIds.map((ad) => ad._id);
+
+      if (query._id) {
+        query._id.$in = subCustomFieldAdIdArray;
+      } else {
+        query._id = { $in: subCustomFieldAdIdArray };
+      }
+    }
+
+    // Fetch ads
+    const ads = await Ad.find(query, options).sort(options);
+
+    res.json(ads);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error });
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 // DELETE
 export const deleteAd = async (req, res) => {

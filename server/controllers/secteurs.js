@@ -13,10 +13,22 @@ export const getSecteurs = async (req, res) => {
 export const getAllSecteurs = async (req, res) => {
 
   try {
-    const secteurs = await Secteur.find(); 
-    res.status(200).json(secteurs);
+    const searchQuery = req.query.name;
+
+    // Define the query object
+    const query = {};
+
+    if (searchQuery) {
+      // Use a regular expression to perform a case-insensitive search
+      query.name = { $regex: new RegExp(searchQuery, 'i') };
+    }
+
+    // Perform the search query and return the filtered subcategories
+    const secteurs = await Secteur.find(query);
+    res.json(secteurs);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 export const createSecteur = async (req, res) => {

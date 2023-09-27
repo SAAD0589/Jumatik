@@ -100,86 +100,52 @@ export const follow = async(req, res) => {
         res.status(404).json({ message: error.message });
     }
 };
-export const updateUser = async(req, res) => {
+export const updateUser = async (req, res) => {
     try {
-        const userId = req.params.id;
-        const {
-            firstName,
-            lastName,
-            phone,
-            password,
-            passwordVerification,
-            address,
-            profilePicture,
-        } = req.body;
-
-        const user = await User.findById(userId);
-        if (!user) return res.status(404).json({ msg: 'User not found' });
-        // Only update fields that were actually sent
-        if (firstName) user.firstName = firstName;
-        if (lastName) user.lastName = lastName;
-        if (phone) user.phone = phone;
-        if (address) user.address = address;
-        if (profilePicture) user.profilePicture = profilePicture;
-
-        // Update password if it was sent
-        if (password && passwordVerification) {
-            if (password !== passwordVerification) {
-                return res.status(400).json({ msg: 'Passwords do not match' });
-            }
-
-            const salt = await bcrypt.genSalt();
-            user.password = await bcrypt.hash(password, salt);
+      const userId = req.params.id;
+      const {
+        firstName,
+        lastName,
+        phone,
+        UserType,
+        password,
+        passwordVerification,
+        address,
+        profilePicture,
+      } = req.body;
+  
+      const user = await User.findById(userId);
+      if (!user) return res.status(404).json({ msg: 'User not found' });
+  
+      // Only update fields that were actually sent
+      if (firstName) user.firstName = firstName;
+      if (lastName) user.lastName = lastName;
+      if (phone) user.phone = phone;
+      if (address) user.address = address;
+      if (profilePicture) user.profilePicture = profilePicture;
+  
+      // Update UserType if it was sent
+      if (UserType) {
+        user.UserType = JSON.parse(UserType);
+      }
+  
+      // Update password if it was sent
+      if (password && passwordVerification) {
+        if (password !== passwordVerification) {
+          return res.status(400).json({ msg: 'Passwords do not match' });
         }
-
-        const savedUser = await user.save();
-
-
-        res.status(200).json(savedUser);
+  
+        const salt = await bcrypt.genSalt();
+        user.password = await bcrypt.hash(password, salt);
+      }
+  
+      const savedUser = await user.save();
+      res.status(200).json(savedUser);
     } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-};
-export const deleteFollowers = async (req, res) => {
-    try {
-      const { id, followerId } = req.params;
-      const user = await User.findById(id);
-      const followers = user.followers;
-  
-      // Filter out the follower with the specified followerId
-      const updatedFollowers = followers.filter(follower => follower !== followerId);
-  
-      // Update the user's followers array with the filtered array
-      user.followers = updatedFollowers;
-  
-      // Save the updated user
-      await user.save();
-  
-      res.status(200).json(updatedFollowers);
-    } catch (error) {
-      res.status(404).json({ message: error.message });
+      res.status(500).json({ error: error.message });
     }
   };
   
-export const deleteFollowings = async(req, res) => {
-    try {
-        const { id, followingId } = req.params;
-        const user = await User.findById(id);
-        const followings = user.following;
-    
+  
 
-        const updatedFollowings = followings.filter(following => following.toString() !== followingId.toString());
-        
-        
-    
-        // Update the user's followers array with the filtered array
-        user.following = updatedFollowings;
-    
-        // Save the updated user
-        await user.save();
-    
-        res.status(200).json(updatedFollowings);
-      } catch (error) {
-        res.status(404).json({ message: error.message });
-      }
-    };
+  

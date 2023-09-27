@@ -3,10 +3,22 @@ import CustomField from "../models/CustomField.js";
 // READ
 export const getAllCustomFields = async (req, res) => {
   try {
-    const customFields = await CustomField.find();
-    res.status(200).json(customFields);
+    const searchQuery = req.query.name;
+
+    // Define the query object
+    const query = {};
+
+    if (searchQuery) {
+      // Use a regular expression to perform a case-insensitive search
+      query.name = { $regex: new RegExp(searchQuery, 'i') };
+    }
+
+    // Perform the search query and return the filtered subcategories
+    const customFields = await CustomField.find(query);
+    res.json(customFields);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 export const getCustomField = async (req, res) => {
@@ -26,7 +38,7 @@ export const getCustomFieldByCategory = async (req, res) => {
   const { category } = req.params;
 
   try {
-    const customField = await CustomField.find({category: category, subcategory: ""});
+    const customField = await CustomField.find({category: category, subcategory: ''});
     if (!customField) {
       return res.status(404).json({ message: "customField not found" });
     }

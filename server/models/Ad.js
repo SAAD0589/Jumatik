@@ -6,7 +6,7 @@ const AdSchema = new mongoose.Schema({
     },
     firstName: {
         type: String,
-        required: false,
+        required: true,
         min: 2,
         max: 50,
     },
@@ -84,6 +84,9 @@ const AdSchema = new mongoose.Schema({
     likes: {
         type: Map,
         of: Boolean,
+    },
+    ProPart: {
+        type: String,
     },
 }, { timestamps: true });
 

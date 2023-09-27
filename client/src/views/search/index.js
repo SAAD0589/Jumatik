@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import {
+  RangeSlider,
+  RangeSliderTrack,
+  RangeSliderFilledTrack,
+  RangeSliderThumb,
+} from '@chakra-ui/react'
+import { FaDollarSign } from 'react-icons/fa';
+
 // Chakra imports
 import {
   Box,
@@ -35,6 +43,7 @@ import {
   Grid,
   InputLeftElement,
   InputLeftAddon,
+  Tooltip
 } from '@chakra-ui/react';
 import {
   AsyncCreatableSelect,
@@ -130,6 +139,12 @@ export default function RecentAds() {
   const inputText = useColorModeValue('gray.700', 'gray.100');
   const searchIconColor = useColorModeValue('gray.700', 'white');
   const inputBg = useColorModeValue('secondaryGray.300', 'navy.900');
+
+  const [range, setRange] = useState([0,100]);
+
+  const [maxValue, setMaxValue] = useState('');
+  const [minValue, setMinValue] = useState('');
+
   const onChangeText = e => {
     setText(e.target.value);
   };
@@ -197,7 +212,14 @@ export default function RecentAds() {
           '&secteur=' +
           secteur +
           '&text=' +
-          text
+          text+
+          '&maxValue=' +
+          maxValue +
+          '&minValue=' +
+          minValue 
+
+
+          
       );
       setAds(response.data);
     } catch (error) {
@@ -273,7 +295,14 @@ export default function RecentAds() {
       console.error(error);
     }
   };
-
+  
+  useEffect(()=>{
+    setMinValue(range[0])
+    setMaxValue(range[1])
+  },[minValue,maxValue])
+  
+console.log(range[0],range[1]);
+console.log('min:'+minValue,'max:'+maxValue);
   return (
     <Box pt={{ base: '120px', md: '80px', xl: '20px' }}>
       {' '}
@@ -325,7 +354,12 @@ export default function RecentAds() {
                           ></IconButton>
                         }
                       />{' '}
-                      <Input
+                      {/*input range */}
+                                    
+                  {/* <input  type='range' value={range} min={0}
+                    onChange={e=>setRange(e.target.value)}
+                  /> */}
+                    <Input
                         variant="auth"
                         name="text"
                         size="lg"
@@ -457,6 +491,61 @@ export default function RecentAds() {
                     </InputGroup>{' '}
                   </Flex>{' '}
                 </Flex>
+                {/* <h1>Max {maxValue}</h1>
+                <h1>Min{minValue}</h1> */}
+                {/* <RangeSlider aria-label={['min', 'max']} value={range}
+                  onChange={(value) => {
+                    setRange(value);
+                    setMinValue(value[0])
+                    setMaxValue(value[1]);
+                  }
+                  }
+                  
+                   > 
+                    <RangeSliderTrack>
+                      <RangeSliderFilledTrack />
+                    </RangeSliderTrack>
+                    <RangeSliderThumb index={0} />
+                    <RangeSliderThumb index={1} />
+                  </RangeSlider>    */}
+                 Min <Input htmlSize={4} width='auto'  type='number' value={range[0]}
+                 onChange={(e)=>setMinValue(e.target.value)}
+                 /> - 
+                 Max <Input htmlSize={4} width='auto' type='number' value={range[1]} 
+                 />
+                      <RangeSlider
+      aria-labelledby="Price Range"
+      defaultValue={range}
+      min={0}
+      max={1000}
+      mt={6}
+      mb={4}
+      step={10}
+      onChange={(value) => {
+        setRange(value);
+        setMinValue(value[0])
+        setMaxValue(value[1]);
+      }
+      }    >
+      <RangeSliderTrack>
+        <RangeSliderFilledTrack  bg='purple.300'  />
+      </RangeSliderTrack>
+      <RangeSliderThumb index={0} boxSize={6} >
+      <Tooltip label={range[0]} hasArrow placement="top">
+          <Flex align="center" direction="column">
+            <Icon as={FaDollarSign} boxSize={4} color='purple' />
+          </Flex>
+        </Tooltip>
+      </RangeSliderThumb>
+      <RangeSliderThumb index={1} boxSize={6}>
+      <Tooltip label={range[1]} hasArrow placement="top">
+          <Flex align="center" direction="column">
+            <Icon as={FaDollarSign} boxSize={4} color='purple' />
+          </Flex>
+        </Tooltip>
+      </RangeSliderThumb>
+      
+    </RangeSlider>
                 <Button
                   onClick={handleSubmit}
                   fontSize="md"
